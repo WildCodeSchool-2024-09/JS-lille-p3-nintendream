@@ -1,3 +1,28 @@
-.title-billetterie {
-  font-family: var(font-family);
+.billetterie-card {
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: var(--secondary-color);
+  width: 23rem;
+  height: 40rem;
+}
+
+.billetterie-card-img {
+  width: 100%;
+  height: 17rem;
+  border-radius: 15px;
+  display: flex;
+  justify-self: center;
+  margin-bottom: 1rem;
+}
+
+.card-billetterie-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-between;
+  padding: 1rem;
+}
+
+.billetterie-card-title {
+  justify-self: center;
 }
