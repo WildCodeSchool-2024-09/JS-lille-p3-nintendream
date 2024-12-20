@@ -36,12 +36,14 @@ const prices: PricesProps[] = [
 function Billetterie() {
   return (
     <main className="billetterie-container">
-      <h1 className="title-billetterie"> Nos différents tarifs</h1>
-      <p className="subtitle-billetterie">
-        {" "}
-        Choisissez le billet qui vous convient le plus, que ce soit seul... ou à
-        plusieurs !
-      </p>
+      <section className="billetterie-title-container">
+        <h1 className="title-billetterie"> Nos différents tarifs</h1>
+        <h2 className="subtitle-billetterie">
+          {" "}
+          Choisissez le billet qui vous convient le plus, que ce soit seul... ou
+          à plusieurs !
+        </h2>
+      </section>
 
       <div className="card-billetterie-container">
         {prices.map((price) => (
@@ -51,9 +53,57 @@ function Billetterie() {
             <p className="billetterie-availability">{price.availability}</p>
             <p className="billetterie-cancel">{price.cancel}</p>
             <p className="billetterie-other">{price.other}</p>
+            <button type="button" className="billetterie-btn">
+              {" "}
+              ACHETER
+            </button>
           </div>
         ))}
       </div>
+      <h1 className="title-billetterie"> Les avantages des billets</h1>
+      <section className="billetterie-avantages-container">
+        <div className="billetterie-container">
+          <img
+            src="./public/image/img-billetterie4.png"
+            alt="img"
+            className="billetterie-avantages-img"
+          />
+          <h3 className="billetterie-avantages-subtitle">
+            Accès à tout le parc
+          </h3>
+          <p className="billetterie-avanatages-more">
+            Profitez de toutes nos attractions, spectacles et bien plus encore !
+          </p>
+        </div>
+        <div className="billetterie-container">
+          <img
+            src="./public/image/img-billetterie5.png"
+            alt="img"
+            className="billetterie-avantages-img"
+          />
+          <h3 className="billetterie-avantages-subtitle">
+            Des conditions flexibles
+          </h3>
+          <p className="billetterie-avanatages-more">
+            Des billets datés annulables jusqu'à 3 jours avant l'arrivée, ou des
+            billets Liberté valables durant 1 an !
+          </p>
+        </div>
+        <div className="billetterie-container">
+          <img
+            src="./public/image/img-billetterie6.png"
+            alt="img"
+            className="billetterie-avantages-img billetterie-enfants-img"
+          />
+          <h3 className="billetterie-avantages-subtitle">
+            {" "}
+            Des tarifs spéciaux pour les enfants
+          </h3>
+          <p className="billetterie-avanatages-more">
+            Pour les enfants de 5 à 11 ans. 
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
