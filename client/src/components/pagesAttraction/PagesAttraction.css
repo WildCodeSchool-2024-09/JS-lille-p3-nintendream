@@ -1,0 +1,41 @@
+.background-attraction {
+	width: 100%;
+	max-height: 500px;
+}
+
+.description-attraction-sensation {
+	max-width: 800px;
+}
+
+.button-attraction {
+	text-align: end;
+}
+
+.attraction-sensation{
+    height: 200px;
+}
+
+
+.attraction-card{
+    
+    background-color: #E60012;
+    width: 30%;
+    height: 300%;
+    border-radius: 10%;
+}
+
+.img-attraction{
+    width: 90%;
+    border-radius: 10%;
+    margin: 5%;
+}
+
+h2{
+    display: flex;
+    justify-content: center;
+}
+.img-container-attraction{
+    display: flex;
+    justify-content: center;
+    
+}
