@@ -6,3 +6,10 @@
   --tertiary-color: #424242;
   --font-family: Josefin Sans, sans-serif;
 }
+
+* {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
