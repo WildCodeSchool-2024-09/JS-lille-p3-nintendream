@@ -1,14 +1,13 @@
 import "./App.css";
-import Billetterie from "./pages/billetterie/Billetterie";
+import Login from "./pages/login/Login";
 import NavBar from "./components/NavBar/NavBar";
-
 function App() {
   return (
     <>
-      <NavBar />;
-      <Billetterie />
+     <NavBar />
+     <Login />
     </>
-  );
+    );
 }
 
 export default App;
