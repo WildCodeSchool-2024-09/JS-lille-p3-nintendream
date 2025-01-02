@@ -39,3 +39,7 @@
   font-size: 1.1rem;
   visibility: hidden;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
