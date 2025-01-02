@@ -1,0 +1,45 @@
+.whole-nav {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  text-align: center;
+  margin: 0;
+}
+.nintendreamlogo {
+  height: 100px;
+}
+
+.logo-and-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-ul {
+  display: flex;
+  list-style: none;
+  gap: 5%;
+  justify-content: center;
+  margin-top: 0px;
+}
+.nav-li:hover {
+  font-size: 1.4rem;
+  transition: 0.2s;
+}
+.nav-li {
+  transition: 0.1s;
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+}
+.login-p-right {
+  margin-right: 2%;
+  font-size: 1.1rem;
+  margin-top: 2%;
+}
+.login-p-left {
+  margin-left: 2%;
+  font-size: 1.1rem;
+  visibility: hidden;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
