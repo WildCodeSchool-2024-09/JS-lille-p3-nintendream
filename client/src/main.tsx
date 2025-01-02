@@ -7,8 +7,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import Login from "./pages/login/Login";
 import Billetterie from "./pages/billetterie/Billetterie";
+import Login from "./pages/login/Login";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -50,7 +50,7 @@ if (rootElement == null) {
 createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
+  </StrictMode>,
 );
 
 /**
