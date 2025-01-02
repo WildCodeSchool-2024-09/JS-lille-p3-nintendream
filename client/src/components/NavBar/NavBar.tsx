@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 function NavBar() {
   return (
@@ -9,14 +10,18 @@ function NavBar() {
           alt="Nintendream"
           className="nintendreamlogo"
         />
-        <p className="login-p-right">Se connecter/S'inscrire</p>
+        <Link to="/login">
+          <p className="login-p-right">Se connecter/S'inscrire</p>
+        </Link>
       </div>
       <ul className="nav-ul">
         <li className="nav-li">Attractions</li>
         <li className="nav-li">Évènements</li>
         <li className="nav-li">Hébergement</li>
         <li className="nav-li">Restauration</li>
-        <li className="nav-li">Billetterie</li>
+        <Link to="/billetterie">
+          <li className="nav-li">Billetterie</li>
+        </Link>
       </ul>
     </header>
   );
