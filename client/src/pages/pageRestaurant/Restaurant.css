@@ -5,11 +5,11 @@ header {
   margin-left: 10%;
   margin-top: 8%;
 }
-.title {
+.title-resto {
   font-size: 5rem;
 }
 
-.subtitle {
+.subtitle-resto {
   font-size: 3rem;
   margin-bottom: 8%;
 }
@@ -31,7 +31,7 @@ header {
   pointer-events: none;
 }
 
-.carroussel {
+.carroussel-resto {
   border-radius: 20px;
   width: 95%;
   filter: brightness(70%);
@@ -46,7 +46,7 @@ header {
 .section-carroussel {
   margin: 1rem;
 }
-.card {
+.card-resto {
   background-color: #e60012;
   width: 100%;
   height: 480px;
@@ -54,64 +54,54 @@ header {
   position: relative;
 }
 
-.card h1 {
+.card-resto h1 {
   display: flex;
   justify-content: center;
   padding: 3%;
   font-size: 2.5rem;
+  color: white;
 }
 
 .card-container-restaurant {
   width: auto;
 }
 
-.card h1 {
-  text-align: center;
-  margin: 0;
-  font-size: 2.5rem;
-  color: white;
-}
-
-.font {
+.font-resto {
   color: white;
   margin: 7%;
   font-size: 1.5rem;
 }
 
-.price-container {
+.price-container-resto {
   background-color: white;
   margin: 1%;
   display: flex;
   border-radius: 20px;
   justify-content: space-evenly;
 }
-.price-box {
+.price-box-resto {
   margin-top: -5%;
 }
 
-.price {
+.price-resto {
   font-size: 2.5rem;
   display: flex;
   flex-direction: row;
 }
-.pricetwo {
+.pricetwo-resto {
   font-size: 1rem;
 }
 
-.type {
+.type-resto {
   margin-top: -40%;
   margin-left: 10%;
 }
-.age {
+.age-resto {
   margin-top: -20%;
   margin-left: -10%;
 }
 
-.button {
-  display: flex;
-  justify-content: center;
-}
-.white-box {
+.white-box-resto {
   background-color: white;
   width: 80%;
   margin: 10% auto;
@@ -124,19 +114,20 @@ header {
   left: 50%;
   transform: translateX(-50%);
 }
-.button {
+.button-restaurants {
   margin-top: -2%;
   margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
 }
-.button-reservation {
+
+.button-reservation-resto {
   background-image: linear-gradient(
     to right,
     #e60012 0%,
     #e35d5b 51%,
     #e60012 100%
   );
-}
-.button-reservation {
   padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
@@ -149,7 +140,7 @@ header {
   border: none;
 }
 
-.button-reservation:hover {
+.button-reservation-resto:hover {
   background-position: right center;
   color: #fff;
   text-decoration: none;

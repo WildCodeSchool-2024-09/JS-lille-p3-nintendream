@@ -24,7 +24,7 @@ function Restaurant() {
   return (
     <>
       <header>
-        <h1 className="title">
+        <h1 className="title-resto">
           <b>
             {" "}
             Des saveurs à la <br />
@@ -32,7 +32,7 @@ function Restaurant() {
           </b>
         </h1>
 
-        <h2 className="subtitle">
+        <h2 className="subtitle-resto">
           Offrez-vous une pause gourmande au cœur <br />
           de l'aventure !
         </h2>
@@ -57,7 +57,7 @@ function Restaurant() {
           >
             <div className="img-restau">
               <img
-                className="carroussel"
+                className="carroussel-resto"
                 src="/imgRestaurant/image1.webp"
                 alt=""
               />
@@ -65,7 +65,7 @@ function Restaurant() {
             </div>
             <div className="img-restau">
               <img
-                className="carroussel"
+                className="carroussel-resto"
                 src="/imgRestaurant/image2.webp"
                 alt=""
               />
@@ -73,7 +73,7 @@ function Restaurant() {
             </div>
             <div className="img-restau">
               <img
-                className="carroussel"
+                className="carroussel-resto"
                 src="/imgRestaurant/image3.jpg"
                 alt=""
               />
@@ -81,7 +81,7 @@ function Restaurant() {
             </div>
             <div className="img-restau">
               <img
-                className="carroussel"
+                className="carroussel-resto"
                 src="/imgRestaurant/image4.jpg"
                 alt=""
               />
@@ -89,7 +89,7 @@ function Restaurant() {
             </div>
             <div className="img-restau">
               <img
-                className="carroussel"
+                className="carroussel-resto"
                 src="/imgRestaurant/image5.jpg"
                 alt=""
               />
@@ -99,39 +99,39 @@ function Restaurant() {
         </section>
         <section className="container-restaurant">
           <section className="card-container-restaurant">
-            <div className="card">
+            <div className="card-resto">
               <h1>Le Champignon Gourmet</h1>
-              <p className="font">
+              <p className="font-resto">
                 -Un restaurant inspiré de l’univers de Mario, avec des plats en
                 forme de champignons, d’étoiles ou de carapaces.
               </p>
-              <div className="white-box">
-                <div className="price-container">
-                  <div className="price-box">
+              <div className="white-box-resto">
+                <div className="price-container-resto">
+                  <div className="price-box-resto">
                     <b>
-                      <p className="price">
-                        29 <p className="pricetwo">€99</p>
+                      <p className="price-resto">
+                        29 <p className="pricetwo-resto">€99</p>
                       </p>
                     </b>
-                    <p className="type">
+                    <p className="type-resto">
                       <b>Adulte</b>
                     </p>
-                    <p className="age">+ de 14 ans</p>
+                    <p className="age-resto">+ de 14 ans</p>
                   </div>
-                  <div className="price-box">
+                  <div className="price-box-resto">
                     <b>
-                      <p className="price">
-                        16 <p className="pricetwo">€99</p>
+                      <p className="price-resto">
+                        16 <p className="pricetwo-resto">€99</p>
                       </p>
                     </b>
-                    <p className="type">
+                    <p className="type-resto">
                       <b>Enfants</b>
                     </p>
-                    <p className="age">- de 14 ans</p>
+                    <p className="age-resto">- de 14 ans</p>
                   </div>
                 </div>
-                <div className="button">
-                  <button type="submit" className="button-reservation">
+                <div className="button-restaurants">
+                  <button type="submit" className="button-reservation-resto">
                     Reserver
                   </button>
                 </div>
@@ -139,39 +139,39 @@ function Restaurant() {
             </div>
           </section>
           <section className="card-container-restaurant">
-            <div className="card">
+            <div className="card-resto">
               <h1>Zelda's Feast</h1>
-              <p className="font">
+              <p className="font-resto">
                 -Une ambiance médiévale avec des plats dignes des banquets
                 d’Hyrule. Parfait pour les fans de la série The Legend of Zelda.
               </p>
-              <div className="white-box">
-                <div className="price-container">
-                  <div className="price-box">
+              <div className="white-box-resto">
+                <div className="price-container-resto">
+                  <div className="price-box-resto">
                     <b>
-                      <p className="price">
-                        19 <p className="pricetwo">€99</p>
+                      <p className="price-resto">
+                        19 <p className="pricetwo-resto">€99</p>
                       </p>
                     </b>
-                    <p className="type">
+                    <p className="type-resto">
                       <b>Adulte</b>
                     </p>
-                    <p className="age">+ de 14 ans</p>
+                    <p className="age-resto">+ de 14 ans</p>
                   </div>
-                  <div className="price-box">
+                  <div className="price-box-resto">
                     <b>
-                      <p className="price">
-                        12 <p className="pricetwo">€99</p>
+                      <p className="price-resto">
+                        12 <p className="pricetwo-resto">€99</p>
                       </p>
                     </b>
-                    <p className="type">
+                    <p className="type-resto">
                       <b>Enfants</b>
                     </p>
-                    <p className="age">- de 14 ans</p>
+                    <p className="age-resto">- de 14 ans</p>
                   </div>
                 </div>
-                <div className="button">
-                  <button type="submit" className="button-reservation">
+                <div className="button-restaurants">
+                  <button type="submit" className="button-reservation-resto">
                     Reserver
                   </button>
                 </div>
@@ -179,39 +179,39 @@ function Restaurant() {
             </div>
           </section>
           <section className="card-container-restaurant">
-            <div className="card">
+            <div className="card-resto">
               <h1>Donkey Kong Grill</h1>
-              <p className="font">
+              <p className="font-resto">
                 -Un barbecue tropical où les bananes et les saveurs exotiques
                 sont à l’honneur, dans une ambiance de jungle.
               </p>
-              <div className="white-box">
-                <div className="price-container">
-                  <div className="price-box">
+              <div className="white-box-resto">
+                <div className="price-container-resto">
+                  <div className="price-box-resto">
                     <b>
-                      <p className="price">
-                        21 <p className="pricetwo">€99</p>
+                      <p className="price-resto">
+                        21 <p className="pricetwo-resto">€99</p>
                       </p>
                     </b>
-                    <p className="type">
+                    <p className="type-resto">
                       <b>Adulte</b>
                     </p>
-                    <p className="age">+ de 14 ans</p>
+                    <p className="age-resto">+ de 14 ans</p>
                   </div>
-                  <div className="price-box">
+                  <div className="price-box-resto">
                     <b>
-                      <p className="price">
-                        18 <p className="pricetwo">€99</p>
+                      <p className="price-resto">
+                        18 <p className="pricetwo-resto">€99</p>
                       </p>
                     </b>
-                    <p className="type">
+                    <p className="type-resto">
                       <b>Enfants</b>
                     </p>
-                    <p className="age">- de 14 ans</p>
+                    <p className="age-resto">- de 14 ans</p>
                   </div>
                 </div>
-                <div className="button">
-                  <button type="submit" className="button-reservation">
+                <div className="button-restaurants">
+                  <button type="submit" className="button-reservation-resto">
                     Reserver
                   </button>
                 </div>
@@ -219,39 +219,39 @@ function Restaurant() {
             </div>
           </section>
           <section className="card-container-restaurant">
-            <div className="card">
+            <div className="card-resto">
               <h1>Kirby Snack's World</h1>
-              <p className="font">
+              <p className="font-resto">
                 -Un lieu fun et coloré, proposant des desserts et en-cas aux
                 formes adorables, inspirés de Kirby et de ses aventures.
               </p>
-              <div className="white-box">
-                <div className="price-container">
-                  <div className="price-box">
+              <div className="white-box-resto">
+                <div className="price-container-resto">
+                  <div className="price-box-resto">
                     <b>
-                      <p className="price">
-                        12 <p className="pricetwo">€99</p>
+                      <p className="price-resto">
+                        12 <p className="pricetwo-resto">€99</p>
                       </p>
                     </b>
-                    <p className="type">
+                    <p className="type-resto">
                       <b>Adulte</b>
                     </p>
-                    <p className="age">+ de 14 ans</p>
+                    <p className="age-resto">+ de 14 ans</p>
                   </div>
-                  <div className="price-box">
+                  <div className="price-box-resto">
                     <b>
-                      <p className="price">
-                        9 <p className="pricetwo">€99</p>
+                      <p className="price-resto">
+                        9 <p className="pricetwo-resto">€99</p>
                       </p>
                     </b>
-                    <p className="type">
+                    <p className="type-resto">
                       <b>Enfants</b>
                     </p>
-                    <p className="age">- de 14 ans</p>
+                    <p className="age-resto">- de 14 ans</p>
                   </div>
                 </div>
-                <div className="button">
-                  <button type="submit" className="button-reservation">
+                <div className="button-restaurants">
+                  <button type="submit" className="button-reservation-resto">
                     Reserver
                   </button>
                 </div>
@@ -259,39 +259,39 @@ function Restaurant() {
             </div>
           </section>
           <section className="card-container-restaurant">
-            <div className="card">
+            <div className="card-resto">
               <h1>Pokemon Café</h1>
-              <p className="font">
+              <p className="font-resto">
                 -Des plats et boissons inspirés de vos Pokémon préférés, avec
                 des présentations ludiques et originales.
               </p>
-              <div className="white-box">
-                <div className="price-container">
-                  <div className="price-box">
+              <div className="white-box-resto">
+                <div className="price-container-resto">
+                  <div className="price-box-resto">
                     <b>
-                      <p className="price">
-                        13 <p className="pricetwo">€99</p>
+                      <p className="price-resto">
+                        13 <p className="pricetwo-resto">€99</p>
                       </p>
                     </b>
-                    <p className="type">
+                    <p className="type-resto">
                       <b>Adulte</b>
                     </p>
-                    <p className="age">+ de 14 ans</p>
+                    <p className="age-resto">+ de 14 ans</p>
                   </div>
-                  <div className="price-box">
+                  <div className="price-box-resto">
                     <b>
-                      <p className="price">
-                        11 <p className="pricetwo">€99</p>
+                      <p className="price-resto">
+                        11 <p className="pricetwo-resto">€99</p>
                       </p>
                     </b>
-                    <p className="type">
+                    <p className="type-resto">
                       <b>Enfants</b>
                     </p>
-                    <p className="age">- de 14 ans</p>
+                    <p className="age-resto">- de 14 ans</p>
                   </div>
                 </div>
-                <div className="button">
-                  <button type="submit" className="button-reservation">
+                <div className="button-restaurants">
+                  <button type="submit" className="button-reservation-resto">
                     Reserver
                   </button>
                 </div>
