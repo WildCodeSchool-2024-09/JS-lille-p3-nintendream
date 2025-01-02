@@ -150,9 +150,10 @@ header {
 }
 
 .button-reservation:hover {
-  background-position: right center; /* change the direction of the change here */
+  background-position: right center;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .container-restaurant {
@@ -161,5 +162,5 @@ header {
   gap: 2rem;
   justify-content: center;
   margin: 8% auto;
-  width: 75%; /* Largeur du conteneur */
+  width: 75%;
 }

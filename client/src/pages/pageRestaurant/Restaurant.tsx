@@ -116,22 +116,24 @@ function Restaurant() {
                     <p className="type">
                       <b>Adulte</b>
                     </p>
-                    <p className="age">14ans et plus</p>
+                    <p className="age">+ de 14 ans</p>
                   </div>
                   <div className="price-box">
                     <b>
                       <p className="price">
-                        29 <p className="pricetwo">€99</p>
+                        16 <p className="pricetwo">€99</p>
                       </p>
                     </b>
                     <p className="type">
-                      <b>Adulte</b>
+                      <b>Enfants</b>
                     </p>
-                    <p className="age">14ans et plus</p>
+                    <p className="age">- de 14 ans</p>
                   </div>
                 </div>
                 <div className="button">
-                  <button className="button-reservation">Reserver</button>
+                  <button type="submit" className="button-reservation">
+                    Reserver
+                  </button>
                 </div>
               </div>
             </div>
@@ -148,28 +150,30 @@ function Restaurant() {
                   <div className="price-box">
                     <b>
                       <p className="price">
-                        29 <p className="pricetwo">€99</p>
+                        19 <p className="pricetwo">€99</p>
                       </p>
                     </b>
                     <p className="type">
                       <b>Adulte</b>
                     </p>
-                    <p className="age">14ans et plus</p>
+                    <p className="age">+ de 14 ans</p>
                   </div>
                   <div className="price-box">
                     <b>
                       <p className="price">
-                        29 <p className="pricetwo">€99</p>
+                        12 <p className="pricetwo">€99</p>
                       </p>
                     </b>
                     <p className="type">
-                      <b>Adulte</b>
+                      <b>Enfants</b>
                     </p>
-                    <p className="age">14ans et plus</p>
+                    <p className="age">- de 14 ans</p>
                   </div>
                 </div>
                 <div className="button">
-                  <button className="button-reservation">Reserver</button>
+                  <button type="submit" className="button-reservation">
+                    Reserver
+                  </button>
                 </div>
               </div>
             </div>
@@ -186,28 +190,30 @@ function Restaurant() {
                   <div className="price-box">
                     <b>
                       <p className="price">
-                        29 <p className="pricetwo">€99</p>
+                        21 <p className="pricetwo">€99</p>
                       </p>
                     </b>
                     <p className="type">
                       <b>Adulte</b>
                     </p>
-                    <p className="age">14ans et plus</p>
+                    <p className="age">+ de 14 ans</p>
                   </div>
                   <div className="price-box">
                     <b>
                       <p className="price">
-                        29 <p className="pricetwo">€99</p>
+                        18 <p className="pricetwo">€99</p>
                       </p>
                     </b>
                     <p className="type">
-                      <b>Adulte</b>
+                      <b>Enfants</b>
                     </p>
-                    <p className="age">14ans et plus</p>
+                    <p className="age">- de 14 ans</p>
                   </div>
                 </div>
                 <div className="button">
-                  <button className="button-reservation">Reserver</button>
+                  <button type="submit" className="button-reservation">
+                    Reserver
+                  </button>
                 </div>
               </div>
             </div>
@@ -224,28 +230,30 @@ function Restaurant() {
                   <div className="price-box">
                     <b>
                       <p className="price">
-                        29 <p className="pricetwo">€99</p>
+                        12 <p className="pricetwo">€99</p>
                       </p>
                     </b>
                     <p className="type">
                       <b>Adulte</b>
                     </p>
-                    <p className="age">14ans et plus</p>
+                    <p className="age">+ de 14 ans</p>
                   </div>
                   <div className="price-box">
                     <b>
                       <p className="price">
-                        29 <p className="pricetwo">€99</p>
+                        9 <p className="pricetwo">€99</p>
                       </p>
                     </b>
                     <p className="type">
-                      <b>Adulte</b>
+                      <b>Enfants</b>
                     </p>
-                    <p className="age">14ans et plus</p>
+                    <p className="age">- de 14 ans</p>
                   </div>
                 </div>
                 <div className="button">
-                  <button className="button-reservation">Reserver</button>
+                  <button type="submit" className="button-reservation">
+                    Reserver
+                  </button>
                 </div>
               </div>
             </div>
@@ -262,28 +270,30 @@ function Restaurant() {
                   <div className="price-box">
                     <b>
                       <p className="price">
-                        29 <p className="pricetwo">€99</p>
+                        13 <p className="pricetwo">€99</p>
                       </p>
                     </b>
                     <p className="type">
                       <b>Adulte</b>
                     </p>
-                    <p className="age">14ans et plus</p>
+                    <p className="age">+ de 14 ans</p>
                   </div>
                   <div className="price-box">
                     <b>
                       <p className="price">
-                        29 <p className="pricetwo">€99</p>
+                        11 <p className="pricetwo">€99</p>
                       </p>
                     </b>
                     <p className="type">
-                      <b>Adulte</b>
+                      <b>Enfants</b>
                     </p>
-                    <p className="age">14ans et plus</p>
+                    <p className="age">- de 14 ans</p>
                   </div>
                 </div>
                 <div className="button">
-                  <button className="button-reservation">Reserver</button>
+                  <button type="submit" className="button-reservation">
+                    Reserver
+                  </button>
                 </div>
               </div>
             </div>
