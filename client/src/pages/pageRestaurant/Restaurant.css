@@ -56,9 +56,9 @@ header {
 
 .card-resto h1 {
   display: flex;
-  justify-content: center;
-  padding: 3%;
-  font-size: 2.5rem;
+  justify-content: space-around;
+  padding: 5%;
+  font-size: 2rem;
   color: white;
 }
 
@@ -69,12 +69,13 @@ header {
 .font-resto {
   color: white;
   margin: 7%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .price-container-resto {
   background-color: white;
   margin: 1%;
+  margin-top: 20%;
   display: flex;
   border-radius: 20px;
   justify-content: space-evenly;
@@ -92,19 +93,11 @@ header {
   font-size: 1rem;
 }
 
-.type-resto {
-  margin-top: -40%;
-  margin-left: 10%;
-}
-.age-resto {
-  margin-top: -20%;
-  margin-left: -10%;
-}
-
 .white-box-resto {
   background-color: white;
   width: 80%;
   margin: 10% auto;
+  height: 40%;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
