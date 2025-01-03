@@ -8,7 +8,6 @@ const router = express.Router();
 
 // Define item-related routes
 
-
 /* ************************************************************************* */
 
 export default router;
