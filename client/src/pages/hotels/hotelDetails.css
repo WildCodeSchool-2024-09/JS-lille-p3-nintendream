@@ -1,0 +1,53 @@
+.paradise-hotel-img {
+  width: 100%;
+  height: 43rem;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.hotel-name {
+  position: absolute;
+  top: 35%;
+  width: 10rem;
+  left: 10%;
+  font-size: 5rem;
+  text-shadow: 5px 5px 10px white;
+}
+
+.hotel-description-img {
+  position: absolute;
+  top: 77%;
+  left: 10%;
+  width: 35rem;
+  font-size: 2rem;
+  text-shadow: 5px 5px 10px white;
+}
+
+.hotel-details {
+  border: 2px solid var(--primary-color);
+  background-color: var(--secondary-color);
+  border-radius: 15px;
+  padding: 2rem;
+  width: 45rem;
+  justify-self: center;
+}
+
+.hotel-details-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.hotel-description-title,
+.hotel-rooms-title {
+  justify-self: center;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+}
+
+.hotel-description-details {
+  justify-self: center;
+  width: 50rem;
+  line-height: 1.5rem;
+  text-align: justify;
+}
