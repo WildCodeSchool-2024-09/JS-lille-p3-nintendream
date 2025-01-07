@@ -1,5 +1,30 @@
 import "./hotelDetails.css";
 
+interface RoomsProps {
+  img: string;
+  title: string;
+  description: string;
+}
+
+const rooms: RoomsProps[] = [
+  {
+    img: "/imagesHotel/pixel-chambre1.webp",
+    title: "Chambre 2 personnes, 25m²",
+    description: "1 lit double ou 2 lits simples, pour 1 à 2 personnes",
+  },
+  {
+    img: "/imagesHotel/pixel-chambre2.webp",
+    title: "Chambre 4 personnes 30m²",
+    description:
+      "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes",
+  },
+  {
+    img: "/imagesHotel/pixel-chambre3.webp",
+    title: "Chambre duplex 6 personnes, 40m²",
+    description: "2 lits doubles et un lit superposé, pour 5 à 6 personnes",
+  },
+];
+
 function hotelDetails() {
   return (
     <main className="hotel-details-container">
@@ -49,6 +74,16 @@ function hotelDetails() {
       </section>
       <section className="hotel-rooms-container">
         <h2 className="hotel-rooms-title">Nos chambres</h2>
+
+        <section className="hotel-rooms">
+          {rooms.map((room: RoomsProps) => (
+            <section key={room.title} className="room-card">
+              <img src={room.img} alt={room.title} className="room-card-img" />
+              <h3 className="room-card-title">{room.title}</h3>
+              <p className="room-card-description">{room.description}</p>
+            </section>
+          ))}
+        </section>
       </section>
     </main>
   );
