@@ -1,5 +1,5 @@
 import "./HotelDetails.css";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 interface RoomsProps {
   id: number;
@@ -38,7 +38,7 @@ function HotelDetails() {
 
   const hotel = location.state;
 
-  const { id } = useParams();
+  // const { id } = useParams();
 
   return (
     <main className="hotel-details-container">
