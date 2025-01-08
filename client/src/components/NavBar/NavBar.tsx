@@ -16,8 +16,8 @@ function NavBar() {
           <span
             className={
               menuBurgerToggle
-                ? "navbar-burger-line navbar-burger-open navbar-burger-line1"
-                : "navbar-burger-line navbar-burger-close navbar-burger-line1"
+                ? "navbar-burger-line navbar-burger-open navbar-burger-line1-open"
+                : "navbar-burger-line navbar-burger-close navbar-burger-line1-close"
             }
           >
             {""}
@@ -25,8 +25,8 @@ function NavBar() {
           <span
             className={
               menuBurgerToggle
-                ? "navbar-burger-line navbar-burger-open navbar-burger-line2"
-                : "navbar-burger-line navbar-burger-close navbar-burger-line2"
+                ? "navbar-burger-line navbar-burger-open navbar-burger-line2-open"
+                : "navbar-burger-line navbar-burger-close navbar-burger-line2-close"
             }
           >
             {""}
@@ -34,8 +34,8 @@ function NavBar() {
           <span
             className={
               menuBurgerToggle
-                ? "navbar-burger-line navbar-burger-open navbar-burger-line3"
-                : "navbar-burger-line navbar-burger-close navbar-burger-line3"
+                ? "navbar-burger-line navbar-burger-open navbar-burger-line3-open"
+                : "navbar-burger-line navbar-burger-close navbar-burger-line3-close"
             }
           >
             {""}
