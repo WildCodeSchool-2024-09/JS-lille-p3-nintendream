@@ -1,6 +1,8 @@
-import "./hotelDetails.css";
+import "./HotelDetails.css";
+import { useLocation, useParams } from "react-router-dom";
 
 interface RoomsProps {
+  id: number;
   img: string;
   title: string;
   description: string;
@@ -8,33 +10,45 @@ interface RoomsProps {
 
 const rooms: RoomsProps[] = [
   {
+    id: 1,
     img: "/imagesHotel/pixel-chambre1.webp",
     title: "Chambre 2 personnes, 25m²",
     description: "1 lit double ou 2 lits simples, pour 1 à 2 personnes",
   },
   {
+    id: 2,
     img: "/imagesHotel/pixel-chambre2.webp",
     title: "Chambre 4 personnes 30m²",
     description:
       "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes",
   },
   {
+    id: 3,
     img: "/imagesHotel/pixel-chambre3.webp",
     title: "Chambre duplex 6 personnes, 40m²",
     description: "2 lits doubles et un lit superposé, pour 5 à 6 personnes",
   },
 ];
 
-function hotelDetails() {
+function HotelDetails() {
+  const location = useLocation();
+
+  //store the state in a variable if you want
+  //location.state then the property or object you want
+
+  const hotel = location.state;
+
+  const { id } = useParams();
+
   return (
     <main className="hotel-details-container">
       <section className="hotel-main-photo">
         <img
-          src="/image/pixel-paradise.webp"
+          src="/imagesHotel/pixel-paradise.webp"
           alt="pixel paradise hotel"
           className="paradise-hotel-img"
         />
-        <h1 className="hotel-name">PIXEL PARADISE HOTEL</h1>
+        <h1 className="hotel-name">{hotel.title}</h1>
         <p className="hotel-description-img">
           Bienvenue au Pixel Hotel Paradise, un lieu magique où l'univers des
           jeux vidéo prend vie. Niché dans un décor moderne et vibrant, cet
@@ -89,4 +103,4 @@ function hotelDetails() {
   );
 }
 
-export default hotelDetails;
+export default HotelDetails;

@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import "./hotels.css";
 
 interface hotelsProps {
+  id: number;
   img: string;
   name: string;
   distance: number;
@@ -9,21 +11,24 @@ interface hotelsProps {
 
 const hotels: hotelsProps[] = [
   {
-    img: "./image/pixel-paradise.webp",
+    id: 1,
+    img: "/imagesHotel/pixel-paradise.webp",
     name: "Pixel Paradise Hotel",
     distance: 300,
     description:
       "Niché dans un décor moderne et vibrant, le Pixel Paradise Hotel vous accueille pour un séjour inoubliable !",
   },
   {
-    img: "/image/dunkey-kong-hotel.webp",
+    id: 2,
+    img: "/imagesHotel/dunkey-kong-hotel.webp",
     name: "Donkey Kong Jungle Resort",
     distance: 900,
     description:
       "Plongez en immersion dans la jungle avec Donkey Kong et ses amis !",
   },
   {
-    img: "/image/mario-hotel.webp",
+    id: 3,
+    img: "/imagesHotel/mario-hotel.webp",
     name: "Mario & Friends Hotel",
     distance: 600,
     description:
@@ -60,9 +65,11 @@ function HotelsPage() {
                 </div>
               </div>
               <p className="hotel-card-description">{hotel.description}</p>
-              <button type="button" className="hotel-card-button">
-                Voir l'hôtel
-              </button>
+              <Link to={`/hotels/${hotel.id}`} state={hotel}>
+                <button type="button" className="hotel-card-button">
+                  Voir l'hôtel
+                </button>
+              </Link>
             </section>
           ))}
         </div>

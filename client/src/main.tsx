@@ -9,6 +9,43 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Billetterie from "./pages/billetterie/Billetterie";
 import Login from "./pages/login/Login";
+import HotelsPage from "./pages/hotels/hotels";
+import HotelDetails from "./pages/hotels/hotelDetails.tsx";
+
+interface hotelsProps {
+  id: number;
+  img: string;
+  name: string;
+  distance: number;
+  description: string;
+}
+
+const hotels: hotelsProps[] = [
+  {
+    id: 1,
+    img: "/imagesHotel/pixel-paradise.webp",
+    name: "Pixel Paradise Hotel",
+    distance: 300,
+    description:
+      "Niché dans un décor moderne et vibrant, le Pixel Paradise Hotel vous accueille pour un séjour inoubliable !",
+  },
+  {
+    id: 2,
+    img: "/imagesHotel/dunkey-kong-hotel.webp",
+    name: "Donkey Kong Jungle Resort",
+    distance: 900,
+    description:
+      "Plongez en immersion dans la jungle avec Donkey Kong et ses amis !",
+  },
+  {
+    id: 3,
+    img: "/imagesHotel/mario-hotel.webp",
+    name: "Mario & Friends Hotel",
+    distance: 600,
+    description:
+      "Venez rencontrer Mario et ses amis dans un hôtel coloré et chaleureux !",
+  },
+];
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -32,6 +69,14 @@ const router = createBrowserRouter([
       {
         path: "/billetterie",
         element: <Billetterie />,
+      },
+      {
+        path: "/hotels",
+        element: <HotelsPage />,
+      },
+      {
+        path: "/hotels/:id",
+        element: <HotelDetails />,
       },
     ], // Renders the App component for the home page
   },
