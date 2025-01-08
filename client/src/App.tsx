@@ -1,16 +1,13 @@
 import "./App.css";
+import Restaurant from "./pages/pageRestaurant/Restaurant";
 import { Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
-// import HotelDetails from "./pages/hotels/HotelDetails";
-import HotelsPage from "./pages/hotels/hotels";
-
 function App() {
   return (
     <>
+      <Restaurant />
       <NavBar />
       <Outlet />
-      {/* <HotelDetails /> */}
-      <HotelsPage />
     </>
   );
 }

@@ -11,6 +11,7 @@ import Billetterie from "./pages/billetterie/Billetterie";
 import HotelDetails from "./pages/hotels/HotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
+import Restaurant from "./pages/pageRestaurant/Restaurant";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
