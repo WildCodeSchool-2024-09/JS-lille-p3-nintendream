@@ -8,9 +8,9 @@
 .hotel-name {
   position: absolute;
   top: 35%;
-  width: 10rem;
+  width: 25rem;
   left: 10%;
-  font-size: 5rem;
+  font-size: 4.5rem;
   text-shadow: 5px 5px 10px white;
 }
 
