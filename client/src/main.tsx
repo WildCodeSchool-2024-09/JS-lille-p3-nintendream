@@ -11,6 +11,7 @@ import Billetterie from "./pages/billetterie/Billetterie";
 import Evenements from "./pages/evenements/Evenements";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
+import EvenemementDetails from "./pages/evenements/EvenementDetails";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
         path: "/evenements",
         element: <Evenements />,
       },
+      {
+        path: "/evenements/:id",
+        element: <EvenemementDetails />,
+      },
     ], // Renders the App component for the home page
   },
   // Try adding a new route! For example, "/about" with an About component
@@ -60,7 +65,7 @@ if (rootElement == null) {
 createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </StrictMode>
 );
 
 /**

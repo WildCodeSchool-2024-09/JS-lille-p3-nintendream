@@ -69,8 +69,8 @@ CREATE TABLE hotel (
 CREATE TABLE event (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(80) NOT NULL,
-    short_description VARCHAR(80) NOT NULL,
-    description VARCHAR(255) NOT NULL,
+    short_description VARCHAR(255) NOT NULL,
+    description text NOT NULL,
     schedule VARCHAR(80) NOT NULL,
     img_src VARCHAR(300) NOT NULL,
     zone_id INT NOT NULL,
@@ -113,3 +113,6 @@ INSERT INTO attraction ( name, waiting_time, type, min_height, schedule, state, 
 ( 'Meta Knight’s Flight Challenge', '25 min', 'sensation fortes', '120 cm', '9h - 22h', 'Open', 'Volez à travers des champs de bataille célestes avec Meta Knight.'),
 ( 'Donkey Kong Jungle Swing', '30 min', 'sensation fortes', '110 cm', '9h - 22h', 'Open', 'Balancez-vous dans une jungle inspirée de Donkey Kong.'),
 ( 'Mario & Sonic Olympic Dash', '35 min', 'famille', '130 cm', '9h - 22h', 'Open', 'Relevez des défis sportifs en compagnie de Mario et Sonic.');
+
+INSERT INTO event(name, short_description, description, schedule, img_src, zone_id) VALUES
+("Mario kart live show : la course arc en ciel","Rejoignez Mario et ses amis pour une course folle sur la piste arc-en-ciel, où l'univers du jeu vidéo prend vie avec des karts en taille réelle et une expérience interactive inédite ! ","Un spectacle interactif où Mario, Luigi, Peach et Bowser s'affrontent sur une piste de course dynamique inspirée de la célèbre Rainbow Road. Grâce à des véhicules téléguidés géants et des projections LED, le public vivra une véritable course effrénée. Les spectateurs pourront même 'lancer' des bananes et des carapaces via des applications mobiles connectées pour influencer la course !","10h","/imageEvents/mario-kart-event.jpg",1);
