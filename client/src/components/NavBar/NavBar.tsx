@@ -67,7 +67,7 @@ function NavBar() {
         <Link to="attractions">
           <li className="nav-li">Attractions</li>
         </Link>
-        <Link to="/évènements">
+        <Link to="/evenements">
           <li className="nav-li">Évènements</li>
         </Link>
         <Link to="/hotels">

@@ -8,6 +8,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import Billetterie from "./pages/billetterie/Billetterie";
+import Evenements from "./pages/evenements/Evenements";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/restaurants",
         element: <Restaurant />,
+      },
+      {
+        path: "/evenements",
+        element: <Evenements />,
       },
     ], // Renders the App component for the home page
   },
