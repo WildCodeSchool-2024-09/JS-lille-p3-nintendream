@@ -34,6 +34,7 @@ body {
   justify-content: center;
   padding: 1rem;
   gap: 6rem;
+  color: white;
 }
 
 .hotel-card-name {
