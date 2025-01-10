@@ -12,7 +12,7 @@ function Evenements() {
     },
     {
       id: 2,
-      name: "Zelda: L'éveil du Héros",
+      name: "Zelda: L'éveil du Héros du temps",
       shortdesc:
         "Partez à l'aventure dans une chasse au trésor épique pour retrouver la légendaire Master Sword ! Explorez le parc, résolvez des énigmes et devenez le héros du royaume de Hyrule.",
       imgsrc: "/imageEvents/zelda-quest-event.jpg",
@@ -39,7 +39,7 @@ function Evenements() {
         {events.map((event) => (
           <div key={event.id} className="events-card">
             <h3 className="events-card-title"> {event.name}</h3>
-            <img src={event.imgsrc} className="events-picture" />
+            <img src={event.imgsrc} className="events-picture" alt="" />
             <p className="events-shortdesc">{event.shortdesc}</p>
             <Link to={`/evenements/${event.id}`}>
               <button type="button" className="events-details-button">
