@@ -15,7 +15,7 @@ function Login() {
         />
         <input
           className="login-input"
-          type="text"
+          type="password"
           name="connection-password"
           id="connection-password"
           placeholder="Mot de passe"
@@ -40,7 +40,7 @@ function Login() {
         />
         <input
           className="login-input"
-          type="text"
+          type="email"
           name="adresse-mail"
           id="adresse-mail"
           placeholder="Adresse email"
@@ -48,7 +48,7 @@ function Login() {
         />
         <input
           className="login-input"
-          type="text"
+          type="email"
           name="confirm-adresse-mail"
           id="confirm-adresse-mail"
           placeholder="Confirmation adresse email"
@@ -56,7 +56,7 @@ function Login() {
         />
         <input
           className="login-input"
-          type="text"
+          type="password"
           name="inscription-password"
           id="inscription-password"
           placeholder="Mot de passe"
@@ -64,7 +64,7 @@ function Login() {
         />
         <input
           className="login-input"
-          type="text"
+          type="password"
           name="inscription-confirm-password"
           id="inscription-confirm-password"
           placeholder="Confirmation mot de passe"
