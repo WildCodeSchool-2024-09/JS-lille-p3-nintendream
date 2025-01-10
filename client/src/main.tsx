@@ -7,8 +7,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import Admin from "./pages/admin/Admin.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
-import HotelDetails from "./pages/hotels/HotelDetails.tsx";
+import HotelDetails from "./pages/hotels/hotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
@@ -46,6 +47,9 @@ const router = createBrowserRouter([
         element: <HotelDetails />,
       },
       {
+        path: "/admin",
+        element: <Admin />,
+      },
         path: "/*",
         element: <ErrorPage />,
       },
