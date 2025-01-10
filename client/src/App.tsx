@@ -1,12 +1,13 @@
-import "./App.css";
-import Attraction from "./components/pagesAttraction/PagesAttraction";
+import { Outlet } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
-	return (
-		<>
-			<Attraction />
-		</>
-	);
+  return (
+    <>
+      <NavBar />
+      <Outlet />
+    </>
+  );
 }
 
 export default App;
