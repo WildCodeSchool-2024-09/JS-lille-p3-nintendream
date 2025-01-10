@@ -11,6 +11,7 @@ import Billetterie from "./pages/billetterie/Billetterie";
 import HotelDetails from "./pages/hotels/HotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
+import ErrorPage from "./pages/error/ErrorPage.tsx";
 // import Restaurant from "./pages/pageRestaurant/Restaurant";
 
 // Import additional components for new routes
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/hotels/:id",
         element: <HotelDetails />,
+      },
+      {
+        path: "/*",
+        element: <ErrorPage />,
       },
     ], // Renders the App component for the home page
   },
