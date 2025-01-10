@@ -8,10 +8,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import Billetterie from "./pages/billetterie/Billetterie";
-import HotelDetails from "./pages/hotels/HotelDetails.tsx";
+import ErrorPage from "./pages/error/ErrorPage.tsx";
+import HotelDetails from "./pages/hotels/hotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
-import ErrorPage from "./pages/error/ErrorPage.tsx";
 // import Restaurant from "./pages/pageRestaurant/Restaurant";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
