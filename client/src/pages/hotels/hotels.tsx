@@ -150,7 +150,7 @@ function HotelsPage() {
                 </div>
               </div>
               <p className="hotel-card-description">{hotel.description}</p>
-              <Link to={`/hotels/${hotel.id}`} state={hotel}>
+              <Link to={`/hotel/${hotel.id}`} state={hotel}>
                 <button type="button" className="hotel-card-button">
                   Voir l'hôtel
                 </button>

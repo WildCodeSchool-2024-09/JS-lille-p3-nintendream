@@ -9,6 +9,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Admin from "./pages/admin/Admin.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
+import ErrorPage from "./pages/error/ErrorPage.tsx";
 import HotelDetails from "./pages/hotels/hotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
@@ -42,12 +43,16 @@ const router = createBrowserRouter([
         element: <HotelsPage />,
       },
       {
-        path: "/hotels/:id",
+        path: "/hotel/:id",
         element: <HotelDetails />,
       },
       {
         path: "/admin",
         element: <Admin />,
+      },
+      {
+        path: "/*",
+        element: <ErrorPage />,
       },
     ], // Renders the App component for the home page
   },
