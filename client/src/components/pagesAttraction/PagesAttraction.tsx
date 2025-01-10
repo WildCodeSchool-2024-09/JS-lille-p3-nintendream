@@ -12,7 +12,9 @@ function Attraction() {
       </div>
       <section>
         <div className="description">
-          <h1>DES ATTRACTIONS A SENSATION SENSATIONNELLE </h1>
+          <h1 className="h1-attraction">
+            DES ATTRACTIONS A SENSATION SENSATIONNELLE{" "}
+          </h1>
           <p>
             Pour les amateurs de sensations fortes, préparez-vous à vivre des
             émotions intenses ! Plongez dans des aventures palpitantes où
@@ -29,7 +31,6 @@ function Attraction() {
         <div className="button-attraction">
           <button type="button">Voir plus d'attractions</button>
         </div>
-
         <div className="attraction">
           <div className="attraction-card">
             <div className="img-container-attraction">
@@ -84,7 +85,9 @@ function Attraction() {
 
       <section>
         <div className="description">
-          <h1>DES ATTRACTIONS POUR TOUTE LA FAMILLE</h1>
+          <h1 className="h1-attraction">
+            DES ATTRACTIONS POUR TOUTE LA FAMILLE
+          </h1>
           <p>
             Venez vivre des moments inoubliables en famille avec nos attractions
             spécialement conçues pour petits et grands ! Découvrez des aventures
@@ -106,7 +109,7 @@ function Attraction() {
             <div className="img-container-attraction">
               <img
                 className="img-attraction"
-                src="/public/imagePagesAttractions/MarioKartRacing.jpeg"
+                src="/public/imagePagesAttractions/YoshiEggHunt.jpeg"
                 alt="Attraction"
               />
             </div>
@@ -122,7 +125,7 @@ function Attraction() {
             <div className="img-container-attraction">
               <img
                 className="img-attraction2"
-                src="/public/imagePagesAttractions/Bowser’s Castle Escape.jpeg"
+                src="/public/imagePagesAttractions/ZeldaMasterSwordQuest.jpeg"
                 alt="Attraction"
               />
             </div>
@@ -138,7 +141,7 @@ function Attraction() {
             <div className="img-container-attraction">
               <img
                 className="img-attraction3"
-                src="/public/imagePagesAttractions/PikachuThunderroller.jpg"
+                src="/public/imagePagesAttractions/HyruleSkyGlider.jpeg"
                 alt="Attraction"
               />
             </div>
@@ -155,7 +158,7 @@ function Attraction() {
 
       <section>
         <div className="description">
-          <h1>DES ATTRACTIONS POUR LES PLUS PETIT</h1>
+          <h1 className="h1-attraction">DES ATTRACTIONS POUR LES PLUS PETIT</h1>
           <p>
             Les plus jeunes seront comblés par nos attractions spécialement
             créées pour eux ! Plongez dans un univers féérique et ludique où
@@ -177,7 +180,7 @@ function Attraction() {
             <div className="img-container-attraction">
               <img
                 className="img-attraction"
-                src="/public/imagePagesAttractions/MarioKartRacing.jpeg"
+                src="/public/imagePagesAttractions/PeachGardenAdventure.jpg"
                 alt="Attraction"
               />
             </div>
@@ -193,7 +196,7 @@ function Attraction() {
             <div className="img-container-attraction">
               <img
                 className="img-attraction2"
-                src="/public/imagePagesAttractions/Bowser’s Castle Escape.jpeg"
+                src="/public/imagePagesAttractions/WaddleDeePlayground.jpg"
                 alt="Attraction"
               />
             </div>
@@ -209,7 +212,7 @@ function Attraction() {
             <div className="img-container-attraction">
               <img
                 className="img-attraction3"
-                src="/public/imagePagesAttractions/PikachuThunderroller.jpg"
+                src="/public/imagePagesAttractions/EeveeEvolutionCarousel.jpg"
                 alt="Attraction"
               />
             </div>
@@ -223,6 +226,11 @@ function Attraction() {
           </div>
         </div>
       </section>
+      <img
+        className="map-nintendream"
+        src="/public/imagePagesAttractions/MapNintendDream.jpeg"
+        alt="Map"
+      />
     </>
   );
 }
