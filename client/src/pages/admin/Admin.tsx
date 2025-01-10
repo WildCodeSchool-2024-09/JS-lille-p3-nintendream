@@ -1,11 +1,28 @@
 import "./Admin.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+type Attraction = {
+  id: number;
+  img: string;
+  name: string;
+  description: string;
+  location: string;
+};
 
 function Admin() {
   const [showAttractions, setshowAttractions] = useState(false);
   const [showHotels, setShowHotels] = useState(false);
   const [showRestaurants, setShowRestaurants] = useState(false);
   const [showEvents, setShowEvents] = useState(false);
+  const [newAttraction, setNewAttraction] = useState([] as Attraction[]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/api/attractions`)
+      .then((response) => response.json())
+      .then((data: Attraction[]) => {
+        setNewAttraction(data);
+      });
+  }, []);
 
   const handleAttractionClick = () => {
     setshowAttractions(!showAttractions);
@@ -69,33 +86,15 @@ function Admin() {
       </section>
       <section className="admin-row2">
         {showAttractions && (
-          <>
-            <article className="admin-attraction-title">
-              Mario kart racing ✅ ❌ 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Bowser’s Castle Escape ✅ ❌ 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Pikachu Thunder Roller ✅ ❌ 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Yoshi’s Egg Hunt ✅ ❌ 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Zelda: Master Sword Quest ✅ ❌ 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Hyrule Sky Glider ✅ ❌ 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Peach’s Garden Adventure ✅ ❌ 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Waddle Dee’s Playground ✅ ❌ 🗑️
-            </article>
-          </>
+          <section className="admin-attraction-list">
+            {newAttraction.map((attraction) => (
+              <article key={attraction.id} className="admin-attraction-title">
+                {attraction.name} ✅ ❌ 🗑️
+              </article>
+            ))}
+          </section>
         )}
+
         {showHotels && (
           <>
             <article className="admin-attraction-title">
