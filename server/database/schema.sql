@@ -24,19 +24,19 @@ CREATE TABLE zone (
     img_src VARCHAR(300) NOT NULL
 );
 -- Table ATTRACTION
-CREATE TABLE attraction (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(80) NOT NULL,
-    waiting_time VARCHAR(80) NOT NULL,
-    type VARCHAR(80) NOT NULL,
-    min_height VARCHAR(80) NOT NULL,
-    zone_id INT NULL,
-    schedule VARCHAR(80) NOT NULL,
-    description TEXT NOT NULL,
-    state VARCHAR(80) NOT NULL,
-    img_src VARCHAR(300),
-    FOREIGN KEY (zone_id) REFERENCES zone(id)
-);
+    CREATE TABLE attraction (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        name VARCHAR(80) NOT NULL,
+        waiting_time VARCHAR(80) NOT NULL,
+        type VARCHAR(80) NOT NULL,
+        min_height VARCHAR(80) NOT NULL,
+        zone_id INT NULL,
+        schedule VARCHAR(80) NOT NULL,
+        description TEXT NOT NULL,
+        state VARCHAR(80) NOT NULL,
+        img_src VARCHAR(300),
+        FOREIGN KEY (zone_id) REFERENCES zone(id)
+    );
 -- Table RESTAURANT
 CREATE TABLE restaurant (
     id INT PRIMARY KEY AUTO_INCREMENT,
