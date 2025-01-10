@@ -9,6 +9,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Billetterie from "./pages/billetterie/Billetterie";
 import Login from "./pages/login/Login";
+import Restaurant from "./pages/pageRestaurant/Restaurant";
+import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
       {
         path: "/billetterie",
         element: <Billetterie />,
+      },
+      {
+        path: "/restaurant",
+        element: <Restaurant />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantDetails />,
       },
     ], // Renders the App component for the home page
   },

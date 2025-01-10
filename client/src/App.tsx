@@ -1,10 +1,10 @@
 import "./App.css";
-import Restaurant from "./pages/pageRestaurant/Restaurant";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Restaurant />
+      <Outlet />
     </>
   );
 }
