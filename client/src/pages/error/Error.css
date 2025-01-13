@@ -1,0 +1,26 @@
+.error-img {
+  width: 20rem;
+  height: auto;
+  margin-left: 10rem;
+}
+
+.error-container {
+  display: flex;
+  align-items: center;
+  width: 63rem;
+}
+
+.error-text {
+  margin-left: 3rem;
+  line-height: 2.1rem;
+  font-size: 1.1rem;
+}
+
+.error-title {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.link-error {
+  color: black;
+}
