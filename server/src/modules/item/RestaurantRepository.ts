@@ -23,7 +23,7 @@ class RestaurantRepository {
     // Execute the SQL SELECT query to retrieve a specific item by its ID
     const [rows] = await databaseClient.query<Rows>(
       "select * from restaurant where id = ?",
-      [id]
+      [id],
     );
 
     // Return the first row of the result, which represents the item
