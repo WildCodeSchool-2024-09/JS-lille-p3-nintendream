@@ -26,10 +26,10 @@ function Evenements() {
       <h1 className="events-title">Évènements et spectacles</h1>
       <h2 className="events-global-desc">
         Lors de votre visite, vous pourrez assister sans frais supplémentaires à
-        différents évènements et spectacles touts plus enchanteurs les uns que
+        différents évènements et spectacles tous plus enchanteurs les uns que
         les autres ! <br />
         Nous organisons régulièrement de nouveaux évènements pour faire de
-        chacune de vos visite une expérience unique !
+        chacune de vos visites une expérience unique !
       </h2>
       <div className="events-all-cards">
         {events?.map((event) => (
