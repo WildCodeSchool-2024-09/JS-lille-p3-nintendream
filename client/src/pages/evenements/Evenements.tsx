@@ -24,7 +24,7 @@ function Evenements() {
   return (
     <main className="events-main">
       <h1 className="events-title">Évènements et spectacles</h1>
-      <h2>
+      <h2 className="events-global-desc">
         Lors de votre visite, vous pourrez assister sans frais supplémentaires à
         différents évènements et spectacles touts plus enchanteurs les uns que
         les autres ! <br />
