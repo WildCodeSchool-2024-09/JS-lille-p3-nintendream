@@ -42,6 +42,10 @@
   margin-bottom: 3rem;
 }
 
+.event-details-button:hover {
+  cursor: pointer;
+}
+
 .event-details-accroche {
   width: 60%;
   font-size: 1.3rem;
