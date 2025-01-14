@@ -9,9 +9,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Admin from "./pages/admin/Admin.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
-
+import EvenemementDetails from "./pages/evenements/EvenementDetails";
+import Evenements from "./pages/evenements/Evenements";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
-
 import HotelDetails from "./pages/hotels/hotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
@@ -61,6 +61,14 @@ const router = createBrowserRouter([
       {
         path: "/restaurant",
         element: <Restaurant />,
+      },
+      {
+        path: "/evenements",
+        element: <Evenements />,
+      },
+      {
+        path: "/evenements/:id",
+        element: <EvenemementDetails />,
       },
       {
         path: "/restaurant/:id",
