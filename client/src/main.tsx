@@ -10,10 +10,7 @@ import App from "./App";
 import Admin from "./pages/admin/Admin.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
 
-
 import ErrorPage from "./pages/error/ErrorPage.tsx";
-
-
 
 import HotelDetails from "./pages/hotels/hotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
