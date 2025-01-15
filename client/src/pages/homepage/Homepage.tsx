@@ -30,7 +30,7 @@ const articles = [
     description:
       "Chez Nintendream, nous vous offrons bien plus qu’un simple séjour : une expérience inoubliable. Découvrez des chambres thématiques inspirées de vos jeux préférés. Que vous soyez fan de légendaires aventures ou adepte de courses effrénées, chaque recoin de notre hôtel vous promet des surprises à la hauteur de votre passion pour le jeu.",
     image: "../image/imageHomepage/dunkey-kong-hotel.webp",
-    URL: "/hôtels",
+    URL: "/hotels",
   },
   {
     title: "Un Parc Accessible à Tous chez Nintendream 🎮",
