@@ -18,8 +18,10 @@ import HotelDetails from "./pages/hotels/hotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
+import Homepage from "./pages/homepage/Homepage";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 import DeleteAttractionForm from "./pages/admin/DeleteAttractionForm.tsx";
+
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
     path: "/", // The root path
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: <Homepage />,
+      },
       {
         path: "/login",
         element: <Login />,
