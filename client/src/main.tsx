@@ -7,10 +7,21 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import Admin from "./pages/admin/Admin.tsx";
+import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
+import AttractionForm from "./pages/admin/NewAttractionForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
+import ErrorPage from "./pages/error/ErrorPage.tsx";
+import EvenemementDetails from "./pages/evenements/EvenementDetails";
+import Evenements from "./pages/evenements/Evenements";
+import HotelDetails from "./pages/hotels/hotelDetails.tsx";
+import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import Homepage from "./pages/homepage/Homepage";
+import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
+import DeleteAttractionForm from "./pages/admin/DeleteAttractionForm.tsx";
+
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -40,8 +51,96 @@ const router = createBrowserRouter([
         element: <Billetterie />,
       },
       {
-        path: "/restaurants",
+        path: "/hotel",
+        element: <HotelsPage />,
+      },
+      {
+        path: "/hotel/:id",
+        element: <HotelDetails />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />,
+      },
+      {
+        path: "/admin/:id/edit",
+        element: (
+          <EditAttractionForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              waiting_time: "0",
+              type: "",
+              description: "",
+              min_height: "",
+              zone_id: 0,
+              schedule: "",
+              state: "",
+              img_src: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/new",
+        element: (
+          <AttractionForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              waiting_time: "0",
+              type: "",
+              description: "",
+              min_height: "",
+              zone_id: 0,
+              schedule: "",
+              state: "",
+              img_src: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/:id/delete",
+        element: (
+          <DeleteAttractionForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              waiting_time: "0",
+              type: "",
+              description: "",
+              min_height: "",
+              zone_id: 0,
+              schedule: "",
+              state: "",
+              img_src: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/*",
+        element: <ErrorPage />,
+      },
+      {
+        path: "/restaurant",
         element: <Restaurant />,
+      },
+      {
+        path: "/evenements",
+        element: <Evenements />,
+      },
+      {
+        path: "/evenements/:id",
+        element: <EvenemementDetails />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantDetails />,
       },
     ], // Renders the App component for the home page
   },
