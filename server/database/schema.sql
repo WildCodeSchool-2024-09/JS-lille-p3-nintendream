@@ -92,6 +92,13 @@ CREATE TABLE operate (
     FOREIGN KEY (account_id) REFERENCES account(id),
     FOREIGN KEY (event_id) REFERENCES event(id)
 );
+
+INSERT INTO zone (name, `character`,parade, img_src) VALUES
+('Mario', 'Mario, Luigi, Peach, Bowser', 'Mario Kart Live Show : La Course Arc-en-Ciel', ''),
+('Zelda', 'Link, Zelda, Ganondorf', "Zelda : l'Éveil du Héros", ''),
+('Pokémon', 'Pikachu, Bulbizarre, Salamèche, Carapuce', 'Pokémon Parade : Attrapez-les tous !', ''),
+('Kirby', 'Kirby, Meta Knight, Roi Dadidou', 'Kirby Parade : L"Étoile Magique"', '');
+
 INSERT INTO attraction ( name, waiting_time, type, min_height, schedule, state, description) VALUES
 ( 'Mario Kart Racing', '45 min', 'sensation fortes', '120 cm', '9h - 22h', 'Open', 'Vivez l’intensité d’une course effrénée inspirée de Mario Kart avec des virages serrés et des obstacles interactifs.'),
 ( 'Bowser’s Castle Escape', '30 min', 'sensation fortes', '100 cm', '9h - 22h', 'Open', 'Traversez les pièges du château de Bowser dans une aventure immersive pleine de rebondissements.'),
@@ -114,13 +121,9 @@ INSERT INTO attraction ( name, waiting_time, type, min_height, schedule, state, 
 ( 'Donkey Kong Jungle Swing', '30 min', 'sensation fortes', '110 cm', '9h - 22h', 'Open', 'Balancez-vous dans une jungle inspirée de Donkey Kong.'),
 ( 'Mario & Sonic Olympic Dash', '35 min', 'famille', '130 cm', '9h - 22h', 'Open', 'Relevez des défis sportifs en compagnie de Mario et Sonic.');
 
-INSERT INTO zone (name, `character`,parade, img_src) VALUES
-('Mario', 'Mario, Luigi, Peach, Bowser', 'Mario Kart Live Show : La Course Arc-en-Ciel', ''),
-('Zelda', 'Link, Zelda, Ganondorf', "Zelda : l'Éveil du Héros", ''),
-('Pokémon', 'Pikachu, Bulbizarre, Salamèche, Carapuce', 'Pokémon Parade : Attrapez-les tous !', ''),
-('Kirby', 'Kirby, Meta Knight, Roi Dadidou', 'Kirby Parade : L"Étoile Magique"', '');
 
 INSERT INTO event(name, short_description, description, schedule, img_src, zone_id) VALUES
 ("Mario kart live show : la course arc en ciel","Rejoignez Mario et ses amis pour une course folle sur la piste arc-en-ciel, où l'univers du jeu vidéo prend vie avec des karts en taille réelle et une expérience interactive inédite ! ","Un spectacle interactif où Mario, Luigi, Peach et Bowser s'affrontent sur une piste de course dynamique inspirée de la célèbre Rainbow Road. Grâce à des véhicules téléguidés géants et des projections LED, le public vivra une véritable course effrénée. Les spectateurs pourront même 'lancer' des bananes et des carapaces via des applications mobiles connectées pour influencer la course !","10h","/imageEvents/mario-kart-event.jpg",1),
 ("Zelda: L'éveil du Héros du temps", "Partez à l'aventure dans une chasse au trésor épique pour retrouver la légendaire Master Sword ! Explorez le parc, résolvez des énigmes et devenez le héros du royaume de Hyrule.","Zelda : L'Éveil du Héros vous invite à plonger dans une quête palpitante pour retrouver l’emblématique Master Sword, cachée quelque part dans les terres enchantées de Nintendream. Cette chasse au trésor immersive vous fera traverser des paysages inspirés des lieux mythiques du royaume d’Hyrule. À chaque étape, des énigmes ingénieuses et des défis captivants mettront votre courage, votre sagacité et votre esprit d’équipe à l’épreuve. Vous croiserez peut-être la route de personnages emblématiques prêts à vous offrir leur aide – ou à compliquer votre mission ! De la Forêt Kokiri aux sommets du Mont du Péril, chaque exploration vous rapprochera de votre destinée : devenir le héros capable de protéger Hyrule des forces du mal. Préparez-vous à une aventure inoubliable où chaque instant est une célébration de l’univers magique de Zelda.","10h, 15h, 16h", "/imageEvents/zelda-quest-event.jpg",2),
 ("Donkey Kong Jungle Groove", "Un spectacle de percussions qui vous emmènera à travers la jungle de Donkey kong !", "Donkey Kong Jungle Groove est un spectacle vibrant et rythmé qui vous transporte au cœur de la jungle luxuriante de Donkey Kong. Laissez-vous emporter par une symphonie percussive envoûtante, où chaque battement raconte une histoire sauvage et palpitante. Les tambours résonnent comme les battements de la jungle, accompagnés de chorégraphies dynamiques et de projections immersives qui recréent l’univers tropical emblématique. Vous suivrez Donkey Kong et ses amis dans une aventure musicale riche en surprises, où les rythmes effrénés et les mélodies entraînantes captiveront petits et grands. Préparez-vous à une expérience multisensorielle qui fera vibrer toute la salle et réveillera l’explorateur qui sommeille en vous ! ","14h, 17h, 19h", "/imageEvents/donkey-kong-event.jpg", 3);
+
