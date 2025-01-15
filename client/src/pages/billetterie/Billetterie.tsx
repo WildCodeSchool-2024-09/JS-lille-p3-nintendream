@@ -10,7 +10,7 @@ interface PricesProps {
 
 const prices: PricesProps[] = [
   {
-    img: "./public/image/img-billetterie1.jpg",
+    img: "./public/image/imageHomepage/img-billetterie1.jpg",
     title: "Tarif individuel",
     availability:
       "Valable 1 an à partir de la date d'achat (hors 14 Juillet,31 Octobre et 31 Décembre)",
