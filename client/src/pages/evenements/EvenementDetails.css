@@ -1,0 +1,52 @@
+.event-details-main {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  text-align: center;
+  background-color: var(--primary-color);
+}
+
+.event-details-title {
+  margin-top: 3rem;
+}
+
+.event-details-description {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  width: 75%;
+  padding: 1rem;
+  border-radius: 20px;
+  font-size: 1.3rem;
+}
+
+.event-details-schedule {
+  border: 1px solid red;
+  padding: 1.5rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+}
+
+.event-details-pass {
+  font-size: 1.3rem;
+}
+
+.event-details-button {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  border: 0px;
+  border-radius: 50px;
+  margin-bottom: 3rem;
+}
+
+.event-details-button:hover {
+  cursor: pointer;
+}
+
+.event-details-accroche {
+  width: 60%;
+  font-size: 1.3rem;
+}
