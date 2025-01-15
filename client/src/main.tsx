@@ -110,7 +110,7 @@ const router = createBrowserRouter([
 				element: <ErrorPage />,
 			},
 			{
-				path: "/restaurant",
+				path: "/restaurants",
 				element: <Restaurant />,
 			},
 			{
