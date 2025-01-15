@@ -92,6 +92,13 @@ CREATE TABLE operate (
     FOREIGN KEY (account_id) REFERENCES account(id),
     FOREIGN KEY (event_id) REFERENCES event(id)
 );
+
+INSERT INTO zone (name, `character`,parade, img_src) VALUES
+('Mario', 'Mario, Luigi, Peach, Bowser', 'Mario Kart Live Show : La Course Arc-en-Ciel', ''),
+('Zelda', 'Link, Zelda, Ganondorf', "Zelda : l'Éveil du Héros", ''),
+('Pokémon', 'Pikachu, Bulbizarre, Salamèche, Carapuce', 'Pokémon Parade : Attrapez-les tous !', ''),
+('Kirby', 'Kirby, Meta Knight, Roi Dadidou', 'Kirby Parade : L"Étoile Magique"', '');
+
 INSERT INTO attraction ( name, waiting_time, type, min_height, schedule, state, description) VALUES
 ('Mario Kart Racing', '45 min', 'sensation fortes', '120 cm', '9h - 22h', 'Open', 'Vivez l’intensité d’une course effrénée inspirée de Mario Kart avec des virages serrés et des obstacles interactifs.'),
 ( 'Bowser’s Castle Escape', '30 min', 'sensation fortes', '100 cm', '9h - 22h', 'Open', 'Traversez les pièges du château de Bowser dans une aventure immersive pleine de rebondissements.'),
@@ -134,3 +141,4 @@ INSERT INTO attraction ( name, waiting_time, type, min_height, schedule, state, 
 ( 'Meta Knight’s Flight Challenge', '25 min', 'sensation fortes', '120 cm', '9h - 22h', 'Open', 'Volez à travers des champs de bataille célestes avec Meta Knight.'),
 ( 'Donkey Kong Jungle Swing', '30 min', 'sensation fortes', '110 cm', '9h - 22h', 'Open', 'Balancez-vous dans une jungle inspirée de Donkey Kong.'),
 ( 'Mario & Sonic Olympic Dash', '35 min', 'famille', '130 cm', '9h - 22h', 'Open', 'Relevez des défis sportifs en compagnie de Mario et Sonic.');
+

@@ -39,8 +39,18 @@ class AttractionRepository {
 
   async create(attraction: Omit<Attraction, "id">) {
     const [result] = await databaseClient.query<Result>(
-      "insert into attraction (name) values (?)",
-      [attraction.name],
+      "insert into attraction (name, waiting_time,type, min_height, zone_id, description, schedule, state, img_src) values (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      [
+        attraction.name,
+        attraction.waiting_time,
+        attraction.type,
+        attraction.min_height,
+        attraction.zone_id,
+        attraction.description,
+        attraction.schedule,
+        attraction.state,
+        attraction.img_src,
+      ],
     );
     return result.insertId;
   }
