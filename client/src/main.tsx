@@ -8,9 +8,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import Admin from "./pages/admin/Admin.tsx";
+import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
 import AttractionForm from "./pages/admin/NewAttractionForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
-import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import HotelDetails from "./pages/hotels/hotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
