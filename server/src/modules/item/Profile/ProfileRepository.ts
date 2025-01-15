@@ -18,7 +18,7 @@ class ProfileRepository {
   async read(id: number) {
     const [rows] = await databaseClient.query<Rows>(
       "select * from account where id = ?",
-      [id]
+      [id],
     );
     return rows[0] as Profile;
   }
