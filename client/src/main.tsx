@@ -10,6 +10,7 @@ import App from "./App";
 import Billetterie from "./pages/billetterie/Billetterie";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
+import Homepage from "./pages/homepage/Homepage";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     path: "/", // The root path
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: <Homepage />,
+      },
       {
         path: "/login",
         element: <Login />,

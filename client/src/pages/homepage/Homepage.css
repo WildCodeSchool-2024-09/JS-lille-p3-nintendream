@@ -1,0 +1,487 @@
+.body {
+  background-color: var(--primary-color);
+}
+
+.image-homepage {
+  position: relative;
+  width: 100%;
+  height: 22rem;
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  z-index: -1;
+}
+
+.card-container-homepage-reservation {
+  background-color: var(--secondary-color);
+  color: white;
+  height: 135%;
+  width: 30%;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 13rem;
+  margin-top: -16rem;
+  margin-bottom: 8rem;
+  z-index: 0;
+  margin-left: 4rem;
+  width: 22rem;
+}
+
+.button-homepage-reservation {
+  background-image: linear-gradient(
+    to right,
+    #e60012 0%,
+    #e35d5b 51%,
+    #e60012 100%
+  );
+  padding: 15px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+  display: block;
+  border: none;
+  width: 80%;
+  justify-self: center;
+}
+
+.button-homepage-reservation:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-new-events {
+  background-image: linear-gradient(
+    to right,
+    #e60012 0%,
+    #e35d5b 51%,
+    #e60012 100%
+  );
+  padding: 15px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+  display: block;
+  border: none;
+  width: 80%;
+  justify-self: center;
+}
+
+.button-new-events:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-events {
+  justify-items: center;
+}
+
+.container-homepage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: pre-line;
+  padding: 1rem;
+  gap: 1rem;
+  height: 15rem;
+  gap: 10%;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.card-container-new-attraction {
+  background-color: var(--secondary-color);
+  color: white;
+  height: 135%;
+  width: 30%;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-top: auto;
+}
+
+.card-container-events {
+  background-color: var(--secondary-color);
+  color: white;
+  height: 135%;
+  width: 30%;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-top: auto;
+}
+
+.card-container-offers {
+  background-color: var(--secondary-color);
+  color: white;
+  height: 135%;
+  width: 30%;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  margin-top: auto;
+}
+
+.button-reservation-new-attraction {
+  background-image: linear-gradient(
+    to right,
+    #e60012 0%,
+    #e35d5b 51%,
+    #e60012 100%
+  );
+  padding: 15px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+  display: block;
+  border: none;
+  width: 80%;
+  justify-self: center;
+}
+
+.button-reservation-new-attraction:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-new-attraction {
+  justify-items: center;
+}
+
+.button-new-events {
+  background-image: linear-gradient(
+    to right,
+    #e60012 0%,
+    #e35d5b 51%,
+    #e60012 100%
+  );
+  padding: 15px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+  display: block;
+  border: none;
+  width: 80%;
+  justify-self: center;
+}
+
+.button-new-events:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-events {
+  justify-items: center;
+}
+
+.button-new-offers {
+  background-image: linear-gradient(
+    to right,
+    #e60012 0%,
+    #e35d5b 51%,
+    #e60012 100%
+  );
+  padding: 15px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+  display: block;
+  border: none;
+  width: 80%;
+  justify-self: center;
+}
+
+.button-new-offers:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-offers {
+  justify-items: center;
+}
+
+.button-container-homepage {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: pre-line;
+  padding: 1rem;
+  gap: 1rem;
+  height: 15rem;
+  gap: 5%;
+  margin-bottom: 5%;
+  list-style: none;
+  justify-content: space-evenly;
+}
+
+/*card Article Style*/
+
+.card-homepage {
+  justify-self: center;
+  width: 90%;
+  border-radius: 10px;
+}
+
+.link-article {
+  display: grid;
+  margin-top: 5rem;
+  margin-left: 2%;
+  margin-right: 2%;
+  background-color: #f0f0f0;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.image-card-article {
+  grid-area: 1 / 1 / 3 / 3;
+}
+.card-title {
+  grid-area: 1 / 3 / 2 / 6;
+}
+.card-descritpion {
+  grid-area: 2 / 3 / 3 / 6;
+}
+
+.card-homepage:hover {
+  box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2), -6px -6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-card-article {
+  height: 100%;
+  border-radius: 10px;
+  width: 30rem;
+  margin-left: -1.9rem;
+}
+
+.card-title {
+  font-size: x-large;
+  align-content: center;
+  margin-bottom: -4rem;
+}
+
+.card-description {
+  font-size: larger;
+  align-content: center;
+  margin: 10rem;
+}
+
+@media screen and (max-width: 464px) {
+  .card-container-homepage-reservation {
+    height: 7rem;
+    margin-top: -8rem;
+    margin-bottom: 3rem;
+    z-index: 0;
+    margin-left: 2rem;
+    width: 10rem;
+  }
+
+  .link-article {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-self: center;
+    margin-top: 5rem;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1),
+      -4px -4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  .image-card-article {
+    height: 100%;
+    border-radius: 10px;
+    width: 100%;
+    justify-items: center;
+    margin-left: 0;
+    margin-right: 2%;
+  }
+
+  .card-title {
+    font-size: x-large;
+    align-content: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+
+  .card-description {
+    font-size: larger;
+    align-content: center;
+    margin: 3rem;
+  }
+
+  .container-homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    padding: 0;
+    height: 35rem;
+  }
+
+  .button-container-homepage {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    white-space: pre-line;
+    padding: 1rem;
+    gap: 1rem;
+    height: 15rem;
+    gap: 5%;
+    margin-bottom: 5%;
+    list-style: none;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .link-article {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-self: center;
+    margin-top: 5rem;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1),
+      -4px -4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  .image-card-article {
+    height: 100%;
+    border-radius: 15px;
+    width: 100%;
+    justify-items: center;
+    margin-left: 0;
+    margin-right: 2%;
+  }
+
+  .card-title {
+    font-size: x-large;
+    align-content: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+
+  .card-description {
+    font-size: larger;
+    align-content: center;
+    margin: 3rem;
+  }
+
+  .container-homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    padding: 0;
+    height: 35rem;
+  }
+
+  .card-container-new-attraction {
+    background-color: var(--secondary-color);
+    color: white;
+    height: 50rem;
+    width: 50%;
+    border-radius: 20%;
+  }
+
+  .card-container-events {
+    height: 50rem;
+    width: 50%;
+    border-radius: 20%;
+  }
+
+  .card-container-offers {
+    height: 50rem;
+    width: 50%;
+    border-radius: 20%;
+  }
+
+  .button-new-attraction {
+    justify-items: center;
+  }
+
+  .button-events {
+    justify-items: center;
+  }
+
+  .button-offers {
+    justify-items: center;
+  }
+
+  .button-container-homepage {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    white-space: pre-line;
+    padding: 1rem;
+    gap: 1rem;
+    height: 15rem;
+    gap: 5%;
+    margin-bottom: 5%;
+    list-style: none;
+    justify-content: space-evenly;
+  }
+}
