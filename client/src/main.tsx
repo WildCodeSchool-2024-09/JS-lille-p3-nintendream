@@ -8,9 +8,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import Admin from "./pages/admin/Admin.tsx";
-import AttractionForm from "./pages/admin/AttractionForm.tsx";
-import AttractionsEdit from "./pages/admin/AttractionsEdit.tsx";
+import AttractionForm from "./pages/admin/NewAttractionForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
+import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import HotelDetails from "./pages/hotels/hotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
@@ -54,11 +54,43 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/:id/edit",
-        element: <AttractionsEdit />,
+        element: (
+          <EditAttractionForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              waiting_time: "0",
+              type: "",
+              description: "",
+              min_height: "",
+              zone_id: 0,
+              schedule: "",
+              state: "",
+              img_src: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
       },
       {
         path: "/admin/new",
-        element: <AttractionForm defaultValue={{}} />,
+        element: (
+          <AttractionForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              waiting_time: "0",
+              type: "",
+              description: "",
+              min_height: "",
+              zone_id: 0,
+              schedule: "",
+              state: "",
+              img_src: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
       },
       {
         path: "/*",
