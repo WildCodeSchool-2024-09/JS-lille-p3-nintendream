@@ -18,7 +18,7 @@ import Login from "./pages/login/Login";
 // import Restaurant from "./pages/pageRestaurant/Restaurant";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
-import Profil from "./pages/profil/profil.tsx";
+import Profile from "./pages/profile/profile.tsx";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profil />,
+        element: <Profile />,
       },
       {
         path: "/*",

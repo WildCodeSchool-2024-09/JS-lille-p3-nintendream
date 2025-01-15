@@ -13,7 +13,7 @@ router.get("/api/events", EventActions.browse);
 router.get("/api/events/:id", EventActions.read);
 router.get("/api/attraction/:id", AttractionsActions.read);
 router.get("/api/restaurant/:id", RestaurantAction.read);
-router.get("api/profile/:id", ProfileAction.browse);
+router.get("api/profile/:id", ProfileAction.read);
 // Define item-related routes
 
 /* ************************************************************************* */

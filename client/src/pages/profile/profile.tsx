@@ -1,6 +1,6 @@
-import "./profil.css";
+import "./profile.css";
 
-function Profil() {
+function Profile() {
   return (
     <>
       <body className="body-profil">
@@ -25,4 +25,4 @@ function Profil() {
   );
 }
 
-export default Profil;
+export default Profile;
