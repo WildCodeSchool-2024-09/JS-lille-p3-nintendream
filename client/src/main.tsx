@@ -58,6 +58,11 @@ const router = createBrowserRouter([
         element: <Admin />,
       },
       {
+        path: "/profile",
+        element: <Profile />,
+      },
+
+      {
         path: "/admin/:id/edit",
         element: (
           <EditAttractionForm
@@ -96,10 +101,6 @@ const router = createBrowserRouter([
             onSubmit={() => {}}
           />
         ),
-      },
-      {
-        path: "/profile",
-        element: <Profile />,
       },
       {
         path: "/*",
