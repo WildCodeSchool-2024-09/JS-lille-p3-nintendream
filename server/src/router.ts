@@ -1,7 +1,12 @@
 import express from "express";
+
+import AttractionsActions from "./modules/item/AttractionsActions";
+import RestaurantAction from "./modules/item/RestaurantAction";
+
 import EventActions from "./modules/Events/EventActions";
 import AttractionsActions from "./modules/item/AttractionsActions";
 import RestaurantAction from "./modules/item/RestaurantAction";
+
 
 const router = express.Router();
 
@@ -9,11 +14,18 @@ const router = express.Router();
 // Define Your API Routes Here
 /* ************************************************************************* */
 
+router.get("/api/attraction/:id", AttractionsActions.read);
+router.get("/api/restaurant/:id", RestaurantAction.read);
+
+
 router.get("/api/events", EventActions.browse);
 router.get("/api/events/:id", EventActions.read);
 router.get("/api/attraction/:id", AttractionsActions.read);
 router.get("/api/restaurant/:id", RestaurantAction.read);
 router.get("api/profile/:id", ProfileAction.read);
+
+
+
 // Define item-related routes
 
 /* ************************************************************************* */
