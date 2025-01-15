@@ -11,11 +11,15 @@ import Admin from "./pages/admin/Admin.tsx";
 import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
 import AttractionForm from "./pages/admin/NewAttractionForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
+import EvenemementDetails from "./pages/evenements/EvenementDetails";
+import Evenements from "./pages/evenements/Evenements";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import HotelDetails from "./pages/hotels/hotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
 // import Restaurant from "./pages/pageRestaurant/Restaurant";
+import Restaurant from "./pages/pageRestaurant/Restaurant";
+import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -95,6 +99,23 @@ const router = createBrowserRouter([
       {
         path: "/*",
         element: <ErrorPage />,
+      },
+      {
+        path: "/restaurant",
+        element: <Restaurant />,
+      },
+      {
+
+        path: "/evenements",
+        element: <Evenements />,
+      },
+      {
+        path: "/evenements/:id",
+        element: <EvenemementDetails />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantDetails />,
       },
     ], // Renders the App component for the home page
   },
