@@ -1,3 +1,14 @@
+.main-reservation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.h1-reservation {
+  margin-top: 3rem;
+}
+
+/* css du calendrier */
 .flatpickr-weekdays {
   background-color: var(--secondary-color);
 }
@@ -29,4 +40,7 @@ span.flatpickr-weekday {
 }
 .flatpickr-current-month {
   color: var(--primary-color);
+}
+.flatpickr-input {
+  display: none;
 }

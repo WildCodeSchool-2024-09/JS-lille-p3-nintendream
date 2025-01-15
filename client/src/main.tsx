@@ -76,7 +76,7 @@ const router = createBrowserRouter([
         element: <RestaurantDetails />,
       },
       {
-        path: "/reservation",
+        path: "/reservation/:name",
         element: <Reservation />,
       },
     ], // Renders the App component for the home page

@@ -1,11 +1,12 @@
 import "./HotelDetails.css";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface RoomsProps {
   id: number;
   img: string;
   title: string;
   description: string;
+  linkTitle: string;
 }
 
 function HotelDetails() {
@@ -48,6 +49,9 @@ function HotelDetails() {
               <img src={room.img} alt={room.title} className="room-card-img" />
               <h3 className="room-card-title">{room.title}</h3>
               <p className="room-card-description">{room.description}</p>
+              <Link to={`/reservation/${room.linkTitle}`}>
+                <button type="button"> Réserver</button>
+              </Link>
             </section>
           ))}
         </section>
