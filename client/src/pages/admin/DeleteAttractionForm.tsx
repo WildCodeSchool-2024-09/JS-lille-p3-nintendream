@@ -1,25 +1,7 @@
 import "./AttractionForm.css";
 import { useNavigate, useParams } from "react-router-dom";
 
-type AttractionData = {
-  id: number;
-  name: string;
-  waiting_time: string;
-  type: string;
-  min_height: string;
-  zone_id: number;
-  schedule: string;
-  description: string;
-  state: string;
-  img_src: string;
-};
-
-interface AttractionFormProps {
-  defaultValue: AttractionData;
-  onSubmit: (attraction: AttractionData) => void;
-}
-
-function DeleteAttractionForm({ defaultValue }: AttractionFormProps) {
+function DeleteAttractionForm() {
   const navigate = useNavigate();
   const { id } = useParams();
 
