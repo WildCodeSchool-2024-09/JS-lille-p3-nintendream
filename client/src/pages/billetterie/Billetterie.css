@@ -26,6 +26,7 @@
 
 .billetterie-card-title {
   justify-self: center;
+  color: white;
 }
 
 .billetterie-title-container {
@@ -98,4 +99,10 @@
   max-width: 250px;
   padding: 10px;
   text-align: center;
+}
+
+.billetterie-other,
+.billetterie-cancel,
+.billetterie-availability {
+  color: white;
 }
