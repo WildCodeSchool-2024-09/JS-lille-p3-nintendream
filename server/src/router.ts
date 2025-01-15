@@ -13,10 +13,12 @@ router.get("/api/events", EventActions.browse);
 router.get("/api/events/:id", EventActions.read);
 router.get("/api/attraction/:id", AttractionsActions.read);
 router.get("/api/restaurant/:id", RestaurantAction.read);
+router.get("api/profile/:id", ProfileAction.browse);
 // Define item-related routes
 
 /* ************************************************************************* */
 
+import ProfileAction from "./modules/item/Profile/ProfileAction";
 import attractionActions from "./modules/item/attractions/attractionActions";
 
 router.get("/api/attractions", attractionActions.browse);

@@ -1,0 +1,51 @@
+.body-profil {
+  background-image: url("./imageProfil/herbe.webp");
+  background-size: cover; /* L'image couvre tout l'écran */
+  background-position: center; /* Centrer l'image */
+  background-repeat: no-repeat; /* Ne pas répéter l'image */
+  height: 100vh; /* Prend toute la hauteur de la fenêtre */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-container-profil {
+  background-color: white;
+  border-radius: 10%;
+}
+
+.title-profile {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+
+.texte-profile {
+  display: flex;
+  text-align: center;
+  margin: 5% 20%;
+}
+.email-profile {
+  margin-left: 20%;
+  margin-top: 8%;
+}
+.prenom-profile {
+  margin-left: 20%;
+  margin-top: 4%;
+}
+.nom-profile {
+  margin-left: 20%;
+  margin-top: 4%;
+}
+.age-profile {
+  margin-left: 20%;
+  margin-top: 4%;
+}
+
+.ending-profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  margin-bottom: 7%;
+}
