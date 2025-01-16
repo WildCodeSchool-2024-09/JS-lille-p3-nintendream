@@ -36,20 +36,22 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  font-size: 1.2rem;
 }
 
 .hotel-description-title,
 .hotel-rooms-title {
   justify-self: center;
-  margin-bottom: 1rem;
-  margin-top: 4rem;
+  margin: 4rem;
+  font-size: 1.5rem;
 }
 
 .hotel-description-details {
   justify-self: center;
   width: 50rem;
-  line-height: 1.5rem;
+  line-height: 1.9rem;
   text-align: justify;
+  font-size: 1.2em;
 }
 
 .hotel-rooms {
@@ -62,7 +64,7 @@
 }
 
 .room-card {
-  border: 2px solid black;
+  border: 2px solid var(--primary-color);
   border-radius: 15px;
   background-color: var(--secondary-color);
   width: 20rem;
@@ -72,7 +74,7 @@
 
 .room-card-img {
   width: 100%;
-  height: 17rem;
+  height: 16rem;
   border-radius: 15px;
 }
 
@@ -84,4 +86,5 @@
 .room-card-description {
   text-align: center;
   margin: 2rem;
+  font-size: 1.2rem;
 }

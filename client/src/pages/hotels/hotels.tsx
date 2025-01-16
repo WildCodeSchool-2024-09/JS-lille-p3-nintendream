@@ -12,7 +12,8 @@ interface hotelsProps {
   id: number;
   img: string;
   name: string;
-  distance: number;
+  distance: string;
+  hotelPrice: string;
   description: string;
   secondaryDescription: string;
   tertiaryDescription: string;
@@ -24,7 +25,8 @@ const hotels: hotelsProps[] = [
     id: 1,
     img: "/imagesHotel/pixel-paradise.webp",
     name: "Pixel Paradise Hotel",
-    distance: 300,
+    distance: "300 m du parc",
+    hotelPrice: "Entre 90 et 200 €",
     description:
       "Niché dans un décor moderne et vibrant, le Pixel Paradise Hotel vous accueille pour un séjour inoubliable ! ",
     secondaryDescription:
@@ -57,7 +59,8 @@ const hotels: hotelsProps[] = [
     id: 2,
     img: "/imagesHotel/dunkey-kong-hotel.webp",
     name: "Donkey Kong Jungle Resort",
-    distance: 900,
+    distance: "900 m du parc",
+    hotelPrice: "Entre 120 et 299 €",
     description:
       "Plongez en immersion dans la jungle avec Donkey Kong et ses amis !",
     secondaryDescription:
@@ -90,7 +93,8 @@ const hotels: hotelsProps[] = [
     id: 3,
     img: "/imagesHotel/mario-hotel.webp",
     name: "Mario & Friends Hotel",
-    distance: 600,
+    distance: "600 m du parc",
+    hotelPrice: "Entre 60 et 170 €",
     description:
       "Venez rencontrer Mario et ses amis dans un hôtel coloré et chaleureux !",
     secondaryDescription:
@@ -146,7 +150,8 @@ function HotelsPage() {
                   <p className="hotel-card-distance">{hotel.distance}</p>
                 </div>
                 <div className="hotel-card-distance-second-row">
-                  <hr className="second-line" /> <p>m du parc</p>
+                  <hr className="second-line" />{" "}
+                  <p className="hotel-card-price">{hotel.hotelPrice} </p>
                 </div>
               </div>
               <p className="hotel-card-description">{hotel.description}</p>
