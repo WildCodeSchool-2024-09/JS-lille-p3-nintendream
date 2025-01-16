@@ -13,12 +13,13 @@
 .error-text {
   margin-left: 3rem;
   line-height: 2.1rem;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .error-title {
   text-align: center;
   margin-top: 5rem;
+  font-size: 2.5rem;
 }
 
 .link-error {
