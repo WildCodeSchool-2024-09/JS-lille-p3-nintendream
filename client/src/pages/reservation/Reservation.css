@@ -7,7 +7,18 @@
 .h1-reservation {
   margin-top: 3rem;
 }
-
+.reservation-button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+.reservation-button:hover {
+  cursor: pointer;
+}
 /* css du calendrier */
 .flatpickr-weekdays {
   background-color: var(--secondary-color);

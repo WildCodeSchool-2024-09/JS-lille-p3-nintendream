@@ -9,6 +9,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Admin from "./pages/admin/Admin.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
+import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import EvenemementDetails from "./pages/evenements/EvenementDetails";
 import Evenements from "./pages/evenements/Evenements";
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: "/reservation/:name",
         element: <Reservation />,
+      },
+      {
+        path: "/confirmation",
+        element: <Confirmation />,
       },
     ], // Renders the App component for the home page
   },

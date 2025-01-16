@@ -3,12 +3,12 @@ import "flatpickr/dist/flatpickr.min.css";
 import "flatpickr/dist/themes/material_red.css";
 import "./Reservation.css";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 function Reservation() {
   const [priceMultiplier, setPriceMultiplier] = useState(0);
-  const [personeNumber, setPersonNumber] = useState(1);
+  const [personNumber, setPersonNumber] = useState(1);
   const [price, setPrice] = useState(0);
-
+  const [date, setDate] = useState("");
   const { name } = useParams();
 
   useEffect(() => {
@@ -81,9 +81,11 @@ function Reservation() {
           dateFormat: "Y-m-d H:i",
           minDate: "today",
           mode: "range",
-          onValueUpdate: (selectedDates: [string, string]) => {
+          onValueUpdate: (selectedDates: [string, string], dates: string) => {
             const firstDate = new Date(selectedDates[0]).getTime();
             const secondDate = new Date(selectedDates[1]).getTime();
+            setDate(dates);
+
             if (secondDate) {
               const dateGap = (secondDate - firstDate) / 86400000 + 1;
               setPriceMultiplier(dateGap);
@@ -93,7 +95,20 @@ function Reservation() {
           },
         }}
       />
-      <h2>Prix : {price * priceMultiplier * personeNumber}€</h2>
+
+      <h2>Prix : {price * priceMultiplier * personNumber}€</h2>
+      <Link
+        to="/confirmation"
+        state={{
+          price: price * priceMultiplier * personNumber,
+          personNumber: personNumber,
+          date: date,
+        }}
+      >
+        <button type="button" className="reservation-button">
+          Vers le paiement
+        </button>
+      </Link>
     </main>
   );
 }
