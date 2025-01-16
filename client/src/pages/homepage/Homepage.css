@@ -29,60 +29,50 @@
   z-index: 0;
   margin-left: 4rem;
   width: 22rem;
+  font-size: 1.3rem;
 }
 
 .button-homepage-reservation {
-  background-image: linear-gradient(
-    to right,
-    #e60012 0%,
-    #e35d5b 51%,
-    #e60012 100%
-  );
   padding: 15px 0px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
+  color: black;
   border-radius: 20px;
   display: block;
   border: none;
   width: 80%;
   justify-self: center;
+  font-size: 1.3rem;
 }
 
 .button-homepage-reservation:hover {
   background-position: right center;
-  color: #fff;
+  color: #f76363;
   text-decoration: none;
   cursor: pointer;
+  color: black;
 }
 
 .button-new-events {
-  background-image: linear-gradient(
-    to right,
-    #e60012 0%,
-    #e35d5b 51%,
-    #e60012 100%
-  );
   padding: 15px 0px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
+  color: black;
   border-radius: 20px;
   display: block;
   border: none;
   width: 80%;
   justify-self: center;
+  font-size: 1.3rem;
 }
 
 .button-new-events:hover {
   background-position: right center;
-  color: #fff;
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
@@ -103,6 +93,7 @@
   gap: 10%;
   margin-top: 5%;
   margin-bottom: 10%;
+  font-size: 1.3rem;
 }
 
 .card-container-new-attraction {
@@ -145,29 +136,23 @@
 }
 
 .button-reservation-new-attraction {
-  background-image: linear-gradient(
-    to right,
-    #e60012 0%,
-    #e35d5b 51%,
-    #e60012 100%
-  );
   padding: 15px 0px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
+  color: black;
   border-radius: 20px;
   display: block;
   border: none;
   width: 80%;
   justify-self: center;
+  font-size: 1.3rem;
 }
 
 .button-reservation-new-attraction:hover {
   background-position: right center;
-  color: #fff;
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
@@ -177,20 +162,12 @@
 }
 
 .button-new-events {
-  background-image: linear-gradient(
-    to right,
-    #e60012 0%,
-    #e35d5b 51%,
-    #e60012 100%
-  );
   padding: 15px 0px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 20px;
+  color: black;
   display: block;
   border: none;
   width: 80%;
@@ -199,7 +176,7 @@
 
 .button-new-events:hover {
   background-position: right center;
-  color: #fff;
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
@@ -209,35 +186,30 @@
 }
 
 .button-new-offers {
-  background-image: linear-gradient(
-    to right,
-    #e60012 0%,
-    #e35d5b 51%,
-    #e60012 100%
-  );
   padding: 15px 0px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;
-  box-shadow: 0 0 20px #eee;
+  color: black;
   border-radius: 20px;
   display: block;
   border: none;
   width: 80%;
   justify-self: center;
+  font-size: 1.3rem;
 }
 
 .button-new-offers:hover {
   background-position: right center;
-  color: #fff;
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
 
 .button-offers {
   justify-items: center;
+  font-size: 1.3rem;
 }
 
 .button-container-homepage {
@@ -254,6 +226,7 @@
   margin-bottom: 5%;
   list-style: none;
   justify-content: space-evenly;
+  font-size: 1.3rem;
 }
 
 /*card Article Style*/
@@ -304,13 +277,15 @@
 .card-title {
   font-size: x-large;
   align-content: center;
-  margin-bottom: -4rem;
+  margin-bottom: -8rem;
+  font-size: 1.5rem;
 }
 
 .card-description {
   font-size: larger;
   align-content: center;
-  margin: 10rem;
+  margin: 5rem;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 464px) {
@@ -321,6 +296,18 @@
     z-index: 0;
     margin-left: 2rem;
     width: 10rem;
+  }
+
+  .button-reservation-new-attraction {
+    width: 84%;
+    justify-self: center;
+    font-size: 1rem;
+  }
+
+  .button-homepage-reservation {
+    width: 75%;
+    height: 3rem;
+    font-size: 0.8rem;
   }
 
   .link-article {
@@ -441,19 +428,19 @@
     background-color: var(--secondary-color);
     color: white;
     height: 50rem;
-    width: 50%;
+    width: 60%;
     border-radius: 20%;
   }
 
   .card-container-events {
     height: 50rem;
-    width: 50%;
+    width: 60%;
     border-radius: 20%;
   }
 
   .card-container-offers {
     height: 50rem;
-    width: 50%;
+    width: 60%;
     border-radius: 20%;
   }
 

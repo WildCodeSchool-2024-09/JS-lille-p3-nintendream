@@ -77,7 +77,7 @@ function Homepage() {
                 type="button"
                 className="button-reservation-new-attraction"
               >
-                En savoir plus...
+                En savoir plus ...
               </button>
             </Link>
           </div>
