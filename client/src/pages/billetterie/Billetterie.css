@@ -3,7 +3,7 @@
   border-radius: 15px;
   background-color: var(--secondary-color);
   width: 20rem;
-  height: 41rem;
+  height: auto;
   padding: 0.5rem;
 }
 
@@ -44,6 +44,8 @@
 .billetterie-availability,
 .billetterie-company {
   color: white;
+  font-size: 1.2rem;
+  margin: 1rem;
 }
 
 .white-box-billetterie {
@@ -104,14 +106,14 @@
 }
 
 .billetterie-avantages-subtitle {
-  font-size: 18px;
+  font-size: 1.3rem;
   font-weight: bold;
   text-align: center;
   margin: 10px;
 }
 
 .billetterie-avanatages-more {
-  font-size: 14px;
+  font-size: 1.1rem;
   text-align: center;
   line-height: 1.5;
 }
