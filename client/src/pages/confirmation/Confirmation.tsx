@@ -1,7 +1,9 @@
 import { useLocation } from "react-router-dom";
 import "./Confirmation.css";
+import cleanDate from "../../services/CleanDate";
 function Confirmation() {
   const { state } = useLocation();
+  const dateString = String(state.date);
 
   return (
     <main className="payment-main">
@@ -71,7 +73,7 @@ function Confirmation() {
           <p className="payment-label">
             Nombre de personnes : {state.personNumber}{" "}
           </p>
-          <p className="payment-label"> Date : {state.date}</p>
+          <p className="payment-label"> Date : {cleanDate(dateString)}</p>
           <p className="payment-label"> Prix à payer : {state.price}€</p>
         </div>
       </section>

@@ -8,7 +8,8 @@ function Reservation() {
   const [priceMultiplier, setPriceMultiplier] = useState(0);
   const [personNumber, setPersonNumber] = useState(1);
   const [price, setPrice] = useState(0);
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState<[string, string]>(["", ""]);
+
   const { name } = useParams();
 
   useEffect(() => {
@@ -81,10 +82,10 @@ function Reservation() {
           dateFormat: "Y-m-d H:i",
           minDate: "today",
           mode: "range",
-          onValueUpdate: (selectedDates: [string, string], dates: string) => {
+          onValueUpdate: (selectedDates: [string, string]) => {
             const firstDate = new Date(selectedDates[0]).getTime();
             const secondDate = new Date(selectedDates[1]).getTime();
-            setDate(dates);
+            setDate(selectedDates);
 
             if (secondDate) {
               const dateGap = (secondDate - firstDate) / 86400000 + 1;
