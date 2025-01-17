@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import "./Billetterie.css";
 
 interface PricesProps {
   img: string;
   title: string;
+  linkTitle: string;
   availability?: string;
   cancel: string;
   other: string;
@@ -12,6 +14,7 @@ const prices: PricesProps[] = [
   {
     img: "./public/image/imageHomepage/img-billetterie1.jpg",
     title: "Tarif individuel",
+    linkTitle: "individuel",
     availability:
       "Valable 1 an à partir de la date d'achat (hors 14 Juillet,31 Octobre et 31 Décembre)",
     cancel: "Non remboursable, non annulable",
@@ -20,6 +23,7 @@ const prices: PricesProps[] = [
   {
     img: "./public/image/img-billetterie2.png",
     title: "Tarif groupe/famille",
+    linkTitle: "famille",
     availability:
       "Valable 1 an à partir de la date d'achat (hors 14 Juillet,31 Octobre et 31 Décembre)",
     cancel: "Annulez jusqu'à trois jours avant l'arrivée",
@@ -28,6 +32,7 @@ const prices: PricesProps[] = [
   {
     img: "./public/image/img-billetterie3.png",
     title: "CSE",
+    linkTitle: "CSE",
     cancel: "Annulez jusqu' trois jours avant l'arrivée",
     other: "Pour entreprises uniquement",
   },
@@ -53,10 +58,12 @@ function Billetterie() {
             <p className="billetterie-availability">{price.availability}</p>
             <p className="billetterie-cancel">{price.cancel}</p>
             <p className="billetterie-other">{price.other}</p>
-            <button type="button" className="billetterie-btn">
-              {" "}
-              ACHETER
-            </button>
+            <Link to={`/reservation/${price.linkTitle}`}>
+              <button type="button" className="billetterie-btn">
+                {" "}
+                ACHETER
+              </button>
+            </Link>
           </div>
         ))}
       </div>

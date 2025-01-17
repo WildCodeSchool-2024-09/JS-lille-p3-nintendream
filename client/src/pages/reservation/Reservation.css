@@ -1,0 +1,57 @@
+.main-reservation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.h1-reservation {
+  margin-top: 3rem;
+}
+.reservation-button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+.reservation-button:hover {
+  cursor: pointer;
+}
+/* css du calendrier */
+.flatpickr-weekdays {
+  background-color: var(--secondary-color);
+}
+span.flatpickr-weekday {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.flatpickr-months .flatpickr-month {
+  background-color: var(--secondary-color);
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  background-color: var(--secondary-color);
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.flatpickr-current-month input.cur-year:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.flatpickr-day.selected.startRange,
+.flatpickr-day.startRange.startRange,
+.flatpickr-day.endRange.startRange {
+  background-color: var(--secondary-color);
+}
+.flatpickr-day.selected.endRange,
+.flatpickr-day.startRange.endRange,
+.flatpickr-day.endRange.endRange {
+  background-color: var(--secondary-color);
+}
+.flatpickr-current-month {
+  color: var(--primary-color);
+}
+.flatpickr-input {
+  display: none;
+}

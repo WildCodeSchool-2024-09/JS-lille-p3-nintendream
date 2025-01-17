@@ -12,6 +12,8 @@ import DeleteAttractionForm from "./pages/admin/DeleteAttractionForm.tsx";
 import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
 import AttractionForm from "./pages/admin/NewAttractionForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
+
+import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import EvenemementDetails from "./pages/evenements/EvenementDetails";
 import Evenements from "./pages/evenements/Evenements";
@@ -21,6 +23,7 @@ import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
+import Reservation from "./pages/reservation/Reservation.tsx";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -124,6 +127,14 @@ const router = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestaurantDetails />,
+      },
+      {
+        path: "/reservation/:name",
+        element: <Reservation />,
+      },
+      {
+        path: "/confirmation",
+        element: <Confirmation />,
       },
     ], // Renders the App component for the home page
   },
