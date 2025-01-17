@@ -6,6 +6,7 @@ interface RoomsProps {
   img: string;
   title: string;
   description: string;
+  price: string;
 }
 
 function HotelDetails() {
@@ -48,6 +49,9 @@ function HotelDetails() {
               <img src={room.img} alt={room.title} className="room-card-img" />
               <h2 className="room-card-title">{room.title}</h2>
               <p className="room-card-description">{room.description}</p>
+              <article className="white-box-room">
+                <p className="room-card-price">{room.price}</p>
+              </article>
             </section>
           ))}
         </section>

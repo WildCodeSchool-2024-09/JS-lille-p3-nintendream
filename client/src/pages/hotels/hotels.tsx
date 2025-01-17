@@ -6,6 +6,7 @@ interface RoomsProps {
   img: string;
   title: string;
   description: string;
+  price: string;
 }
 
 interface hotelsProps {
@@ -39,6 +40,7 @@ const hotels: hotelsProps[] = [
         img: "/imagesHotel/pixel-chambre1.webp",
         title: "Chambre 2 personnes, 25m²",
         description: "1 lit double ou 2 lits simples, pour 1 à 2 personnes",
+        price: "90 €",
       },
       {
         id: 2,
@@ -46,12 +48,14 @@ const hotels: hotelsProps[] = [
         title: "Chambre 4 personnes 30m²",
         description:
           "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes",
+        price: "130 €",
       },
       {
         id: 3,
         img: "/imagesHotel/pixel-chambre3.webp",
         title: "Chambre duplex 6 personnes, 40m²",
         description: "2 lits doubles et un lit superposé, pour 5 à 6 personnes",
+        price: "200 €",
       },
     ],
   },
@@ -73,6 +77,7 @@ const hotels: hotelsProps[] = [
         img: "/imagesHotel/donkey-chambre1.jpg",
         title: "Chambre 2 personnes, 25m²",
         description: "1 lit double ou 2 lits simples, pour 1 à 2 personnes",
+        price: "120 €",
       },
       {
         id: 2,
@@ -80,12 +85,14 @@ const hotels: hotelsProps[] = [
         title: "Chambre 4 personnes 30m²",
         description:
           "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes",
+        price: "230 €",
       },
       {
         id: 3,
         img: "/imagesHotel/donkey-chambre3.jpg",
         title: "Chambre duplex 6 personnes, 40m²",
         description: "2 lits doubles et un lit superposé, pour 5 à 6 personnes",
+        price: "299 €",
       },
     ],
   },
@@ -107,6 +114,7 @@ const hotels: hotelsProps[] = [
         img: "/imagesHotel/mario-chambre1.png",
         title: "Chambre 2 personnes, 25m²",
         description: "1 lit double ou 2 lits simples, pour 1 à 2 personnes",
+        price: "60 €",
       },
       {
         id: 2,
@@ -114,12 +122,14 @@ const hotels: hotelsProps[] = [
         title: "Chambre 4 personnes 30m²",
         description:
           "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes",
+        price: "99 €",
       },
       {
         id: 3,
         img: "/imagesHotel/mario-chambre3.jpeg",
         title: "Chambre duplex 6 personnes, 40m²",
         description: "2 lits doubles et un lit superposé, pour 5 à 6 personnes",
+        price: "170 €",
       },
     ],
   },
