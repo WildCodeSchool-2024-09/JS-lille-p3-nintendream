@@ -1,0 +1,112 @@
+body {
+  background-color: var(--primary-color);
+}
+
+.main-title-hotel {
+  text-align: center;
+  margin: 2rem;
+  font-size: 2.5rem;
+}
+
+.hotels-description {
+  text-align: center;
+  margin: 3rem;
+  font-size: 1.5rem;
+}
+
+.hotel-card {
+  margin-top: 2rem;
+  border: 2px solid var(--secondary-color);
+  border-radius: 15px;
+  background-color: var(--secondary-color);
+  width: 20rem;
+  height: auto;
+  padding: 0.5rem;
+}
+
+.hotel-card-img {
+  width: 100%;
+  height: 17rem;
+  border-radius: 15px;
+}
+
+.hotel-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem;
+  gap: 6rem;
+  color: white;
+}
+
+.hotel-card-name {
+  text-align: center;
+  margin: 0.7rem;
+}
+
+.hotel-card-rows {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+.hotel-card-price {
+  margin-top: 0.7rem;
+}
+
+.hotel-card-distance-second-row {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.second-line {
+  rotate: 90deg;
+  width: 70%;
+  margin-right: 10%;
+  display: flex;
+  margin-top: 9%;
+}
+
+.hotel-card-description {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+}
+
+.hotel-card-button {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-self: center;
+}
+
+.hotel-card-button:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 464px) {
+  .hotel-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .second-line {
+    width: 30%;
+    margin-left: 20%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hotel-card {
+    height: 38rem;
+  }
+  .second-line {
+    width: 20%;
+    margin-left: 30%;
+  }
+}
