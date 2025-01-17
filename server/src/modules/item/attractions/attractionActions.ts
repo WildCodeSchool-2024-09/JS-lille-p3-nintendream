@@ -76,7 +76,6 @@ const add: RequestHandler = async (req, res, next) => {
       min_height: req.body.min_height,
       zone_id: req.body.zone_id,
       description: req.body.description,
-      image_url: req.body.image_url,
       schedule: req.body.schedule,
       state: req.body.state,
       img_src: req.body.img_src,

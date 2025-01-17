@@ -12,7 +12,7 @@ interface PricesProps {
 
 const prices: PricesProps[] = [
   {
-    img: "./public/image/img-billetterie1.jpg",
+    img: "./public/image/imageHomepage/img-billetterie1.jpg",
     title: "Tarif individuel",
     linkTitle: "individuel",
     availability:
@@ -106,7 +106,7 @@ function Billetterie() {
             {" "}
             Des tarifs spéciaux pour les enfants
           </h3>
-          <p className="billetterie-avanatages-more">
+          <p className="billetterie-avantages-more">
             Pour les enfants de 5 à 11 ans. 
           </p>
         </div>

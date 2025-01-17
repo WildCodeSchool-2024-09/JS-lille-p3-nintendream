@@ -64,17 +64,20 @@ function NavBar() {
             : "nav-ul navbar-burger-close"
         }
       >
+        <Link to="/parc">
+          <li className="nav-li">Parc</li>
+        </Link>
         <Link to="attractions">
           <li className="nav-li">Attractions</li>
         </Link>
         <Link to="/evenements">
           <li className="nav-li">Évènements</li>
         </Link>
-        <Link to="/hotel">
-          <li className="nav-li">Hébergement</li>
+        <Link to="/hotels">
+          <li className="nav-li">Hôtels</li>
         </Link>
         <Link to="/restaurants">
-          <li className="nav-li">Restauration</li>
+          <li className="nav-li">Restaurants</li>
         </Link>
         <Link to="/billetterie">
           <li className="nav-li nav-li-billetterie">Billetterie</li>
