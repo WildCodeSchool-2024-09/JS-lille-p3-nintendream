@@ -22,7 +22,11 @@ import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
+
+import Profile from "./pages/profile/profile.tsx";
+
 import Reservation from "./pages/reservation/Reservation.tsx";
+
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -63,6 +67,11 @@ const router = createBrowserRouter([
         path: "/admin",
         element: <Admin />,
       },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+
       {
         path: "/admin/:id/edit",
         element: (

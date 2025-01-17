@@ -8,6 +8,8 @@ interface PricesProps {
   availability?: string;
   cancel: string;
   other: string;
+  price: string;
+  company?: string;
 }
 
 const prices: PricesProps[] = [
@@ -19,6 +21,7 @@ const prices: PricesProps[] = [
       "Valable 1 an à partir de la date d'achat (hors 14 Juillet,31 Octobre et 31 Décembre)",
     cancel: "Non remboursable, non annulable",
     other: "Idéal pour un cadeau",
+    price: "35€ ",
   },
   {
     img: "./public/image/img-billetterie2.png",
@@ -28,13 +31,17 @@ const prices: PricesProps[] = [
       "Valable 1 an à partir de la date d'achat (hors 14 Juillet,31 Octobre et 31 Décembre)",
     cancel: "Annulez jusqu'à trois jours avant l'arrivée",
     other: "De 2 à 8 personnes",
+    price: "30€",
   },
   {
     img: "./public/image/img-billetterie3.png",
     title: "CSE",
+    company:
+      "Pour plus d'informations, contactez le service CSE de votre entreprise",
     linkTitle: "CSE",
     cancel: "Annulez jusqu' trois jours avant l'arrivée",
     other: "Pour entreprises uniquement",
+    price: "25€",
   },
 ];
 
@@ -58,6 +65,14 @@ function Billetterie() {
             <p className="billetterie-availability">{price.availability}</p>
             <p className="billetterie-cancel">{price.cancel}</p>
             <p className="billetterie-other">{price.other}</p>
+            <p className="billetterie-company">{price.company}</p>
+            <article className="white-box-billetterie">
+              <p className="billetterie-price">{price.price}</p>
+            </article>
+            <button type="button" className="billetterie-btn">
+              {" "}
+              ACHETER
+            </button>
             <Link to={`/reservation/${price.linkTitle}`}>
               <button type="button" className="billetterie-btn">
                 {" "}
