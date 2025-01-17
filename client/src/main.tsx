@@ -12,7 +12,6 @@ import DeleteAttractionForm from "./pages/admin/DeleteAttractionForm.tsx";
 import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
 import AttractionForm from "./pages/admin/NewAttractionForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
-
 import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import EvenemementDetails from "./pages/evenements/EvenementDetails";

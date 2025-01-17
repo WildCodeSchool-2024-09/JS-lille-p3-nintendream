@@ -4,21 +4,23 @@ body {
 
 .main-title-hotel {
   text-align: center;
-  margin-top: 2rem;
+  margin: 2rem;
+  font-size: 2.5rem;
 }
 
 .hotels-description {
   text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 3rem;
+  font-size: 1.5rem;
 }
 
 .hotel-card {
-  border: 2px solid black;
+  margin-top: 2rem;
+  border: 2px solid var(--secondary-color);
   border-radius: 15px;
   background-color: var(--secondary-color);
   width: 20rem;
-  height: 33rem;
+  height: auto;
   padding: 0.5rem;
 }
 
@@ -39,13 +41,18 @@ body {
 
 .hotel-card-name {
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin: 0.7rem;
 }
 
 .hotel-card-rows {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+.hotel-card-price {
+  margin-top: 0.7rem;
 }
 
 .hotel-card-distance-second-row {
@@ -57,14 +64,15 @@ body {
 
 .second-line {
   rotate: 90deg;
-  width: 20%;
-  margin-left: 30%;
+  width: 70%;
+  margin-right: 10%;
   display: flex;
-  margin-top: 10%;
+  margin-top: 9%;
 }
 
 .hotel-card-description {
-  margin-top: 2rem;
+  margin-top: 3rem;
+  font-size: 1.2rem;
 }
 
 .hotel-card-button {

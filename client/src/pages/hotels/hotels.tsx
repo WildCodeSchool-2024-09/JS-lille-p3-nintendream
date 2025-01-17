@@ -6,6 +6,7 @@ interface RoomsProps {
   img: string;
   title: string;
   description: string;
+  price: string;
   linkTitle: string;
 }
 
@@ -13,7 +14,8 @@ interface hotelsProps {
   id: number;
   img: string;
   name: string;
-  distance: number;
+  distance: string;
+  hotelPrice: string;
   description: string;
   secondaryDescription: string;
   tertiaryDescription: string;
@@ -25,7 +27,8 @@ const hotels: hotelsProps[] = [
     id: 1,
     img: "/imagesHotel/pixel-paradise.webp",
     name: "Pixel Paradise Hotel",
-    distance: 300,
+    distance: "300 m du parc",
+    hotelPrice: "Entre 90 et 200 €",
     description:
       "Niché dans un décor moderne et vibrant, le Pixel Paradise Hotel vous accueille pour un séjour inoubliable ! ",
     secondaryDescription:
@@ -38,6 +41,7 @@ const hotels: hotelsProps[] = [
         img: "/imagesHotel/pixel-chambre1.webp",
         title: "Chambre 2 personnes, 25m²",
         description: "1 lit double ou 2 lits simples, pour 1 à 2 personnes",
+        price: "90 €",
         linkTitle: "pixel-paradise-small-room",
       },
       {
@@ -46,6 +50,7 @@ const hotels: hotelsProps[] = [
         title: "Chambre 4 personnes 30m²",
         description:
           "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes",
+        price: "130 €",
         linkTitle: "pixel-paradise-medium-room",
       },
       {
@@ -53,6 +58,7 @@ const hotels: hotelsProps[] = [
         img: "/imagesHotel/pixel-chambre3.webp",
         title: "Chambre duplex 6 personnes, 40m²",
         description: "2 lits doubles et un lit superposé, pour 5 à 6 personnes",
+        price: "200 €",
         linkTitle: "pixel-paradise-big-room",
       },
     ],
@@ -61,7 +67,8 @@ const hotels: hotelsProps[] = [
     id: 2,
     img: "/imagesHotel/dunkey-kong-hotel.webp",
     name: "Donkey Kong Jungle Resort",
-    distance: 900,
+    distance: "900 m du parc",
+    hotelPrice: "Entre 120 et 299 €",
     description:
       "Plongez en immersion dans la jungle avec Donkey Kong et ses amis !",
     secondaryDescription:
@@ -74,6 +81,7 @@ const hotels: hotelsProps[] = [
         img: "/imagesHotel/donkey-chambre1.jpg",
         title: "Chambre 2 personnes, 25m²",
         description: "1 lit double ou 2 lits simples, pour 1 à 2 personnes",
+        price: "120 €",
         linkTitle: "donkey-small-room",
       },
       {
@@ -82,6 +90,7 @@ const hotels: hotelsProps[] = [
         title: "Chambre 4 personnes 30m²",
         description:
           "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes",
+        price: "230 €",
         linkTitle: "donkey-medium-room",
       },
       {
@@ -89,6 +98,7 @@ const hotels: hotelsProps[] = [
         img: "/imagesHotel/donkey-chambre3.jpg",
         title: "Chambre duplex 6 personnes, 40m²",
         description: "2 lits doubles et un lit superposé, pour 5 à 6 personnes",
+        price: "299 €",
         linkTitle: "donkey-big-room",
       },
     ],
@@ -97,7 +107,8 @@ const hotels: hotelsProps[] = [
     id: 3,
     img: "/imagesHotel/mario-hotel.webp",
     name: "Mario & Friends Hotel",
-    distance: 600,
+    distance: "600 m du parc",
+    hotelPrice: "Entre 60 et 170 €",
     description:
       "Venez rencontrer Mario et ses amis dans un hôtel coloré et chaleureux !",
     secondaryDescription:
@@ -110,6 +121,7 @@ const hotels: hotelsProps[] = [
         img: "/imagesHotel/mario-chambre1.png",
         title: "Chambre 2 personnes, 25m²",
         description: "1 lit double ou 2 lits simples, pour 1 à 2 personnes",
+        price: "60 €",
         linkTitle: "mario-small-room",
       },
       {
@@ -118,6 +130,7 @@ const hotels: hotelsProps[] = [
         title: "Chambre 4 personnes 30m²",
         description:
           "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes",
+        price: "99 €",
         linkTitle: "mario-medium-room",
       },
       {
@@ -125,6 +138,7 @@ const hotels: hotelsProps[] = [
         img: "/imagesHotel/mario-chambre3.jpeg",
         title: "Chambre duplex 6 personnes, 40m²",
         description: "2 lits doubles et un lit superposé, pour 5 à 6 personnes",
+        price: "170 €",
         linkTitle: "mario-big-room",
       },
     ],
@@ -156,7 +170,8 @@ function HotelsPage() {
                   <p className="hotel-card-distance">{hotel.distance}</p>
                 </div>
                 <div className="hotel-card-distance-second-row">
-                  <hr className="second-line" /> <p>m du parc</p>
+                  <hr className="second-line" />{" "}
+                  <p className="hotel-card-price">{hotel.hotelPrice} </p>
                 </div>
               </div>
               <p className="hotel-card-description">{hotel.description}</p>

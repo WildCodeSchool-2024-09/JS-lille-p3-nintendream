@@ -6,6 +6,7 @@ interface RoomsProps {
   img: string;
   title: string;
   description: string;
+  price: string;
   linkTitle: string;
 }
 
@@ -47,8 +48,11 @@ function HotelDetails() {
           {hotels.rooms.map((room: RoomsProps) => (
             <section key={room.title} className="room-card">
               <img src={room.img} alt={room.title} className="room-card-img" />
-              <h3 className="room-card-title">{room.title}</h3>
+              <h2 className="room-card-title">{room.title}</h2>
               <p className="room-card-description">{room.description}</p>
+              <article className="white-box-room">
+                <p className="room-card-price">{room.price}</p>
+              </article>
               <Link to={`/reservation/${room.linkTitle}`}>
                 <button type="button"> Réserver</button>
               </Link>
