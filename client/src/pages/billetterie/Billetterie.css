@@ -37,6 +37,12 @@
 
 .title-billetterie {
   font-size: 2rem;
+  margin: 2rem;
+}
+
+.subtitle-billetterie {
+  margin: 2rem;
+  font-size: 1.5rem;
 }
 
 .billetterie-other,
