@@ -3,8 +3,8 @@ import "./profile.css";
 function Profile() {
   return (
     <>
-      <body className="body-profil">
-        <section className="box-container-profil">
+      <body className="body-profile">
+        <section className="box-container-profile">
           <div>
             <h1 className="title-profile">Vos informations</h1>
           </div>

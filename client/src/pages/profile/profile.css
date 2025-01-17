@@ -1,4 +1,4 @@
-.body-profil {
+.body-profile {
   background-image: url("./imageProfil/herbe.webp");
   background-size: cover;
   background-position: center;
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.box-container-profil {
+.box-container-profile {
   background-color: white;
   border-radius: 10%;
 }
