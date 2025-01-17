@@ -69,10 +69,6 @@ function Billetterie() {
             <article className="white-box-billetterie">
               <p className="billetterie-price">{price.price}</p>
             </article>
-            <button type="button" className="billetterie-btn">
-              {" "}
-              ACHETER
-            </button>
             <Link to={`/reservation/${price.linkTitle}`}>
               <button type="button" className="billetterie-btn">
                 {" "}
