@@ -3,7 +3,7 @@
   border-radius: 15px;
   background-color: var(--secondary-color);
   width: 23rem;
-  height: 43rem;
+  height: 45rem;
   padding: 0.5rem;
 }
 
@@ -50,7 +50,7 @@
 .billetterie-availability,
 .billetterie-company {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin: 1rem;
 }
 
@@ -69,31 +69,27 @@
 }
 
 .billetterie-btn {
-  background-image: linear-gradient(
-    to right,
-    var(--primary-color) 0%,
-    var(--secondary-color) 51%,
-    var(--tertiary-color) 100%
-  );
-  padding: 15px 45px;
+  padding: 15px 0px;
   text-align: center;
   transition: 0.5s;
-  background-size: 150%;
-  color: rgb(21, 63, 36);
-  border-radius: 15px;
+  background-size: 200% auto;
+  border-radius: 20px;
   display: block;
-  margin: 0 auto;
+  border: none;
+  width: 50%;
+  justify-self: center;
+  font-size: 1.3rem;
 }
 
 .billetterie-btn:hover {
   background-position: right center;
-  color: #fff;
+  background-color: #f76363;
   cursor: pointer;
 }
 
 .title-billetterie {
   justify-self: center;
-  margin-top: 3rem;
+  margin: 3rem;
 }
 
 .billetterie-enfants-img {
@@ -119,9 +115,8 @@
 }
 
 .billetterie-avanatages-more {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   text-align: center;
-  line-height: 1.5;
 }
 
 .billetterie-avantages-container > .billetterie-container {
