@@ -1,5 +1,5 @@
 import "./HotelDetails.css";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 interface RoomsProps {
   id: number;
@@ -7,6 +7,7 @@ interface RoomsProps {
   title: string;
   description: string;
   price: string;
+  linkTitle: string;
 }
 
 function HotelDetails() {
@@ -52,6 +53,9 @@ function HotelDetails() {
               <article className="white-box-room">
                 <p className="room-card-price">{room.price}</p>
               </article>
+              <Link to={`/reservation/${room.linkTitle}`}>
+                <button type="button"> Réserver</button>
+              </Link>
             </section>
           ))}
         </section>
