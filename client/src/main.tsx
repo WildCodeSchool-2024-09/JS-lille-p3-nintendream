@@ -8,16 +8,17 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import Admin from "./pages/admin/Admin.tsx";
+import DeleteAttractionForm from "./pages/admin/DeleteAttractionForm.tsx";
 import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
 import AttractionForm from "./pages/admin/NewAttractionForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import EvenemementDetails from "./pages/evenements/EvenementDetails";
 import Evenements from "./pages/evenements/Evenements";
+import Homepage from "./pages/homepage/Homepage";
 import HotelDetails from "./pages/hotels/hotelDetails.tsx";
 import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
-// import Restaurant from "./pages/pageRestaurant/Restaurant";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 import Profile from "./pages/profile/profile.tsx";
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
+        path: "/",
+        element: <Homepage />,
+      },
+      {
         path: "/login",
         element: <Login />,
       },
@@ -46,7 +51,7 @@ const router = createBrowserRouter([
         element: <Billetterie />,
       },
       {
-        path: "/hotel",
+        path: "/hotels",
         element: <HotelsPage />,
       },
       {
@@ -103,11 +108,15 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/admin/:id/delete",
+        element: <DeleteAttractionForm />,
+      },
+      {
         path: "/*",
         element: <ErrorPage />,
       },
       {
-        path: "/restaurant",
+        path: "/restaurants",
         element: <Restaurant />,
       },
       {

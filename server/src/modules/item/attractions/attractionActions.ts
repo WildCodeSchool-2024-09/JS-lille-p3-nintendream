@@ -1,5 +1,5 @@
 import type { RequestHandler } from "express";
-import attractionRepository from "./attractionRepository";
+import AttractionRepository from "./attractionRepository";
 
 type newAttraction = {
   id: number;
@@ -16,7 +16,7 @@ type newAttraction = {
 
 const browse: RequestHandler = async (req, res, next) => {
   try {
-    const attractions = await attractionRepository.readAll();
+    const attractions = await AttractionRepository.readAll();
 
     res.json(attractions);
   } catch (err) {
@@ -27,7 +27,7 @@ const browse: RequestHandler = async (req, res, next) => {
 const read: RequestHandler = async (req, res, next) => {
   try {
     const attractionId = Number(req.params.id);
-    const attraction = await attractionRepository.read(attractionId);
+    const attraction = await AttractionRepository.read(attractionId);
 
     if (attraction == null) {
       res.sendStatus(404);
@@ -55,7 +55,7 @@ const edit: RequestHandler = async (req, res, next) => {
       img_src: req.body.img_src,
     };
 
-    const affectedRows = await attractionRepository.update(attraction);
+    const affectedRows = await AttractionRepository.update(attraction);
 
     if (affectedRows === 0) {
       res.sendStatus(404);
@@ -81,7 +81,7 @@ const add: RequestHandler = async (req, res, next) => {
       img_src: req.body.img_src,
     };
 
-    const insertId = await attractionRepository.create(newAttraction);
+    const insertId = await AttractionRepository.create(newAttraction);
 
     res.status(201).json({ insertId });
   } catch (err) {
@@ -93,7 +93,7 @@ const destroy: RequestHandler = async (req, res, next) => {
   try {
     const attractionId = Number(req.params.id);
 
-    await attractionRepository.delete(attractionId);
+    await AttractionRepository.delete(attractionId);
 
     res.sendStatus(204);
   } catch (err) {

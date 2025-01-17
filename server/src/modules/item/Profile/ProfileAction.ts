@@ -1,6 +1,6 @@
 import type { RequestHandler } from "express";
-import "./AttractionRepository";
 import ProfileRepository from "./ProfileRepository";
+
 const browse: RequestHandler = async (req, res, next) => {
   try {
     const profile = await ProfileRepository.readAll();
