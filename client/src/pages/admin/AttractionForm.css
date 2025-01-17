@@ -1,0 +1,26 @@
+.form-admin-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+  padding: 1rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.form-admin {
+  width: 15rem;
+  border-radius: 15px;
+  padding: 0.5rem;
+  border: 2px solid black;
+}
+
+.admin-form-button {
+  margin-top: 1rem;
+  border-radius: 15px;
+  width: 15rem;
+  padding: 0.5rem;
+}
+
+.admin-form-button:hover {
+  cursor: pointer;
+}

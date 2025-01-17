@@ -15,7 +15,7 @@ interface Restaurant {
 const resto: Restaurant[] = [
   {
     id: 1,
-    nom: "Le Champignon Gourmet",
+    nom: "Champignon Gourmet",
     img: "/imgRestaurant/image1.webp",
     intro:
       "Plongez dans l’univers magique de Mario avec Le Champignon Gourmet, un restaurant où la gastronomie rencontre l’aventure ! Savourez des plats créatifs inspirés du Royaume Champignon : des pizzas en forme de Super Étoiles, des burgers aux pains colorés comme les blocs  et des desserts rappelant les célèbres champignons rouges et verts. Dans un décor immersif mêlant tuyaux géants, briques suspendues et musique entraînante, vivez une expérience culinaire unique qui ravira petits et grands aventuriers.",
