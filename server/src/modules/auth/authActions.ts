@@ -11,16 +11,11 @@ const login: RequestHandler = async (req, res, next) => {
       return;
     }
 
-    const verified = await argon2.verify(
-      user.hashedPassword,
-      req.body.password,
-    );
-    if (verified) {
-      const { hashedPassword, ...userWithoutPassword } = user;
-
-      res.json(userWithoutPassword);
-    } else {
+    const verified = await argon2.verify(user.password, req.body.password);
+    if (!verified) {
       res.sendStatus(422);
+    } else {
+      res.json(user);
     }
   } catch (err) {
     next(err);
@@ -31,8 +26,8 @@ const hashedPassword: RequestHandler = async (req, res, next) => {
   try {
     const { password } = req.body;
     const hashedPassword = await argon2.hash(password);
-    req.body.hashedPassword = hashedPassword;
-    req.body.password = undefined;
+    req.body.password = hashedPassword;
+
     next();
   } catch (err) {
     next(err);

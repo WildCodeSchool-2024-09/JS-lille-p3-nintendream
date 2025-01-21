@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   const mailRef = useRef<HTMLInputElement>(null);
-  const confirmMailRef = useRef<HTMLInputElement>(null);
+  //const confirmMailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
-  const confirmPasswordRef = useRef<HTMLInputElement>(null);
+  //const confirmPasswordRef = useRef<HTMLInputElement>(null);
 
   // const [password, setPassword] = useState("");
   // const [confirmPassword, setConfirmPassword] = useState("");
@@ -73,22 +73,31 @@ function Login() {
     }
   };
 
-  const handleSubmitRegister: FormEventHandler = async (event) => {
-    event.preventDefault();
-    // ici vous allez réaliser le front de la création d'un compte;
-  };
+  // const handleSubmitRegister: FormEventHandler = async (event) => {
+  //   event.preventDefault();
+  //   // ici vous allez réaliser le front de la création d'un compte;
+  // };
 
   return (
     <div className="login-page">
       <form className="login-form" onSubmit={handleSubmitLogin}>
         <h2 className="login-h2">Se connecter</h2>
-        <input
+        {/* <input
           className="login-input"
           type="text"
           name="connection-username"
           id="connection-username"
           placeholder="Nom d'utilisateur"
           required
+        /> */}
+        <input
+          className="login-input"
+          type="email"
+          name="adresse-mail"
+          id="adresse-mail"
+          placeholder="Adresse email"
+          required
+          ref={mailRef}
         />
         <input
           className="login-input"
@@ -106,7 +115,7 @@ function Login() {
           className="login-submit login-submit-left"
         />
       </form>
-      <form className="login-form" onSubmit={handleSubmitRegister}>
+      {/* <form className="login-form" onSubmit={handleSubmitRegister}>
         <h2 className="login-h2">S'inscrire</h2>
         <input
           className="login-input"
@@ -153,7 +162,7 @@ function Login() {
           ref={confirmPasswordRef}
         />
         <input type="submit" value="Valider" className="login-submit " />
-      </form>
+      </form> */}
     </div>
   );
 }

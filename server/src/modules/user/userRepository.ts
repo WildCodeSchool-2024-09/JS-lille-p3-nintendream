@@ -4,15 +4,12 @@ import type { Result, Rows } from "../../../database/client";
 
 type User = {
   id: number;
-  role: string;
   username: string;
   password: string;
   first_name: string;
   name: string;
   age: number;
   mail: string;
-  user_id: number;
-  hashedPassword: string;
 };
 
 class UserRepository {

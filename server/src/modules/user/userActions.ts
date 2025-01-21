@@ -2,8 +2,6 @@ import type { RequestHandler } from "express";
 import UserRepository from "./userRepository";
 
 type User = {
-  id: number;
-  role: string;
   username: string;
   password: string;
   first_name: string;
@@ -11,7 +9,6 @@ type User = {
   age: number;
   mail: string;
   user_id: number;
-  hashedPassword: string;
 };
 
 const browse: RequestHandler = async (req, res, next) => {
@@ -41,8 +38,6 @@ const read: RequestHandler = async (req, res, next) => {
 const add: RequestHandler = async (req, res, next) => {
   try {
     const newUser: User = {
-      id: req.body.id,
-      role: "user",
       first_name: req.body.first_name,
       name: req.body.name,
       username: req.body.username,
@@ -50,7 +45,6 @@ const add: RequestHandler = async (req, res, next) => {
       age: req.body.age,
       user_id: req.body.user_id,
       password: req.body.password,
-      hashedPassword: "",
     };
     const insertId = await UserRepository.create(newUser);
 
