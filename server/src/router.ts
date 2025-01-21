@@ -29,4 +29,14 @@ router.put("/api/attractions/:id", attractionActions.edit);
 router.post("/api/attractions", attractionActions.add);
 router.delete("/api/attractions/:id", attractionActions.destroy);
 
+import UserActions from "./modules/user/userActions";
+
+router.get("/api/users", UserActions.browse);
+router.get("/api/user/:id", UserActions.read);
+router.post("/api/users", UserActions.add);
+
+import authActions from "./modules/auth/authActions";
+
+router.post("/api/login", authActions.login);
+
 export default router;

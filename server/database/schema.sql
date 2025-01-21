@@ -3,18 +3,13 @@ CREATE TABLE user (
     id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(80) NOT NULL,
     name VARCHAR(80) NOT NULL,
-    age INT NOT NULL
-);
--- Table ACCOUNT
-CREATE TABLE account (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    role VARCHAR(80) NOT NULL,
+    age INT NOT NULL,
+    mail VARCHAR(80) NOT NULL,
     username VARCHAR(80) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    mail VARCHAR(80) NOT NULL,
-    user_id INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES user(id)
+    role VARCHAR(80) NOT NULL DEFAULT "user"
 );
+
 -- Table ZONE
 CREATE TABLE zone (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -83,13 +78,13 @@ CREATE TABLE operate (
     restaurant_id INT,
     zone_id INT,
     attraction_id INT,
-    account_id INT,
+    user_id INT,
     event_id INT,
     FOREIGN KEY (hotel_id) REFERENCES hotel(id),
     FOREIGN KEY (restaurant_id) REFERENCES restaurant(id),
     FOREIGN KEY (zone_id) REFERENCES zone(id),
     FOREIGN KEY (attraction_id) REFERENCES attraction(id),
-    FOREIGN KEY (account_id) REFERENCES account(id),
+    FOREIGN KEY (user_id) REFERENCES user(id),
     FOREIGN KEY (event_id) REFERENCES event(id)
 );
 
@@ -126,4 +121,12 @@ INSERT INTO event(name, short_description, description, schedule, img_src, zone_
 ("Mario kart live show : la course arc en ciel","Rejoignez Mario et ses amis pour une course folle sur la piste arc-en-ciel, où l'univers du jeu vidéo prend vie avec des karts en taille réelle et une expérience interactive inédite ! ","Un spectacle interactif où Mario, Luigi, Peach et Bowser s'affrontent sur une piste de course dynamique inspirée de la célèbre Rainbow Road. Grâce à des véhicules téléguidés géants et des projections LED, le public vivra une véritable course effrénée. Les spectateurs pourront même 'lancer' des bananes et des carapaces via des applications mobiles connectées pour influencer la course !","10h","/imageEvents/mario-kart-event.jpg",1),
 ("Zelda: L'éveil du Héros du temps", "Partez à l'aventure dans une chasse au trésor épique pour retrouver la légendaire Master Sword ! Explorez le parc, résolvez des énigmes et devenez le héros du royaume de Hyrule.","Zelda : L'Éveil du Héros vous invite à plonger dans une quête palpitante pour retrouver l’emblématique Master Sword, cachée quelque part dans les terres enchantées de Nintendream. Cette chasse au trésor immersive vous fera traverser des paysages inspirés des lieux mythiques du royaume d’Hyrule. À chaque étape, des énigmes ingénieuses et des défis captivants mettront votre courage, votre sagacité et votre esprit d’équipe à l’épreuve. Vous croiserez peut-être la route de personnages emblématiques prêts à vous offrir leur aide – ou à compliquer votre mission ! De la Forêt Kokiri aux sommets du Mont du Péril, chaque exploration vous rapprochera de votre destinée : devenir le héros capable de protéger Hyrule des forces du mal. Préparez-vous à une aventure inoubliable où chaque instant est une célébration de l’univers magique de Zelda.","10h, 15h, 16h", "/imageEvents/zelda-quest-event.jpg",2),
 ("Donkey Kong Jungle Groove", "Un spectacle de percussions qui vous emmènera à travers la jungle de Donkey kong !", "Donkey Kong Jungle Groove est un spectacle vibrant et rythmé qui vous transporte au cœur de la jungle luxuriante de Donkey Kong. Laissez-vous emporter par une symphonie percussive envoûtante, où chaque battement raconte une histoire sauvage et palpitante. Les tambours résonnent comme les battements de la jungle, accompagnés de chorégraphies dynamiques et de projections immersives qui recréent l’univers tropical emblématique. Vous suivrez Donkey Kong et ses amis dans une aventure musicale riche en surprises, où les rythmes effrénés et les mélodies entraînantes captiveront petits et grands. Préparez-vous à une expérience multisensorielle qui fera vibrer toute la salle et réveillera l’explorateur qui sommeille en vous ! ","14h, 17h, 19h", "/imageEvents/donkey-kong-event.jpg", 3);
+
+INSERT INTO user (first_name, name, age, mail, username, password)
+VALUES 
+    ('John', 'Doe', 30, 'john.doe@example.com', 'johndoe', 'password123'),
+    ('Jane', 'Smith', 25, 'jane.smith@example.com', 'janesmith', 'password456'),
+    ('Alice', 'Johnson', 28, 'alice.johnson@example.com', 'alicej', 'password789'),
+    ('Bob', 'Brown', 35, 'bob.brown@example.com', 'bobbrown', 'password101'),
+    ('Charlie', 'Davis', 40, 'charlie.davis@example.com', 'charliedavis', 'password202');
 
