@@ -12,6 +12,7 @@ import DeleteAttractionForm from "./pages/admin/DeleteAttractionForm.tsx";
 import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
 import AttractionForm from "./pages/admin/NewAttractionForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
+import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import EvenemementDetails from "./pages/evenements/EvenementDetails";
 import Evenements from "./pages/evenements/Evenements";
@@ -22,6 +23,11 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 import Register from "./pages/register/Register.tsx";
+
+import Profile from "./pages/profile/profile.tsx";
+
+import Reservation from "./pages/reservation/Reservation.tsx";
+
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -34,105 +40,116 @@ import Register from "./pages/register/Register.tsx";
 // Create router configuration with routes
 // You can add more routes as you build out your app!
 const router = createBrowserRouter([
-	{
-		path: "/", // The root path
-		element: <App />,
-		children: [
-			{
-				path: "/",
-				element: <Homepage />,
-			},
-			{
-				path: "/login",
-				element: <Login />,
-			},
-			{
-				path: "/register",
-				element: <Register />,
-			},
-			{
-				path: "/billetterie",
-				element: <Billetterie />,
-			},
-			{
-				path: "/hotels",
-				element: <HotelsPage />,
-			},
-			{
-				path: "/hotel/:id",
-				element: <HotelDetails />,
-			},
-			{
-				path: "/admin",
-				element: <Admin />,
-			},
-			{
-				path: "/admin/:id/edit",
-				element: (
-					<EditAttractionForm
-						defaultValue={{
-							id: 0,
-							name: "",
-							waiting_time: "0",
-							type: "",
-							description: "",
-							min_height: "",
-							zone_id: 0,
-							schedule: "",
-							state: "",
-							img_src: "",
-						}}
-						onSubmit={() => {}}
-					/>
-				),
-			},
-			{
-				path: "/admin/new",
-				element: (
-					<AttractionForm
-						defaultValue={{
-							id: 0,
-							name: "",
-							waiting_time: "0",
-							type: "",
-							description: "",
-							min_height: "",
-							zone_id: 0,
-							schedule: "",
-							state: "",
-							img_src: "",
-						}}
-						onSubmit={() => {}}
-					/>
-				),
-			},
-			{
-				path: "/admin/:id/delete",
-				element: <DeleteAttractionForm />,
-			},
-			{
-				path: "/*",
-				element: <ErrorPage />,
-			},
-			{
-				path: "/restaurant",
-				element: <Restaurant />,
-			},
-			{
-				path: "/evenements",
-				element: <Evenements />,
-			},
-			{
-				path: "/evenements/:id",
-				element: <EvenemementDetails />,
-			},
-			{
-				path: "/restaurant/:id",
-				element: <RestaurantDetails />,
-			},
-		], // Renders the App component for the home page
-	},
-	// Try adding a new route! For example, "/about" with an About component
+
+  {
+    path: "/", // The root path
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Homepage />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/billetterie",
+        element: <Billetterie />,
+      },
+      {
+        path: "/hotels",
+        element: <HotelsPage />,
+      },
+      {
+        path: "/hotel/:id",
+        element: <HotelDetails />,
+      },
+      {
+        path: "/admin",
+        element: <Admin />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+
+      {
+        path: "/admin/:id/edit",
+        element: (
+          <EditAttractionForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              waiting_time: "0",
+              type: "",
+              description: "",
+              min_height: "",
+              zone_id: 0,
+              schedule: "",
+              state: "",
+              img_src: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/new",
+        element: (
+          <AttractionForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              waiting_time: "0",
+              type: "",
+              description: "",
+              min_height: "",
+              zone_id: 0,
+              schedule: "",
+              state: "",
+              img_src: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/:id/delete",
+        element: <DeleteAttractionForm />,
+      },
+      {
+        path: "/*",
+        element: <ErrorPage />,
+      },
+      {
+        path: "/restaurants",
+        element: <Restaurant />,
+      },
+      {
+        path: "/evenements",
+        element: <Evenements />,
+      },
+      {
+        path: "/evenements/:id",
+        element: <EvenemementDetails />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantDetails />,
+      },
+      {
+        path: "/reservation/:name",
+        element: <Reservation />,
+      },
+      {
+        path: "/confirmation",
+        element: <Confirmation />,
+      },
+    ], // Renders the App component for the home page
+  },
+  // Try adding a new route! For example, "/about" with an About component
+
 ]);
 
 /* ************************************************************************* */
@@ -140,14 +157,14 @@ const router = createBrowserRouter([
 // Find the root element in the HTML document
 const rootElement = document.getElementById("root");
 if (rootElement == null) {
-	throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
+  throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
 }
 
 // Render the app inside the root element
 createRoot(rootElement).render(
-	<StrictMode>
-		<RouterProvider router={router} />
-	</StrictMode>,
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>,
 );
 
 /**
