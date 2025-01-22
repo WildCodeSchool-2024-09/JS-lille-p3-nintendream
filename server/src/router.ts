@@ -38,5 +38,6 @@ router.post("/api/users", authActions.hashedPassword, UserActions.add);
 import authActions from "./modules/auth/authActions";
 
 router.post("/api/login", authActions.login);
+router.post("/api/register", authActions.hashedPassword, authActions.register);
 
 export default router;

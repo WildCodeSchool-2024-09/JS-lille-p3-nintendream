@@ -22,11 +22,32 @@ const login: RequestHandler = async (req, res, next) => {
   }
 };
 
+const register: RequestHandler = async (req, res, next) => {
+  try {
+    const newUsers = {
+      name: req.body.name,
+      first_name: req.body.firstName,
+      age: req.body.age,
+      username: req.body.user,
+      mail: req.body.mail,
+      password: req.body.password,
+    };
+
+    const createUser = await UserRepository.create(newUsers);
+    res.status(201).json({ createUser });
+  } catch (err) {
+    next(err);
+  }
+};
+
 const hashedPassword: RequestHandler = async (req, res, next) => {
   try {
     const { password } = req.body;
-    const hashedPassword = await argon2.hash(password);
+    const { confirmPassword } = req.body;
+    const hashedPassword =
+      (await argon2.hash(password)) || argon2.hash(confirmPassword);
     req.body.password = hashedPassword;
+    req.body.confirmPassword = hashedPassword;
 
     next();
   } catch (err) {
@@ -34,4 +55,4 @@ const hashedPassword: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { login, hashedPassword };
+export default { login, hashedPassword, register };
