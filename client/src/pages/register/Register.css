@@ -1,8 +1,4 @@
-body {
-  background-color: var(--primary-color);
-}
-
-.login-form {
+.register-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,13 +8,17 @@ body {
   margin-top: 5%;
 }
 
-.login-page {
+.register-page {
   display: flex;
   justify-content: center;
   gap: 10%;
 }
 
-.login-input {
+.register-h2 {
+  color: var(--secondary-color);
+}
+
+.register-input {
   height: 40px;
   border: red solid 2px;
   border-radius: 12px;
@@ -27,50 +27,46 @@ body {
   padding: 16px;
 }
 
-.login-input::placeholder {
+.register-input::placeholder {
   font-size: 1.1rem;
 }
 
-.login-submit {
+.register-submit {
   border: 0;
   border-radius: 20px;
   background-color: var(--secondary-color);
   color: var(--primary-color);
   width: 40%;
-  height: 40px;
+  height: auto;
   font-size: 1.3rem;
 }
 
-.login-submit-left {
-  margin-top: -0.5rem;
-}
-
-.login-h2 {
-  color: var(--secondary-color);
-}
-
-.login-p {
+.resgiter-p {
   color: var(--secondary-color);
   font-size: 0.9rem;
   margin-top: -1rem;
   align-self: flex-start;
 }
 
+.register-submit-left {
+  margin-top: -0.5rem;
+}
+
 @media only screen and (max-width: 1024px) {
-  .login-form {
+  .register-form {
     width: 40%;
   }
-  .login-input::placeholder {
+  .register-input::placeholder {
     font-size: 0.9rem;
   }
 }
 @media only screen and (max-width: 464px) {
-  .login-page {
+  .register-page {
     flex-direction: column;
     align-items: center;
     gap: 3rem;
   }
-  .login-form {
+  .register-form {
     width: 80%;
     height: auto;
   }
