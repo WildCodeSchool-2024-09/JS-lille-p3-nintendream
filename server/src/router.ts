@@ -1,7 +1,7 @@
 import express from "express";
-import RestaurantAction from "./modules/item/RestaurantAction";
-
 import EventActions from "./modules/Events/EventActions";
+import hotelActions from "./modules/hotels/hotelActions";
+import RestaurantAction from "./modules/item/RestaurantAction";
 
 const router = express.Router();
 
@@ -28,5 +28,11 @@ router.get("/api/attractions/:id", attractionActions.read);
 router.put("/api/attractions/:id", attractionActions.edit);
 router.post("/api/attractions", attractionActions.add);
 router.delete("/api/attractions/:id", attractionActions.destroy);
+
+router.get("/api/hotel", hotelActions.browse);
+router.get("/api/hotel/:id", hotelActions.read);
+router.put("/api/hotel/:id", hotelActions.edit);
+router.post("/api/hotel", hotelActions.add);
+router.delete("/api/hotel/:id", hotelActions.destroy);
 
 export default router;
