@@ -41,7 +41,7 @@ function HotelDetails() {
         </p>
       </section>
       <section className="hotel-rooms-container">
-        <h2 className="hotel-rooms-title">Nos chambres</h2>
+        <h2 className="hotel-description-title">Nos chambres</h2>
 
         <section className="hotel-rooms">
           {hotels.rooms.map((room: RoomsProps) => (

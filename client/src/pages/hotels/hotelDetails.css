@@ -105,3 +105,98 @@
   display: flex;
   align-items: center;
 }
+
+@media screen and (max-width: 464px) {
+  .paradise-hotel-img {
+    height: 50rem;
+  }
+  .hotel-name {
+    font-size: 3.5rem;
+    width: 20rem;
+    top: 30%;
+  }
+  .hotel-description-img {
+    font-size: 1.8rem;
+    width: 19rem;
+    top: 65%;
+    border: 1px light black;
+    border-radius: 15px;
+    padding: 1.5rem;
+    background-color: white;
+    opacity: 0.8;
+  }
+  .hotel-details-list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .hotel-details {
+    width: 20rem;
+  }
+  .hotel-description-title {
+    font-size: 2rem;
+  }
+  .hotel-description-details {
+    font-size: 1.5rem;
+    width: 20rem;
+  }
+  .hotel-rooms {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .room-card-title {
+    font-size: 1.8rem;
+  }
+  .room-card-description {
+    font-size: 1.5rem;
+  }
+  .room-card {
+    height: 40rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .paradise-hotel-img {
+    height: 50rem;
+  }
+  .hotel-name {
+    font-size: 4.5rem;
+    width: 20rem;
+    top: 20%;
+  }
+  .hotel-description-img {
+    font-size: 1.8rem;
+    width: 25rem;
+    top: 50%;
+    border: 1px light black;
+    border-radius: 15px;
+    padding: 1.5rem;
+    background-color: white;
+    opacity: 0.8;
+  }
+  .hotel-details {
+    width: 50rem;
+  }
+  .hotel-details-list {
+    font-size: 1.5rem;
+  }
+  .hotel-description-title {
+    font-size: 2.5rem;
+  }
+  .hotel-description-details {
+    font-size: 1.8rem;
+  }
+  .hotel-rooms {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .room-card-title {
+    font-size: 2rem;
+  }
+  .room-card-description {
+    font-size: 1.8rem;
+  }
+  .room-card {
+    height: 42rem;
+  }
+}
