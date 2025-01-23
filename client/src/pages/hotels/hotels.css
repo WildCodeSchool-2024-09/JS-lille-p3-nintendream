@@ -76,15 +76,22 @@ body {
 }
 
 .hotel-card-button {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  border-radius: 15px;
-  background-color: var(--primary-color);
-  display: flex;
+  margin-top: 1rem;;
+  padding: 15px 0px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 20px;
+  display: block;
+  border: none;
+  width: 50%;
   justify-self: center;
+  font-size: 1.3rem;
 }
 
 .hotel-card-button:hover {
+  background-position: right center;
+  background-color: #f76363;
   cursor: pointer;
 }
 
@@ -94,16 +101,23 @@ body {
     flex-direction: column;
     align-items: center;
   }
-
   .second-line {
     width: 30%;
     margin-left: 20%;
+  }
+  .hotel-card {
+    height: 45rem;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .hotel-card {
-    height: 38rem;
+    height: auto;
+    width: 25rem;
+  }
+  .hotel-card-container {
+    flex-direction: column;
+    align-items: center;
   }
   .second-line {
     width: 20%;

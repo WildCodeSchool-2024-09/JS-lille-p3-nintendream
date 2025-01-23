@@ -146,7 +146,7 @@ function HotelsPage() {
           pour faire rêver votre enfant ? Ou bien préférez-vous un hôtel plus
           luxueux pour vous détendre après une journée de visite ? Ou encore un
           hôtel économique pour profiter de votre séjour sans vous ruiner ? À
-          Nintendream, nous avon tout ce qu'il vous faut !
+          Nintendream, nous avons tout ce qu'il vous faut !
         </p>
 
         <section className="hotel-card-container">
