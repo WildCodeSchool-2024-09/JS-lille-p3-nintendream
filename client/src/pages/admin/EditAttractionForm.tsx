@@ -53,7 +53,7 @@ function EditAttractionForm({ defaultValue }: AttractionFormProps) {
         type="text"
         name="name"
         defaultValue={defaultValue.name}
-        placeholder="nom de l'attraction"
+        placeholder="name de l'attraction"
         className="form-admin"
       />
       <input

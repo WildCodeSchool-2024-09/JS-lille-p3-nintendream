@@ -19,9 +19,10 @@
 }
 
 .admin-attraction,
-.admin-restaurants,
+.admin-restaurants-title,
 .admin-hotels,
 .admin-events,
+.admin-restaurants,
 .admin-attraction-title {
   margin: 1rem;
   padding: 1rem;
@@ -30,6 +31,7 @@
   width: 15rem;
 }
 
+.admin-restaurants-title,
 .admin-attraction-title {
   width: 23rem;
 }

@@ -2,6 +2,16 @@ import "./Admin.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+type Restaurant = {
+  id: number;
+  name: string;
+  img: string;
+  intro: string;
+  text: string;
+  adult_price: number;
+  kids_price: number;
+};
+
 type Attraction = {
   id: number;
   img: string;
@@ -11,11 +21,12 @@ type Attraction = {
 };
 
 function Admin() {
-  const [showAttractions, setshowAttractions] = useState(false);
+  const [showAttractions, setShowAttractions] = useState(false);
   const [showHotels, setShowHotels] = useState(false);
   const [showRestaurants, setShowRestaurants] = useState(false);
   const [showEvents, setShowEvents] = useState(false);
   const [newAttraction, setNewAttraction] = useState([] as Attraction[]);
+  const [newRestaurant, setNewRestaurant] = useState([] as Restaurant[]);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/attractions`)
@@ -25,8 +36,16 @@ function Admin() {
       });
   }, []);
 
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/api/restaurant`)
+      .then((response) => response.json())
+      .then((data: Restaurant[]) => {
+        setNewRestaurant(data);
+      });
+  }, []);
+
   const handleAttractionClick = () => {
-    setshowAttractions(!showAttractions);
+    setShowAttractions(!showAttractions);
     setShowHotels(false);
     setShowRestaurants(false);
     setShowEvents(false);
@@ -34,21 +53,21 @@ function Admin() {
 
   const handleHotelClick = () => {
     setShowHotels(!showHotels);
-    setshowAttractions(false);
+    setShowAttractions(false);
     setShowRestaurants(false);
     setShowEvents(false);
   };
 
   const handleRestaurantClick = () => {
     setShowRestaurants(!showRestaurants);
-    setshowAttractions(false);
+    setShowAttractions(false);
     setShowHotels(false);
     setShowEvents(false);
   };
 
   const handleEventClick = () => {
     setShowEvents(!showEvents);
-    setshowAttractions(false);
+    setShowAttractions(false);
     setShowHotels(false);
     setShowRestaurants(false);
   };
@@ -85,17 +104,22 @@ function Admin() {
           Events
         </article>
       </section>
+
       <section className="admin-row2">
-        <p className="add-attraction-admin">
-          <Link to="/admin/new"> ✅ </Link> Ajouter une attraction{" "}
-        </p>
         {showAttractions && (
           <section className="admin-attraction-list">
+            <p className="add-attraction-admin">
+              <Link to="/admin/new/attractions"> ✅ </Link> Ajouter une
+              attraction{" "}
+            </p>
             {newAttraction.map((attraction) => (
               <article key={attraction.id} className="admin-attraction-title">
                 {attraction.name}{" "}
-                <Link to={`/admin/${attraction.id}/edit`}> 📝</Link>
-                <Link to={`/admin/${attraction.id}/delete`}> 🗑️</Link>
+                <Link to={`/admin/${attraction.id}/edit/attractions`}> 📝</Link>
+                <Link to={`/admin/${attraction.id}/delete/attractions`}>
+                  {" "}
+                  🗑️
+                </Link>
               </article>
             ))}
           </section>
@@ -114,25 +138,33 @@ function Admin() {
             </article>
           </>
         )}
+
         {showRestaurants && (
           <>
-            <article className="admin-attraction-title">
-              Le Champignon Gourmet 📝 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Donkey Kong Grill 📝 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Zelda's Feast 📝 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Kirby's Snack World 📝 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Pokemon Café 📝 🗑️
-            </article>
+            <p className="add-restaurants-admin">
+              <Link to="/admin/new/restaurant"> ✅ </Link> Ajouter un restaurant{" "}
+            </p>
+            <section className="admin-restaurants-list">
+              {newRestaurant.map((restaurant) => (
+                <article
+                  key={restaurant.id}
+                  className="admin-restaurants-title"
+                >
+                  {restaurant.name}{" "}
+                  <Link to={`/admin/${restaurant.id}/edit/restaurant`}>
+                    {" "}
+                    📝
+                  </Link>
+                  <Link to={`/admin/${restaurant.id}/delete/restaurant`}>
+                    {" "}
+                    🗑️
+                  </Link>
+                </article>
+              ))}
+            </section>
           </>
         )}
+
         {showEvents && (
           <>
             <article className="admin-attraction-title">

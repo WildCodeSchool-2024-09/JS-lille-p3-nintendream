@@ -12,7 +12,11 @@ const router = express.Router();
 /* ************************************************************************* */
 
 router.get("/api/attraction/:id", AttractionsActions.read);
+router.get("/api/restaurant", RestaurantAction.browse);
 router.get("/api/restaurant/:id", RestaurantAction.read);
+router.put("/api/restaurant/:id", RestaurantAction.edit);
+router.post("/api/restaurant", RestaurantAction.add);
+router.delete("/api/restaurant/:id", RestaurantAction.destroy);
 
 router.get("/api/events", EventActions.browse);
 router.get("/api/events/:id", EventActions.read);
