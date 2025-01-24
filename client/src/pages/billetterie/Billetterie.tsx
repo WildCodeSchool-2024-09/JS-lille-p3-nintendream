@@ -4,7 +4,7 @@ import "./Billetterie.css";
 interface PricesProps {
   img: string;
   title: string;
-  linkTitle: string;
+  link_title: string;
   availability?: string;
   cancel: string;
   other: string;
@@ -16,7 +16,7 @@ const prices: PricesProps[] = [
   {
     img: "./public/image/imageHomepage/img-billetterie1.jpg",
     title: "Tarif individuel",
-    linkTitle: "individuel",
+    link_title: "individuel",
     availability:
       "Valable 1 an à partir de la date d'achat (hors 14 Juillet,31 Octobre et 31 Décembre)",
     cancel: "Non remboursable, non annulable",
@@ -26,7 +26,7 @@ const prices: PricesProps[] = [
   {
     img: "./public/image/img-billetterie2.png",
     title: "Tarif groupe/famille",
-    linkTitle: "famille",
+    link_title: "famille",
     availability:
       "Valable 1 an à partir de la date d'achat (hors 14 Juillet,31 Octobre et 31 Décembre)",
     cancel: "Annulez jusqu'à trois jours avant l'arrivée",
@@ -38,7 +38,7 @@ const prices: PricesProps[] = [
     title: "CSE",
     company:
       "Pour plus d'informations, contactez le service CSE de votre entreprise",
-    linkTitle: "CSE",
+    link_title: "CSE",
     cancel: "Annulez jusqu' trois jours avant l'arrivée",
     other: "Pour entreprises uniquement",
     price: "25€",
@@ -69,7 +69,7 @@ function Billetterie() {
             <article className="white-box-billetterie">
               <p className="billetterie-price">{price.price}</p>
             </article>
-            <Link to={`/reservation/${price.linkTitle}`}>
+            <Link to={`/reservation/${price.link_title}`}>
               <button type="button" className="billetterie-btn">
                 {" "}
                 ACHETER

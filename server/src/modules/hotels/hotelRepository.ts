@@ -1,0 +1,108 @@
+import databaseClient from "../../../database/client";
+import type { Result, Rows } from "../../../database/client";
+
+type hotel = {
+  id: number;
+  name: string;
+  distance: string;
+  hotelprice: string;
+  description: string;
+  secondary_description: string;
+  tertiary_description: string;
+};
+
+type room = {
+  id: number;
+  img: string;
+  title: string;
+  description: string;
+  price: string;
+  link_title: string;
+};
+
+class hotelRepository {
+  async readAll() {
+    const [rows] = await databaseClient.query<Rows>("select * from hotel");
+    return rows as hotel[];
+  }
+
+  async getRoomsByHotelId(id: number) {
+    const [rows] = await databaseClient.query<Rows>(
+      "SELECT * FROM room INNER JOIN hotel ON hotel.id = room.hotel_id WHERE hotel.id = ?",
+      [id],
+    );
+    return rows as room[];
+  }
+
+  async update(hotel: hotel, room: room) {
+    const [result] = await databaseClient.query<Result>(
+      "update hotel set name = ?, distance = ?, hotelprice = ?, description = ?, secondary_description = ?, tertiary_description = ? where id = ?",
+      [
+        hotel.name,
+        hotel.distance,
+        hotel.hotelprice,
+        hotel.description,
+        hotel.secondary_description,
+        hotel.tertiary_description,
+        hotel.id,
+      ],
+    );
+
+    const [roomResult] = await databaseClient.query<Result>(
+      "update room set img = ?, title = ?, description = ?, price = ?, link_title = ? where id = ?",
+      [
+        room.img,
+        room.title,
+        room.description,
+        room.price,
+        room.link_title,
+        room.id,
+      ],
+    );
+
+    return result.affectedRows;
+  }
+
+  async create(hotel: Omit<hotel, "id">, rooms: room[]) {
+    const [result] = await databaseClient.query<Result>(
+      "insert into hotel (name, distance, hotelprice, description, secondary_description, tertiary_description) values (?, ?, ?, ?, ?, ?)",
+      [
+        hotel.name,
+        hotel.distance,
+        hotel.hotelprice,
+        hotel.description,
+        hotel.secondary_description,
+        hotel.tertiary_description,
+      ],
+    );
+
+    const hotelId = result.insertId;
+
+    for (const room of rooms) {
+      await databaseClient.query<Result>(
+        "insert into room (hotelId, img, title, description, price, link_title) values (?, ?, ?, ?, ?, ?)",
+        [
+          hotelId,
+          room.img,
+          room.title,
+          room.description,
+          room.price,
+          room.link_title,
+        ],
+      );
+    }
+
+    return hotelId;
+  }
+
+  async delete(id: number) {
+    const [result] = await databaseClient.query<Result>(
+      "delete from hotel inner join room where id = ?",
+      [id],
+    );
+
+    return result.affectedRows;
+  }
+}
+
+export default new hotelRepository();
