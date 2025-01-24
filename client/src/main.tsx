@@ -254,14 +254,10 @@ const router = createBrowserRouter([
 const rootElement = document.getElementById("root");
 if (rootElement == null) {
   throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
-  throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
 }
 
 // Render the app inside the root element
 createRoot(rootElement).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
