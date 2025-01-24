@@ -3,18 +3,13 @@ CREATE TABLE user (
     id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(80) NOT NULL,
     name VARCHAR(80) NOT NULL,
-    age INT NOT NULL
-);
--- Table ACCOUNT
-CREATE TABLE account (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    role VARCHAR(80) NOT NULL,
+    age INT NOT NULL,
+    mail VARCHAR(80) NOT NULL,
     username VARCHAR(80) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    mail VARCHAR(80) NOT NULL,
-    user_id INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES user(id)
+    role VARCHAR(80) NOT NULL DEFAULT "user"
 );
+
 -- Table ZONE
 CREATE TABLE zone (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -79,13 +74,13 @@ CREATE TABLE operate (
     restaurant_id INT,
     zone_id INT,
     attraction_id INT,
-    account_id INT,
+    user_id INT,
     event_id INT,
     FOREIGN KEY (hotel_id) REFERENCES hotel(id),
     FOREIGN KEY (restaurant_id) REFERENCES restaurant(id),
     FOREIGN KEY (zone_id) REFERENCES zone(id),
     FOREIGN KEY (attraction_id) REFERENCES attraction(id),
-    FOREIGN KEY (account_id) REFERENCES account(id),
+    FOREIGN KEY (user_id) REFERENCES user(id),
     FOREIGN KEY (event_id) REFERENCES event(id)
 );
 
@@ -124,6 +119,7 @@ INSERT INTO event(name, short_description, description, schedule, img_src, zone_
 ("Donkey Kong Jungle Groove", "Un spectacle de percussions qui vous emmènera à travers la jungle de Donkey kong !", "Donkey Kong Jungle Groove est un spectacle vibrant et rythmé qui vous transporte au cœur de la jungle luxuriante de Donkey Kong. Laissez-vous emporter par une symphonie percussive envoûtante, où chaque battement raconte une histoire sauvage et palpitante. Les tambours résonnent comme les battements de la jungle, accompagnés de chorégraphies dynamiques et de projections immersives qui recréent l’univers tropical emblématique. Vous suivrez Donkey Kong et ses amis dans une aventure musicale riche en surprises, où les rythmes effrénés et les mélodies entraînantes captiveront petits et grands. Préparez-vous à une expérience multisensorielle qui fera vibrer toute la salle et réveillera l’explorateur qui sommeille en vous ! ","14h, 17h, 19h", "/imageEvents/donkey-kong-event.jpg", 3);
 
 
+
 INSERT INTO Restaurant (id, name, img, intro, text, adult_price, kids_price) VALUES
 (1, 'Champignon Gourmet', '/imgRestaurant/image1.webp', 
  'Plongez dans l’univers magique de Mario avec Le Champignon Gourmet, un restaurant où la gastronomie rencontre l’aventure ! Savourez des plats créatifs inspirés du Royaume Champignon : des pizzas en forme de Super Étoiles, des burgers aux pains colorés comme les blocs  et des desserts rappelant les célèbres champignons rouges et verts. Dans un décor immersif mêlant tuyaux géants, briques suspendues et musique entraînante, vivez une expérience culinaire unique qui ravira petits et grands aventuriers.', 
@@ -145,3 +141,12 @@ INSERT INTO Restaurant (id, name, img, intro, text, adult_price, kids_price) VAL
  'Pokémon Café est un lieu unique où les saveurs et les personnages emblématiques de l''univers Pokémon se rencontrent dans un cadre ludique et chaleureux. Plongez dans une ambiance accueillante et découvrez une carte de plats et boissons inspirés par vos Pokémon préférés. Des cafés mignons aux plats délicieux, chaque élément du menu est pensé pour offrir une expérience gastronomique originale, avec des présentations soignées et des touches de fantaisie. Que vous soyez un dresseur chevronné ou un fan de longue date, Pokémon Café vous invite à savourer un moment magique tout en dégustant des créations gourmandes, originales et amusantes.', 
  'Des plats et boissons inspirés de vos Pokémon préférés, avec des présentations ludiques et originales.', 
  13, 11);
+
+INSERT INTO user (first_name, name, age, mail, username, password)
+VALUES 
+    ('John', 'Doe', 30, 'john.doe@example.com', 'johndoe', 'password123'),
+    ('Jane', 'Smith', 25, 'jane.smith@example.com', 'janesmith', 'password456'),
+    ('Alice', 'Johnson', 28, 'alice.johnson@example.com', 'alicej', 'password789'),
+    ('Bob', 'Brown', 35, 'bob.brown@example.com', 'bobbrown', 'password101'),
+    ('Charlie', 'Davis', 40, 'charlie.davis@example.com', 'charliedavis', 'password202');
+

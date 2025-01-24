@@ -169,7 +169,11 @@ function Restaurant() {
                     <div className="price-box-resto">
                       <b>
                         <p className="price-resto">
+
                           {restaurant.adult_price}{" "}
+
+                          {restaurant.prix_adulte}
+
                           <p className="pricetwo-resto">€99</p>
                         </p>
                       </b>

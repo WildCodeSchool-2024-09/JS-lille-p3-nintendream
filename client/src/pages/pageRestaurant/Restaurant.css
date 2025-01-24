@@ -75,7 +75,7 @@ a {
 
   justify-content: space-around;
   padding: 5%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
 }
 
@@ -86,7 +86,7 @@ a {
 .font-resto {
   color: white;
   margin: 7%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .price-container-resto {

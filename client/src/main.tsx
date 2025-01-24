@@ -15,6 +15,7 @@ import DeleteRestaurantForm from "./pages/admin/attraction_admin/DeleteRestauran
 import EditRestaurantForm from "./pages/admin/attraction_admin/EditRestaurantForm.tsx";
 import RestaurantForm from "./pages/admin/attraction_admin/NewRestaurantForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
+import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import EvenemementDetails from "./pages/evenements/EvenementDetails";
 import Evenements from "./pages/evenements/Evenements";
@@ -24,6 +25,12 @@ import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
+import Register from "./pages/register/Register.tsx";
+
+import Profile from "./pages/profile/profile.tsx";
+
+import Reservation from "./pages/reservation/Reservation.tsx";
+
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -36,6 +43,7 @@ import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 // Create router configuration with routes
 // You can add more routes as you build out your app!
 const router = createBrowserRouter([
+
   {
     path: "/", // The root path
     element: <App />,
@@ -65,7 +73,16 @@ const router = createBrowserRouter([
         element: <Admin />,
       },
       {
+
         path: "/admin/:id/edit/attractions",
+
+        path: "/profile",
+        element: <Profile />,
+      },
+
+      {
+        path: "/admin/:id/edit",
+
         element: (
           <EditAttractionForm
             defaultValue={{
@@ -85,7 +102,11 @@ const router = createBrowserRouter([
         ),
       },
       {
+
         path: "/admin/new/attractions",
+
+        path: "/admin/new",
+
         element: (
           <AttractionForm
             defaultValue={{
@@ -105,7 +126,11 @@ const router = createBrowserRouter([
         ),
       },
       {
+
         path: "/admin/:id/delete/attractions",
+
+        path: "/admin/:id/delete",
+
         element: <DeleteAttractionForm />,
       },
       {
@@ -128,6 +153,7 @@ const router = createBrowserRouter([
         path: "/restaurant/:id",
         element: <RestaurantDetails />,
       },
+
 
       {
         path: "/admin/:id/edit/restaurant",
@@ -166,10 +192,20 @@ const router = createBrowserRouter([
       {
         path: "/admin/:id/delete/restaurant",
         element: <DeleteRestaurantForm />,
+
+      {
+        path: "/reservation/:name",
+        element: <Reservation />,
+      },
+      {
+        path: "/confirmation",
+        element: <Confirmation />,
+
       },
     ], // Renders the App component for the home page
   },
   // Try adding a new route! For example, "/about" with an About component
+
 ]);
 
 /* ************************************************************************* */
