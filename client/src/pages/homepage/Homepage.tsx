@@ -91,7 +91,7 @@ function Homepage() {
           </div>
 
           <div className="button-events">
-            <Link to="/évènements" className="link-homepage-to-events">
+            <Link to="/evenements" className="link-homepage-to-events">
               <button type="submit" className="button-new-events">
                 Evènements
               </button>
