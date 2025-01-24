@@ -7,10 +7,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import EditAttractionForm from "./pages/admin//Attraction/EditAttractionForm.tsx";
 import Admin from "./pages/admin/Admin.tsx";
 import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
 import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
-import EditAttractionForm from "./pages/admin//Attraction/EditAttractionForm.tsx";
 import DeleteRestaurantForm from "./pages/admin/restaurant_admin/DeleteRestaurantForm.tsx";
 import EditRestaurantForm from "./pages/admin/restaurant_admin/EditRestaurantForm.tsx";
 import RestaurantForm from "./pages/admin/restaurant_admin/NewRestaurantForm.tsx";
@@ -26,6 +26,7 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 import Profile from "./pages/profile/profile.tsx";
+import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
 
 /* ************************************************************************* */
@@ -36,7 +37,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-
       { path: "/", element: <Homepage /> },
       { path: "/login", element: <Login /> },
       { path: "/billetterie", element: <Billetterie /> },
@@ -48,12 +48,13 @@ const router = createBrowserRouter([
       { path: "/confirmation", element: <Confirmation /> },
       {
         path: "/restaurants",
-        element: <Restaurant /> },
+        element: <Restaurant />,
+      },
       { path: "/restaurant/:id", element: <RestaurantDetails /> },
       { path: "/evenements", element: <Evenements /> },
       { path: "/evenements/:id", element: <EvenementDetails /> },
       { path: "/*", element: <ErrorPage /> },
-       {
+      {
         path: "/register",
         element: <Register />,
       },
@@ -146,8 +147,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
-     
 ]);
 
 /* ************************************************************************* */
@@ -156,14 +155,10 @@ const router = createBrowserRouter([
 const rootElement = document.getElementById("root");
 if (rootElement == null) {
   throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
-  throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
 }
 
 // Render the app inside the root element
 createRoot(rootElement).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
