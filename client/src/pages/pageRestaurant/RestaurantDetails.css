@@ -1,95 +1,71 @@
 * {
   font-family: Josefin Sans, sans-serif;
 }
-.header-restau {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10%;
-  margin-top: 8%;
+.header-allrestau {
+  margin-top: 10%;
+  width: 100%;
 }
-.title-resto {
+
+.texte-accro-allrestau {
+  margin: 3% 20% 5% 20%;
+  font-size: 1.5rem;
+}
+.title-allrestau {
   font-size: 5rem;
-  margin-bottom: 5%;
+  margin-bottom: 3%;
+  margin-top: -5%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
-a {
-  text-decoration: none;
-}
-
-.subtitle-resto {
+.subtitle-allrestau {
   font-size: 3rem;
   margin-bottom: 8%;
 }
 
-.img-restau {
+.img-allrestau {
   position: relative;
   display: inline-block;
-}
-.img-restau p {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  align-items: end;
-  z-index: 2;
-  pointer-events: none;
+  border-radius: 15%;
 }
 
-.carroussel-resto {
-  border-radius: 20px;
-  width: 95%;
-  filter: brightness(70%);
-  object-fit: cover;
-  pointer-events: none;
+.img-container-allrestau {
+  justify-content: center;
+  display: flex;
 }
-
-.img-restau:hover {
+.img-allrestau:hover {
   filter: brightness(80%);
 }
 
-.section-carroussel {
-  margin: 1rem;
-}
-
-.allcard-container-restaurant {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 5%;
-}
-.card-resto {
+.card-allrestau {
   background-color: #e60012;
-  width: 80%;
+  width: 25%;
   height: 480px;
   border-radius: 20px;
   position: relative;
-  margin-bottom: 10%;
 }
 
-.card-resto h1 {
+.card-allrestau h1 {
   display: flex;
-
   justify-content: space-around;
   padding: 5%;
   font-size: 2rem;
   color: white;
 }
 
-.card-container-restaurant {
-  width: 30%;
+.card-container-allrestau {
+  display: flex;
+  justify-content: center;
 }
 
-.font-resto {
+.font-allrestau {
   color: white;
   margin: 7%;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
-.price-container-resto {
+.price-container-allrestau {
   background-color: white;
   margin: 1%;
   margin-top: 20%;
@@ -97,20 +73,20 @@ a {
   border-radius: 20px;
   justify-content: space-evenly;
 }
-.price-box-resto {
+.price-box-allrestau {
   margin-top: -5%;
 }
 
-.price-resto {
+.price-allrestau {
   font-size: 2.5rem;
   display: flex;
   flex-direction: row;
 }
-.pricetwo-resto {
+.pricetwo-allrestau {
   font-size: 1rem;
 }
 
-.white-box-resto {
+.white-box-allrestau {
   background-color: white;
   width: 80%;
   margin: 10% auto;
@@ -124,14 +100,14 @@ a {
   left: 50%;
   transform: translateX(-50%);
 }
-.button-restaurants {
+.button-allrestau {
   margin-top: -2%;
   margin-bottom: 5%;
   display: flex;
   justify-content: center;
 }
 
-.button-reservation-resto {
+.button-reservation-allrestau {
   background-image: linear-gradient(
     to right,
     #e60012 0%,
@@ -148,21 +124,18 @@ a {
   border-radius: 20px;
   display: block;
   border: none;
-  text-decoration: none;
 }
 
-.button-reservation-resto:hover {
+.button-reservation-allrestau:hover {
   background-position: right center;
   color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
 
-.container-restaurant {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+footer {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  display: flex;
   justify-content: center;
-  margin: 8% auto;
-  width: 75%;
 }

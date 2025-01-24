@@ -7,6 +7,7 @@ interface RoomsProps {
   title: string;
   description: string;
   price: string;
+  linkTitle: string;
 }
 
 interface hotelsProps {
@@ -41,6 +42,7 @@ const hotels: hotelsProps[] = [
         title: "Chambre 2 personnes, 25m²",
         description: "1 lit double ou 2 lits simples, pour 1 à 2 personnes",
         price: "90 €",
+        linkTitle: "pixel-paradise-small-room",
       },
       {
         id: 2,
@@ -49,6 +51,7 @@ const hotels: hotelsProps[] = [
         description:
           "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes",
         price: "130 €",
+        linkTitle: "pixel-paradise-medium-room",
       },
       {
         id: 3,
@@ -56,6 +59,7 @@ const hotels: hotelsProps[] = [
         title: "Chambre duplex 6 personnes, 40m²",
         description: "2 lits doubles et un lit superposé, pour 5 à 6 personnes",
         price: "200 €",
+        linkTitle: "pixel-paradise-big-room",
       },
     ],
   },
@@ -78,6 +82,7 @@ const hotels: hotelsProps[] = [
         title: "Chambre 2 personnes, 25m²",
         description: "1 lit double ou 2 lits simples, pour 1 à 2 personnes",
         price: "120 €",
+        linkTitle: "donkey-small-room",
       },
       {
         id: 2,
@@ -86,6 +91,7 @@ const hotels: hotelsProps[] = [
         description:
           "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes",
         price: "230 €",
+        linkTitle: "donkey-medium-room",
       },
       {
         id: 3,
@@ -93,6 +99,7 @@ const hotels: hotelsProps[] = [
         title: "Chambre duplex 6 personnes, 40m²",
         description: "2 lits doubles et un lit superposé, pour 5 à 6 personnes",
         price: "299 €",
+        linkTitle: "donkey-big-room",
       },
     ],
   },
@@ -115,6 +122,7 @@ const hotels: hotelsProps[] = [
         title: "Chambre 2 personnes, 25m²",
         description: "1 lit double ou 2 lits simples, pour 1 à 2 personnes",
         price: "60 €",
+        linkTitle: "mario-small-room",
       },
       {
         id: 2,
@@ -123,6 +131,7 @@ const hotels: hotelsProps[] = [
         description:
           "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes",
         price: "99 €",
+        linkTitle: "mario-medium-room",
       },
       {
         id: 3,
@@ -130,6 +139,7 @@ const hotels: hotelsProps[] = [
         title: "Chambre duplex 6 personnes, 40m²",
         description: "2 lits doubles et un lit superposé, pour 5 à 6 personnes",
         price: "170 €",
+        linkTitle: "mario-big-room",
       },
     ],
   },
@@ -165,7 +175,7 @@ function HotelsPage() {
                 </div>
               </div>
               <p className="hotel-card-description">{hotel.description}</p>
-              <Link to={`/hotels/${hotel.id}`} state={hotel}>
+              <Link to={`/hotel/${hotel.id}`} state={hotel}>
                 <button type="button" className="hotel-card-button">
                   Voir l'hôtel
                 </button>
