@@ -47,7 +47,7 @@ function RestaurantFrom({ defaultValue }: RestaurantFormProps) {
         type="text"
         name="name"
         defaultValue={defaultValue.name}
-        placeholder="name du restaurant"
+        placeholder="nom du restaurant"
         className="form-admin"
       />
       <input
