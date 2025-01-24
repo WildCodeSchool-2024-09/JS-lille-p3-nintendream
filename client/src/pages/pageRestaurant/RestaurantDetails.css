@@ -1,0 +1,141 @@
+* {
+  font-family: Josefin Sans, sans-serif;
+}
+.header-allrestau {
+  margin-top: 10%;
+  width: 100%;
+}
+
+.texte-accro-allrestau {
+  margin: 3% 20% 5% 20%;
+  font-size: 1.5rem;
+}
+.title-allrestau {
+  font-size: 5rem;
+  margin-bottom: 3%;
+  margin-top: -5%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.subtitle-allrestau {
+  font-size: 3rem;
+  margin-bottom: 8%;
+}
+
+.img-allrestau {
+  position: relative;
+  display: inline-block;
+  border-radius: 15%;
+}
+
+.img-container-allrestau {
+  justify-content: center;
+  display: flex;
+}
+.img-allrestau:hover {
+  filter: brightness(80%);
+}
+
+.card-allrestau {
+  background-color: #e60012;
+  width: 25%;
+  height: 480px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.card-allrestau h1 {
+  display: flex;
+  justify-content: space-around;
+  padding: 5%;
+  font-size: 2rem;
+  color: white;
+}
+
+.card-container-allrestau {
+  display: flex;
+  justify-content: center;
+}
+
+.font-allrestau {
+  color: white;
+  margin: 7%;
+  font-size: 1.3rem;
+}
+
+.price-container-allrestau {
+  background-color: white;
+  margin: 1%;
+  margin-top: 20%;
+  display: flex;
+  border-radius: 20px;
+  justify-content: space-evenly;
+}
+.price-box-allrestau {
+  margin-top: -5%;
+}
+
+.price-allrestau {
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: row;
+}
+.pricetwo-allrestau {
+  font-size: 1rem;
+}
+
+.white-box-allrestau {
+  background-color: white;
+  width: 80%;
+  margin: 10% auto;
+  height: 40%;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.button-allrestau {
+  margin-top: -2%;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.button-reservation-allrestau {
+  background-image: linear-gradient(
+    to right,
+    #e60012 0%,
+    #e35d5b 51%,
+    #e60012 100%
+  );
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+  display: block;
+  border: none;
+}
+
+.button-reservation-allrestau:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+footer {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+}

@@ -1,12 +1,19 @@
 * {
   font-family: Josefin Sans, sans-serif;
 }
-header {
+.header-restau {
+  display: flex;
+  flex-direction: column;
   margin-left: 10%;
   margin-top: 8%;
 }
 .title-resto {
   font-size: 5rem;
+  margin-bottom: 5%;
+}
+
+a {
+  text-decoration: none;
 }
 
 .subtitle-resto {
@@ -20,13 +27,14 @@ header {
 }
 .img-restau p {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
+  align-items: end;
   z-index: 2;
   pointer-events: none;
 }
@@ -46,24 +54,33 @@ header {
 .section-carroussel {
   margin: 1rem;
 }
+
+.allcard-container-restaurant {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 5%;
+}
 .card-resto {
   background-color: #e60012;
-  width: 100%;
+  width: 80%;
   height: 480px;
   border-radius: 20px;
   position: relative;
+  margin-bottom: 10%;
 }
 
 .card-resto h1 {
   display: flex;
+
   justify-content: space-around;
   padding: 5%;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
 }
 
 .card-container-restaurant {
-  width: auto;
+  width: 30%;
 }
 
 .font-resto {
@@ -131,6 +148,7 @@ header {
   border-radius: 20px;
   display: block;
   border: none;
+  text-decoration: none;
 }
 
 .button-reservation-resto:hover {
