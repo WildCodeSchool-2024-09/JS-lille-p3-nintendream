@@ -23,9 +23,7 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 import Register from "./pages/register/Register.tsx";
-
 import Profile from "./pages/profile/profile.tsx";
-
 import Reservation from "./pages/reservation/Reservation.tsx";
 
 // Import additional components for new routes
