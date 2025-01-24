@@ -9,7 +9,8 @@ function Reservation() {
   const [priceMultiplier, setPriceMultiplier] = useState(0);
   const [personNumber, setPersonNumber] = useState(1);
   const [price, setPrice] = useState(0);
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState<[string, string]>(["", ""]);
+  const [count, setCount] = useState(2);
   const { name } = useParams();
 
   useEffect(() => {
@@ -55,24 +56,46 @@ function Reservation() {
     }
   }, [name]);
 
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setPersonNumber(Number(event.target.value));
+  function handleClickMore() {
+    if (name === "famille") {
+      if (count < 8) {
+        setCount(count + 1);
+      }
+    } else {
+      setCount(count + 1);
+    }
+    setPersonNumber(count);
+  }
+
+  function handleClickLess() {
+    if (count > 2) setCount(count - 1);
+    setPersonNumber(count);
   }
 
   return (
     <main className="main-reservation">
       <h1 className="h1-reservation">Réservez vos billets</h1>
       {name === "CSE" || name === "famille" ? (
-        <label>
-          Combien êtes-vous ?
-          <input
-            type="number"
-            min="1"
-            name="personNumber"
-            onChange={handleChange}
-            defaultValue={1}
-          />
-        </label>
+        <>
+          <h2>Combien êtes-vous ?</h2>{" "}
+          <div className="reservation-more-less">
+            <button
+              type="button"
+              className="reservation-button-more-less"
+              onClick={handleClickMore}
+            >
+              +
+            </button>
+            <p className="reservation-person-count">{count}</p>
+            <button
+              type="button"
+              className="reservation-button-more-less"
+              onClick={handleClickLess}
+            >
+              -
+            </button>
+          </div>
+        </>
       ) : (
         ""
       )}
@@ -82,10 +105,10 @@ function Reservation() {
           dateFormat: "Y-m-d H:i",
           minDate: "today",
           mode: "range",
-          onValueUpdate: (selectedDates: [string, string], dates: string) => {
+          onValueUpdate: (selectedDates: [string, string]) => {
             const firstDate = new Date(selectedDates[0]).getTime();
             const secondDate = new Date(selectedDates[1]).getTime();
-            setDate(dates);
+            setDate(selectedDates);
 
             if (secondDate) {
               const dateGap = (secondDate - firstDate) / 86400000 + 1;

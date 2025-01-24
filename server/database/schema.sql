@@ -1,4 +1,3 @@
--- Table USER
 CREATE TABLE user (
     id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(80) NOT NULL,
@@ -10,7 +9,6 @@ CREATE TABLE user (
     role VARCHAR(80) NOT NULL DEFAULT "user"
 );
 
--- Table ZONE
 CREATE TABLE zone (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(80) NOT NULL,
@@ -18,7 +16,7 @@ CREATE TABLE zone (
     parade VARCHAR(80) NOT NULL,
     img_src VARCHAR(300) NOT NULL
 );
--- Table ATTRACTION
+
     CREATE TABLE attraction (
         id INT PRIMARY KEY AUTO_INCREMENT,
         name VARCHAR(80) NOT NULL,
@@ -32,7 +30,7 @@ CREATE TABLE zone (
         img_src VARCHAR(300),
         FOREIGN KEY (zone_id) REFERENCES zone(id)
     );
--- Table RESTAURANT
+
 CREATE TABLE restaurant (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(80) NOT NULL,
@@ -47,20 +45,29 @@ CREATE TABLE restaurant (
     zone_id INT NULL,
     FOREIGN KEY (zone_id) REFERENCES zone(id)
 );
--- Table HOTEL
+
 CREATE TABLE hotel (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(80) NOT NULL,
-    reservation VARCHAR(80),
-    price INT NOT NULL,
-    description VARCHAR(255) NOT NULL,
-    nbr_room INT NOT NULL,
-    state VARCHAR(80) NOT NULL,
-    img_src VARCHAR(300) NOT NULL,
-    zone_id INT NOT NULL,
-    FOREIGN KEY (zone_id) REFERENCES zone(id)
+    id INT PRIMARY KEY,
+    img VARCHAR(255),
+    name VARCHAR(255),
+    distance VARCHAR(50),
+    hotel_price VARCHAR(50),
+    description TEXT,
+    secondary_description TEXT,
+    tertiary_description TEXT
 );
--- Table EVENT
+
+CREATE TABLE room (
+    id INT PRIMARY KEY,
+    hotel_id INT,
+    img VARCHAR(255),
+    title VARCHAR(255),
+    description TEXT,
+    price VARCHAR(50),
+    link_title VARCHAR(255),
+    FOREIGN KEY (hotel_id) REFERENCES hotel(id)
+);
+
 CREATE TABLE event (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(80) NOT NULL,
@@ -71,7 +78,7 @@ CREATE TABLE event (
     zone_id INT NOT NULL,
     FOREIGN KEY (zone_id) REFERENCES zone(id)
 );
--- Table OPERATE
+
 CREATE TABLE operate (
     id INT PRIMARY KEY AUTO_INCREMENT,
     hotel_id INT,
@@ -117,10 +124,38 @@ INSERT INTO attraction ( name, waiting_time, type, min_height, schedule, state, 
 ( 'Mario & Sonic Olympic Dash', '35 min', 'famille', '130 cm', '9h - 22h', 'Open', 'Relevez des défis sportifs en compagnie de Mario et Sonic.');
 
 
-INSERT INTO event(name, short_description, description, schedule, img_src, zone_id) VALUES
+INSERT INTO event (name, short_description, description, schedule, img_src, zone_id) VALUES
 ("Mario kart live show : la course arc en ciel","Rejoignez Mario et ses amis pour une course folle sur la piste arc-en-ciel, où l'univers du jeu vidéo prend vie avec des karts en taille réelle et une expérience interactive inédite ! ","Un spectacle interactif où Mario, Luigi, Peach et Bowser s'affrontent sur une piste de course dynamique inspirée de la célèbre Rainbow Road. Grâce à des véhicules téléguidés géants et des projections LED, le public vivra une véritable course effrénée. Les spectateurs pourront même 'lancer' des bananes et des carapaces via des applications mobiles connectées pour influencer la course !","10h","/imageEvents/mario-kart-event.jpg",1),
 ("Zelda: L'éveil du Héros du temps", "Partez à l'aventure dans une chasse au trésor épique pour retrouver la légendaire Master Sword ! Explorez le parc, résolvez des énigmes et devenez le héros du royaume de Hyrule.","Zelda : L'Éveil du Héros vous invite à plonger dans une quête palpitante pour retrouver l’emblématique Master Sword, cachée quelque part dans les terres enchantées de Nintendream. Cette chasse au trésor immersive vous fera traverser des paysages inspirés des lieux mythiques du royaume d’Hyrule. À chaque étape, des énigmes ingénieuses et des défis captivants mettront votre courage, votre sagacité et votre esprit d’équipe à l’épreuve. Vous croiserez peut-être la route de personnages emblématiques prêts à vous offrir leur aide – ou à compliquer votre mission ! De la Forêt Kokiri aux sommets du Mont du Péril, chaque exploration vous rapprochera de votre destinée : devenir le héros capable de protéger Hyrule des forces du mal. Préparez-vous à une aventure inoubliable où chaque instant est une célébration de l’univers magique de Zelda.","10h, 15h, 16h", "/imageEvents/zelda-quest-event.jpg",2),
 ("Donkey Kong Jungle Groove", "Un spectacle de percussions qui vous emmènera à travers la jungle de Donkey kong !", "Donkey Kong Jungle Groove est un spectacle vibrant et rythmé qui vous transporte au cœur de la jungle luxuriante de Donkey Kong. Laissez-vous emporter par une symphonie percussive envoûtante, où chaque battement raconte une histoire sauvage et palpitante. Les tambours résonnent comme les battements de la jungle, accompagnés de chorégraphies dynamiques et de projections immersives qui recréent l’univers tropical emblématique. Vous suivrez Donkey Kong et ses amis dans une aventure musicale riche en surprises, où les rythmes effrénés et les mélodies entraînantes captiveront petits et grands. Préparez-vous à une expérience multisensorielle qui fera vibrer toute la salle et réveillera l’explorateur qui sommeille en vous ! ","14h, 17h, 19h", "/imageEvents/donkey-kong-event.jpg", 3);
+
+
+INSERT INTO hotel (id, img, name, distance, hotel_price, description, secondary_description, tertiary_description)
+VALUES
+(1, "/imagesHotel/pixel-paradise.webp", "Pixel Paradise Hotel", "300 m du parc", "Entre 90 et 200 €",
+ "Niché dans un décor moderne et vibrant, le Pixel Paradise Hotel vous accueille pour un séjour inoubliable !",
+ "Bienvenue au Pixel Hotel Paradise, un lieu magique où l'univers des jeux vidéo prend vie. Niché dans un décor moderne et vibrant, cet hôtel unique allie confort, créativité et une immersion totale dans la culture gaming",
+ "Bienvenue au Pixel Hotel Paradise, là où confort, modernité et convivialité se rencontrent pour créer le séjour parfait ! Nos 150 chambres élégantes et lumineuses, conçues pour accueillir de 1 à 5 personnes, s’adaptent à toutes vos envies, que vous voyagiez en solo, en couple ou en famille. Profitez d’un cadre contemporain où chaque détail a été pensé pour votre bien-être : Wi-Fi gratuit pour rester connecté, room service pour un confort absolu, et un accès direct à notre restaurant gourmet. Laissez-vous séduire par une cuisine savoureuse, variée et créative, qui ravira petits et grands. Après une journée bien remplie, détendez-vous dans un cocon où modernité et confort se conjuguent à la perfection. Que vous planifiez une escapade en famille, un week-end romantique ou un séjour prolongé, le Pixel Hotel Paradise promet de transformer chaque instant en un moment inoubliable. N’attendez plus pour vivre l’expérience Pixel Hotel Paradise – votre oasis de bonheur vous attend !"),
+(2, "/imagesHotel/dunkey-kong-hotel.webp", "Donkey Kong Jungle Resort", "900 m du parc", "Entre 120 et 299 €",
+ "Plongez en immersion dans la jungle avec Donkey Kong et ses amis !",
+ "Le Donkey Kong Jungle Resort vous invite à un séjour luxueux au cœur d'une jungle immersive, aux côtés de Donkey Kong et ses amis",
+ "Bienvenue au Donkey Kong Jungle Resort, un havre de luxe et d'aventure niché au cœur d'une jungle verdoyante et immersive ! Nos 120 chambres et suites spacieuses, pouvant accueillir de 1 à 6 personnes, offrent un cadre unique où confort et exotisme se rencontrent. Que vous voyagiez en solo, en couple, en famille ou entre amis, laissez-vous transporter dans l'univers sauvage de Donkey Kong et ses amis. Profitez d’équipements haut de gamme : Wi-Fi gratuit, room service personnalisé, et accès direct à notre spa tropical et restaurant gastronomique. Découvrez une cuisine inventive et raffinée, inspirée des saveurs de la jungle et pensée pour plaire à tous les palais. Après une journée riche en aventures, détendez-vous dans un décor mêlant nature luxuriante et élégance moderne. Que ce soit pour une escapade romantique ou un séjour inoubliable en famille, le Donkey Kong Jungle Resort promet une immersion totale dans un monde d’évasion et de confort. Plongez dès maintenant dans l'expérience unique du Donkey Kong Jungle Resort – votre aventure de rêve commence ici !"),
+(3, "/imagesHotel/mario-hotel.webp", "Mario & Friends Hotel", "600 m du parc", "Entre 60 et 170 €",
+ "Venez rencontrer Mario et ses amis dans un hôtel coloré et chaleureux !",
+ "Le Mario & Friends Hotel vous accueille dans un univers chaleureux et ludique, idéal pour des séjours en famille. Partagez des moments inoubliables dans un cadre convivial, entouré de Mario et de ses amis emblématiques !",
+ "Bienvenue au Mario & Friends Hotel, un havre de convivialité et de divertissement où toute la famille peut se retrouver et s’amuser ! Nos 130 chambres lumineuses et colorées, pouvant accueillir de 1 à 5 personnes, offrent un cadre chaleureux et joyeux, parfait pour petits et grands. Plongez dans l’univers emblématique de Mario et ses amis, avec des décorations ludiques et des espaces pensés pour les moments de partage. Profitez d’équipements adaptés à toute la famille : Wi-Fi gratuit, aires de jeux interactives, et un accès direct à notre restaurant thématique. Savourez une cuisine variée et gourmande, inspirée des saveurs du Royaume Champignon, pour régaler tous les palais. Après une journée riche en aventures, détendez-vous dans un décor où amusement et confort se conjuguent à merveille. Que ce soit pour un week-end en famille, une fête d’anniversaire ou des vacances prolongées, le Mario & Friends Hotel promet des souvenirs inoubliables. Rejoignez-nous pour une expérience unique, où rires et moments magiques vous attendent à chaque coin de couloir !");
+
+INSERT INTO room (id, hotel_id, img, title, description, price, link_title)
+VALUES
+(1, 1, "/imagesHotel/pixel-chambre1.webp", "Chambre 2 personnes, 25m²", "1 lit double ou 2 lits simples, pour 1 à 2 personnes", "90 €", "pixel-paradise-small-room"),
+(2, 1, "/imagesHotel/pixel-chambre2.webp", "Chambre 4 personnes 30m²", "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes", "130 €", "pixel-paradise-medium-room"),
+(3, 1, "/imagesHotel/pixel-chambre3.webp", "Chambre duplex 6 personnes, 40m²", "2 lits doubles et un lit superposé, pour 5 à 6 personnes", "200 €", "pixel-paradise-big-room"),
+(4, 2, "/imagesHotel/donkey-chambre1.jpg", "Chambre 2 personnes, 25m²", "1 lit double ou 2 lits simples, pour 1 à 2 personnes", "120 €", "donkey-small-room"),
+(5, 2, "/imagesHotel/donkey-chambre2.jpg", "Chambre 4 personnes 30m²", "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes", "230 €", "donkey-medium-room"),
+(6, 2, "/imagesHotel/donkey-chambre3.jpg", "Chambre duplex 6 personnes, 40m²", "2 lits doubles et un lit superposé, pour 5 à 6 personnes", "299 €", "donkey-big-room"),
+(7, 3, "/imagesHotel/mario-chambre1.png", "Chambre 2 personnes, 25m²", "1 lit double ou 2 lits simples, pour 1 à 2 personnes", "60 €", "mario-small-room"),
+(8, 3, "/imagesHotel/mario-chambre2.png", "Chambre 4 personnes 30m²", "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes", "99 €", "mario-medium-room"),
+(9, 3, "/imagesHotel/mario-chambre3.jpeg", "Chambre duplex 6 personnes, 40m²", "2 lits doubles et un lit superposé, pour 5 à 6 personnes", "170 €", "mario-big-room");
 
 INSERT INTO user (first_name, name, age, mail, username, password)
 VALUES 

@@ -8,9 +8,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import Admin from "./pages/admin/Admin.tsx";
-import DeleteAttractionForm from "./pages/admin/DeleteAttractionForm.tsx";
-import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
-import AttractionForm from "./pages/admin/NewAttractionForm.tsx";
+import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
+import EditAttractionForm from "./pages/admin/Attraction/EditAttractionForm.tsx";
+import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
 import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
@@ -23,9 +23,7 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 import Register from "./pages/register/Register.tsx";
-
 import Profile from "./pages/profile/profile.tsx";
-
 import Reservation from "./pages/reservation/Reservation.tsx";
 
 // Import additional components for new routes
@@ -75,7 +73,6 @@ const router = createBrowserRouter([
         path: "/profile",
         element: <Profile />,
       },
-
       {
         path: "/admin/:id/edit",
         element: (
@@ -159,10 +156,14 @@ const router = createBrowserRouter([
 const rootElement = document.getElementById("root");
 if (rootElement == null) {
   throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
+  throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
 }
 
 // Render the app inside the root element
 createRoot(rootElement).render(
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>,
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
