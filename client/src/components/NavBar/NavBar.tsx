@@ -76,8 +76,8 @@ function NavBar() {
         <Link to="/hotels">
           <li className="nav-li">Hôtels</li>
         </Link>
-        <Link to="/restaurant">
-          <li className="nav-li">Restauration</li>
+        <Link to="/restaurants">
+          <li className="nav-li">Restaurants</li>
         </Link>
         <Link to="/billetterie">
           <li className="nav-li nav-li-billetterie">Billetterie</li>
