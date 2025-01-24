@@ -8,9 +8,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import Admin from "./pages/admin/Admin.tsx";
-import DeleteAttractionForm from "./pages/admin/DeleteAttractionForm.tsx";
-import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
-import AttractionForm from "./pages/admin/NewAttractionForm.tsx";
+import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
+import EditAttractionForm from "./pages/admin/Attraction/EditAttractionForm.tsx";
+import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
 import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
@@ -27,7 +27,6 @@ import Register from "./pages/register/Register.tsx";
 import Profile from "./pages/profile/profile.tsx";
 
 import Reservation from "./pages/reservation/Reservation.tsx";
-
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
