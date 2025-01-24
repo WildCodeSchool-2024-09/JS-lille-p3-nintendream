@@ -19,6 +19,29 @@
 .reservation-button:hover {
   cursor: pointer;
 }
+
+.reservation-button-more-less {
+  border: 1px solid red;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  width: 42px;
+}
+.reservation-button-more-less:active {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.reservation-person-count {
+  font-size: 1.5rem;
+}
+
+.reservation-more-less {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+  align-items: center;
+}
 /* css du calendrier */
 .flatpickr-weekdays {
   background-color: var(--secondary-color);
