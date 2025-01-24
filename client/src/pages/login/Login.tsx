@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Login.css";
 import type { FormEventHandler } from "react";
 import { useRef, useState } from "react";
@@ -61,7 +62,15 @@ function Login() {
           required
           ref={passwordRef}
         />
-        <p className="login-p">Mot de passe oublié ?</p>
+        <article className="login-article">
+          <p className="login-p">
+            Mot de passe oublié ? <br />
+            <Link to="/register" className="login-link-form">
+              Pas encore de compte ? Inscris-toi !
+            </Link>
+          </p>
+        </article>
+
         <input
           type="submit"
           value="Valider"
