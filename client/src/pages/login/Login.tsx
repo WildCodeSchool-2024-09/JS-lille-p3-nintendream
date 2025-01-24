@@ -1,17 +1,56 @@
 import "./Login.css";
+import type { FormEventHandler } from "react";
+import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const mailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+
+  const [, setUser] = useState();
+
+  const navigate = useNavigate();
+
+  const handleSubmitLogin: FormEventHandler = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/login`,
+        {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            mail: (mailRef.current as HTMLInputElement).value,
+            password: (passwordRef.current as HTMLInputElement).value,
+          }),
+        },
+      );
+      if (response.status === 200) {
+        const userFromBack = await response.json();
+        setUser(userFromBack);
+        navigate("/");
+      } else {
+        console.info(response);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <div className="login-page">
-      <form className="login-form">
+      <form className="login-form" onSubmit={handleSubmitLogin}>
         <h2 className="login-h2">Se connecter</h2>
+
         <input
           className="login-input"
-          type="text"
-          name="connection-username"
-          id="connection-username"
-          placeholder="Nom d'utilisateur"
+          type="email"
+          name="adresse-mail"
+          id="adresse-mail"
+          placeholder="Adresse email"
           required
+          ref={mailRef}
         />
         <input
           className="login-input"
@@ -20,6 +59,7 @@ function Login() {
           id="connection-password"
           placeholder="Mot de passe"
           required
+          ref={passwordRef}
         />
         <p className="login-p">Mot de passe oublié ?</p>
         <input
@@ -27,50 +67,6 @@ function Login() {
           value="Valider"
           className="login-submit login-submit-left"
         />
-      </form>
-      <form className="login-form">
-        <h2 className="login-h2">S'inscrire</h2>
-        <input
-          className="login-input"
-          type="text"
-          name="inscription-username"
-          id="inscription-username"
-          placeholder="Nom d'utilisateur"
-          required
-        />
-        <input
-          className="login-input"
-          type="email"
-          name="adresse-mail"
-          id="adresse-mail"
-          placeholder="Adresse email"
-          required
-        />
-        <input
-          className="login-input"
-          type="email"
-          name="confirm-adresse-mail"
-          id="confirm-adresse-mail"
-          placeholder="Confirmation adresse email"
-          required
-        />
-        <input
-          className="login-input"
-          type="password"
-          name="inscription-password"
-          id="inscription-password"
-          placeholder="Mot de passe"
-          required
-        />
-        <input
-          className="login-input"
-          type="password"
-          name="inscription-confirm-password"
-          id="inscription-confirm-password"
-          placeholder="Confirmation mot de passe"
-          required
-        />
-        <input type="submit" value="Valider" className="login-submit " />
       </form>
     </div>
   );

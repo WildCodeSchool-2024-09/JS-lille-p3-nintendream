@@ -2,17 +2,11 @@ CREATE TABLE user (
     id INT PRIMARY KEY AUTO_INCREMENT,
     first_name VARCHAR(80) NOT NULL,
     name VARCHAR(80) NOT NULL,
-    age INT NOT NULL
-);
-
-CREATE TABLE account (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    role VARCHAR(80) NOT NULL,
+    age INT NOT NULL,
+    mail VARCHAR(80) NOT NULL,
     username VARCHAR(80) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    mail VARCHAR(80) NOT NULL,
-    user_id INT NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES user(id)
+    role VARCHAR(80) NOT NULL DEFAULT "user"
 );
 
 CREATE TABLE zone (
@@ -91,13 +85,13 @@ CREATE TABLE operate (
     restaurant_id INT,
     zone_id INT,
     attraction_id INT,
-    account_id INT,
+    user_id INT,
     event_id INT,
     FOREIGN KEY (hotel_id) REFERENCES hotel(id),
     FOREIGN KEY (restaurant_id) REFERENCES restaurant(id),
     FOREIGN KEY (zone_id) REFERENCES zone(id),
     FOREIGN KEY (attraction_id) REFERENCES attraction(id),
-    FOREIGN KEY (account_id) REFERENCES account(id),
+    FOREIGN KEY (user_id) REFERENCES user(id),
     FOREIGN KEY (event_id) REFERENCES event(id)
 );
 
@@ -135,6 +129,7 @@ INSERT INTO event (name, short_description, description, schedule, img_src, zone
 ("Zelda: L'éveil du Héros du temps", "Partez à l'aventure dans une chasse au trésor épique pour retrouver la légendaire Master Sword ! Explorez le parc, résolvez des énigmes et devenez le héros du royaume de Hyrule.","Zelda : L'Éveil du Héros vous invite à plonger dans une quête palpitante pour retrouver l’emblématique Master Sword, cachée quelque part dans les terres enchantées de Nintendream. Cette chasse au trésor immersive vous fera traverser des paysages inspirés des lieux mythiques du royaume d’Hyrule. À chaque étape, des énigmes ingénieuses et des défis captivants mettront votre courage, votre sagacité et votre esprit d’équipe à l’épreuve. Vous croiserez peut-être la route de personnages emblématiques prêts à vous offrir leur aide – ou à compliquer votre mission ! De la Forêt Kokiri aux sommets du Mont du Péril, chaque exploration vous rapprochera de votre destinée : devenir le héros capable de protéger Hyrule des forces du mal. Préparez-vous à une aventure inoubliable où chaque instant est une célébration de l’univers magique de Zelda.","10h, 15h, 16h", "/imageEvents/zelda-quest-event.jpg",2),
 ("Donkey Kong Jungle Groove", "Un spectacle de percussions qui vous emmènera à travers la jungle de Donkey kong !", "Donkey Kong Jungle Groove est un spectacle vibrant et rythmé qui vous transporte au cœur de la jungle luxuriante de Donkey Kong. Laissez-vous emporter par une symphonie percussive envoûtante, où chaque battement raconte une histoire sauvage et palpitante. Les tambours résonnent comme les battements de la jungle, accompagnés de chorégraphies dynamiques et de projections immersives qui recréent l’univers tropical emblématique. Vous suivrez Donkey Kong et ses amis dans une aventure musicale riche en surprises, où les rythmes effrénés et les mélodies entraînantes captiveront petits et grands. Préparez-vous à une expérience multisensorielle qui fera vibrer toute la salle et réveillera l’explorateur qui sommeille en vous ! ","14h, 17h, 19h", "/imageEvents/donkey-kong-event.jpg", 3);
 
+
 INSERT INTO hotel (id, img, name, distance, hotel_price, description, secondary_description, tertiary_description)
 VALUES
 (1, "/imagesHotel/pixel-paradise.webp", "Pixel Paradise Hotel", "300 m du parc", "Entre 90 et 200 €",
@@ -161,3 +156,12 @@ VALUES
 (7, 3, "/imagesHotel/mario-chambre1.png", "Chambre 2 personnes, 25m²", "1 lit double ou 2 lits simples, pour 1 à 2 personnes", "60 €", "mario-small-room"),
 (8, 3, "/imagesHotel/mario-chambre2.png", "Chambre 4 personnes 30m²", "2 lits doubles, ou 1 lit double et deux lits simples, pour 3 à 4 personnes", "99 €", "mario-medium-room"),
 (9, 3, "/imagesHotel/mario-chambre3.jpeg", "Chambre duplex 6 personnes, 40m²", "2 lits doubles et un lit superposé, pour 5 à 6 personnes", "170 €", "mario-big-room");
+
+INSERT INTO user (first_name, name, age, mail, username, password)
+VALUES 
+    ('John', 'Doe', 30, 'john.doe@example.com', 'johndoe', 'password123'),
+    ('Jane', 'Smith', 25, 'jane.smith@example.com', 'janesmith', 'password456'),
+    ('Alice', 'Johnson', 28, 'alice.johnson@example.com', 'alicej', 'password789'),
+    ('Bob', 'Brown', 35, 'bob.brown@example.com', 'bobbrown', 'password101'),
+    ('Charlie', 'Davis', 40, 'charlie.davis@example.com', 'charliedavis', 'password202');
+

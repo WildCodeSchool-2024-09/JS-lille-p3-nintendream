@@ -22,6 +22,7 @@ import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
+import Register from "./pages/register/Register.tsx";
 
 import Profile from "./pages/profile/profile.tsx";
 
@@ -38,6 +39,7 @@ import Reservation from "./pages/reservation/Reservation.tsx";
 // Create router configuration with routes
 // You can add more routes as you build out your app!
 const router = createBrowserRouter([
+
   {
     path: "/", // The root path
     element: <App />,
@@ -146,6 +148,7 @@ const router = createBrowserRouter([
     ], // Renders the App component for the home page
   },
   // Try adding a new route! For example, "/about" with an About component
+
 ]);
 
 /* ************************************************************************* */
