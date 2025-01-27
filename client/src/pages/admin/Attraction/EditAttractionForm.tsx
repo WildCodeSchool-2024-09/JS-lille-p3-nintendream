@@ -107,7 +107,7 @@ function EditAttractionForm({ defaultValue }: AttractionFormProps) {
         className="form-admin"
       />
       <button type="submit" className="admin-form-button">
-        Submit
+        Modifier
       </button>
     </form>
   );

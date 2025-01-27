@@ -17,7 +17,7 @@ function HotelsPage() {
   const [hotels, sethotelsProps] = useState([] as hotels[]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/hotel`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/hotels`)
       .then((response) => response.json())
       .then((data: hotels[]) => {
         sethotelsProps(data);

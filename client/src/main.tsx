@@ -23,20 +23,12 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 
+import DeletehotelForm from "./pages/admin/Hotel/DeleteHotelForm.tsx";
+import EditHotelForm from "./pages/admin/Hotel/EditHotelForm.tsx";
+import NewHotelForm from "./pages/admin/Hotel/NewHotelForm.tsx";
 import Profile from "./pages/profile/profile.tsx";
-
 import Reservation from "./pages/reservation/Reservation.tsx";
 
-// Import additional components for new routes
-// Try creating these components in the "pages" folder
-
-// import About from "./pages/About";
-// import Contact from "./pages/Contact";
-
-/* ************************************************************************* */
-
-// Create router configuration with routes
-// You can add more routes as you build out your app!
 const router = createBrowserRouter([
   {
     path: "/", // The root path
@@ -92,7 +84,11 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/new",
+        path: "/admin/:id/delete",
+        element: <DeleteAttractionForm />,
+      },
+      {
+        path: "/admin/newattraction",
         element: (
           <AttractionForm
             defaultValue={{
@@ -111,9 +107,47 @@ const router = createBrowserRouter([
           />
         ),
       },
+
       {
-        path: "/admin/:id/delete",
-        element: <DeleteAttractionForm />,
+        path: "/admin/:id/hotel/edit",
+        element: (
+          <EditHotelForm
+            defaultValue={{
+              id: 0,
+              img: "",
+              name: "",
+              distance: "0",
+              hotel_price: "0",
+              description: "",
+              secondary_description: "",
+              tertiary_description: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+
+      {
+        path: "/admin/newhotel",
+        element: (
+          <NewHotelForm
+            defaultValue={{
+              id: 0,
+              img: "",
+              name: "",
+              distance: "0",
+              hotel_price: "0",
+              description: "",
+              secondary_description: "",
+              tertiary_description: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/:id/hotel/delete",
+        element: <DeletehotelForm />,
       },
       {
         path: "/*",
@@ -162,28 +196,3 @@ createRoot(rootElement).render(
     <RouterProvider router={router} />
   </StrictMode>,
 );
-
-/**
- * Helpful Notes:
- *
- * 1. Adding More Routes:
- *    To add more pages to your app, first create a new component (e.g., About.tsx).
- *    Then, import that component above like this:
- *
- *    import About from "./pages/About";
- *
- *    Add a new route to the router:
- *
- *      {
- *        path: "/about",
- *        element: <About />,  // Renders the About component
- *      }
- *
- * 2. Try Nested Routes:
- *    For more complex applications, you can nest routes. This lets you have sub-pages within a main page.
- *    Documentation: https://reactrouter.com/en/main/start/tutorial#nested-routes
- *
- * 3. Experiment with Dynamic Routes:
- *    You can create routes that take parameters (e.g., /users/:id).
- *    Documentation: https://reactrouter.com/en/main/start/tutorial#url-params-in-loaders
- */

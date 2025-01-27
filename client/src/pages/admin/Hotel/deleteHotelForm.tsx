@@ -1,4 +1,4 @@
-import "./AttractionForm.css";
+import "./HotelForm.css";
 import { useNavigate, useParams } from "react-router-dom";
 
 function DeletehotelForm() {
@@ -24,7 +24,7 @@ function DeletehotelForm() {
         est irréversible ❌
       </h1>
       <button type="submit" className="admin-form-button">
-        Delete
+        Supprimer
       </button>
     </form>
   );

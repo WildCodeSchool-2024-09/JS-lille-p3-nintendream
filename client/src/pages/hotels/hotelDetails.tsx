@@ -2,7 +2,7 @@ import "./HotelDetails.css";
 import { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 
-interface Rooms {
+interface room {
   title: string;
   img: string;
   description: string;
@@ -12,12 +12,12 @@ interface Rooms {
 
 function HotelDetails() {
   const { id } = useParams();
-  const [rooms, setrooms] = useState([] as Rooms[]);
+  const [rooms, setrooms] = useState([] as room[]);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/hotel/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/hotel/${id}/rooms`)
       .then((response) => response.json())
-      .then((data: Rooms[]) => {
+      .then((data: room[]) => {
         setrooms(data);
       });
   }, [id]);
@@ -56,7 +56,7 @@ function HotelDetails() {
         <h2 className="hotel-rooms-title">Nos chambres</h2>
 
         <section className="hotel-rooms">
-          {rooms.map((room: Rooms) => (
+          {rooms.map((room: room) => (
             <section key={room.title} className="room-card">
               <img src={room.img} alt={room.title} className="room-card-img" />
               <h2 className="room-card-title">{room.title}</h2>
