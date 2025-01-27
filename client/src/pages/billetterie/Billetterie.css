@@ -41,6 +41,7 @@
 }
 
 .subtitle-billetterie {
+  text-align: center;
   margin: 2rem;
   font-size: 1.5rem;
 }
@@ -62,6 +63,7 @@
   border-radius: 15px;
   display: flex;
   justify-content: center;
+  opacity: 70%;
 }
 
 .billetterie-price {
@@ -113,13 +115,81 @@
   text-align: center;
   margin: 10px;
 }
-.billetterie-avanatages-more {
+.billetterie-avantages-more {
   font-size: 1.3rem;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
 .billetterie-avantages-container > .billetterie-container {
   max-width: 250px;
   padding: 10px;
   text-align: center;
+}
+
+@media only screen and (max-width: 464px) {
+  .billetterie-other,
+  .billetterie-cancel,
+  .billetterie-availability,
+  .billetterie-company {
+    font-size: 1.5rem;
+  }
+  .title-billetterie {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .billetterie-card {
+    height: 49rem;
+    width: auto;
+    align-self: center;
+  }
+  .billetterie-avantages-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .billetterie-avantages-img {
+    width: 3rem;
+  }
+  .billetterie-avantages-more {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .subtitle-billetterie {
+    font-size: 2rem;
+  }
+  .card-billetterie-container {
+    flex-direction: column;
+  }
+  .billetterie-other,
+  .billetterie-cancel,
+  .billetterie-availability,
+  .billetterie-company {
+    font-size: 1.8rem;
+  }
+  .title-billetterie {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+  .billetterie-card {
+    height: 54rem;
+    align-self: center;
+  }
+  .billetterie-avantages-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .billetterie-avantages-img {
+    width: 8rem;
+  }
+  .billetterie-enfants-img {
+    height: 5.5rem;
+  }
+  .billetterie-avantages-subtitle {
+    font-size: 1.8rem;
+  }
+  .billetterie-avantages-more {
+    font-size: 1.8rem;
+  }
 }
