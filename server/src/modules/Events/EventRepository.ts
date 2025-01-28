@@ -45,6 +45,21 @@ class EventRepository {
     );
     return result.insertId;
   }
+  async update(event: Events) {
+    const [result] = await databaseClient.query<Result>(
+      "UPDATE event SET name = ?, short_description = ?, description = ?, schedule = ?, img_src = ?, zone_id = ? WHERE id = ?",
+      [
+        event.name,
+        event.short_description,
+        event.description,
+        event.schedule,
+        event.img_src,
+        event.zone_id,
+        event.id,
+      ],
+    );
+    return result.affectedRows;
+  }
 }
 
 export default new EventRepository();

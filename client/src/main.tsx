@@ -25,6 +25,7 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 
+import EventEdit from "./pages/admin/Event/EventEdit.tsx";
 import NewEvent from "./pages/admin/Event/NewEvent.tsx";
 import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
 import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
@@ -174,6 +175,10 @@ const router = createBrowserRouter([
       {
         path: "/admin/new/event",
         element: <NewEvent />,
+      },
+      {
+        path: "/admin/:id/edit/event",
+        element: <EventEdit />,
       },
     ],
   },

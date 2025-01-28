@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import EventForm from "../../../components/Event/EventFom";
+import EventForm from "../../../components/Event/EventForm";
 
 function NewEvent() {
   const navigate = useNavigate();
