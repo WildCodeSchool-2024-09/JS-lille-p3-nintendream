@@ -1,6 +1,7 @@
 import databaseClient from "../../../database/client";
 
 import type { Result, Rows } from "../../../database/client";
+import EventActions from "./EventActions";
 
 type Events = {
   id: number;
@@ -29,6 +30,20 @@ class EventRepository {
 
     // Return the first row of the result, which represents the item
     return rows[0] as Events;
+  }
+  async create(event: Omit<Events, "id">) {
+    const [result] = await databaseClient.query<Result>(
+      "insert into event (name, short_description, description, schedule, img_src, zone_id) values (?, ?, ?, ?, ?, ?)",
+      [
+        event.name,
+        event.short_description,
+        event.description,
+        event.schedule,
+        event.img_src,
+        event.zone_id,
+      ],
+    );
+    return result.insertId;
   }
 }
 

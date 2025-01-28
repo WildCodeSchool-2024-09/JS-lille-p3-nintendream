@@ -18,6 +18,7 @@ router.delete("/api/restaurant/:id", RestaurantAction.destroy);
 
 router.get("/api/events", EventActions.browse);
 router.get("/api/events/:id", EventActions.read);
+router.post("/api/events", EventActions.add);
 
 router.get("api/profile/:id", ProfileAction.read);
 
