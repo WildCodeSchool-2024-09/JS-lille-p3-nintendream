@@ -20,12 +20,23 @@ type Attraction = {
   location: string;
 };
 
+type Hotel = {
+  id: number;
+  img: string;
+  name: string;
+  distance: number;
+  hotel_price: number;
+  description: string;
+  secondary_description: string;
+  tertiary_description: string;
+};
 function Admin() {
   const [showAttractions, setShowAttractions] = useState(false);
   const [showHotels, setShowHotels] = useState(false);
   const [showRestaurants, setShowRestaurants] = useState(false);
   const [showEvents, setShowEvents] = useState(false);
   const [newAttraction, setNewAttraction] = useState([] as Attraction[]);
+  const [newHotel, setNewHotel] = useState([] as Hotel[]);
   const [newRestaurant, setNewRestaurant] = useState([] as Restaurant[]);
 
   useEffect(() => {
@@ -37,10 +48,15 @@ function Admin() {
   }, []);
 
   useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/restaurant`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/hotels`)
       .then((response) => response.json())
-      .then((data: Restaurant[]) => {
-        setNewRestaurant(data);
+      .then((data: Hotel[]) => {
+        setNewHotel(data);
+        fetch(`${import.meta.env.VITE_API_URL}/api/restaurant`)
+          .then((response) => response.json())
+          .then((data: Restaurant[]) => {
+            setNewRestaurant(data);
+          });
       });
   }, []);
 
@@ -125,18 +141,20 @@ function Admin() {
           </section>
         )}
 
+        <p className="add-attraction-admin">
+          <Link to="/admin/newhotel"> ➕ </Link> Ajouter un hotel{" "}
+        </p>
         {showHotels && (
-          <>
-            <article className="admin-attraction-title">
-              Pixel Paradise Hotel 📝 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Donkey Kong Jungle Resort 📝 🗑️
-            </article>
-            <article className="admin-attraction-title">
-              Mario & Friends Hotel 📝 🗑️
-            </article>
-          </>
+          <section className="admin-attraction-list">
+            {newHotel.map((hotel) => (
+              <article key={hotel.id} className="admin-attraction-title">
+                {hotel.name}
+                {""}
+                <Link to={`/admin/${hotel.id}/hotel/edit`}> 📝</Link>
+                <Link to={`/admin/${hotel.id}/hotel/delete`}> 🗑️</Link>
+              </article>
+            ))}
+          </section>
         )}
 
         {showRestaurants && (

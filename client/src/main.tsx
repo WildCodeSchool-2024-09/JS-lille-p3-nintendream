@@ -12,7 +12,6 @@ import Admin from "./pages/admin/Admin.tsx";
 import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
 import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
 import DeleteRestaurantForm from "./pages/admin/restaurant_admin/DeleteRestaurantForm.tsx";
-import EditRestaurantForm from "./pages/admin/restaurant_admin/EditRestaurantForm.tsx";
 import RestaurantForm from "./pages/admin/restaurant_admin/NewRestaurantForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
 import Confirmation from "./pages/confirmation/Confirmation.tsx";
@@ -25,13 +24,14 @@ import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
+
+import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
+import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
+import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
 import Profile from "./pages/profile/profile.tsx";
 import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
 
-/* ************************************************************************* */
-
-// Create router configuration with routes
 const router = createBrowserRouter([
   {
     path: "/",
@@ -102,13 +102,11 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/:id/delete/attractions",
+        path: "/admin/:id/delete",
         element: <DeleteAttractionForm />,
       },
-
-      // Admin - Restaurants
       {
-        path: "/admin/new/restaurant",
+        path: "/admin/newattraction",
         element: (
           <RestaurantForm
             defaultValue={{
@@ -124,22 +122,47 @@ const router = createBrowserRouter([
           />
         ),
       },
+
       {
-        path: "/admin/:id/edit/restaurant",
+        path: "/admin/:id/hotel/edit",
         element: (
-          <EditRestaurantForm
+          <EditHotelForm
             defaultValue={{
               id: 0,
-              name: "",
               img: "",
-              intro: "",
-              text: "",
-              adult_price: 0,
-              kids_price: 0,
+              name: "",
+              distance: "0",
+              hotel_price: "0",
+              description: "",
+              secondary_description: "",
+              tertiary_description: "",
             }}
             onSubmit={() => {}}
           />
         ),
+      },
+
+      {
+        path: "/admin/newhotel",
+        element: (
+          <NewHotelForm
+            defaultValue={{
+              id: 0,
+              img: "",
+              name: "",
+              distance: "0",
+              hotel_price: "0",
+              description: "",
+              secondary_description: "",
+              tertiary_description: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/:id/hotel/delete",
+        element: <DeletehotelForm />,
       },
       {
         path: "/admin/:id/delete/restaurant",
@@ -163,10 +186,3 @@ createRoot(rootElement).render(
     <RouterProvider router={router} />
   </StrictMode>,
 );
-
-/**
- * Helpful Notes:
- *
- * - Add more routes dynamically by defining new components and registering them in the router configuration.
- * - Utilize nested routes for organizing sections of your app efficiently.
- */

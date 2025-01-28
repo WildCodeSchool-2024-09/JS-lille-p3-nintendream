@@ -1,6 +1,15 @@
 import type { RequestHandler } from "express";
 import hotelRepository from "./hotelRepository";
 
+type newHotel = {
+  name: string;
+  distance: string;
+  hotelprice: string;
+  description: string;
+  secondary_description: string;
+  tertiary_description: string;
+};
+
 const browse: RequestHandler = async (req, res, next) => {
   try {
     const hotels = await hotelRepository.readAll();
@@ -11,10 +20,25 @@ const browse: RequestHandler = async (req, res, next) => {
   }
 };
 
-const read: RequestHandler = async (req, res, next) => {
+const readRoomsByHotelId: RequestHandler = async (req, res, next) => {
   try {
     const hotelId = Number(req.params.id);
     const hotel = await hotelRepository.getRoomsByHotelId(hotelId);
+
+    if (hotel == null) {
+      res.sendStatus(404);
+    } else {
+      res.json(hotel);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+const readHotelInfos: RequestHandler = async (req, res, next) => {
+  try {
+    const hotelId = Number(req.params.id);
+    const hotel = await hotelRepository.getHotelInfos(hotelId);
 
     if (hotel == null) {
       res.sendStatus(404);
@@ -101,4 +125,11 @@ const destroy: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read, edit, add, destroy };
+export default {
+  browse,
+  readRoomsByHotelId,
+  readHotelInfos,
+  edit,
+  add,
+  destroy,
+};
