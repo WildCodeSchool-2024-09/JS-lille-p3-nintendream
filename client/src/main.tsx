@@ -8,6 +8,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 import Admin from "./pages/admin/Admin.tsx";
+import AttractionDetails from "./pages/attractionDetails/AttractionDetails.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
 import EvenemementDetails from "./pages/evenements/EvenementDetails";
@@ -18,6 +19,7 @@ import Login from "./pages/login/Login";
 // import Restaurant from "./pages/pageRestaurant/Restaurant";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
+import Attraction from "./pages/pagesAttraction/PagesAttraction.tsx";
 
 // Import additional components for new routes
 // Try creating these components in the "pages" folder
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
     path: "/", // The root path
     element: <App />,
     children: [
+      {
+        path: "/attractionsdetails",
+        element: <AttractionDetails />,
+      },
+      {
+        path: "/attractions",
+        element: <Attraction />,
+      },
       {
         path: "/login",
         element: <Login />,

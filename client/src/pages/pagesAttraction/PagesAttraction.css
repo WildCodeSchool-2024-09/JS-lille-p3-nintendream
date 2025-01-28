@@ -17,10 +17,9 @@
 }
 
 .button-attraction {
-  text-align: end;
-  margin-right: 5%;
-  margin-left: 85%;
-  height: 20px;
+  display: flex;
+  margin-top: 5%;
+  justify-content: center;
 }
 
 .attraction {
@@ -53,6 +52,20 @@ h2 {
 .img-container-attraction {
   display: flex;
   justify-content: center;
+}
+
+.attractions-container {
+  display: flex;
+  width: 170%;
+  justify-content: space-around;
+  justify-items: center;
+  margin-left: -3%;
+}
+
+.attraction-title-texte {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10%;
 }
 
 .img-attraction2 {
