@@ -33,17 +33,12 @@ CREATE TABLE zone (
 
 CREATE TABLE restaurant (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(80) NOT NULL,
-    reservation VARCHAR(80),
-    price INT NOT NULL,
-    description VARCHAR(255) NOT NULL,
-    short_description VARCHAR(80) NOT NULL,
-    menu VARCHAR(80) NOT NULL,
-    schedule VARCHAR(80) NOT NULL,
-    state VARCHAR(80) NOT NULL,
-    img_src VARCHAR(300) NOT NULL,
-    zone_id INT NULL,
-    FOREIGN KEY (zone_id) REFERENCES zone(id)
+    name VARCHAR(255) NOT NULL,
+    img VARCHAR(255) NOT NULL,
+    intro TEXT NOT NULL,
+    text TEXT NOT NULL,
+    adult_price DECIMAL(10, 2) NOT NULL,
+    kids_price DECIMAL(10, 2) NOT NULL
 );
 
 CREATE TABLE hotel (
@@ -165,3 +160,25 @@ VALUES
     ('Bob', 'Brown', 35, 'bob.brown@example.com', 'bobbrown', 'password101'),
     ('Charlie', 'Davis', 40, 'charlie.davis@example.com', 'charliedavis', 'password202');
 
+
+INSERT INTO Restaurant (id, name, img, intro, text, adult_price, kids_price) VALUES
+(1, 'Champignon Gourmet', '/imgRestaurant/image1.webp', 
+ 'Plongez dans l’univers magique de Mario avec Le Champignon Gourmet, un restaurant où la gastronomie rencontre l’aventure ! Savourez des plats créatifs inspirés du Royaume Champignon : des pizzas en forme de Super Étoiles, des burgers aux pains colorés comme les blocs  et des desserts rappelant les célèbres champignons rouges et verts. Dans un décor immersif mêlant tuyaux géants, briques suspendues et musique entraînante, vivez une expérience culinaire unique qui ravira petits et grands aventuriers.', 
+ 'Un restaurant inspiré de l’univers de Mario, avec des plats en forme de champignons, d’étoiles ou de carapaces.', 
+ 29, 16),
+(2, 'Zelda''s Feast', '/imgRestaurant/image3.jpg', 
+ 'Zelda''s Feast vous invite à une expérience culinaire inspirée de l''univers magique de The Legend of Zelda. Plongez dans une ambiance médiévale avec des plats raffinés et traditionnels dignes des festins d''Hyrule. Savourez des mets savoureux tels que des viandes rôties, des soupes artisanales, et des desserts faits maison, préparés avec soin pour vous offrir une expérience gastronomique inoubliable. L''atmosphère chaleureuse et conviviale du restaurant vous transporte dans un cadre féerique, idéal pour les fans de la saga. Que vous soyez un adulte ou un enfant, Zelda''s Feast propose une expérience culinaire pour tous les âges.', 
+ 'Une ambiance médiévale avec des plats dignes des banquets d’Hyrule. Parfait pour les fans de la série The Legend of Zelda.', 
+ 19, 12),
+(3, 'Donkey Kong Grill', '/imgRestaurant/image2.webp', 
+ 'Donkey Kong Grill vous emmène au cœur d''une jungle tropicale où les saveurs exotiques prennent vie. Inspiré par l''univers de Donkey Kong, ce restaurant offre une expérience unique avec des plats savoureux à base de viandes grillées, de fruits frais et de légumes croquants. Dans une ambiance chaleureuse et décontractée, vous pourrez déguster des mets tels que des brochettes juteuses, des hamburgers aux saveurs authentiques et des spécialités aux accents tropicaux. Un véritable festin pour les amateurs de cuisine grillée, tout en étant plongé dans un cadre immersif à la manière de la célèbre jungle. Donkey Kong Grill est le lieu parfait pour un repas en famille ou entre amis, à tout moment de la journée.', 
+ 'Un barbecue tropical où les bananes et les saveurs exotiques sont à l’honneur, dans une ambiance de jungle.', 
+ 21, 18),
+(4, 'Kirby Snack''s World', '/imgRestaurant/image4.jpg', 
+ 'Kirby’s Snack’s World est un lieu magique et coloré inspiré par l’univers de Kirby, où les saveurs et les formes se rencontrent dans une explosion de gourmandise. Ce restaurant offre une variété de snacks et de desserts adorables qui rappellent les aventures du petit héros rose. Chaque plat est soigneusement conçu pour émerveiller vos papilles et votre imagination, avec des douceurs sucrées et salées aux couleurs vibrantes et aux formes amusantes. Que vous soyez fan de douceurs légères ou de petites bouchées ludiques, Kirby''s Snack''s World promet de satisfaire toutes vos envies de goûters délicieux et créatifs, le tout dans un cadre joyeux et dynamique.', 
+ 'Un lieu fun et coloré, proposant des desserts et en-cas aux formes adorables, inspirés de Kirby et de ses aventures.', 
+ 12, 9),
+(5, 'Pokemon Café', '/imgRestaurant/image5.jpg', 
+ 'Pokémon Café est un lieu unique où les saveurs et les personnages emblématiques de l''univers Pokémon se rencontrent dans un cadre ludique et chaleureux. Plongez dans une ambiance accueillante et découvrez une carte de plats et boissons inspirés par vos Pokémon préférés. Des cafés mignons aux plats délicieux, chaque élément du menu est pensé pour offrir une expérience gastronomique originale, avec des présentations soignées et des touches de fantaisie. Que vous soyez un dresseur chevronné ou un fan de longue date, Pokémon Café vous invite à savourer un moment magique tout en dégustant des créations gourmandes, originales et amusantes.', 
+ 'Des plats et boissons inspirés de vos Pokémon préférés, avec des présentations ludiques et originales.', 
+ 13, 11);

@@ -4,12 +4,12 @@ import type { Result, Rows } from "../../../database/client";
 
 type Restaurant = {
   id: number;
-  nom: string;
+  name: string;
   img: string;
   intro: string;
-  texte: string;
-  prix_adulte: number;
-  prix_enfants: number;
+  text: string;
+  adult_price: number;
+  kids_price: number;
 };
 class RestaurantRepository {
   async readAll() {
@@ -28,6 +28,39 @@ class RestaurantRepository {
 
     // Return the first row of the result, which represents the item
     return rows[0] as Restaurant;
+  }
+
+  async update(restaurant: Restaurant) {
+    const [result] = await databaseClient.query<Result>(
+      "update restaurant set name = ? where id = ?",
+      [restaurant.name, restaurant.id],
+    );
+
+    return result.affectedRows;
+  }
+
+  async create(restaurant: Omit<Restaurant, "id">) {
+    const [result] = await databaseClient.query<Result>(
+      "insert into restaurant (name, img,intro, text, adult_price, kids_price) values (?, ?, ?, ?, ?, ?)",
+      [
+        restaurant.name,
+        restaurant.img,
+        restaurant.intro,
+        restaurant.text,
+        restaurant.adult_price,
+        restaurant.kids_price,
+      ],
+    );
+    return result.insertId;
+  }
+
+  async delete(id: number) {
+    const [result] = await databaseClient.query<Result>(
+      "delete from restaurant where id = ?",
+      [id],
+    );
+
+    return result.affectedRows;
   }
 }
 
