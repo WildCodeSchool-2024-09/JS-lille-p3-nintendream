@@ -1,12 +1,15 @@
 import "./App.css";
 import { Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
+import { ThemeProvider } from "./services/ThemeContext";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <Outlet />
+      <ThemeProvider>
+        <NavBar />
+        <Outlet />
+      </ThemeProvider>
     </>
   );
 }
