@@ -36,7 +36,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     children: [
-
       { path: "/", element: <Homepage /> },
       { path: "/login", element: <Login /> },
       { path: "/billetterie", element: <Billetterie /> },
@@ -48,15 +47,12 @@ const router = createBrowserRouter([
       { path: "/confirmation", element: <Confirmation /> },
       {
         path: "/restaurants",
-        element: <Restaurant /> },
+        element: <Restaurant />,
+      },
       { path: "/restaurant/:id", element: <RestaurantDetails /> },
       { path: "/evenements", element: <Evenements /> },
       { path: "/evenements/:id", element: <EvenementDetails /> },
       { path: "/*", element: <ErrorPage /> },
-       {
-        path: "/register",
-        element: <Register />,
-      },
 
       // Admin - Attractions
 
@@ -146,8 +142,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-
-     
 ]);
 
 /* ************************************************************************* */
@@ -156,14 +150,10 @@ const router = createBrowserRouter([
 const rootElement = document.getElementById("root");
 if (rootElement == null) {
   throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
-  throw new Error(`Your HTML Document should contain a <div id="root"></div>`);
 }
 
 // Render the app inside the root element
 createRoot(rootElement).render(
-  <StrictMode>
-    <RouterProvider router={router} />
-  </StrictMode>,
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
