@@ -9,23 +9,23 @@ function RestaurantDetails() {
   return (
     <>
       <header className="header-allrestau">
-        <h1 className="title-allrestau">"{resto.nom}"</h1>
+        <h1 className="title-allrestau">"{resto.name}"</h1>
       </header>
       <body>
         <div className="img-container-allrestau">
           <img className="img-allrestau" src={resto.img} alt="" />
         </div>
-        <p className="texte-accro-allrestau">{resto.intro}</p>
+        <p className="text-accro-allrestau">{resto.intro}</p>
         <section className="card-container-allrestau">
           <div className="card-allrestau">
-            <h1>{resto.nom}</h1>
-            <p className="font-allrestau">{resto.texte}</p>
+            <h1>{resto.name}</h1>
+            <p className="font-allrestau">{resto.text}</p>
             <div className="white-box-allrestau">
               <div className="price-container-allrestau">
                 <div className="price-box-allrestau">
                   <b>
                     <p className="price-allrestau">
-                      {resto.prix_adulte}
+                      {resto.adult_price}
                       <p className="pricetwo-allrestau">€99</p>
                     </p>
                   </b>
@@ -37,7 +37,7 @@ function RestaurantDetails() {
                 <div className="price-box-allrestau">
                   <b>
                     <p className="price-allrestau">
-                      {resto.prix_enfants}{" "}
+                      {resto.kids_price}{" "}
                       <p className="pricetwo-allrestau">€99</p>
                     </p>
                   </b>

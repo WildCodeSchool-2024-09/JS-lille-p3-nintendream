@@ -1,14 +1,27 @@
 import "./HotelDetails.css";
-import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 
-interface RoomsProps {
-  id: number;
-  img: string;
+interface room {
   title: string;
+  img: string;
   description: string;
+  price: string;
+  link_title: string;
 }
 
 function HotelDetails() {
+  const { id } = useParams();
+  const [rooms, setrooms] = useState([] as room[]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/api/hotel/${id}/rooms`)
+      .then((response) => response.json())
+      .then((data: room[]) => {
+        setrooms(data);
+      });
+  }, [id]);
+
   const location = useLocation();
   const hotels = location.state;
 
@@ -21,7 +34,7 @@ function HotelDetails() {
           className="paradise-hotel-img"
         />
         <h1 className="hotel-name">{hotels.name}</h1>
-        <p className="hotel-description-img">{hotels.secondaryDescription}</p>
+        <p className="hotel-description-img">{hotels.secondary_description}</p>
       </section>
       <section className="hotel-details">
         <ul className="hotel-details-list">
@@ -36,18 +49,24 @@ function HotelDetails() {
       <section className="hotel-description">
         <h2 className="hotel-description-title">Notre hôtel</h2>
         <p className="hotel-description-details">
-          {hotels.tertiaryDescription}
+          {hotels.tertiary_description}
         </p>
       </section>
       <section className="hotel-rooms-container">
-        <h2 className="hotel-rooms-title">Nos chambres</h2>
+        <h2 className="hotel-description-title">Nos chambres</h2>
 
         <section className="hotel-rooms">
-          {hotels.rooms.map((room: RoomsProps) => (
+          {rooms.map((room: room) => (
             <section key={room.title} className="room-card">
               <img src={room.img} alt={room.title} className="room-card-img" />
-              <h3 className="room-card-title">{room.title}</h3>
+              <h2 className="room-card-title">{room.title}</h2>
               <p className="room-card-description">{room.description}</p>
+              <article className="white-box-room">
+                <p className="room-card-price">{room.price}</p>
+              </article>
+              <Link to={`/reservation/${room.link_title}`}>
+                <button type="button"> Réserver</button>
+              </Link>
             </section>
           ))}
         </section>

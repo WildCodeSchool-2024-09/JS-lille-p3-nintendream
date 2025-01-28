@@ -69,12 +69,10 @@ function Homepage() {
           src="../image/imageHomepage/Image-Mario.jpg"
           alt="Nintendream factice"
         />
-
         <section className="card-container-homepage-reservation">
           <div className="card-homepage-reservation">
             <p>Réservez à partir de 35€</p>
           </div>
-
           <div className="button-reservation-homepage">
             <Link to="billeterie" className="link-homepage-to-billeterie">
               <button type="button" className="button-homepage-reservation">
@@ -89,7 +87,18 @@ function Homepage() {
           <div className="card-new-attraction">
             <p>Découvrez la dernière attraction du parc</p>
           </div>
-
+          <div className="button-reservation-homepage">
+            <Link to="billeterie" className="link-homepage-to-billeterie">
+              <button type="button" className="button-homepage-reservation">
+                Je réserve !
+              </button>
+            </Link>
+          </div>
+        </section>
+        <section className="card-container-new-attraction">
+          <div className="card-new-attraction">
+            <p>Découvrez la dernière attraction du parc</p>
+          </div>
           <div className="button-new-attraction">
             <Link to="attractions" className="link-homepage-to-attractions">
               <button
@@ -108,7 +117,6 @@ function Homepage() {
               de nos spectacles
             </p>
           </div>
-
           <div className="button-events">
             <Link to="/évènements" className="link-homepage-to-events">
               <button type="submit" className="button-new-events">
@@ -121,7 +129,6 @@ function Homepage() {
           <div className="card-offers">
             <p>Profitez de nos dernières offres</p>
           </div>
-
           <div className="button-offers">
             <Link to="/billetterie" className="link-homepage-to-offers">
               <button type="submit" className="button-new-offers">
@@ -131,7 +138,6 @@ function Homepage() {
           </div>
         </section>
       </section>
-
       <section>
         {articles.map((article: Article) => (
           <div key={article.title} className="card-homepage">

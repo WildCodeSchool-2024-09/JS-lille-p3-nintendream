@@ -60,7 +60,7 @@ function EditAttractionForm({ defaultValue }: AttractionFormProps) {
         type="text"
         name="waiting_time"
         defaultValue={defaultValue.waiting_time}
-        placeholder="waiting time"
+        placeholder="temps d'attente"
         className="form-admin"
       />
       <input
@@ -107,7 +107,7 @@ function EditAttractionForm({ defaultValue }: AttractionFormProps) {
         className="form-admin"
       />
       <button type="submit" className="admin-form-button">
-        Submit
+        Modifier
       </button>
     </form>
   );
