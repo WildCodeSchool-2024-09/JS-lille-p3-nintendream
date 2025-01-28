@@ -209,8 +209,9 @@ function Admin() {
             </Link>
             {eventList.map((event) => (
               <article className="admin-attraction-title" key={event.id}>
-                {event.name}{" "}
-                <Link to={`/admin/${event.id}/edit/event`}>📝 </Link>🗑️
+                {event.name}
+                <Link to={`/admin/${event.id}/edit/event`}>📝 </Link>
+                <Link to={`/admin/${event.id}/delete/event`}>🗑️ </Link>
               </article>
             ))}
           </section>

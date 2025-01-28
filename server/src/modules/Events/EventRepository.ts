@@ -60,6 +60,13 @@ class EventRepository {
     );
     return result.affectedRows;
   }
+  async delete(id: number) {
+    const [result] = await databaseClient.query<Result>(
+      "DELETE FROM event WHERE id = ?",
+      [id],
+    );
+    return result.affectedRows;
+  }
 }
 
 export default new EventRepository();

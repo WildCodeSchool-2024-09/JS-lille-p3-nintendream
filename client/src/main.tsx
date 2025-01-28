@@ -25,6 +25,7 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 
+import EventDelete from "./pages/admin/Event/EventDelete.tsx";
 import EventEdit from "./pages/admin/Event/EventEdit.tsx";
 import NewEvent from "./pages/admin/Event/NewEvent.tsx";
 import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
@@ -180,6 +181,7 @@ const router = createBrowserRouter([
         path: "/admin/:id/edit/event",
         element: <EventEdit />,
       },
+      { path: "/admin/:id/delete/event", element: <EventDelete /> },
     ],
   },
 ]);
