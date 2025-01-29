@@ -54,10 +54,12 @@ const router = createBrowserRouter([
       { path: "/evenements", element: <Evenements /> },
       { path: "/evenements/:id", element: <EvenementDetails /> },
       { path: "/*", element: <ErrorPage /> },
+
       {
         path: "/register",
         element: <Register />,
       },
+
 
       // Admin - Attractions
 
