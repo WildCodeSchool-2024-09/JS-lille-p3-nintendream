@@ -10,11 +10,11 @@
   width: 100%;
   height: auto;
   margin: 0;
-  z-index: -1;
 }
 
 .card-container-homepage-reservation {
   background-color: var(--secondary-color);
+  position: absolute;
   color: white;
   height: 135%;
   width: 30%;
@@ -26,7 +26,6 @@
   height: 13rem;
   margin-top: -16rem;
   margin-bottom: 8rem;
-  z-index: 0;
   margin-left: 4rem;
   width: 22rem;
   font-size: 1.3rem;
@@ -284,8 +283,81 @@
 .card-description {
   font-size: larger;
   align-content: center;
-  margin: 5rem;
+  margin: 10rem;
+}
+
+.informations-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 5rem;
+}
+
+.informations-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--primary-color);
+  background-color: var(--secondary-color);
+  height: 30rem;
+  width: 21rem;
+  border-radius: 15px;
+  color: white;
+}
+
+.informations-img {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 15px;
+  display: flex;
+  align-self: center;
+  margin: 1rem;
+}
+
+.informations-title {
+  margin: 1rem;
+  text-align: center;
   font-size: 1.5rem;
+}
+
+.informations-description {
+  width: 16rem;
+  display: flex;
+  align-self: center;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+
+.light.homepage-main {
+  background-color: var(--primary-color);
+}
+
+.light.card-container-homepage-reservation,
+.light.card-container-new-attraction,
+.light.card-container-events,
+.light.card-container-offers,
+.light.informations-card {
+  background-color: var(--secondary-color);
+}
+
+.dark.homepage-main {
+  background-color: var(--primary-dark-color);
+}
+
+.light.link-article {
+  background-color: white;
+}
+
+.dark.link-article {
+  background-color: var(--tertiary-color);
+  color: white;
+}
+
+.dark.card-container-homepage-reservation,
+.dark.card-container-new-attraction,
+.dark.card-container-events,
+.dark.card-container-offers,
+.dark.informations-card {
+  background-color: var(--secondary-dark-color);
 }
 
 @media screen and (max-width: 464px) {
@@ -318,6 +390,8 @@
     margin-top: 5rem;
     background-color: #f0f0f0;
     border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px
+      rgba(0, 0, 0, 0.1);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px
       rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -373,6 +447,26 @@
     list-style: none;
     justify-content: space-evenly;
   }
+  .informations-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .informations-img {
+    height: 19rem;
+    width: 19rem;
+  }
+  .informations-card {
+    height: 36rem;
+  }
+  .informations-title {
+    font-size: 1.8rem;
+  }
+  .informations-description {
+    width: 18rem;
+    font-size: 1.4rem;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -384,6 +478,8 @@
     margin-top: 5rem;
     background-color: #f0f0f0;
     border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px
+      rgba(0, 0, 0, 0.1);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px
       rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
@@ -470,5 +566,23 @@
     margin-bottom: 5%;
     list-style: none;
     justify-content: space-evenly;
+  }
+
+  .informations-img {
+    height: 20rem;
+    width: 20rem;
+  }
+  .informations-card {
+    height: 40rem;
+    width: 24rem;
+  }
+  .informations-title {
+    font-size: 2rem;
+  }
+  .informations-description {
+    width: 22rem;
+    font-size: 1.7rem;
+    margin: 1rem;
+    line-height: 2.3rem;
   }
 }

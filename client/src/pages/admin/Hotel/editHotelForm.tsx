@@ -17,7 +17,7 @@ interface hotelFormProps {
   onSubmit: (hotel: hotelData) => void;
 }
 
-function EdithotelForm({ defaultValue }: hotelFormProps) {
+function EditHotelForm({ defaultValue }: hotelFormProps) {
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -93,10 +93,10 @@ function EdithotelForm({ defaultValue }: hotelFormProps) {
         className="form-admin"
       />
       <button type="submit" className="admin-form-button">
-        Submit
+        Modifier
       </button>
     </form>
   );
 }
 
-export default EdithotelForm;
+export default EditHotelForm;

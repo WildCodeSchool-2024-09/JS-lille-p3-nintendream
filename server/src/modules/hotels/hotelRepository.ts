@@ -26,9 +26,17 @@ class hotelRepository {
     return rows as hotel[];
   }
 
+  async getHotelInfos(id: number) {
+    const [rows] = await databaseClient.query<Rows>(
+      "select * from hotel where id = ?",
+      [id],
+    );
+    return rows[0] as hotel;
+  }
+
   async getRoomsByHotelId(id: number) {
     const [rows] = await databaseClient.query<Rows>(
-      "SELECT * FROM room INNER JOIN hotel ON hotel.id = room.hotel_id WHERE hotel.id = ?",
+      "SELECT * FROM room where hotel_id = ?",
       [id],
     );
     return rows as room[];

@@ -34,10 +34,11 @@ router.put("/api/attractions/:id", attractionActions.edit);
 router.post("/api/attractions", attractionActions.add);
 router.delete("/api/attractions/:id", attractionActions.destroy);
 
-router.get("/api/hotel", hotelActions.browse);
-router.get("/api/hotel/:id", hotelActions.read);
+router.get("/api/hotels", hotelActions.browse);
+router.get("/api/hotel/:id", hotelActions.readHotelInfos);
+router.get("/api/hotel/:id/rooms", hotelActions.readRoomsByHotelId);
 router.put("/api/hotel/:id", hotelActions.edit);
-router.post("/api/hotel", hotelActions.add);
+router.post("/api/hotels", hotelActions.add);
 router.delete("/api/hotel/:id", hotelActions.destroy);
 
 import UserActions from "./modules/user/userActions";

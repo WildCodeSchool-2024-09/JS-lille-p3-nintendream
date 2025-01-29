@@ -4,6 +4,7 @@ import "flatpickr/dist/themes/material_red.css";
 import "./Reservation.css";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+
 function Reservation() {
   const [priceMultiplier, setPriceMultiplier] = useState(0);
   const [personNumber, setPersonNumber] = useState(1);
