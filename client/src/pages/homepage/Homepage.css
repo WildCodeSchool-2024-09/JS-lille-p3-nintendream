@@ -10,6 +10,7 @@
   width: 100%;
   height: auto;
   margin: 0;
+  /* box-shadow: ; */
 }
 
 .card-container-homepage-reservation {
@@ -290,7 +291,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-bottom: 5rem;
 }
 
 .informations-card {
@@ -302,6 +302,7 @@
   width: 21rem;
   border-radius: 15px;
   color: white;
+  margin-bottom: 5rem;
 }
 
 .informations-img {

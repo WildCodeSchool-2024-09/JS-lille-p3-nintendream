@@ -50,3 +50,65 @@
   width: 60%;
   font-size: 1.3rem;
 }
+
+.light.event-details-main {
+  background-color: var(--primary-color);
+}
+
+.dark.event-details-main {
+  background-color: var(--primary-dark-color);
+}
+
+.light.event-details-title,
+.light.event-details-h2 {
+  color: black;
+  background-color: var(--primary-color);
+}
+
+.dark.event-details-title,
+.dark.event-details-h2 {
+  color: white;
+  background-color: var(--primary-dark-color);
+}
+
+.dark.event-details-description {
+  background-color: var(--secondary-dark-color);
+  color: white;
+}
+
+.light.event-details-description {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.light.event-details-schedule {
+  background-color: var(--primary-color);
+  color: black;
+  border-color: var(--secondary-color);
+}
+
+.dark.event-details-schedule {
+  background-color: var(--primary-dark-color);
+  color: white;
+  border-color: var(--secondary-dark-color);
+}
+
+.light.event-details-accroche {
+  color: black;
+  background-color: var(--primary-color);
+}
+
+.dark.event-details-accroche {
+  color: white;
+  background-color: var(--primary-dark-color);
+}
+
+.light.event-details-button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.dark.event-details-button {
+  background-color: var(--secondary-dark-color);
+  color: white;
+}

@@ -29,7 +29,7 @@ function NavBar() {
       <div className="logo-and-login">
         {theme === "light" ? (
           <img
-            src="./public/imgNav/sun-nav.png"
+            src="/imgNav/sun-nav.png"
             alt="sun"
             onClick={handleDarkTheme}
             onKeyUp={handleDarkTheme}
@@ -37,7 +37,7 @@ function NavBar() {
           />
         ) : (
           <img
-            src="./public/imgNav/moon-nav.png"
+            src="/imgNav/moon-nav.png"
             alt="moon"
             onClick={handleDarkTheme}
             onKeyUp={handleDarkTheme}
