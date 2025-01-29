@@ -7,10 +7,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import EditAttractionForm from "./pages/admin//Attraction/EditAttractionForm.tsx";
 import Admin from "./pages/admin/Admin.tsx";
 import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
 import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
-import EditAttractionForm from "./pages/admin//Attraction/EditAttractionForm.tsx";
 import DeleteRestaurantForm from "./pages/admin/restaurant_admin/DeleteRestaurantForm.tsx";
 import EditRestaurantForm from "./pages/admin/restaurant_admin/EditRestaurantForm.tsx";
 import RestaurantForm from "./pages/admin/restaurant_admin/NewRestaurantForm.tsx";
