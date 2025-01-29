@@ -1,5 +1,6 @@
-import "./Homepage.css";
+import { Link } from "import { UseTheme } import "./Homepage.css";
 import { Link } from "react-router-dom";
+import { UseTheme } from "../../services/ThemeContext";
 
 interface Article {
   image: string;
@@ -61,15 +62,26 @@ const informations = [
 ];
 
 function Homepage() {
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
+
   return (
-    <div>
+    <main className={`homepage-main ${theme}`}>
       <div className="image-with-title">
-        <img
-          className="image-homepage"
-          src="../image/imageHomepage/Image-Mario.jpg"
-          alt="Nintendream factice"
-        />
-        <section className="card-container-homepage-reservation">
+        {theme === "light" ? (
+          <img
+            className="image-homepage"
+            src="../image/imageHomepage/Image-Mario-day.webp"
+            alt="Nintendream factice"
+          />
+        ) : (
+          <img
+            className="image-homepage"
+            src="../image/imageHomepage/Image-Mario-night.webp"
+            alt="Nintendream factice"
+          />
+        )}
+        <section className={`card-container-homepage-reservation ${theme}`}>
           <div className="card-homepage-reservation">
             <p>Réservez à partir de 35€</p>
           </div>
@@ -83,7 +95,7 @@ function Homepage() {
         </section>
       </div>
       <section className="container-homepage">
-        <section className="card-container-new-attraction">
+        <section className={`card-container-new-attraction ${theme}`}>
           <div className="card-new-attraction">
             <p>Découvrez la dernière attraction du parc</p>
           </div>
@@ -95,7 +107,7 @@ function Homepage() {
             </Link>
           </div>
         </section>
-        <section className="card-container-new-attraction">
+        <section className={`card-container-new-attraction ${theme}`}>
           <div className="card-new-attraction">
             <p>Découvrez la dernière attraction du parc</p>
           </div>
@@ -110,7 +122,7 @@ function Homepage() {
             </Link>
           </div>
         </section>
-        <section className="card-container-events">
+        <section className={`card-container-events ${theme}`}>
           <div className="card-events">
             <p>
               Soyez enchantés par la magie <br />
@@ -125,7 +137,7 @@ function Homepage() {
             </Link>
           </div>
         </section>
-        <section className="card-container-offers">
+        <section className={`card-container-offers ${theme}`}>
           <div className="card-offers">
             <p>Profitez de nos dernières offres</p>
           </div>
@@ -135,14 +147,15 @@ function Homepage() {
                 Offres
               </button>
             </Link>
-          </div>
+          </div>{" "}
+          mala
         </section>
       </section>
       <section>
         {articles.map((article: Article) => (
           <div key={article.title} className="card-homepage">
             <div className="card-article">
-              <Link to={article.URL} className="link-article">
+              <Link to={article.URL} className={`link-article ${theme}`}>
                 <img
                   className="image-card-article"
                   src={article.image}
@@ -157,7 +170,10 @@ function Homepage() {
       </section>
       <section className="informations-container">
         {informations.map((information: Information) => (
-          <article key={information.title} className="informations-card">
+          <article
+            key={information.title}
+            className={`informations-card ${theme}`}
+          >
             <img
               src={information.img}
               alt="image-informations"
@@ -170,7 +186,7 @@ function Homepage() {
           </article>
         ))}
       </section>
-    </div>
+    </main>
   );
 }
 
