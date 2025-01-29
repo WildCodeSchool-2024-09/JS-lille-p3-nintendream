@@ -66,11 +66,11 @@ a {
   margin-left: 1rem;
 }
 
-.light {
+.light.whole-nav {
   background-color: var(--secondary-color);
 }
 
-.dark {
+.dark.whole-nav {
   background-color: var(--secondary-dark-color);
 }
 
