@@ -1,4 +1,4 @@
-import "./Homepage.css";
+import { Link } from "import { UseTheme } import "./Homepage.css";
 import { Link } from "react-router-dom";
 import { UseTheme } from "../../services/ThemeContext";
 
