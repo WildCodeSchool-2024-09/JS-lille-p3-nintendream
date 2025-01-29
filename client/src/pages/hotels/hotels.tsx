@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./hotels.css";
 import { useEffect, useState } from "react";
+import { UseTheme } from "../../services/ThemeContext";
 
 interface hotels {
   id: number;
@@ -15,6 +16,8 @@ interface hotels {
 
 function HotelsPage() {
   const [hotels, sethotelsProps] = useState([] as hotels[]);
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/hotels`)
@@ -26,8 +29,8 @@ function HotelsPage() {
 
   return (
     <>
-      <main className="hotels-container">
-        <h1 className="main-title-hotel">Nos hôtels</h1>
+      <main className={`hotels-container ${theme}`}>
+        <h1 className={`main-title-hotel ${theme}`}>Nos hôtels</h1>
         <p className="hotels-description">
           {" "}
           Découvez notre sélection d'hôtels ! Vous cherchez un hôtel familial
