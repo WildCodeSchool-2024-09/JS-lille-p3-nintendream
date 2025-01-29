@@ -8,6 +8,12 @@ interface Article {
   URL: string;
 }
 
+interface Information {
+  img: string;
+  title: string;
+  description: string;
+}
+
 const articles = [
   {
     title: "Hâte de venir ?",
@@ -17,27 +23,40 @@ const articles = [
     URL: "/billetterie",
   },
   {
-    title:
-      "Plongez dans un univers culinaire où vos rêves de gamer prennent vie !",
+    title: "Plongez dans un univers où vos rêves de gamer prennent vie !",
     description:
       "Chez Nintendream, nous vous offrons bien plus qu’un simple repas : une expérience inoubliable. Découvrez des plats thématiques inspirés de vos jeux préférés, des salles immersives aux décors époustouflants, et une ambiance ludique parfaite pour toute la famille. Que vous soyez fan de légendaires aventures ou adepte de courses effrénées, chaque plat et chaque détail de notre restaurant vous promet des surprises à la hauteur de votre passion pour le jeu.",
     image: "../image/Restaurant-Nintendream.webp",
     URL: "/restaurants",
   },
   {
-    title:
-      "Plongez dans un univers d'hôtels où vos rêves de gamer prennent vie !",
+    title: "Plongez dans un univers où vos rêves de gamer prennent vie !",
     description:
       "Chez Nintendream, nous vous offrons bien plus qu’un simple séjour : une expérience inoubliable. Découvrez des chambres thématiques inspirées de vos jeux préférés. Que vous soyez fan de légendaires aventures ou adepte de courses effrénées, chaque recoin de notre hôtel vous promet des surprises à la hauteur de votre passion pour le jeu.",
     image: "../image/imageHomepage/dunkey-kong-hotel.webp",
-    URL: "/hotels",
+    URL: "/hébergement",
   },
   {
     title: "Un Parc Accessible à Tous chez Nintendream 🎮",
     description:
       "Le parc Nintendream est conçu pour accueillir tous les visiteurs, avec des installations adaptées aux personnes à mobilité réduite et des services pour répondre à divers besoins. Des rampes, ascenseurs, et files prioritaires facilitent l’accès aux attractions, tandis que des casques antibruit et des panneaux tactiles améliorent l’expérience sensorielle. Notre personnel formé est à disposition pour accompagner chaque visiteur. Profitez d’une aventure inclusive et magique, sans limites ! 🌟",
-    image: "../image/imageHomepage/Mario-fauteuil.jpg",
+    image: "../image/imageHomepage/Accessibilite-handicape.jpg",
     URL: "/parc",
+  },
+];
+
+const informations = [
+  {
+    img: "./image/imageHomepage/mario-clock.jpeg",
+    title: "Horaires d'ouverture",
+    description:
+      "Vacances scolaires : 9h - 20h Hors période de vacances : 10h - 19h00",
+  },
+  {
+    img: "./image/imageHomepage/zelda-homepage.jpeg",
+    title: "Comment nous retrouver ?",
+    description:
+      "165 Avenue de Bretagne, Place Pierre de Saintignon, 59000 Lille",
   },
 ];
 
@@ -50,12 +69,10 @@ function Homepage() {
           src="../image/imageHomepage/Image-Mario.jpg"
           alt="Nintendream factice"
         />
-
         <section className="card-container-homepage-reservation">
           <div className="card-homepage-reservation">
             <p>Réservez à partir de 35€</p>
           </div>
-
           <div className="button-reservation-homepage">
             <Link to="billeterie" className="link-homepage-to-billeterie">
               <button type="button" className="button-homepage-reservation">
@@ -70,14 +87,25 @@ function Homepage() {
           <div className="card-new-attraction">
             <p>Découvrez la dernière attraction du parc</p>
           </div>
-
+          <div className="button-reservation-homepage">
+            <Link to="billeterie" className="link-homepage-to-billeterie">
+              <button type="button" className="button-homepage-reservation">
+                Je réserve !
+              </button>
+            </Link>
+          </div>
+        </section>
+        <section className="card-container-new-attraction">
+          <div className="card-new-attraction">
+            <p>Découvrez la dernière attraction du parc</p>
+          </div>
           <div className="button-new-attraction">
             <Link to="attractions" className="link-homepage-to-attractions">
               <button
                 type="button"
                 className="button-reservation-new-attraction"
               >
-                En savoir plus ...
+                En savoir plus...
               </button>
             </Link>
           </div>
@@ -89,9 +117,8 @@ function Homepage() {
               de nos spectacles
             </p>
           </div>
-
           <div className="button-events">
-            <Link to="/evenements" className="link-homepage-to-events">
+            <Link to="/évènements" className="link-homepage-to-events">
               <button type="submit" className="button-new-events">
                 Evènements
               </button>
@@ -102,7 +129,6 @@ function Homepage() {
           <div className="card-offers">
             <p>Profitez de nos dernières offres</p>
           </div>
-
           <div className="button-offers">
             <Link to="/billetterie" className="link-homepage-to-offers">
               <button type="submit" className="button-new-offers">
@@ -112,7 +138,6 @@ function Homepage() {
           </div>
         </section>
       </section>
-
       <section>
         {articles.map((article: Article) => (
           <div key={article.title} className="card-homepage">
@@ -128,6 +153,21 @@ function Homepage() {
               </Link>
             </div>
           </div>
+        ))}
+      </section>
+      <section className="informations-container">
+        {informations.map((information: Information) => (
+          <article key={information.title} className="informations-card">
+            <img
+              src={information.img}
+              alt="image-informations"
+              className="informations-img"
+            />
+            <h2 className="informations-title">{information.title}</h2>
+            <p className="informations-description">
+              {information.description}
+            </p>
+          </article>
         ))}
       </section>
     </div>

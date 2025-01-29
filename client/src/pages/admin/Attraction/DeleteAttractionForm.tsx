@@ -29,7 +29,7 @@ function DeleteAttractionForm() {
         action est irréversible ❌
       </h1>
       <button type="submit" className="admin-form-button">
-        Delete
+        Supprimer
       </button>
     </form>
   );
