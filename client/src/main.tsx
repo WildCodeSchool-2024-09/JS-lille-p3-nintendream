@@ -1,4 +1,4 @@
-// Import necessary modules from React and React Router
+// Impo// Import necessary modules from React and React Router
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -167,6 +167,7 @@ const router = createBrowserRouter([
       {
         path: "/admin/:id/delete/restaurant",
         element: <DeleteRestaurantForm />,
+
       },
     ],
   },

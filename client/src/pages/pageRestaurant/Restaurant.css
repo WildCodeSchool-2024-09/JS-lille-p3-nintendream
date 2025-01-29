@@ -59,11 +59,13 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 16px;
   margin-top: 5%;
+  max-height: fit-content;
 }
 .card-resto {
   background-color: #e60012;
-  width: 80%;
+  width: 320px;
   height: 480px;
   border-radius: 20px;
   position: relative;
@@ -165,4 +167,43 @@ a {
   justify-content: center;
   margin: 8% auto;
   width: 75%;
+}
+
+@media screen and (max-width: 464px) {
+  .title-resto {
+    font-size: 2.5rem;
+  }
+  .subtitle-resto {
+    font-size: 1.5rem;
+  }
+  .allcard-container-restaurant {
+    flex-direction: column;
+    justify-self: center;
+  }
+  .card-resto {
+    width: 250px;
+  }
+}
+
+@media (min-width: 840px) and (max-width: 1024px) {
+  .title-resto {
+    font-size: 3.5rem;
+  }
+  .subtitle-resto {
+    font-size: 2.5rem;
+  }
+  .card-resto {
+    width: 250px;
+  }
+}
+@media (min-width: 680px) and (max-width: 840px) {
+  .card-resto {
+    width: 200px;
+  }
+}
+@media (min-width: 464px) and (max-width: 680px) {
+  .allcard-container-restaurant {
+    flex-direction: column;
+    justify-self: center;
+  }
 }
