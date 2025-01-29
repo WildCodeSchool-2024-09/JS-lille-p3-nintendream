@@ -35,15 +35,15 @@ function Admin() {
 	const [showHotels, setShowHotels] = useState(false);
 	const [showRestaurants, setShowRestaurants] = useState(false);
 	const [showEvents, setShowEvents] = useState(false);
-	const [newAttraction, setNewAttraction] = useState([] as Attraction[]);
-	const [newHotel, setNewHotel] = useState([] as Hotel[]);
-	const [newRestaurant, setNewRestaurant] = useState([] as Restaurant[]);
+	const [attractionsList, setAttractionsList] = useState([] as Attraction[]);
+	const [hotelsList, setHotelsList] = useState([] as Hotel[]);
+	const [restaurantsList, setRestaurantsList] = useState([] as Restaurant[]);
 
 	useEffect(() => {
 		fetch(`${import.meta.env.VITE_API_URL}/api/attractions`)
 			.then((response) => response.json())
 			.then((data: Attraction[]) => {
-				setNewAttraction(data);
+				setAttractionsList(data);
 			});
 	}, []);
 
@@ -51,11 +51,11 @@ function Admin() {
 		fetch(`${import.meta.env.VITE_API_URL}/api/hotels`)
 			.then((response) => response.json())
 			.then((data: Hotel[]) => {
-				setNewHotel(data);
+				setHotelsList(data);
 				fetch(`${import.meta.env.VITE_API_URL}/api/restaurant`)
 					.then((response) => response.json())
 					.then((data: Restaurant[]) => {
-						setNewRestaurant(data);
+						setRestaurantsList(data);
 					});
 			});
 	}, []);
@@ -125,10 +125,12 @@ function Admin() {
 				{showAttractions && (
 					<section className="admin-attraction-list">
 						<p className="add-attraction-admin">
-							<Link to="/admin/new/attractions"> ✅ </Link> Ajouter une
-							attraction{" "}
+							<Link to="/admin/new/attractions">
+								{" "}
+								✅ Ajouter une attraction{" "}
+							</Link>
 						</p>
-						{newAttraction.map((attraction) => (
+						{attractionsList.map((attraction) => (
 							<article key={attraction.id} className="admin-attraction-title">
 								{attraction.name}{" "}
 								<Link to={`/admin/${attraction.id}/edit/attractions`}> 📝</Link>
@@ -140,30 +142,30 @@ function Admin() {
 						))}
 					</section>
 				)}
-
-				<p className="add-attraction-admin">
-					<Link to="/admin/newhotel"> ➕ </Link> Ajouter un hotel{" "}
-				</p>
-				{showHotels && (
-					<section className="admin-attraction-list">
-						{newHotel.map((hotel) => (
-							<article key={hotel.id} className="admin-attraction-title">
-								{hotel.name}
-								{""}
-								<Link to={`/admin/${hotel.id}/hotel/edit`}> 📝</Link>
-								<Link to={`/admin/${hotel.id}/hotel/delete`}> 🗑️</Link>
-							</article>
-						))}
-					</section>
-				)}
-
-				{showRestaurants && (
-					<>
-						<p className="add-restaurants-admin">
-							<Link to="/admin/new/restaurant"> ✅ </Link> Ajouter un restaurant{" "}
-						</p>
+				<section className="admin-hotel-list">
+					<p className="add-hotel-admin">
+						<Link to="/admin/newhotel" className="add-button-hotel"> ✅ Ajouter un hotel </Link>
+					</p>
+					{showHotels && (
+						<section className="admin-attraction-list">
+							{hotelsList.map((hotel) => (
+								<article key={hotel.id} className="admin-attraction-title">
+									{hotel.name}
+									{""}
+									<Link to={`/admin/${hotel.id}/hotel/edit`}> 📝</Link>
+									<Link to={`/admin/${hotel.id}/hotel/delete`}> 🗑️</Link>
+								</article>
+							))}
+						</section>
+					)}
+				</section>
+				<>
+					<p className="add-restaurants-admin">
+						<Link to="/admin/new/restaurant" className = "add-button-restaurant"> ✅ Ajouter un restaurant </Link>
+					</p>
+					{showRestaurants && (
 						<section className="admin-restaurants-list">
-							{newRestaurant.map((restaurant) => (
+							{restaurantsList.map((restaurant) => (
 								<article
 									key={restaurant.id}
 									className="admin-restaurants-title"
@@ -180,9 +182,8 @@ function Admin() {
 								</article>
 							))}
 						</section>
-					</>
-				)}
-
+					)}
+				</>
 				{showEvents && (
 					<>
 						<article className="admin-attraction-title">

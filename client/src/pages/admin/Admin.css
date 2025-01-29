@@ -1,21 +1,26 @@
 .main-admin {
-  display: flex;
-  flex-direction: row;
-  margin-top: 2rem;
-  justify-content: center;
+	display: flex;
+	flex-direction: row;
+	margin-top: 2rem;
+	justify-content: center;
+}
+
+.add-button-hotel,
+.add-button-restaurant {
+	color: black;
 }
 
 .admin-row1,
 .admin-row2 {
-  border: 2px solid black;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 15px;
-  width: 20rem;
+	border: 2px solid black;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 15px;
+	width: 20rem;
 }
 
 .admin-row2 {
-  width: 28rem;
+	width: 28rem;
 }
 
 .admin-attraction,
@@ -24,23 +29,23 @@
 .admin-events,
 .admin-restaurants,
 .admin-attraction-title {
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 15px;
-  border: 2px solid black;
-  width: 15rem;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 15px;
+	border: 2px solid black;
+	width: 15rem;
 }
 
 .admin-restaurants-title,
 .admin-attraction-title {
-  width: 23rem;
+	width: 23rem;
 }
 
 .admin-attraction:hover,
 .admin-restaurants:hover,
 .admin-hotels:hover,
 .admin-events:hover {
-  background-color: var(--secondary-color);
-  cursor: pointer;
-  opacity: 80%;
+	background-color: var(--secondary-color);
+	cursor: pointer;
+	opacity: 80%;
 }
