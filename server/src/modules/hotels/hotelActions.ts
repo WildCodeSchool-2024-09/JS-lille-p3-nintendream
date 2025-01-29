@@ -1,15 +1,6 @@
 import type { RequestHandler } from "express";
 import hotelRepository from "./hotelRepository";
 
-type newHotel = {
-  name: string;
-  distance: string;
-  hotelprice: string;
-  description: string;
-  secondary_description: string;
-  tertiary_description: string;
-};
-
 const browse: RequestHandler = async (req, res, next) => {
   try {
     const hotels = await hotelRepository.readAll();
@@ -53,10 +44,10 @@ const readHotelInfos: RequestHandler = async (req, res, next) => {
 const edit: RequestHandler = async (req, res, next) => {
   try {
     const hotel = {
-      id: req.body.id,
+      id: req.params.id,
       name: req.body.name,
       distance: req.body.distance,
-      hotelprice: req.body.hotelprice,
+      hotel_price: req.body.hotel_price,
       description: req.body.description,
       secondary_description: req.body.secondary_description,
       tertiary_description: req.body.tertiary_description,
@@ -87,8 +78,9 @@ const add: RequestHandler = async (req, res, next) => {
   try {
     const newHotel = {
       name: req.body.name,
+      img: req.body.img,
       distance: req.body.distance,
-      hotelprice: req.body.hotelprice,
+      hotel_price: req.body.hotel_price,
       description: req.body.description,
       secondary_description: req.body.secondary_description,
       tertiary_description: req.body.tertiary_description,
@@ -117,7 +109,7 @@ const destroy: RequestHandler = async (req, res, next) => {
   try {
     const hotelId = Number(req.params.id);
 
-    await hotelRepository.delete(hotelId);
+    await hotelRepository.deleteByHotelId(hotelId);
 
     res.sendStatus(204);
   } catch (err) {

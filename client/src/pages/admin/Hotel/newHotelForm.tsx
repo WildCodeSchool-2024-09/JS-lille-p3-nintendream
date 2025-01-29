@@ -35,8 +35,8 @@ function NewHotelForm({ defaultValue }: hotelFormProps) {
       body: JSON.stringify(newhotel),
     })
       .then((response) => response.json())
-      .then((data) => {
-        navigate(`/admin/hotels/${data.insertId}`);
+      .then(() => {
+        navigate("/admin");
       });
   };
 

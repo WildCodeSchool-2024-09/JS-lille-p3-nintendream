@@ -11,8 +11,8 @@ import EditAttractionForm from "./pages/admin//Attraction/EditAttractionForm.tsx
 import Admin from "./pages/admin/Admin.tsx";
 import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
 import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
-import DeleteRestaurantForm from "./pages/admin/restaurant_admin/DeleteRestaurantForm.tsx";
-import RestaurantForm from "./pages/admin/restaurant_admin/NewRestaurantForm.tsx";
+import DeleteRestaurantForm from "./pages/admin/restaurant/DeleteRestaurantForm.tsx";
+import RestaurantForm from "./pages/admin/restaurant/NewRestaurantForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
 import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
@@ -58,222 +58,116 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register />,
       },
+
+      // Admin - Attractions
+
       {
-        path: "/",
-        element: <App />,
-        children: [
-          { path: "/", element: <Homepage /> },
-          { path: "/login", element: <Login /> },
-          { path: "/billetterie", element: <Billetterie /> },
-          { path: "/hotels", element: <HotelsPage /> },
-          { path: "/hotel/:id", element: <HotelDetails /> },
-          { path: "/admin", element: <Admin /> },
-          { path: "/profile", element: <Profile /> },
-          { path: "/reservation/:name", element: <Reservation /> },
-          { path: "/confirmation", element: <Confirmation /> },
-          {
-            path: "/restaurants",
-            element: <Restaurant />,
-          },
-          { path: "/restaurant/:id", element: <RestaurantDetails /> },
-          { path: "/evenements", element: <Evenements /> },
-          { path: "/evenements/:id", element: <EvenementDetails /> },
-          { path: "/*", element: <ErrorPage /> },
-          {
-            path: "/register",
-            element: <Register />,
-          },
+        path: "/admin/new/attractions",
+        element: (
+          <AttractionForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              waiting_time: "0",
+              type: "",
+              description: "",
+              min_height: "",
+              zone_id: 0,
+              schedule: "",
+              state: "",
+              img_src: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/:id/edit",
+        element: (
+          <EditAttractionForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              waiting_time: "0",
+              type: "",
+              description: "",
+              min_height: "",
+              zone_id: 0,
+              schedule: "",
+              state: "",
+              img_src: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/:id/delete",
+        element: <DeleteAttractionForm />,
+      },
 
-          // Admin - Attractions
-          // Admin - Attractions
+      {
+        path: "/admin/:id/hotel/edit",
+        element: (
+          <EditHotelForm
+            defaultValue={{
+              id: 0,
+              img: "",
+              name: "",
+              distance: "0",
+              hotel_price: "0",
+              description: "",
+              secondary_description: "",
+              tertiary_description: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
 
-          {
-            path: "/admin/new/attractions",
-            element: (
-              <AttractionForm
-                defaultValue={{
-                  id: 0,
-                  name: "",
-                  waiting_time: "0",
-                  type: "",
-                  description: "",
-                  min_height: "",
-                  zone_id: 0,
-                  schedule: "",
-                  state: "",
-                  img_src: "",
-                }}
-                onSubmit={() => {}}
-              />
-            ),
-          },
-          {
-            path: "/admin/:id/edit",
-            element: (
-              <EditAttractionForm
-                defaultValue={{
-                  id: 0,
-                  name: "",
-                  waiting_time: "0",
-                  type: "",
-                  description: "",
-                  min_height: "",
-                  zone_id: 0,
-                  schedule: "",
-                  state: "",
-                  img_src: "",
-                }}
-                onSubmit={() => {}}
-              />
-            ),
-          },
-          {
-            path: "/admin/:id/delete",
-            element: <DeleteAttractionForm />,
-          },
-          {
-            path: "/admin/newattraction",
-            element: (
-              <RestaurantForm
-                defaultValue={{
-                  id: 0,
-                  name: "",
-                  img: "",
-                  intro: "",
-                  text: "",
-                  adult_price: 0,
-                  kids_price: 0,
-                }}
-                onSubmit={() => {}}
-              />
-            ),
-          },
-          {
-            path: "/admin/new/attractions",
-            element: (
-              <AttractionForm
-                defaultValue={{
-                  id: 0,
-                  name: "",
-                  waiting_time: "0",
-                  type: "",
-                  description: "",
-                  min_height: "",
-                  zone_id: 0,
-                  schedule: "",
-                  state: "",
-                  img_src: "",
-                }}
-                onSubmit={() => {}}
-              />
-            ),
-          },
-          {
-            path: "/admin/:id/edit",
-            element: (
-              <EditAttractionForm
-                defaultValue={{
-                  id: 0,
-                  name: "",
-                  waiting_time: "0",
-                  type: "",
-                  description: "",
-                  min_height: "",
-                  zone_id: 0,
-                  schedule: "",
-                  state: "",
-                  img_src: "",
-                }}
-                onSubmit={() => {}}
-              />
-            ),
-          },
-          {
-            path: "/admin/:id/delete",
-            element: <DeleteAttractionForm />,
-          },
-          {
-            path: "/admin/newattraction",
-            element: (
-              <RestaurantForm
-                defaultValue={{
-                  id: 0,
-                  name: "",
-                  img: "",
-                  intro: "",
-                  text: "",
-                  adult_price: 0,
-                  kids_price: 0,
-                }}
-                onSubmit={() => {}}
-              />
-            ),
-          },
+      {
+        path: "/admin/newhotel",
+        element: (
+          <NewHotelForm
+            defaultValue={{
+              id: 0,
+              img: "",
+              name: "",
+              distance: "0",
+              hotel_price: "0",
+              description: "",
+              secondary_description: "",
+              tertiary_description: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/:id/hotel/delete",
+        element: <DeletehotelForm />,
+      },
+      {
+        path: "/admin/newattraction",
+        element: (
+          <RestaurantForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              img: "",
+              intro: "",
+              text: "",
+              adult_price: 0,
+              kids_price: 0,
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/:id/delete/restaurant",
+        element: <DeleteRestaurantForm />,
 
-          {
-            path: "/admin/:id/hotel/edit",
-            element: (
-              <EditHotelForm
-                defaultValue={{
-                  id: 0,
-                  img: "",
-                  name: "",
-                  distance: "0",
-                  hotel_price: "0",
-                  description: "",
-                  secondary_description: "",
-                  tertiary_description: "",
-                }}
-                onSubmit={() => {}}
-              />
-            ),
-          },
-          {
-            path: "/admin/:id/hotel/edit",
-            element: (
-              <EditHotelForm
-                defaultValue={{
-                  id: 0,
-                  img: "",
-                  name: "",
-                  distance: "0",
-                  hotel_price: "0",
-                  description: "",
-                  secondary_description: "",
-                  tertiary_description: "",
-                }}
-                onSubmit={() => {}}
-              />
-            ),
-          },
-
-          {
-            path: "/admin/newhotel",
-            element: (
-              <NewHotelForm
-                defaultValue={{
-                  id: 0,
-                  img: "",
-                  name: "",
-                  distance: "0",
-                  hotel_price: "0",
-                  description: "",
-                  secondary_description: "",
-                  tertiary_description: "",
-                }}
-                onSubmit={() => {}}
-              />
-            ),
-          },
-          {
-            path: "/admin/:id/hotel/delete",
-            element: <DeletehotelForm />,
-          },
-          {
-            path: "/admin/:id/delete/restaurant",
-            element: <DeleteRestaurantForm />,
-          },
-        ],
       },
     ],
   },
