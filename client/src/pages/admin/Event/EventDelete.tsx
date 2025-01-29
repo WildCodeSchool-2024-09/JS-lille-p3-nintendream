@@ -8,7 +8,7 @@ function EventDelete() {
     <>
       <h1>
         {" "}
-        ❌ Êtes-vous sûr de vouloir supprimer l'attraction ? Attention ! Cette
+        ❌ Êtes-vous sûr de vouloir supprimer l'évènement ? Attention ! Cette
         action est irréversible ❌
       </h1>
       <EventDeleteForm id={numberId}>Supprimer</EventDeleteForm>
