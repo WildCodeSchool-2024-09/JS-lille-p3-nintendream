@@ -1,4 +1,4 @@
-// Import necessary modules from React and React Router
+// Impo// Import necessary modules from React and React Router
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -11,8 +11,8 @@ import EditAttractionForm from "./pages/admin//Attraction/EditAttractionForm.tsx
 import Admin from "./pages/admin/Admin.tsx";
 import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
 import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
-import DeleteRestaurantForm from "./pages/admin/restaurant_admin/DeleteRestaurantForm.tsx";
-import RestaurantForm from "./pages/admin/restaurant_admin/NewRestaurantForm.tsx";
+import DeleteRestaurantForm from "./pages/admin/restaurant/DeleteRestaurantForm.tsx";
+import RestaurantForm from "./pages/admin/restaurant/NewRestaurantForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
 import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
@@ -25,9 +25,11 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 
+
 import EventDelete from "./pages/admin/Event/EventDelete.tsx";
 import EventEdit from "./pages/admin/Event/EventEdit.tsx";
 import NewEvent from "./pages/admin/Event/NewEvent.tsx";
+
 import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
 import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
 import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
@@ -109,24 +111,6 @@ const router = createBrowserRouter([
         element: <DeleteAttractionForm />,
       },
       {
-        path: "/admin/newattraction",
-        element: (
-          <RestaurantForm
-            defaultValue={{
-              id: 0,
-              name: "",
-              img: "",
-              intro: "",
-              text: "",
-              adult_price: 0,
-              kids_price: 0,
-            }}
-            onSubmit={() => {}}
-          />
-        ),
-      },
-
-      {
         path: "/admin/:id/hotel/edit",
         element: (
           <EditHotelForm
@@ -168,12 +152,6 @@ const router = createBrowserRouter([
         element: <DeletehotelForm />,
       },
       {
-        path: "/admin/:id/delete/restaurant",
-        element: <DeleteRestaurantForm />,
-      },
-
-      //admin events
-      {
         path: "/admin/new/event",
         element: <NewEvent />,
       },
@@ -182,6 +160,28 @@ const router = createBrowserRouter([
         element: <EventEdit />,
       },
       { path: "/admin/:id/delete/event", element: <EventDelete /> },
+      {
+        path: "/admin/newattraction",
+        element: (
+          <RestaurantForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              img: "",
+              intro: "",
+              text: "",
+              adult_price: 0,
+              kids_price: 0,
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/:id/delete/restaurant",
+        element: <DeleteRestaurantForm />,
+
+      },
     ],
   },
 ]);

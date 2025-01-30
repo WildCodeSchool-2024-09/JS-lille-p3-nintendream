@@ -39,8 +39,8 @@ function AttractionForm({ defaultValue }: AttractionFormProps) {
       body: JSON.stringify(newAttraction),
     })
       .then((response) => response.json())
-      .then((data) => {
-        navigate(`/admin/attractions/${data.insertId}`);
+      .then(() => {
+        navigate("/admin");
       });
   };
 

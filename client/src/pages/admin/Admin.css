@@ -5,6 +5,11 @@
   justify-content: center;
 }
 
+.add-button-hotel,
+.add-button-restaurant {
+  color: black;
+}
+
 .admin-row1,
 .admin-row2 {
   border: 2px solid black;
