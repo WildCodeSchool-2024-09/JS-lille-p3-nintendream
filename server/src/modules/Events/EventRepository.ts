@@ -1,7 +1,6 @@
 import databaseClient from "../../../database/client";
 
 import type { Result, Rows } from "../../../database/client";
-import EventActions from "./EventActions";
 
 type Events = {
   id: number;
