@@ -13,6 +13,7 @@ const browse: RequestHandler = async (req, res, next) => {
     next(err);
   }
 };
+
 const read: RequestHandler = async (req, res, next) => {
   try {
     // Fetch a specific item based on the provided ID
@@ -31,4 +32,56 @@ const read: RequestHandler = async (req, res, next) => {
     next(err);
   }
 };
-export default { browse, read };
+
+const add: RequestHandler = async (req, res, next) => {
+  try {
+    const newEvent = {
+      name: req.body.name,
+      short_description: req.body.short_description,
+      description: req.body.description,
+      schedule: req.body.schedule,
+      img_src: req.body.img_src,
+      zone_id: req.body.zone_id,
+    };
+    const insertId = await EventRepository.create(newEvent);
+
+    res.status(201).json({ insertId });
+  } catch (err) {
+    next(err);
+  }
+};
+
+const edit: RequestHandler = async (req, res, next) => {
+  try {
+    const event = {
+      id: Number(req.params.id),
+      name: req.body.name,
+      short_description: req.body.short_description,
+      description: req.body.description,
+      schedule: req.body.schedule,
+      img_src: req.body.img_src,
+      zone_id: req.body.zone_id,
+    };
+    const affectedRows = await EventRepository.update(event);
+    if (affectedRows === 0) {
+      res.sendStatus(404);
+    } else {
+      res.sendStatus(204);
+    }
+  } catch (err) {
+    next(err);
+  }
+};
+
+const destroy: RequestHandler = async (req, res, next) => {
+  try {
+    const eventId = Number(req.params.id);
+
+    await EventRepository.delete(eventId);
+
+    res.sendStatus(204);
+  } catch (err) {
+    next(err);
+  }
+};
+export default { browse, read, add, edit, destroy };

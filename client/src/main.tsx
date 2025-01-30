@@ -11,6 +11,12 @@ import EditAttractionForm from "./pages/admin//Attraction/EditAttractionForm.tsx
 import Admin from "./pages/admin/Admin.tsx";
 import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
 import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
+import EventDelete from "./pages/admin/Event/EventDelete.tsx";
+import EventEdit from "./pages/admin/Event/EventEdit.tsx";
+import NewEvent from "./pages/admin/Event/NewEvent.tsx";
+import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
+import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
+import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
 import DeleteRestaurantForm from "./pages/admin/restaurant/DeleteRestaurantForm.tsx";
 import RestaurantForm from "./pages/admin/restaurant/NewRestaurantForm.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
@@ -24,10 +30,6 @@ import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
-
-import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
-import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
-import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
 import Profile from "./pages/profile/profile.tsx";
 import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
@@ -105,7 +107,6 @@ const router = createBrowserRouter([
         path: "/admin/:id/delete",
         element: <DeleteAttractionForm />,
       },
-
       {
         path: "/admin/:id/hotel/edit",
         element: (
@@ -148,6 +149,15 @@ const router = createBrowserRouter([
         element: <DeletehotelForm />,
       },
       {
+        path: "/admin/new/event",
+        element: <NewEvent />,
+      },
+      {
+        path: "/admin/:id/edit/event",
+        element: <EventEdit />,
+      },
+      { path: "/admin/:id/delete/event", element: <EventDelete /> },
+      {
         path: "/admin/newattraction",
         element: (
           <RestaurantForm
@@ -167,7 +177,6 @@ const router = createBrowserRouter([
       {
         path: "/admin/:id/delete/restaurant",
         element: <DeleteRestaurantForm />,
-
       },
     ],
   },
