@@ -106,6 +106,46 @@
   align-items: center;
 }
 
+.light.hotel-details-container {
+  background-color: var(--primary-color);
+}
+
+.dark.hotel-details-container {
+  background-color: var(--primary-dark-color);
+}
+
+.light.hotel-details {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+}
+
+.dark.hotel-details {
+  background-color: var(--secondary-dark-color);
+  color: white;
+  border: none;
+}
+
+.light.hotel-description-title {
+  color: black;
+}
+
+.dark.hotel-description-title {
+  color: white;
+}
+
+.light.room-card {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+}
+
+.dark.room-card {
+  background-color: var(--secondary-dark-color);
+  color: white;
+  border: none;
+}
+
 @media screen and (max-width: 464px) {
   .paradise-hotel-img {
     height: 50rem;
