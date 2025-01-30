@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./Restaurant.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -12,65 +13,24 @@ interface Restaurant {
   adult_price: number;
   kids_price: number;
 }
-const resto: Restaurant[] = [
-  {
-    id: 1,
-    name: "Champignon Gourmet",
-    img: "/imgRestaurant/image1.webp",
-    intro:
-      "Plongez dans l’univers magique de Mario avec Le Champignon Gourmet, un restaurant où la gastronomie rencontre l’aventure ! Savourez des plats créatifs inspirés du Royaume Champignon : des pizzas en forme de Super Étoiles, des burgers aux pains colorés comme les blocs  et des desserts rappelant les célèbres champignons rouges et verts. Dans un décor immersif mêlant tuyaux géants, briques suspendues et musique entraînante, vivez une expérience culinaire unique qui ravira petits et grands aventuriers.",
-    text: "Un restaurant inspiré de l’univers de Mario, avec des plats en forme de champignons, d’étoiles ou de carapaces.",
-    adult_price: 29,
-    kids_price: 16,
-  },
-  {
-    id: 2,
-    name: "Zelda's Feast",
-    img: "/imgRestaurant/image3.jpg",
-    intro:
-      "Zelda's Feast vous invite à une expérience culinaire inspirée de l'univers magique de The Legend of Zelda. Plongez dans une ambiance médiévale avec des plats raffinés et traditionnels dignes des festins d'Hyrule. Savourez des mets savoureux tels que des viandes rôties, des soupes artisanales, et des desserts faits maison, préparés avec soin pour vous offrir une expérience gastronomique inoubliable. L'atmosphère chaleureuse et conviviale du restaurant vous transporte dans un cadre féerique, idéal pour les fans de la saga. Que vous soyez un adulte ou un enfant, Zelda's Feast propose une expérience culinaire pour tous les âges.",
-    text: "Une ambiance médiévale avec des plats dignes des banquets d’Hyrule. Parfait pour les fans de la série The Legend of Zelda.",
-    adult_price: 19,
-    kids_price: 12,
-  },
-  {
-    id: 3,
-    name: "Donkey Kong Grill",
-    img: "/imgRestaurant/image2.webp",
-    intro:
-      "Donkey Kong Grill vous emmène au cœur d'une jungle tropicale où les saveurs exotiques prennent vie. Inspiré par l'univers de Donkey Kong, ce restaurant offre une expérience unique avec des plats savoureux à base de viandes grillées, de fruits frais et de légumes croquants. Dans une ambiance chaleureuse et décontractée, vous pourrez déguster des mets tels que des brochettes juteuses, des hamburgers aux saveurs authentiques et des spécialités aux accents tropicaux. Un véritable festin pour les amateurs de cuisine grillée, tout en étant plongé dans un cadre immersif à la manière de la célèbre jungle. Donkey Kong Grill est le lieu parfait pour un repas en famille ou entre amis, à tout moment de la journée.",
-    text: "Un barbecue tropical où les bananes et les saveurs exotiques sont à l’honneur, dans une ambiance de jungle.",
-    adult_price: 21,
-    kids_price: 18,
-  },
-  {
-    id: 4,
-    name: "Kirby Snack's World",
-    img: "/imgRestaurant/image4.jpg",
-    intro:
-      "Kirby’s Snack’s World est un lieu magique et coloré inspiré par l’univers de Kirby, où les saveurs et les formes se rencontrent dans une explosion de gourmandise. Ce restaurant offre une variété de snacks et de desserts adorables qui rappellent les aventures du petit héros rose. Chaque plat est soigneusement conçu pour émerveiller vos papilles et votre imagination, avec des douceurs sucrées et salées aux couleurs vibrantes et aux formes amusantes. Que vous soyez fan de douceurs légères ou de petites bouchées ludiques, Kirby's Snack's World promet de satisfaire toutes vos envies de goûters délicieux et créatifs, le tout dans un cadre joyeux et dynamique.",
-    text: "Un lieu fun et coloré, proposant des desserts et en-cas aux formes adorables, inspirés de Kirby et de ses aventures.",
-    adult_price: 12,
-    kids_price: 9,
-  },
-  {
-    id: 5,
-    name: "Pokemon Café",
-    img: "/imgRestaurant/image5.jpg",
-    intro:
-      "Pokémon Café est un lieu unique où les saveurs et les personnages emblématiques de l'univers Pokémon se rencontrent dans un cadre ludique et chaleureux. Plongez dans une ambiance accueillante et découvrez une carte de plats et boissons inspirés par vos Pokémon préférés. Des cafés mignons aux plats délicieux, chaque élément du menu est pensé pour offrir une expérience gastronomique originale, avec des présentations soignées et des touches de fantaisie. Que vous soyez un dresseur chevronné ou un fan de longue date, Pokémon Café vous invite à savourer un moment magique tout en dégustant des créations gourmandes, originales et amusantes.",
-    text: "Des plats et boissons inspirés de vos Pokémon préférés, avec des présentations ludiques et originales.",
-    adult_price: 13,
-    kids_price: 11,
-  },
-];
 
 function Restaurant() {
+  const [restaurants, setRestaurants] = useState([] as Restaurant[]);
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/api/restaurant`)
+      .then((response) => response.json())
+      .then((data: Restaurant[]) => {
+        setRestaurants(data);
+      })
+      .catch((error) => console.error("Erreur lors du fetch :", error));
+  }, []);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
       items: 3,
-      slidesToSlide: 1, // Smooth transition: only one item slides at a time
+      slidesToSlide: 1,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -160,7 +120,7 @@ function Restaurant() {
           </Carousel>
         </section>
         <section className="allcard-container-restaurant">
-          {resto.map((restaurant) => (
+          {restaurants.map((restaurant: Restaurant) => (
             <section key={restaurant.id} className="card-container-restaurant">
               <div className="card-resto">
                 <h1>{restaurant.name}</h1>
