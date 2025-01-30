@@ -27,7 +27,7 @@ function EditHotelForm({ defaultValue }: hotelFormProps) {
     const formData = new FormData(event.currentTarget);
     const edithotel = Object.fromEntries(formData.entries());
 
-    fetch(`${import.meta.env.VITE_API_URL}/api/hotels/${id}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/hotel/${id}`, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -35,7 +35,7 @@ function EditHotelForm({ defaultValue }: hotelFormProps) {
       body: JSON.stringify(edithotel),
     }).then((response) => {
       if (response.status === 204) {
-        navigate("/admin/hotels/${id}");
+        navigate("/admin");
       }
     });
   };
