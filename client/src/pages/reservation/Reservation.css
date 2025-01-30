@@ -78,3 +78,48 @@ span.flatpickr-weekday {
 .flatpickr-input {
   display: none;
 }
+
+.light.main-reservation {
+  background-color: var(--primary-color);
+}
+
+.dark.main-reservation {
+  background-color: var(--primary-dark-color);
+}
+
+.light.h1-reservation,
+.light.h2-reservation,
+.light.reservation-person-count {
+  color: black;
+}
+
+.dark.h1-reservation,
+.dark.h2-reservation,
+.dark.reservation-person-count {
+  color: white;
+}
+
+.light.reservation-button-more-less {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.dark.reservation-button-more-less {
+  background-color: var(--primary-dark-color);
+  color: white;
+  border-color: var(--secondary-dark-color);
+}
+
+.light.reservation-button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.dark.reservation-button {
+  background-color: var(--secondary-dark-color);
+  color: white;
+}
+
+.light.latpickr-light {
+  background-color: blue;
+}
