@@ -29,7 +29,6 @@ type Hotel = {
   description: string;
   secondary_description: string;
   tertiary_description: string;
-
 };
 type Events = {
   id: number;
@@ -51,7 +50,6 @@ function Admin() {
   const [attractionsList, setAttractionsList] = useState([] as Attraction[]);
   const [hotelsList, setHotelsList] = useState([] as Hotel[]);
   const [restaurantsList, setRestaurantsList] = useState([] as Restaurant[]);
-
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/attractions`)
@@ -81,10 +79,6 @@ function Admin() {
         setEventList(data);
       });
   }, []);
-
-        
-
-
 
   const handleAttractionClick = () => {
     setShowAttractions(!showAttractions);
@@ -169,7 +163,7 @@ function Admin() {
           </section>
         )}
 
-          {showHotels && (
+        {showHotels && (
           <section className="admin-hotel-list">
             <p className="add-hotel-admin">
               <Link to="/admin/newhotel" className="add-button-hotel">
@@ -204,10 +198,7 @@ function Admin() {
               <article key={restaurant.id} className="admin-restaurants-title">
                 {restaurant.name}{" "}
                 <Link to={`/admin/${restaurant.id}/edit/restaurant`}> 📝</Link>
-                <Link to={`/admin/${restaurant.id}/delete/restaurant`}>
-                  {" "}
-                  🗑️
-                </Link>
+                <Link to={`/admin/${restaurant.id}/delete/restaurant`}>🗑️</Link>
               </article>
             ))}
           </section>
@@ -226,7 +217,8 @@ function Admin() {
               </article>
             ))}
           </section>
-
+        )}
+      </section>
     </main>
   );
 }
