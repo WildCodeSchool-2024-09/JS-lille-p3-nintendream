@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Billetterie.css";
+import { UseTheme } from "../../services/ThemeContext";
 
 interface PricesProps {
   img: string;
@@ -46,9 +47,11 @@ const prices: PricesProps[] = [
 ];
 
 function Billetterie() {
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
   return (
-    <main className="billetterie-container">
-      <section className="billetterie-title-container">
+    <main className={`billetterie-container ${theme}`}>
+      <section className={`billetterie-title-container ${theme}`}>
         <h1 className="title-billetterie"> Nos différents tarifs</h1>
         <h2 className="subtitle-billetterie">
           {" "}
@@ -59,7 +62,7 @@ function Billetterie() {
 
       <section className="card-billetterie-container">
         {prices.map((price) => (
-          <article key={price.title} className="billetterie-card">
+          <article key={price.title} className={`billetterie-card ${theme}`}>
             <img src={price.img} alt="img" className="billetterie-card-img" />
             <h2 className="billetterie-card-title">{price.title}</h2>
             <p className="billetterie-availability">{price.availability}</p>
@@ -78,8 +81,11 @@ function Billetterie() {
           </article>
         ))}
       </section>
-      <h1 className="title-billetterie"> Les avantages des billets</h1>
-      <section className="billetterie-avantages-container">
+      <h1 className={`title-billetterie ${theme}`}>
+        {" "}
+        Les avantages des billets
+      </h1>
+      <section className={`billetterie-avantages-container ${theme}`}>
         <div className="billetterie-container">
           <img
             src="./public/image/img-billetterie4.png"
