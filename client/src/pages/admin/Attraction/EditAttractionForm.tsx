@@ -39,7 +39,7 @@ function EditAttractionForm({ defaultValue }: AttractionFormProps) {
       body: JSON.stringify(editAttraction),
     }).then((response) => {
       if (response.status === 204) {
-        navigate("/admin/attractions/${id}");
+        navigate("/admin");
       }
     });
   };

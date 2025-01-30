@@ -1,11 +1,7 @@
-body {
-  background-color: var(--primary-color);
-}
-
 .main-title-hotel {
   text-align: center;
-  margin: 2rem;
   font-size: 2.5rem;
+  padding-top: 2rem;
 }
 
 .hotels-description {
@@ -93,6 +89,35 @@ body {
   background-position: right center;
   background-color: #f76363;
   cursor: pointer;
+}
+
+.light.hotels-container {
+  background-color: var(--primary-color);
+}
+
+.dark.hotels-container {
+  background-color: var(--primary-dark-color);
+}
+
+.light.main-title-hotel,
+.light.hotels-description {
+  color: black;
+}
+
+.dark.main-title-hotel,
+.dark.hotels-description {
+  color: white;
+}
+
+.light.hotel-card {
+  background-color: var(--secondary-color);
+  border: none;
+  color: white;
+}
+
+.dark.hotel-card {
+  background-color: var(--secondary-dark-color);
+  border: none;
 }
 
 @media screen and (max-width: 464px) {

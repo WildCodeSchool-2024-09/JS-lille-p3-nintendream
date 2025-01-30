@@ -83,6 +83,7 @@ function Restaurant() {
       slidesToSlide: 1,
     },
   };
+
   return (
     <>
       <header className="header-restau">

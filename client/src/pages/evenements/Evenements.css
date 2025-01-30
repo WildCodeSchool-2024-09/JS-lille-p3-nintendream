@@ -59,6 +59,34 @@
   cursor: pointer;
 }
 
+.light.events-main {
+  background-color: var(--primary-color);
+}
+
+.dark.events-main {
+  background-color: var(--primary-dark-color);
+}
+
+.light.global-desc,
+.light.events-title {
+  color: black;
+  background-color: var(--primary-color);
+}
+
+.dark.global-desc,
+.dark.events-title {
+  color: white;
+  background-color: var(--primary-dark-color);
+}
+
+.light.events-card {
+  background-color: var(--secondary-color);
+}
+
+.dark.events-card {
+  background-color: var(--secondary-dark-color);
+}
+
 @media only screen and (max-width: 1024px) {
   .events-title {
     font-size: 1.5rem;
