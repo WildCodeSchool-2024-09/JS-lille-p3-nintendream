@@ -60,7 +60,6 @@ const router = createBrowserRouter([
         element: <Register />,
       },
 
-
       // Admin - Attractions
 
       {
@@ -104,11 +103,11 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/:id/delete",
+        path: "/admin/:id/delete/attractions",
         element: <DeleteAttractionForm />,
       },
       {
-        path: "/admin/newattraction",
+        path: "/admin/new/restaurant",
         element: (
           <RestaurantForm
             defaultValue={{
