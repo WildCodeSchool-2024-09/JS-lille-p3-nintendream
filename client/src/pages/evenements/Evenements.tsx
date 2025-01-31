@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Evenements.css";
 import { useEffect, useState } from "react";
+import { UseTheme } from "../../services/ThemeContext";
+
 type Events = {
   id: number;
   name: string;
@@ -12,6 +14,8 @@ type Events = {
 };
 function Evenements() {
   const [events, setEvents] = useState([] as Events[]);
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/events`)
@@ -22,9 +26,9 @@ function Evenements() {
   }, []);
 
   return (
-    <main className="events-main">
-      <h1 className="events-title">Évènements et spectacles</h1>
-      <h2 className="events-global-desc">
+    <main className={`events-main ${theme}`}>
+      <h1 className={`events-title ${theme}`}>Évènements et spectacles</h1>
+      <h2 className={`global-desc ${theme}`}>
         Lors de votre visite, vous pourrez assister sans frais supplémentaires à
         différents évènements et spectacles tous plus enchanteurs les uns que
         les autres ! <br />
@@ -33,7 +37,7 @@ function Evenements() {
       </h2>
       <div className="events-all-cards">
         {events?.map((event) => (
-          <div key={event.id} className="events-card">
+          <div key={event.id} className={`events-card ${theme}`}>
             <h3 className="events-card-title"> {event.name}</h3>
             <img src={event.img_src} className="events-picture" alt="" />
             <p className="events-shortdesc">{event.short_description}</p>

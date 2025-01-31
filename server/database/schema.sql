@@ -37,12 +37,13 @@ CREATE TABLE restaurant (
     img VARCHAR(255) NOT NULL,
     intro TEXT NOT NULL,
     text TEXT NOT NULL,
-    adult_price DECIMAL(10, 2) NOT NULL,
-    kids_price DECIMAL(10, 2) NOT NULL
+    adult_price INT NOT NULL,
+    kids_price INT NOT NULL
+
 );
 
 CREATE TABLE hotel (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     img VARCHAR(255),
     name VARCHAR(255),
     distance VARCHAR(50),
@@ -53,14 +54,14 @@ CREATE TABLE hotel (
 );
 
 CREATE TABLE room (
-    id INT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     hotel_id INT,
     img VARCHAR(255),
     title VARCHAR(255),
     description TEXT,
     price VARCHAR(50),
     link_title VARCHAR(255),
-    FOREIGN KEY (hotel_id) REFERENCES hotel(id)
+    FOREIGN KEY (hotel_id) REFERENCES hotel(id) ON DELETE CASCADE
 );
 
 CREATE TABLE event (
