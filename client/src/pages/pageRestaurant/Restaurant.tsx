@@ -3,6 +3,7 @@ import "./Restaurant.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Link } from "react-router-dom";
+import { UseTheme } from "../../services/ThemeContext";
 
 interface Restaurant {
   id: number;
@@ -16,6 +17,8 @@ interface Restaurant {
 
 function Restaurant() {
   const [restaurants, setRestaurants] = useState([] as Restaurant[]);
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/restaurant`)
@@ -46,20 +49,20 @@ function Restaurant() {
 
   return (
     <>
-      <header className="header-restau">
-        <h1 className="title-resto">
-          <b>
-            Des saveurs à la <br />
-            hauteur de vos <br /> aventures Nintendo . . .
-          </b>
-        </h1>
+      <main className={`restau-main ${theme}`}>
+        <header className="header-restau">
+          <h1 className="title-allresto">
+            <b>
+              Des saveurs à la <br />
+              hauteur de vos <br /> aventures Nintendo . . .
+            </b>
+          </h1>
 
-        <h2 className="subtitle-resto">
-          Offrez-vous une pause gourmande au cœur <br />
-          de l'aventure !
-        </h2>
-      </header>
-      <main>
+          <h2 className="subtitle-allresto">
+            Offrez-vous une pause gourmande au cœur <br />
+            de l'aventure !
+          </h2>
+        </header>
         <section className="section-carroussel">
           <Carousel
             swipeable={true} // Activer le swipe
@@ -79,7 +82,7 @@ function Restaurant() {
           >
             <div className="img-restau">
               <img
-                className="carroussel-resto"
+                className="carroussel-allresto"
                 src="/imgRestaurant/image1.webp"
                 alt=""
               />
@@ -87,7 +90,7 @@ function Restaurant() {
             </div>
             <div className="img-restau">
               <img
-                className="carroussel-resto"
+                className="carroussel-allresto"
                 src="/imgRestaurant/image2.webp"
                 alt=""
               />
@@ -95,7 +98,7 @@ function Restaurant() {
             </div>
             <div className="img-restau">
               <img
-                className="carroussel-resto"
+                className="carroussel-allresto"
                 src="/imgRestaurant/image3.jpg"
                 alt=""
               />
@@ -103,7 +106,7 @@ function Restaurant() {
             </div>
             <div className="img-restau">
               <img
-                className="carroussel-resto"
+                className="carroussel-allresto"
                 src="/imgRestaurant/image4.jpg"
                 alt=""
               />
@@ -111,7 +114,7 @@ function Restaurant() {
             </div>
             <div className="img-restau">
               <img
-                className="carroussel-resto"
+                className="carroussel-allresto"
                 src="/imgRestaurant/image5.jpg"
                 alt=""
               />
@@ -121,35 +124,35 @@ function Restaurant() {
         </section>
         <section className="allcard-container-restaurant">
           {restaurants.map((restaurant: Restaurant) => (
-            <section key={restaurant.id} className="card-container-restaurant">
-              <div className="card-resto">
+            <section key={restaurant.id} className="card-container-restaurant-">
+              <div className={`card-allresto ${theme}`}>
                 <h1>{restaurant.name}</h1>
-                <p className="font-resto">{restaurant.text}</p>
-                <div className="white-box-resto">
-                  <div className="price-container-resto">
-                    <div className="price-box-resto">
+                <p className="font-allresto">{restaurant.text}</p>
+                <div className={`white-box-allresto ${theme}`}>
+                  <div className={`price-container-allresto ${theme}`}>
+                    <div className={`price-box-allresto ${theme}`}>
                       <b>
-                        <p className="price-resto">
+                        <p className={`price-allresto ${theme}`}>
                           {restaurant.adult_price}{" "}
-                          <p className="pricetwo-resto">€99</p>
+                          <p className={`pricetwo-allresto ${theme}`}>€99</p>
                         </p>
                       </b>
-                      <p className="type-resto">
+                      <p className={`type-allresto ${theme}`}>
                         <b>Adulte</b>
                       </p>
-                      <p className="age-resto">+ de 14 ans</p>
+                      <p className="age-allresto">+ de 14 ans</p>
                     </div>
-                    <div className="price-box-resto">
+                    <div className={`price-box-allresto ${theme}`}>
                       <b>
-                        <p className="price-resto">
+                        <p className={`price-allresto ${theme}`}>
                           {restaurant.kids_price}{" "}
-                          <p className="pricetwo-resto">€99</p>
+                          <p className={`pricetwo-allresto ${theme}`}>€99</p>
                         </p>
                       </b>
-                      <p className="type-resto">
+                      <p className={`type-allresto ${theme}`}>
                         <b>Enfants</b>
                       </p>
-                      <p className="age-resto">- de 14 ans</p>
+                      <p className="age-allresto">- de 14 ans</p>
                     </div>
                   </div>
 
@@ -157,7 +160,7 @@ function Restaurant() {
                     <div className="button-restaurants">
                       <button
                         type="submit"
-                        className="button-reservation-resto"
+                        className={`button-reservation-allresto ${theme}`}
                       >
                         Réserver
                       </button>
@@ -169,7 +172,6 @@ function Restaurant() {
           ))}
         </section>
       </main>
-      ;
     </>
   );
 }

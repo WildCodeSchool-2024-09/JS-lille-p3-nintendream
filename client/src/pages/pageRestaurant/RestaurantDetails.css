@@ -1,16 +1,20 @@
 * {
   font-family: Josefin Sans, sans-serif;
 }
-.header-allrestau {
-  margin-top: 10%;
+
+.body-restau {
+  padding: 10%;
+}
+
+.header-restau {
   width: 100%;
 }
 
-.text-accro-allrestau {
+.text-accro-restau {
   margin: 3% 20% 5% 20%;
   font-size: 1.5rem;
 }
-.title-allrestau {
+.title-restau {
   font-size: 5rem;
   margin-bottom: 3%;
   margin-top: -5%;
@@ -19,26 +23,26 @@
   width: 100%;
 }
 
-.subtitle-allrestau {
+.subtitle-restau {
   font-size: 3rem;
   margin-bottom: 8%;
 }
 
-.img-allrestau {
+.img-restau {
   position: relative;
   display: inline-block;
   border-radius: 15%;
 }
 
-.img-container-allrestau {
+.img-container-restau {
   justify-content: center;
   display: flex;
 }
-.img-allrestau:hover {
+.img-restau:hover {
   filter: brightness(80%);
 }
 
-.card-allrestau {
+.card-restau {
   background-color: #e60012;
   width: 25%;
   height: 480px;
@@ -46,7 +50,7 @@
   position: relative;
 }
 
-.card-allrestau h1 {
+.card-restau h1 {
   display: flex;
   justify-content: space-around;
   padding: 5%;
@@ -54,18 +58,18 @@
   color: white;
 }
 
-.card-container-allrestau {
+.card-container-restau {
   display: flex;
   justify-content: center;
 }
 
-.font-allrestau {
+.font-restau {
   color: white;
   margin: 7%;
   font-size: 1.3rem;
 }
 
-.price-container-allrestau {
+.price-container-restau {
   background-color: white;
   margin: 1%;
   margin-top: 20%;
@@ -73,20 +77,20 @@
   border-radius: 20px;
   justify-content: space-evenly;
 }
-.price-box-allrestau {
+.price-box-restau {
   margin-top: -5%;
 }
 
-.price-allrestau {
+.price-restau {
   font-size: 2.5rem;
   display: flex;
   flex-direction: row;
 }
-.pricetwo-allrestau {
+.pricetwo-restau {
   font-size: 1rem;
 }
 
-.white-box-allrestau {
+.white-box-restau {
   background-color: white;
   width: 80%;
   margin: 10% auto;
@@ -100,14 +104,14 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.button-allrestau {
+.button-restau {
   margin-top: -2%;
   margin-bottom: 5%;
   display: flex;
   justify-content: center;
 }
 
-.button-reservation-allrestau {
+.button-reservation-restau {
   background-image: linear-gradient(
     to right,
     #e60012 0%,
@@ -126,7 +130,7 @@
   border: none;
 }
 
-.button-reservation-allrestau:hover {
+.button-reservation-restau:hover {
   background-position: right center;
   color: #fff;
   text-decoration: none;
@@ -134,8 +138,57 @@
 }
 
 footer {
-  margin-top: 5%;
-  margin-bottom: 2%;
+  padding: 2%;
   display: flex;
   justify-content: center;
+}
+
+.light.body-restau,
+.light.footer-restaurant {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.dark.body-restau,
+.dark.footer-restaurant {
+  background-color: var(--primary-dark-color);
+  color: white;
+}
+
+.light.card-restau {
+  background-color: var(--secondary-color);
+}
+
+.dark.card-restau {
+  background-color: var(--secondary-dark-color);
+}
+
+.light.white-box-restau,
+.light.price-container-restau {
+  background-color: white;
+  color: black;
+}
+
+.dark.white-box-restau,
+.dark.price-container-restau {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.light.button-reservation-restau {
+  background-image: linear-gradient(
+    to right,
+    #e60012 0%,
+    #e35d5b 51%,
+    #e60012 100%
+  );
+}
+
+.dark.button-reservation-restau {
+  background-image: linear-gradient(
+    to right,
+    #f04755 0%,
+    #c84745 48%,
+    #85010c 100%
+  );
 }
