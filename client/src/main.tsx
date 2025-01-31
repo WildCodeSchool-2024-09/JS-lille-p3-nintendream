@@ -25,13 +25,13 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 
+import Carte from "./pages/Carte/Carte.tsx";
 import DeleteHotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
 import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
 import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
 import Profile from "./pages/profile/profile.tsx";
 import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
-import Carte from "./pages/Carte/Carte.tsx";
 
 const router = createBrowserRouter([
   {
