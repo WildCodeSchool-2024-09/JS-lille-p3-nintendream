@@ -31,6 +31,7 @@ import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
 import Profile from "./pages/profile/profile.tsx";
 import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
+import Carte from "./pages/Carte/Carte.tsx";
 
 const router = createBrowserRouter([
   {
@@ -54,12 +55,11 @@ const router = createBrowserRouter([
       { path: "/evenements", element: <Evenements /> },
       { path: "/evenements/:id", element: <EvenementDetails /> },
       { path: "/*", element: <ErrorPage /> },
-
+      { path: "/carte", element: <Carte /> },
       {
         path: "/register",
         element: <Register />,
       },
-
 
       // Admin - Attractions
 
