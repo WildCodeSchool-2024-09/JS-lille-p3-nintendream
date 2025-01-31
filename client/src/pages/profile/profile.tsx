@@ -10,7 +10,7 @@ function Profile() {
         {theme === "light" ? (
           <img
             src="./imageProfil/herbe.webp"
-            alt="prè le jour"
+            alt="pré le jour"
             className="background-profile-light"
           />
         ) : (
