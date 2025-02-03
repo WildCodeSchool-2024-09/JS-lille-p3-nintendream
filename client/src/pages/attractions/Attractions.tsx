@@ -8,11 +8,11 @@ interface Attractions {
   name: string;
   img: string;
   waiting_time: number;
-  type_attraction: string;
+  type: string;
   min_height: number;
   zone_id: number;
   schedule: string;
-  description_attraction: string;
+  description: string;
   state: string;
 }
 
@@ -47,8 +47,8 @@ function Attractions() {
               />
               <div className="texte-card-attraction">
                 <h1>{attraction.name}</h1>
-                <p>{attraction.description_attraction}</p>
-                <p>Type : {attraction.type_attraction}</p>
+                <p>{attraction.description}</p>
+                <p>Type : {attraction.type}</p>
                 <p>Hauteur minimum : {attraction.min_height}</p>
               </div>
             </Link>
