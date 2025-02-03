@@ -44,7 +44,6 @@ function Admin() {
       .then((response) => response.json())
       .then((data: Attraction[]) => {
         setAttractionsList(data);
-
       });
   }, []);
 
