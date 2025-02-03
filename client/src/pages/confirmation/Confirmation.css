@@ -10,7 +10,7 @@
 .payment-main {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 3rem;
+  padding: 3rem;
 }
 
 .payment-img {
@@ -64,4 +64,52 @@
   font-size: 1.1rem;
   padding: 3px;
   margin-left: 0.5rem;
+}
+
+.light.payment-main {
+  background-color: var(--primary-color);
+}
+
+.dark.payment-main {
+  background-color: var(--primary-dark-color);
+}
+
+.light.payment-h2,
+.light.payment-label {
+  color: black;
+}
+
+.dark.payment-h2,
+.dark.payment-label {
+  color: white;
+}
+
+.light.payment-form,
+.light.payment-summary {
+  border-color: var(--secondary-color);
+}
+
+.dark.payment-form,
+.dark.payment-summary {
+  border-color: var(--secondary-dark-color);
+}
+
+.light.payment-input {
+  background-color: white;
+  border-color: var(--secondary-color);
+}
+
+.dark.payment-input {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-dark-color);
+}
+
+.light.payment-validate-button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.dark.payment-validate-button {
+  background-color: var(--secondary-dark-color);
+  color: white;
 }

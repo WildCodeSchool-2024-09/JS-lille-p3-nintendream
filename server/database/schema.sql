@@ -37,8 +37,9 @@ CREATE TABLE restaurant (
     img VARCHAR(255) NOT NULL,
     intro TEXT NOT NULL,
     text TEXT NOT NULL,
-    adult_price DECIMAL(10, 2) NOT NULL,
-    kids_price DECIMAL(10, 2) NOT NULL
+    adult_price INT NOT NULL,
+    kids_price INT NOT NULL
+
 );
 
 CREATE TABLE hotel (

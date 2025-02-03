@@ -1,10 +1,26 @@
 import "./profile.css";
+import { UseTheme } from "../../services/ThemeContext";
 
 function Profile() {
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
   return (
     <>
       <body className="body-profile">
-        <section className="box-container-profile">
+        {theme === "light" ? (
+          <img
+            src="./imageProfil/herbe.webp"
+            alt="pré le jour"
+            className="background-profile-light"
+          />
+        ) : (
+          <img
+            src="./imageProfil/herbe-nuit.webp"
+            alt="pré la nuit"
+            className="background-profile-dark"
+          />
+        )}
+        <section className={`box-container-profile ${theme}`}>
           <div>
             <h1 className="title-profile">Vos informations</h1>
           </div>
