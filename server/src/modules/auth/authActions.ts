@@ -1,6 +1,7 @@
 import argon2 from "argon2";
 import type { RequestHandler } from "express";
 import UserRepository from "../user/userRepository";
+import joi from "joi";
 
 const login: RequestHandler = async (req, res, next) => {
   try {
@@ -55,4 +56,24 @@ const hashedPassword: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { login, hashedPassword, register };
+const userSchema = joi.object({
+  id: joi.number().max(20).required(),
+  first_name: joi.string().max(255).required(),
+  name: joi.string().max(255).required(),
+  age: joi.number().max(3).required(),
+  mail: joi.string().max(255).required(),
+  username: joi.string().max(255).required(),
+  password: joi.string().max(255).required(),
+  role: joi.string().max(255).required(),
+});
+const validate: RequestHandler = (req, res, next) => {
+  const { error } = userSchema.validate(req.body, { abortEarly: false });
+
+  if (error == null) {
+    next();
+  } else {
+    res.status(400).json({ validationErrors: error.details });
+  }
+};
+
+export default { login, hashedPassword, register, validate };
