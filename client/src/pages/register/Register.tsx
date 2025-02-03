@@ -2,8 +2,11 @@ import "./Register.css";
 import type { FormEventHandler } from "react";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { UseTheme } from "../../services/ThemeContext";
 
 function Register() {
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
   const navigate = useNavigate();
 
   const mailRef = useRef<HTMLInputElement>(null);
@@ -49,11 +52,11 @@ function Register() {
   };
 
   return (
-    <main className="register-page">
+    <main className={`register-page ${theme}`}>
       <form className="register-form" onSubmit={handleSubmitRegister}>
-        <h2 className="register-h2"> S'inscrire</h2>
+        <h2 className={`register-h2 ${theme}`}> S'inscrire</h2>
         <input
-          className="register-input"
+          className={`register-input ${theme}`}
           type="text"
           name="connection-username"
           id="connection-username"
@@ -62,7 +65,7 @@ function Register() {
           ref={userRef}
         />
         <input
-          className="register-input"
+          className={`register-input ${theme}`}
           type="text"
           name="connection-first-name"
           id="connection-first-name"
@@ -71,7 +74,7 @@ function Register() {
           ref={firstNameRef}
         />
         <input
-          className="register-input"
+          className={`register-input ${theme}`}
           type="text"
           name="connection-name"
           id="connection-name"
@@ -80,7 +83,7 @@ function Register() {
           ref={nameRef}
         />
         <input
-          className="register-input"
+          className={`register-input ${theme}`}
           type="number"
           name="connection-age"
           id="connection-age"
@@ -89,7 +92,7 @@ function Register() {
           ref={ageRef}
         />
         <input
-          className="register-input"
+          className={`register-input ${theme}`}
           type="email"
           name="adresse-mail"
           id="adresse-mail"
@@ -98,7 +101,7 @@ function Register() {
           ref={mailRef}
         />
         <input
-          className="register-input"
+          className={`register-input ${theme}`}
           type="email"
           name="confirm-adresse-mail"
           id="confirm-adresse-mail"
@@ -107,7 +110,7 @@ function Register() {
           ref={confirmMailRef}
         />
         <input
-          className="register-input"
+          className={`register-input ${theme}`}
           type="password"
           name="inscription-password"
           id="inscription-password"
@@ -116,7 +119,7 @@ function Register() {
           ref={passwordRef}
         />
         <input
-          className="register-input"
+          className={`register-input ${theme}`}
           type="password"
           name="inscription-confirm-password"
           id="inscription-confirm-password"
@@ -124,7 +127,11 @@ function Register() {
           required
           ref={confirmPasswordRef}
         />
-        <input type="submit" value="Valider" className="register-submit" />
+        <input
+          type="submit"
+          value="Valider"
+          className={`register-submit ${theme}`}
+        />
       </form>
     </main>
   );
