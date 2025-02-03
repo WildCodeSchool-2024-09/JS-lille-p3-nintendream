@@ -1,17 +1,32 @@
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import { useState } from "react";
+import { UseTheme } from "../../services/ThemeContext";
+
 function NavBar() {
   const [menuBurgerToggle, setMenuBurgerToggle] = useState(false);
 
   function handleClick() {
     setMenuBurgerToggle(!menuBurgerToggle);
   }
+  const themeContext = UseTheme();
+  if (!themeContext) {
+    return null;
+  }
+
+  const { theme, setTheme } = themeContext;
+
+  const handleDarkTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
 
   return (
-    <header className="whole-nav">
+    <header className={`whole-nav ${theme}`}>
       <div className="logo-and-login">
-        <p className="login-p-left">Se connecter/S'inscrire</p>
         <button className="navbar-burger" onClick={handleClick} type="button">
           <span
             className={
@@ -41,6 +56,25 @@ function NavBar() {
             {""}
           </span>
         </button>
+        <div className={`dark-mode-logo ${theme}`}>
+          {theme === "light" ? (
+            <img
+              src="/imgNav/sun-nav.png"
+              alt="sun"
+              onClick={handleDarkTheme}
+              onKeyUp={handleDarkTheme}
+              className="sun-nav"
+            />
+          ) : (
+            <img
+              src="/imgNav/moon-nav.png"
+              alt="moon"
+              onClick={handleDarkTheme}
+              onKeyUp={handleDarkTheme}
+              className="moon-nav"
+            />
+          )}
+        </div>
         <Link to="/">
           <img
             src="/Logos/NintenDreamlogo.png"
@@ -64,8 +98,8 @@ function NavBar() {
             : "nav-ul navbar-burger-close"
         }
       >
-        <Link to="/parc">
-          <li className="nav-li">Parc</li>
+        <Link to="/">
+          <li className="nav-li">Accueil</li>
         </Link>
         <Link to="attractions">
           <li className="nav-li">Attractions</li>

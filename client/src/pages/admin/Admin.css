@@ -5,6 +5,11 @@
   justify-content: center;
 }
 
+.add-button-hotel,
+.add-button-restaurant {
+  color: black;
+}
+
 .admin-row1,
 .admin-row2 {
   border: 2px solid black;
@@ -43,4 +48,8 @@
   background-color: var(--secondary-color);
   cursor: pointer;
   opacity: 80%;
+}
+
+.add-events-admin {
+  color: black;
 }

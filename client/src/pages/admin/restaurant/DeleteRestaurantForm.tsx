@@ -14,7 +14,7 @@ function DeleteRestaurantForm() {
       method: "delete",
     }).then((response) => {
       if (response.status === 204) {
-        navigate("/restaurant");
+        navigate("/admin");
       }
     });
   };
