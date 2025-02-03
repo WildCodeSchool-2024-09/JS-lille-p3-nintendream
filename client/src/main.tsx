@@ -11,6 +11,9 @@ import EditAttractionForm from "./pages/admin//Attraction/EditAttractionForm.tsx
 import Admin from "./pages/admin/Admin.tsx";
 import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
 import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
+import EventDelete from "./pages/admin/Event/EventDelete.tsx";
+import EventEdit from "./pages/admin/Event/EventEdit.tsx";
+import NewEvent from "./pages/admin/Event/NewEvent.tsx";
 import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
 import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
 import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
@@ -151,6 +154,15 @@ const router = createBrowserRouter([
         element: <DeletehotelForm />,
       },
       {
+        path: "/admin/new/event",
+        element: <NewEvent />,
+      },
+      {
+        path: "/admin/:id/edit/event",
+        element: <EventEdit />,
+      },
+      { path: "/admin/:id/delete/event", element: <EventDelete /> },
+      {
         path: "/admin/newattraction",
         element: (
           <RestaurantForm
@@ -187,5 +199,5 @@ if (rootElement == null) {
 createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </StrictMode>
 );
