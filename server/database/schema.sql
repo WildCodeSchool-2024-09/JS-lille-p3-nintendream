@@ -22,11 +22,11 @@ CREATE TABLE zone (
         name VARCHAR(80) NOT NULL,
         img VARCHAR(255) NOT NULL,
         waiting_time VARCHAR(80) NOT NULL,
-        type_attraction VARCHAR(80) NOT NULL,
+        type VARCHAR(80) NOT NULL,
         min_height VARCHAR(80) NOT NULL,
         zone_id INT NULL,
         schedule VARCHAR(80) NOT NULL,
-        description_attraction TEXT NOT NULL,
+        description TEXT NOT NULL,
         state VARCHAR(80) NOT NULL,
         FOREIGN KEY (zone_id) REFERENCES zone(id)
     );
