@@ -1,7 +1,7 @@
 import argon2 from "argon2";
 import type { RequestHandler } from "express";
-import UserRepository from "../user/userRepository";
 import joi from "joi";
+import UserRepository from "../user/userRepository";
 
 const login: RequestHandler = async (req, res, next) => {
   try {
@@ -57,14 +57,33 @@ const hashedPassword: RequestHandler = async (req, res, next) => {
 };
 
 const userSchema = joi.object({
-  id: joi.number().max(20).required(),
-  first_name: joi.string().max(255).required(),
-  name: joi.string().max(255).required(),
-  age: joi.number().max(3).required(),
-  mail: joi.string().max(255).required(),
-  username: joi.string().max(255).required(),
-  password: joi.string().max(255).required(),
-  role: joi.string().max(255).required(),
+  first_name: joi.string().max(255).required().messages({
+    "string.empty": "Le prénom est requis",
+    "string.max": "Le prénom ne peut pas dépasser 255 caractères",
+  }),
+  name: joi.string().max(255).required().messages({
+    "string.empty": "Le nom est requis",
+    "string.max": "Le nom ne peut pas dépasser 255 caractères",
+  }),
+  age: joi.number().max(120).required().messages({
+    "number.base": "L'âge doit être un nombre",
+    "number.max": "L'âge ne peut pas dépasser 120 ans",
+    "any.required": "L'âge est requis",
+  }),
+  mail: joi.string().email().max(255).required().messages({
+    "string.email": "L'email doit être valide",
+    "string.empty": "L'email est requis",
+    "string.max": "L'email ne peut pas dépasser 255 caractères",
+    "any.required": "L'email est requis",
+  }),
+  username: joi.string().max(255).required().messages({
+    "string.empty": "Le nom d'utilisateur est requis",
+    "string.max": "Le nom d'utilisateur ne peut pas dépasser 255 caractères",
+  }),
+  password: joi.string().max(255).required().messages({
+    "string.empty": "Le mot de passe est requis",
+    "string.max": "Le mot de passe ne peut pas dépasser 255 caractères",
+  }),
 });
 const validate: RequestHandler = (req, res, next) => {
   const { error } = userSchema.validate(req.body, { abortEarly: false });
