@@ -352,10 +352,12 @@
   color: white;
   box-shadow: 0px 0px 10px var(--primary-color), 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
+
 .dark.card-homepage:hover {
   box-shadow: 6px 6px 15px var(--secondary-dark-color), -6px -6px 15px
     rgba(0, 0, 0, 0.2);
 }
+
 .dark.card-container-homepage-reservation,
 .dark.card-container-new-attraction,
 .dark.card-container-events,
@@ -363,6 +365,7 @@
 .dark.informations-card {
   background-color: var(--secondary-dark-color);
 }
+
 .dark.informations-card {
   border: none;
 }
