@@ -97,7 +97,7 @@ INSERT INTO zone (name, `character`,parade, img_src) VALUES
 ('Pokémon', 'Pikachu, Bulbizarre, Salamèche, Carapuce', 'Pokémon Parade : Attrapez-les tous !', ''),
 ('Kirby', 'Kirby, Meta Knight, Roi Dadidou', 'Kirby Parade : L"Étoile Magique"', '');
 
-INSERT INTO attraction ( name, img, waiting_time, type_attraction, min_height, schedule, state, description_attraction) VALUES
+INSERT INTO attraction ( name, img, waiting_time, type, min_height, schedule, state, description) VALUES
 ( 'Mario Kart Racing', '/image/attractions/MarioKartRacing.jpeg', '45 min', 'SENSATION FORTE', '120 cm', '9h - 22h', 'Ouvert', 'Vivez l’intensité d’une course effrénée inspirée de Mario Kart avec des virages serrés et des obstacles interactifs.'),
 ( 'Bowser’s Castle Escape', '/image/attractions/Bowser’s Castle Escape (1).jpeg', '30 min', 'SENSATION FORTE', '100 cm', '9h - 22h', 'Ouvert', 'Traversez les pièges du château de Bowser dans une aventure immersive pleine de rebondissements.'),
 ( 'Peach’s Garden Adventure', '/image/attractions/PeachGardenAdventure.jpg', '15 min', 'ENFANT', '90 cm', '9h - 22h', 'Ouvert', 'Un manège féérique au milieu des fleurs magiques du jardin de Peach.'),
