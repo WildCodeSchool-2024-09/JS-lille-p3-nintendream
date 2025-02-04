@@ -75,7 +75,7 @@ function Reservation() {
   }
 
   function handleAlert() {
-    alert("Veuillez sélectionnez une date");
+    alert("Veuillez sélectionner une date");
   }
 
   return (
