@@ -19,6 +19,8 @@ import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
 import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
 import DeleteRestaurantForm from "./pages/admin/restaurant/DeleteRestaurantForm.tsx";
 import RestaurantForm from "./pages/admin/restaurant/NewRestaurantForm.tsx";
+import AttractionDetails from "./pages/attractionDetails/AttractionDetails.tsx";
+import Attractions from "./pages/attractions/Attractions.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
 import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
@@ -41,6 +43,8 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Homepage /> },
       { path: "/login", element: <Login /> },
+      { path: "/attractions", element: <Attractions /> },
+      { path: "/attraction/:id", element: <AttractionDetails /> },
       { path: "/billetterie", element: <Billetterie /> },
       { path: "/hotels", element: <HotelsPage /> },
       { path: "/hotel/:id", element: <HotelDetails /> },
@@ -107,6 +111,7 @@ const router = createBrowserRouter([
         path: "/admin/:id/delete",
         element: <DeleteAttractionForm />,
       },
+
       {
         path: "/admin/:id/hotel/edit",
         element: (
@@ -195,4 +200,5 @@ createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
+
 );

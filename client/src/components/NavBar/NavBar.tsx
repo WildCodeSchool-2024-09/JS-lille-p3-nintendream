@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../services/userContext";
 import { UseTheme } from "../../services/ThemeContext";
 
 function NavBar() {
@@ -9,6 +10,8 @@ function NavBar() {
   function handleClick() {
     setMenuBurgerToggle(!menuBurgerToggle);
   }
+
+  const userContext = useContext(UserContext);
   const themeContext = UseTheme();
   if (!themeContext) {
     return null;
@@ -24,27 +27,12 @@ function NavBar() {
     }
   };
 
+  if (!userContext) {
+    throw new Error("UserContext is null");
+  }
   return (
     <header className={`whole-nav ${theme}`}>
       <div className="logo-and-login">
-        {theme === "light" ? (
-          <img
-            src="/imgNav/sun-nav.png"
-            alt="sun"
-            onClick={handleDarkTheme}
-            onKeyUp={handleDarkTheme}
-            className="sun-nav"
-          />
-        ) : (
-          <img
-            src="/imgNav/moon-nav.png"
-            alt="moon"
-            onClick={handleDarkTheme}
-            onKeyUp={handleDarkTheme}
-            className="moon-nav"
-          />
-        )}
-        <p className="login-p-left">Se connecter/S'inscrire</p>
         <button className="navbar-burger" onClick={handleClick} type="button">
           <span
             className={
@@ -74,6 +62,25 @@ function NavBar() {
             {""}
           </span>
         </button>
+        <div className={`dark-mode-logo ${theme}`}>
+          {theme === "light" ? (
+            <img
+              src="/imgNav/sun-nav.png"
+              alt="sun"
+              onClick={handleDarkTheme}
+              onKeyUp={handleDarkTheme}
+              className="sun-nav"
+            />
+          ) : (
+            <img
+              src="/imgNav/moon-nav.png"
+              alt="moon"
+              onClick={handleDarkTheme}
+              onKeyUp={handleDarkTheme}
+              className="moon-nav"
+            />
+          )}
+        </div>
         <Link to="/">
           <img
             src="/Logos/NintenDreamlogo.png"
@@ -81,14 +88,24 @@ function NavBar() {
             className="nintendreamlogo"
           />
         </Link>
-        <Link to="/login" className="nav-link">
-          <p className="login-p-right">Se connecter/S'inscrire</p>
-          <img
-            src="/Logos/connexion.png"
-            alt="mon compte"
-            className="login-favicon"
-          />
-        </Link>
+        {userContext.user ? (
+          <Link to="/profile">
+            <img
+              src="/imgNav/profile.png"
+              alt="profile logo"
+              className="profile-image"
+            />
+          </Link>
+        ) : (
+          <Link to="/login" className="nav-link">
+            <p className="login-p-right">Se connecter/S'inscrire</p>
+            <img
+              src="/Logos/connexion.png"
+              alt="mon compte"
+              className="login-favicon"
+            />
+          </Link>
+        )}
       </div>
       <ul
         className={
@@ -97,8 +114,8 @@ function NavBar() {
             : "nav-ul navbar-burger-close"
         }
       >
-        <Link to="/parc">
-          <li className="nav-li">Parc</li>
+        <Link to="/">
+          <li className="nav-li">Accueil</li>
         </Link>
         <Link to="attractions">
           <li className="nav-li">Attractions</li>
