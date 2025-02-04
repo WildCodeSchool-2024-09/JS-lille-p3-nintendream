@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 import { useContext, useState } from "react";
-import { UserContext } from "../../services/userContext";
 import { UseTheme } from "../../services/ThemeContext";
+import { UserContext } from "../../services/UserContext";
 
 function NavBar() {
   const [menuBurgerToggle, setMenuBurgerToggle] = useState(false);
