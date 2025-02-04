@@ -1,22 +1,35 @@
 function cleanDate(date: string) {
   const pushDate = [];
+
   if (date.includes(",")) {
     const halfSplit = date.split(",");
-    const splitDate1 = date.split(" ");
-    const splitDate2 = halfSplit[1].split(" ");
 
-    pushDate.push(
-      "du",
-      splitDate1[0],
-      splitDate1[2],
-      splitDate1[1],
-      splitDate1[3],
-      "au",
-      splitDate2[0],
-      splitDate2[2],
-      splitDate2[1],
-      splitDate2[3],
-    );
+    if (halfSplit[0] === halfSplit[1]) {
+      const splitDate = date.split(" ");
+      pushDate.push(
+        "le",
+        splitDate[0],
+        splitDate[2],
+        splitDate[1],
+        splitDate[3],
+      );
+    } else {
+      const splitDate1 = date.split(" ");
+      const splitDate2 = halfSplit[1].split(" ");
+
+      pushDate.push(
+        "du",
+        splitDate1[0],
+        splitDate1[2],
+        splitDate1[1],
+        splitDate1[3],
+        "au",
+        splitDate2[0],
+        splitDate2[2],
+        splitDate2[1],
+        splitDate2[3],
+      );
+    }
   } else {
     const splitDate = date.split(" ");
     pushDate.push("le", splitDate[0], splitDate[2], splitDate[1], splitDate[3]);
