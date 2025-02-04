@@ -1,7 +1,7 @@
 import express from "express";
-import RestaurantAction from "./modules/item/RestaurantAction";
-
 import EventActions from "./modules/Events/EventActions";
+import hotelActions from "./modules/hotels/hotelActions";
+import RestaurantAction from "./modules/item/RestaurantAction";
 
 const router = express.Router();
 
@@ -9,11 +9,19 @@ const router = express.Router();
 // Define Your API Routes Here
 /* ************************************************************************* */
 
+router.get("/api/restaurant", RestaurantAction.browse);
+
 router.get("/api/restaurant/:id", RestaurantAction.read);
+router.put("/api/restaurant/:id", RestaurantAction.edit);
+router.post("/api/restaurant", RestaurantAction.add);
+router.delete("/api/restaurant/:id", RestaurantAction.destroy);
 
 router.get("/api/events", EventActions.browse);
 router.get("/api/events/:id", EventActions.read);
-router.get("/api/restaurant/:id", RestaurantAction.read);
+router.post("/api/events", EventActions.add);
+router.put("/api/events/:id", EventActions.edit);
+router.delete("/api/events/:id", EventActions.destroy);
+
 router.get("api/profile/:id", ProfileAction.read);
 
 // Define item-related routes
@@ -28,6 +36,13 @@ router.get("/api/attractions/:id", attractionActions.read);
 router.put("/api/attractions/:id", attractionActions.edit);
 router.post("/api/attractions", attractionActions.add);
 router.delete("/api/attractions/:id", attractionActions.destroy);
+
+router.get("/api/hotels", hotelActions.browse);
+router.get("/api/hotel/:id", hotelActions.readHotelInfos);
+router.get("/api/hotel/:id/rooms", hotelActions.readRoomsByHotelId);
+router.put("/api/hotel/:id", hotelActions.edit);
+router.post("/api/hotels", hotelActions.add);
+router.delete("/api/hotel/:id", hotelActions.destroy);
 
 import UserActions from "./modules/user/userActions";
 

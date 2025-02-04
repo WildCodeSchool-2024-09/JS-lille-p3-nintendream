@@ -19,7 +19,7 @@ interface AttractionFormProps {
   onSubmit: (attraction: AttractionData) => void;
 }
 
-function AttractionFrom({ defaultValue }: AttractionFormProps) {
+function AttractionForm({ defaultValue }: AttractionFormProps) {
   const navigate = useNavigate();
 
   const handleSubmitNewAttraction = (
@@ -39,8 +39,8 @@ function AttractionFrom({ defaultValue }: AttractionFormProps) {
       body: JSON.stringify(newAttraction),
     })
       .then((response) => response.json())
-      .then((data) => {
-        navigate(`/admin/attractions/${data.insertId}`);
+      .then(() => {
+        navigate("/admin");
       });
   };
 
@@ -104,10 +104,10 @@ function AttractionFrom({ defaultValue }: AttractionFormProps) {
         className="form-admin"
       />
       <button type="submit" className="admin-form-button">
-        Submit
+        Ajouter
       </button>
     </form>
   );
 }
 
-export default AttractionFrom;
+export default AttractionForm;

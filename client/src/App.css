@@ -4,6 +4,8 @@
   --primary-color: #feffea;
   --secondary-color: #e60012;
   --tertiary-color: #424242;
+  --primary-dark-color: #1c1b1b;
+  --secondary-dark-color: #8b0000;
   --font-family: Josefin Sans, sans-serif;
 }
 
@@ -12,4 +14,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-color);
 }

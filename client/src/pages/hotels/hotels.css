@@ -1,11 +1,7 @@
-body {
-  background-color: var(--primary-color);
-}
-
 .main-title-hotel {
   text-align: center;
-  margin: 2rem;
   font-size: 2.5rem;
+  padding-top: 2rem;
 }
 
 .hotels-description {
@@ -76,16 +72,52 @@ body {
 }
 
 .hotel-card-button {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  border-radius: 15px;
-  background-color: var(--primary-color);
-  display: flex;
+  margin-top: 1rem;
+  padding: 15px 0px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 20px;
+  display: block;
+  border: none;
+  width: 50%;
   justify-self: center;
+  font-size: 1.3rem;
 }
 
 .hotel-card-button:hover {
+  background-position: right center;
+  background-color: #f76363;
   cursor: pointer;
+}
+
+.light.hotels-container {
+  background-color: var(--primary-color);
+}
+
+.dark.hotels-container {
+  background-color: var(--primary-dark-color);
+}
+
+.light.main-title-hotel,
+.light.hotels-description {
+  color: black;
+}
+
+.dark.main-title-hotel,
+.dark.hotels-description {
+  color: white;
+}
+
+.light.hotel-card {
+  background-color: var(--secondary-color);
+  border: none;
+  color: white;
+}
+
+.dark.hotel-card {
+  background-color: var(--secondary-dark-color);
+  border: none;
 }
 
 @media screen and (max-width: 464px) {
@@ -94,19 +126,34 @@ body {
     flex-direction: column;
     align-items: center;
   }
-
   .second-line {
     width: 30%;
     margin-left: 20%;
+  }
+  .hotel-card {
+    height: 45rem;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .hotel-card {
-    height: 38rem;
+    height: auto;
+    width: 20rem;
+  }
+  .hotel-card-container {
+    flex-wrap: wrap;
   }
   .second-line {
     width: 20%;
     margin-left: 30%;
+  }
+  .hotel-card-name {
+    font-size: 2rem;
+  }
+  .hotel-card-distance {
+    font-size: 1.5rem;
+  }
+  .hotel-card-description {
+    font-size: 1.5rem;
   }
 }

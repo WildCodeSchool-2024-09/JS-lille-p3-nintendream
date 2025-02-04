@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import "./Billetterie.css";
+import { UseTheme } from "../../services/ThemeContext";
 
 interface PricesProps {
   img: string;
   title: string;
-  linkTitle: string;
+  link_title: string;
   availability?: string;
   cancel: string;
   other: string;
@@ -16,7 +17,7 @@ const prices: PricesProps[] = [
   {
     img: "./public/image/imageHomepage/img-billetterie1.jpg",
     title: "Tarif individuel",
-    linkTitle: "individuel",
+    link_title: "individuel",
     availability:
       "Valable 1 an à partir de la date d'achat (hors 14 Juillet,31 Octobre et 31 Décembre)",
     cancel: "Non remboursable, non annulable",
@@ -26,7 +27,7 @@ const prices: PricesProps[] = [
   {
     img: "./public/image/img-billetterie2.png",
     title: "Tarif groupe/famille",
-    linkTitle: "famille",
+    link_title: "famille",
     availability:
       "Valable 1 an à partir de la date d'achat (hors 14 Juillet,31 Octobre et 31 Décembre)",
     cancel: "Annulez jusqu'à trois jours avant l'arrivée",
@@ -38,7 +39,7 @@ const prices: PricesProps[] = [
     title: "CSE",
     company:
       "Pour plus d'informations, contactez le service CSE de votre entreprise",
-    linkTitle: "CSE",
+    link_title: "CSE",
     cancel: "Annulez jusqu' trois jours avant l'arrivée",
     other: "Pour entreprises uniquement",
     price: "25€",
@@ -46,9 +47,11 @@ const prices: PricesProps[] = [
 ];
 
 function Billetterie() {
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
   return (
-    <main className="billetterie-container">
-      <section className="billetterie-title-container">
+    <main className={`billetterie-container ${theme}`}>
+      <section className={`billetterie-title-container ${theme}`}>
         <h1 className="title-billetterie"> Nos différents tarifs</h1>
         <h2 className="subtitle-billetterie">
           {" "}
@@ -57,9 +60,9 @@ function Billetterie() {
         </h2>
       </section>
 
-      <div className="card-billetterie-container">
+      <section className="card-billetterie-container">
         {prices.map((price) => (
-          <div key={price.title} className="billetterie-card">
+          <article key={price.title} className={`billetterie-card ${theme}`}>
             <img src={price.img} alt="img" className="billetterie-card-img" />
             <h2 className="billetterie-card-title">{price.title}</h2>
             <p className="billetterie-availability">{price.availability}</p>
@@ -69,17 +72,20 @@ function Billetterie() {
             <article className="white-box-billetterie">
               <p className="billetterie-price">{price.price}</p>
             </article>
-            <Link to={`/reservation/${price.linkTitle}`}>
+            <Link to={`/reservation/${price.link_title}`}>
               <button type="button" className="billetterie-btn">
                 {" "}
                 ACHETER
               </button>
             </Link>
-          </div>
+          </article>
         ))}
-      </div>
-      <h1 className="title-billetterie"> Les avantages des billets</h1>
-      <section className="billetterie-avantages-container">
+      </section>
+      <h1 className={`title-billetterie ${theme}`}>
+        {" "}
+        Les avantages des billets
+      </h1>
+      <section className={`billetterie-avantages-container ${theme}`}>
         <div className="billetterie-container">
           <img
             src="./public/image/img-billetterie4.png"
@@ -89,7 +95,7 @@ function Billetterie() {
           <h3 className="billetterie-avantages-subtitle">
             Accès à tout le parc
           </h3>
-          <p className="billetterie-avanatages-more">
+          <p className="billetterie-avantages-more">
             Profitez de toutes nos attractions, spectacles et bien plus encore !
           </p>
         </div>
@@ -102,7 +108,7 @@ function Billetterie() {
           <h3 className="billetterie-avantages-subtitle">
             Des conditions flexibles
           </h3>
-          <p className="billetterie-avanatages-more">
+          <p className="billetterie-avantages-more">
             Des billets datés annulables jusqu'à 3 jours avant l'arrivée, ou des
             billets Liberté valables durant 1 an !
           </p>

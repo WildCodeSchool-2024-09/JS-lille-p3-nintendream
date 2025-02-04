@@ -35,7 +35,7 @@
 }
 
 .login-p-right {
-  margin-right: 2rem;
+  margin-right: 6rem;
   font-size: 1.1rem;
   margin-top: 15%;
   white-space: nowrap;
@@ -63,11 +63,38 @@ a {
 .profile-image {
   height: 8rem;
   border-radius: 50%;
+
+.sun-nav {
+  height: 4rem;
+  margin-left: -5rem;
+}
+
+.moon-nav {
+  height: 3.5rem;
+  margin-left: -5rem;
+}
+
+.dark-mode-logo {
+  border: 2px solid var(--secondary-color);
+  width: 15rem;
+}
+
+.light.whole-nav {
+  background-color: var(--secondary-color);
+}
+
+.dark.whole-nav {
+  background-color: var(--secondary-dark-color);
+}
+
+.dark.dark-mode-logo {
+  border: 2px solid var(--secondary-dark-color);
 }
 
 @media only screen and (max-width: 1024px) {
   .nintendreamlogo {
-    height: 50px;
+    height: 55px;
+    margin-left: 8rem;
   }
 
   .login-p-right {
@@ -86,6 +113,16 @@ a {
   .nav-li {
     font-size: 0.8rem;
     color: white;
+  }
+
+  .sun-nav,
+  .moon-nav {
+    margin-left: 4rem;
+    height: 3rem;
+  }
+
+  .dark-mode-logo {
+    width: 2rem;
   }
 }
 
@@ -110,7 +147,6 @@ a {
     gap: 5px;
     background-color: inherit;
     border: none;
-    margin-left: 1rem;
   }
 
   .navbar-burger-line {
@@ -120,6 +156,7 @@ a {
     border-radius: 3px;
     background-color: black;
     transition: 0.5s ease-in-out;
+    margin-left: 1rem;
   }
   .nav-ul {
     position: fixed;
@@ -165,5 +202,23 @@ a {
   .navbar-burger-line2-open {
     transform: translateX(-50px);
     transition: 0.5s ease-in-out;
+  }
+  .sun-nav,
+  .moon-nav {
+    margin-left: -0.5rem;
+    height: 2rem;
+  }
+
+  .dark-mode-logo {
+    width: 2rem;
+  }
+
+  .nintendreamlogo {
+    height: 40px;
+    margin-left: -1.5rem;
+  }
+  .navbar-burger-line {
+    width: 25px;
+    height: 4px;
   }
 }

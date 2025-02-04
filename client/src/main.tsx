@@ -1,4 +1,4 @@
-// Import necessary modules from React and React Router
+// Impo// Import necessary modules from React and React Router
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -7,14 +7,24 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import EditAttractionForm from "./pages/admin//Attraction/EditAttractionForm.tsx";
 import Admin from "./pages/admin/Admin.tsx";
-import DeleteAttractionForm from "./pages/admin/DeleteAttractionForm.tsx";
-import EditAttractionForm from "./pages/admin/EditAttractionForm.tsx";
-import AttractionForm from "./pages/admin/NewAttractionForm.tsx";
+import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
+import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
+import EventDelete from "./pages/admin/Event/EventDelete.tsx";
+import EventEdit from "./pages/admin/Event/EventEdit.tsx";
+import NewEvent from "./pages/admin/Event/NewEvent.tsx";
+import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
+import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
+import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
+import DeleteRestaurantForm from "./pages/admin/restaurant/DeleteRestaurantForm.tsx";
+import RestaurantForm from "./pages/admin/restaurant/NewRestaurantForm.tsx";
+import AttractionDetails from "./pages/attractionDetails/AttractionDetails.tsx";
+import Attractions from "./pages/attractions/Attractions.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
 import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
-import EvenemementDetails from "./pages/evenements/EvenementDetails";
+import EvenementDetails from "./pages/evenements/EvenementDetails";
 import Evenements from "./pages/evenements/Evenements";
 import Homepage from "./pages/homepage/Homepage";
 import HotelDetails from "./pages/hotels/hotelDetails.tsx";
@@ -22,162 +32,60 @@ import HotelsPage from "./pages/hotels/hotels";
 import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
-import Register from "./pages/register/Register.tsx";
-
 import Profile from "./pages/profile/profile.tsx";
-
+import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
 
-// Import additional components for new routes
-// Try creating these components in the "pages" folder
-
-// import About from "./pages/About";
-// import Contact from "./pages/Contact";
-
-/* ************************************************************************* */
-
-// Create router configuration with routes
-// You can add more routes as you build out your app!
 const router = createBrowserRouter([
   {
-    path: "/", // The root path
+    path: "/",
     element: <App />,
     children: [
-      {
-        path: "/",
-        element: <Homepage />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/billetterie",
-        element: <Billetterie />,
-      },
-      {
-        path: "/hotels",
-        element: <HotelsPage />,
-      },
-      {
-        path: "/hotel/:id",
-        element: <HotelDetails />,
-      },
-      {
-        path: "/admin",
-        element: <Admin />,
-      },
-      {
-        path: "/profile",
-        element: <Profile />,
-      },
-      {
-        path: "/admin/:id/edit",
-        element: (
-          <EditAttractionForm
-            defaultValue={{
-              id: 0,
-              name: "",
-              waiting_time: "0",
-              type: "",
-              description: "",
-              min_height: "",
-              zone_id: 0,
-              schedule: "",
-              state: "",
-              img_src: "",
-            }}
-            onSubmit={() => {}}
-          />
-        ),
-      },
-      {
-        path: "/admin/new",
-        element: (
-          <AttractionForm
-            defaultValue={{
-              id: 0,
-              name: "",
-              waiting_time: "0",
-              type: "",
-              description: "",
-              min_height: "",
-              zone_id: 0,
-              schedule: "",
-              state: "",
-              img_src: "",
-            }}
-            onSubmit={() => {}}
-          />
-        ),
-      },
-      {
-        path: "/admin/:id/delete",
-        element: <DeleteAttractionForm />,
-      },
-      {
-        path: "/*",
-        element: <ErrorPage />,
-      },
+      { path: "/", element: <Homepage /> },
+      { path: "/login", element: <Login /> },
+      { path: "/attractions", element: <Attractions /> },
+      { path: "/attraction/:id", element: <AttractionDetails /> },
+      { path: "/billetterie", element: <Billetterie /> },
+      { path: "/hotels", element: <HotelsPage /> },
+      { path: "/hotel/:id", element: <HotelDetails /> },
+      { path: "/admin", element: <Admin /> },
+      { path: "/profile", element: <Profile /> },
+      { path: "/reservation/:name", element: <Reservation /> },
+      { path: "/confirmation", element: <Confirmation /> },
       {
         path: "/restaurants",
         element: <Restaurant />,
       },
-      {
-        path: "/evenements",
-        element: <Evenements />,
-      },
-      {
-        path: "/evenements/:id",
-        element: <EvenemementDetails />,
-      },
-      {
-        path: "/restaurant/:id",
-        element: <RestaurantDetails />,
-      },
-      {
-        path: "/reservation/:name",
-        element: <Reservation />,
-      },
-      {
-        path: "/confirmation",
-        element: <Confirmation />,
-      },
-    ], // Renders the App component for the home page
-  },
-  // Try adding a new route! For example, "/about" with an About component
-
-  {
-    path: "/", // The root path
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <Homepage />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
+      { path: "/restaurant/:id", element: <RestaurantDetails /> },
+      { path: "/evenements", element: <Evenements /> },
+      { path: "/evenements/:id", element: <EvenementDetails /> },
+      { path: "/*", element: <ErrorPage /> },
       {
         path: "/register",
         element: <Register />,
       },
+
+      // Admin - Attractions
+
       {
-        path: "/billetterie",
-        element: <Billetterie />,
-      },
-      {
-        path: "/hotels",
-        element: <HotelsPage />,
-      },
-      {
-        path: "/hotel/:id",
-        element: <HotelDetails />,
-      },
-      {
-        path: "/admin",
-        element: <Admin />,
+        path: "/admin/new/attractions",
+        element: (
+          <AttractionForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              waiting_time: "0",
+              type: "",
+              description: "",
+              min_height: "",
+              zone_id: 0,
+              schedule: "",
+              state: "",
+              img_src: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
       },
       {
         path: "/admin/:id/edit",
@@ -200,52 +108,83 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/new",
+        path: "/admin/:id/delete",
+        element: <DeleteAttractionForm />,
+      },
+
+      {
+        path: "/admin/:id/hotel/edit",
         element: (
-          <AttractionForm
+          <EditHotelForm
             defaultValue={{
               id: 0,
+              img: "",
               name: "",
-              waiting_time: "0",
-              type: "",
+              distance: "0",
+              hotel_price: "0",
               description: "",
-              min_height: "",
-              zone_id: 0,
-              schedule: "",
-              state: "",
-              img_src: "",
+              secondary_description: "",
+              tertiary_description: "",
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+
+      {
+        path: "/admin/newhotel",
+        element: (
+          <NewHotelForm
+            defaultValue={{
+              id: 0,
+              img: "",
+              name: "",
+              distance: "0",
+              hotel_price: "0",
+              description: "",
+              secondary_description: "",
+              tertiary_description: "",
             }}
             onSubmit={() => {}}
           />
         ),
       },
       {
-        path: "/admin/:id/delete",
-        element: <DeleteAttractionForm />,
+        path: "/admin/:id/hotel/delete",
+        element: <DeletehotelForm />,
       },
       {
-        path: "/*",
-        element: <ErrorPage />,
+        path: "/admin/new/event",
+        element: <NewEvent />,
       },
       {
-        path: "/restaurant",
-        element: <Restaurant />,
+        path: "/admin/:id/edit/event",
+        element: <EventEdit />,
+      },
+      { path: "/admin/:id/delete/event", element: <EventDelete /> },
+      {
+        path: "/admin/newattraction",
+        element: (
+          <RestaurantForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              img: "",
+              intro: "",
+              text: "",
+              adult_price: 0,
+              kids_price: 0,
+            }}
+            onSubmit={() => {}}
+          />
+        ),
       },
       {
-        path: "/evenements",
-        element: <Evenements />,
+        path: "/admin/:id/delete/restaurant",
+        element: <DeleteRestaurantForm />,
       },
-      {
-        path: "/evenements/:id",
-        element: <EvenemementDetails />,
-      },
-      {
-        path: "/restaurant/:id",
-        element: <RestaurantDetails />,
-      },
-    ], // Renders the App component for the home page
+    ],
   },
-  // Try adding a new route! For example, "/about" with an About component
 ]);
 
 /* ************************************************************************* */
@@ -261,29 +200,5 @@ createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
-);
 
-/**
- * Helpful Notes:
- *
- * 1. Adding More Routes:
- *    To add more pages to your app, first create a new component (e.g., About.tsx).
- *    Then, import that component above like this:
- *
- *    import About from "./pages/About";
- *
- *    Add a new route to the router:
- *
- *      {
- *        path: "/about",
- *        element: <About />,  // Renders the About component
- *      }
- *
- * 2. Try Nested Routes:
- *    For more complex applications, you can nest routes. This lets you have sub-pages within a main page.
- *    Documentation: https://reactrouter.com/en/main/start/tutorial#nested-routes
- *
- * 3. Experiment with Dynamic Routes:
- *    You can create routes that take parameters (e.g., /users/:id).
- *    Documentation: https://reactrouter.com/en/main/start/tutorial#url-params-in-loaders
- */
+);
