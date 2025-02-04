@@ -35,14 +35,14 @@ const articles = [
     description:
       "Chez Nintendream, nous vous offrons bien plus qu’un simple séjour : une expérience inoubliable. Découvrez des chambres thématiques inspirées de vos jeux préférés. Que vous soyez fan de légendaires aventures ou adepte de courses effrénées, chaque recoin de notre hôtel vous promet des surprises à la hauteur de votre passion pour le jeu.",
     image: "../image/imageHomepage/dunkey-kong-hotel.webp",
-    URL: "/hébergement",
+    URL: "/hotels",
   },
   {
     title: "Un Parc Accessible à Tous chez Nintendream 🎮",
     description:
       "Le parc Nintendream est conçu pour accueillir tous les visiteurs, avec des installations adaptées aux personnes à mobilité réduite et des services pour répondre à divers besoins. Des rampes, ascenseurs, et files prioritaires facilitent l’accès aux attractions, tandis que des casques antibruit et des panneaux tactiles améliorent l’expérience sensorielle. Notre personnel formé est à disposition pour accompagner chaque visiteur. Profitez d’une aventure inclusive et magique, sans limites ! 🌟",
-    image: "../image/imageHomepage/Accessibilite-handicape.jpg",
-    URL: "/parc",
+    image: "/image/imageHomepage/Mario-fauteuil.jpg",
+    URL: "/",
   },
 ];
 
@@ -86,7 +86,7 @@ function Homepage() {
             <p>Réservez à partir de 35€</p>
           </div>
           <div className="button-reservation-homepage">
-            <Link to="billeterie" className="link-homepage-to-billeterie">
+            <Link to="/billetterie" className="link-homepage-to-billeterie">
               <button type="button" className="button-homepage-reservation">
                 Je réserve !
               </button>
@@ -107,21 +107,6 @@ function Homepage() {
             </Link>
           </div>
         </section>
-        <section className={`card-container-new-attraction ${theme}`}>
-          <div className="card-new-attraction">
-            <p>Découvrez la dernière attraction du parc</p>
-          </div>
-          <div className="button-new-attraction">
-            <Link to="attractions" className="link-homepage-to-attractions">
-              <button
-                type="button"
-                className="button-reservation-new-attraction"
-              >
-                En savoir plus...
-              </button>
-            </Link>
-          </div>
-        </section>
         <section className={`card-container-events ${theme}`}>
           <div className="card-events">
             <p>
@@ -130,9 +115,9 @@ function Homepage() {
             </p>
           </div>
           <div className="button-events">
-            <Link to="/évènements" className="link-homepage-to-events">
+            <Link to="/evenements" className="link-homepage-to-events">
               <button type="submit" className="button-new-events">
-                Evènements
+                Évènements
               </button>
             </Link>
           </div>
@@ -147,13 +132,12 @@ function Homepage() {
                 Offres
               </button>
             </Link>
-          </div>{" "}
-          mala
+          </div>
         </section>
       </section>
       <section>
         {articles.map((article: Article) => (
-          <div key={article.title} className="card-homepage">
+          <div key={article.title} className={`card-homepage ${theme}`}>
             <div className="card-article">
               <Link to={article.URL} className={`link-article ${theme}`}>
                 <img
