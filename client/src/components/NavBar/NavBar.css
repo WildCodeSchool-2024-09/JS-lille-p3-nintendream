@@ -60,6 +60,11 @@ a {
   display: none;
 }
 
+.profile-image {
+  height: 8rem;
+  border-radius: 50%;
+}
+
 @media only screen and (max-width: 1024px) {
   .nintendreamlogo {
     height: 50px;

@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom";
 import "./Login.css";
 import type { FormEventHandler } from "react";
-import { useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../services/userContext";
 
 function Login() {
   const mailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
 
-  const [, setUser] = useState();
+  const userContext = useContext(UserContext);
+
+  if (!userContext) {
+    throw new Error("UserContext is null");
+  }
+
+  const { setUser } = userContext;
 
   const navigate = useNavigate();
 
