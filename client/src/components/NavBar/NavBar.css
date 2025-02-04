@@ -60,6 +60,10 @@ a {
   display: none;
 }
 
+.profile-image {
+  height: 8rem;
+  border-radius: 50%;
+
 .sun-nav {
   height: 4rem;
   margin-left: -5rem;

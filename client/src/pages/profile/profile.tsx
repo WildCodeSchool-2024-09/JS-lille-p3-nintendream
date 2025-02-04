@@ -1,9 +1,29 @@
+import { useContext } from "react";
 import "./profile.css";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../services/userContext";
+
+function Profile() {
+  const userContext = useContext(UserContext);
+
+  if (!userContext) {
+    throw new Error("UserContext is null");
+  }
+  const { setUser } = userContext;
+
+  function handleProfileClick() {
+    setUser(null);
+    navigate("/");
+  }
+
+  const navigate = useNavigate();
+
 import { UseTheme } from "../../services/ThemeContext";
 
 function Profile() {
   const themeContext = UseTheme();
   const theme = themeContext ? themeContext.theme : "light";
+  
   return (
     <>
       <body className="body-profile">
@@ -35,6 +55,14 @@ function Profile() {
           <div className="ending-profile">
             A très vite dans notre super parc Nintendream !
           </div>
+          <button
+            type="button"
+            className="button-profile"
+            onClick={handleProfileClick}
+            onKeyUp={handleProfileClick}
+          >
+            Se déconnecter
+          </button>
         </section>
       </body>
     </>
