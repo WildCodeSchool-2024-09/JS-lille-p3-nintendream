@@ -18,6 +18,7 @@ import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
 import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
 import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
 import DeleteRestaurantForm from "./pages/admin/restaurant/DeleteRestaurantForm.tsx";
+import EditRestaurantForm from "./pages/admin/restaurant/EditRestaurantForm.tsx";
 import RestaurantForm from "./pages/admin/restaurant/NewRestaurantForm.tsx";
 import AttractionDetails from "./pages/attractionDetails/AttractionDetails.tsx";
 import Attractions from "./pages/attractions/Attractions.tsx";
@@ -33,9 +34,9 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 import Profile from "./pages/profile/profile.tsx";
+import ProjectMap from "./pages/projectMap/projectMap.tsx";
 import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
       { path: "/evenements", element: <Evenements /> },
       { path: "/evenements/:id", element: <EvenementDetails /> },
       { path: "/*", element: <ErrorPage /> },
+      { path: "/map", element: <ProjectMap /> },
       {
         path: "/register",
         element: <Register />,
@@ -68,7 +70,7 @@ const router = createBrowserRouter([
       // Admin - Attractions
 
       {
-        path: "/admin/new/attractions",
+        path: "/admin/attractions/new",
         element: (
           <AttractionForm
             defaultValue={{
@@ -81,14 +83,14 @@ const router = createBrowserRouter([
               zone_id: 0,
               schedule: "",
               state: "",
-              img_src: "",
+              img: "",
             }}
             onSubmit={() => {}}
           />
         ),
       },
       {
-        path: "/admin/:id/edit",
+        path: "/admin/attractions/:id/edit",
         element: (
           <EditAttractionForm
             defaultValue={{
@@ -98,22 +100,23 @@ const router = createBrowserRouter([
               type: "",
               description: "",
               min_height: "",
-              zone_id: 0,
+              zone_id: 1,
               schedule: "",
               state: "",
-              img_src: "",
+              img: "",
             }}
             onSubmit={() => {}}
           />
         ),
       },
       {
-        path: "/admin/:id/delete",
+        path: "/admin/attractions/:id/delete",
         element: <DeleteAttractionForm />,
       },
 
+      // Admin - Hotels
       {
-        path: "/admin/:id/hotel/edit",
+        path: "/admin/hotels/:id/edit",
         element: (
           <EditHotelForm
             defaultValue={{
@@ -132,7 +135,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/admin/newhotel",
+        path: "/admin/hotels/new",
         element: (
           <NewHotelForm
             defaultValue={{
@@ -150,20 +153,25 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/:id/hotel/delete",
+        path: "/admin/hotels/:id/delete",
         element: <DeletehotelForm />,
       },
+
+      // Admin - Events
+
       {
-        path: "/admin/new/event",
+        path: "/admin/events/new",
         element: <NewEvent />,
       },
       {
-        path: "/admin/:id/edit/event",
+        path: "/admin/events/:id/edit",
         element: <EventEdit />,
       },
-      { path: "/admin/:id/delete/event", element: <EventDelete /> },
+      { path: "/admin/events/:id/delete", element: <EventDelete /> },
+
+      // Admin - Restaurants
       {
-        path: "/admin/newattraction",
+        path: "/admin/restaurants/:id/edit",
         element: (
           <RestaurantForm
             defaultValue={{
@@ -180,7 +188,24 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/:id/delete/restaurant",
+        path: "/admin/restaurants/new",
+        element: (
+          <EditRestaurantForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              img: "",
+              intro: "",
+              text: "",
+              adult_price: 0,
+              kids_price: 0,
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/restaurants/:id/delete",
         element: <DeleteRestaurantForm />,
       },
     ],

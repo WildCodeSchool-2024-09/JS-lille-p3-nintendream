@@ -20,7 +20,7 @@ CREATE TABLE zone (
     CREATE TABLE attraction (
         id INT PRIMARY KEY AUTO_INCREMENT,
         name VARCHAR(80) NOT NULL,
-        img VARCHAR(255) NOT NULL,
+        img VARCHAR(255),
         waiting_time VARCHAR(80) NOT NULL,
         type VARCHAR(80) NOT NULL,
         min_height VARCHAR(80) NOT NULL,
@@ -180,6 +180,6 @@ INSERT INTO Restaurant (id, name, img, intro, text, adult_price, kids_price) VAL
  'Un lieu fun et coloré, proposant des desserts et en-cas aux formes adorables, inspirés de Kirby et de ses aventures.', 
  12, 9),
 (5, 'Pokemon Café', '/imgRestaurant/image5.jpg', 
- 'Pokémon Café est un lieu unique où les saveurs et les personnages emblématiques de l''univers Pokémon se rencontrent dans un cadre ludique et chaleureux. Plongez dans une ambiance accueillante et découvrez une carte de plats et boissons inspirés par vos Pokémon préférés. Des cafés mignons aux plats délicieux, chaque élément du menu est pensé pour offrir une expérience gastronomique originale, avec des présentations soignées et des touches de fantaisie. Que vous soyez un dresseur chevronné ou un fan de longue date, Pokémon Café vous invite à savourer un moment magique tout en dégustant des créations gourmandes, originales et amusantes.', 
+ 'Pokémon Café est un lieu unique où les saveurs et les personnages emblématiques de l''univers Pokémon se rencontrent dans un cadre ludique et chaleureux. Plongez dans une ambiance accueillante et découvrez une map de plats et boissons inspirés par vos Pokémon préférés. Des cafés mignons aux plats délicieux, chaque élément du menu est pensé pour offrir une expérience gastronomique originale, avec des présentations soignées et des touches de fantaisie. Que vous soyez un dresseur chevronné ou un fan de longue date, Pokémon Café vous invite à savourer un moment magique tout en dégustant des créations gourmandes, originales et amusantes.', 
  'Des plats et boissons inspirés de vos Pokémon préférés, avec des présentations ludiques et originales.', 
  13, 11);

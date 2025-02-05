@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { UseTheme } from "../../services/ThemeContext";
+import { UserContext } from "../../services/UserContext";
 
 function NavBar() {
   const [menuBurgerToggle, setMenuBurgerToggle] = useState(false);
@@ -9,6 +10,8 @@ function NavBar() {
   function handleClick() {
     setMenuBurgerToggle(!menuBurgerToggle);
   }
+
+  const userContext = useContext(UserContext);
   const themeContext = UseTheme();
   if (!themeContext) {
     return null;
@@ -24,6 +27,9 @@ function NavBar() {
     }
   };
 
+  if (!userContext) {
+    throw new Error("UserContext is null");
+  }
   return (
     <header className={`whole-nav ${theme}`}>
       <div className="logo-and-login">
@@ -82,14 +88,24 @@ function NavBar() {
             className="nintendreamlogo"
           />
         </Link>
-        <Link to="/login" className="nav-link">
-          <p className="login-p-right">Se connecter/S'inscrire</p>
-          <img
-            src="/Logos/connexion.png"
-            alt="mon compte"
-            className="login-favicon"
-          />
-        </Link>
+        {userContext.user ? (
+          <Link to="/profile">
+            <img
+              src="/imgNav/profile.png"
+              alt="profile logo"
+              className="profile-image"
+            />
+          </Link>
+        ) : (
+          <Link to="/login" className="nav-link">
+            <p className="login-p-right">Se connecter/S'inscrire</p>
+            <img
+              src="/Logos/connexion.png"
+              alt="mon compte"
+              className="login-favicon"
+            />
+          </Link>
+        )}
       </div>
       <ul
         className={
