@@ -13,7 +13,8 @@ function Profile() {
     throw new Error("UserContext is null");
   }
   const { setUser } = userContext;
-
+  const { user } = userContext;
+  
   function handleProfileClick() {
     setUser(null);
     navigate("/");
@@ -22,8 +23,8 @@ function Profile() {
   const navigate = useNavigate();
 
   return (
-    userContext.user && (
-      <body className="body-profile">
+    user && (
+      <main className="main-profile">
         {theme === "light" ? (
           <img
             src="./imageProfil/herbe.webp"
@@ -46,12 +47,10 @@ function Profile() {
             de votre compte Nintendream :
           </p>
           <ul>
-            <li className="email-profile">E-mail : {userContext.user.mail}</li>
-            <li className="firstname-profile">
-              Prénom : {userContext.user.first_name}
-            </li>
-            <li className="name-profile">Nom : {userContext.user.name}</li>
-            <li className="age-profile">Age : {userContext.user.age}</li>
+            <li className="email-profile">E-mail : {user.mail}</li>
+            <li className="firstname-profile">Prénom : {user.first_name}</li>
+            <li className="name-profile">Nom : {user.name}</li>
+            <li className="age-profile">Age : {user.age}</li>
           </ul>
           <div className="ending-profile">
             A très vite dans notre super parc Nintendream !
@@ -65,7 +64,7 @@ function Profile() {
             Se déconnecter
           </button>
         </section>
-      </body>
+      </main>
     )
   );
 }
