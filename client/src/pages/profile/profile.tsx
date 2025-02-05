@@ -22,7 +22,7 @@ function Profile() {
   const navigate = useNavigate();
 
   return (
-    <>
+    userContext.user && (
       <body className="body-profile">
         {theme === "light" ? (
           <img
@@ -41,20 +41,24 @@ function Profile() {
           <div>
             <h1 className="title-profile">Vos informations</h1>
           </div>
-          <div className="text-profile">
+          <p className="text-profile">
             Voici les informations que vous avez enregistrées depuis la création
             de votre compte Nintendream :
-          </div>
-          <div className="email-profile">E-mail :</div>
-          <div className="firstname-profile">Prénom :</div>
-          <div className="name-profile">Nom :</div>
-          <div className="age-profile">Age :</div>
-          <div className="ending-profile">
-            A très vite dans notre super parc Nintendream !
-          </div>
+          </p>
+          <ul>
+            <li className="email-profile">E-mail : {userContext.user.mail}</li>
+            <li className="firstname-profile">
+              Prénom : {userContext.user.first_name}
+            </li>
+            <li className="name-profile">Nom : {userContext.user.name}</li>
+            <li className="age-profile">Age : {userContext.user.age}</li>
+            <div className="ending-profile">
+              A très vite dans notre super parc Nintendream !
+            </div>
+          </ul>
           <button
             type="button"
-            className="button-profile"
+            className={`button-profile ${theme}`}
             onClick={handleProfileClick}
             onKeyUp={handleProfileClick}
           >
@@ -62,7 +66,7 @@ function Profile() {
           </button>
         </section>
       </body>
-    </>
+    )
   );
 }
 
