@@ -1,10 +1,13 @@
 import { useContext } from "react";
 import "./profile.css";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../services/userContext";
+import { UseTheme } from "../../services/ThemeContext";
+import { UserContext } from "../../services/UserContext";
 
 function Profile() {
   const userContext = useContext(UserContext);
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
 
   if (!userContext) {
     throw new Error("UserContext is null");
@@ -18,12 +21,6 @@ function Profile() {
 
   const navigate = useNavigate();
 
-import { UseTheme } from "../../services/ThemeContext";
-
-function Profile() {
-  const themeContext = UseTheme();
-  const theme = themeContext ? themeContext.theme : "light";
-  
   return (
     <>
       <body className="body-profile">
