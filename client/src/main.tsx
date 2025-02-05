@@ -7,10 +7,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import EditAttractionForm from "./pages/admin//Attraction/EditAttractionForm.tsx";
+import EditAttraction from "./pages/admin/Attraction/EditAttraction.tsx";
 import Admin from "./pages/admin/Admin.tsx";
 import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
-import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
 import EventDelete from "./pages/admin/Event/EventDelete.tsx";
 import EventEdit from "./pages/admin/Event/EventEdit.tsx";
 import NewEvent from "./pages/admin/Event/NewEvent.tsx";
@@ -36,6 +35,7 @@ import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 import Profile from "./pages/profile/profile.tsx";
 import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
+import NewAttraction from "./pages/admin/Attraction/NewAttraction.tsx";
 
 const router = createBrowserRouter([
   {
@@ -70,43 +70,11 @@ const router = createBrowserRouter([
 
       {
         path: "/admin/attractions/new",
-        element: (
-          <AttractionForm
-            defaultValue={{
-              id: 0,
-              name: "",
-              waiting_time: "0",
-              type: "",
-              description: "",
-              min_height: "",
-              zone_id: 0,
-              schedule: "",
-              state: "",
-              img: "",
-            }}
-            onSubmit={() => {}}
-          />
-        ),
+        element: <NewAttraction />,
       },
       {
         path: "/admin/attractions/:id/edit",
-        element: (
-          <EditAttractionForm
-            defaultValue={{
-              id: 0,
-              name: "",
-              waiting_time: "0",
-              type: "",
-              description: "",
-              min_height: "",
-              zone_id: 1,
-              schedule: "",
-              state: "",
-              img: "",
-            }}
-            onSubmit={() => {}}
-          />
-        ),
+        element: <EditAttraction />,
       },
       {
         path: "/admin/attractions/:id/delete",
