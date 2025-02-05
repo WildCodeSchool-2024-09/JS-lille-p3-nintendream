@@ -32,7 +32,7 @@ function Attractions() {
       <div className="image-background-attraction">
         <img
           className="background-attraction"
-          src="/image/attractions/Background-Attraction.jpeg"
+          src="/public/image/attractions/Backgroung-Attraction.webp"
           alt="attraction"
         />
       </div>
