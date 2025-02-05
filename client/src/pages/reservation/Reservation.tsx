@@ -1,9 +1,10 @@
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
-import "flatpickr/dist/themes/material_red.css";
 import "./Reservation.css";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { UseTheme } from "../../services/ThemeContext";
+
 function Reservation() {
   const [priceMultiplier, setPriceMultiplier] = useState(0);
   const [personNumber, setPersonNumber] = useState(1);
@@ -11,6 +12,8 @@ function Reservation() {
   const [date, setDate] = useState<[string, string]>(["", ""]);
   const [count, setCount] = useState(2);
   const { name } = useParams();
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
 
   useEffect(() => {
     switch (name) {
@@ -72,23 +75,23 @@ function Reservation() {
   }
 
   return (
-    <main className="main-reservation">
-      <h1 className="h1-reservation">Réservez vos billets</h1>
+    <main className={`main-reservation ${theme}`}>
+      <h1 className={`h1-reservation ${theme}`}>Réservez vos billets</h1>
       {name === "CSE" || name === "famille" ? (
         <>
-          <h2>Combien êtes-vous ?</h2>{" "}
+          <h2 className={`h2-reservation ${theme}`}>Combien êtes-vous ?</h2>
           <div className="reservation-more-less">
             <button
               type="button"
-              className="reservation-button-more-less"
+              className={`reservation-button-more-less ${theme}`}
               onClick={handleClickMore}
             >
               +
             </button>
-            <p className="reservation-person-count">{count}</p>
+            <p className={`reservation-person-count ${theme}`}>{count}</p>
             <button
               type="button"
-              className="reservation-button-more-less"
+              className={`reservation-button-more-less ${theme}`}
               onClick={handleClickLess}
             >
               -
@@ -98,6 +101,7 @@ function Reservation() {
       ) : (
         ""
       )}
+
       <Flatpickr
         options={{
           inline: true,
@@ -119,7 +123,9 @@ function Reservation() {
         }}
       />
 
-      <h2>Prix : {price * priceMultiplier * personNumber}€</h2>
+      <h2 className={`h2-reservation ${theme}`}>
+        Prix : {price * priceMultiplier * personNumber}€
+      </h2>
       <Link
         to="/confirmation"
         state={{
@@ -128,7 +134,7 @@ function Reservation() {
           date: date,
         }}
       >
-        <button type="button" className="reservation-button">
+        <button type="button" className={`reservation-button ${theme}`}>
           Vers le paiement
         </button>
       </Link>

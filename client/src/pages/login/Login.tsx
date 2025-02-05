@@ -3,8 +3,11 @@ import "./Login.css";
 import type { FormEventHandler } from "react";
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UseTheme } from "../../services/ThemeContext";
 
 function Login() {
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
   const mailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
 
@@ -40,12 +43,12 @@ function Login() {
   };
 
   return (
-    <div className="login-page">
+    <main className={`login-page ${theme}`}>
       <form className="login-form" onSubmit={handleSubmitLogin}>
-        <h2 className="login-h2">Se connecter</h2>
+        <h2 className={`login-h2 ${theme}`}>Se connecter</h2>
 
         <input
-          className="login-input"
+          className={`login-input ${theme}`}
           type="email"
           name="adresse-mail"
           id="adresse-mail"
@@ -54,7 +57,7 @@ function Login() {
           ref={mailRef}
         />
         <input
-          className="login-input"
+          className={`login-input ${theme}`}
           type="password"
           name="connection-password"
           id="connection-password"
@@ -63,9 +66,9 @@ function Login() {
           ref={passwordRef}
         />
         <article className="login-article">
-          <p className="login-p">
+          <p className={`login-p ${theme}`}>
             Mot de passe oublié ? <br />
-            <Link to="/register" className="login-link-form">
+            <Link to="/register" className={`login-link-form ${theme}`}>
               Pas encore de compte ? Inscris-toi !
             </Link>
           </p>
@@ -74,10 +77,10 @@ function Login() {
         <input
           type="submit"
           value="Valider"
-          className="login-submit login-submit-left"
+          className={`login-submit login-submit-left ${theme}`}
         />
       </form>
-    </div>
+    </main>
   );
 }
 

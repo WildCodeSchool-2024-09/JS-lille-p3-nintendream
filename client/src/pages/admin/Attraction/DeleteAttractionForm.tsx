@@ -14,7 +14,7 @@ function DeleteAttractionForm() {
       method: "delete",
     }).then((response) => {
       if (response.status === 204) {
-        navigate("/attractions");
+        navigate("/admin");
       }
     });
   };

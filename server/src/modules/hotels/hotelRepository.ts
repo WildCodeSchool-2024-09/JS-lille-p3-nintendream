@@ -2,10 +2,10 @@ import databaseClient from "../../../database/client";
 import type { Result, Rows } from "../../../database/client";
 
 type hotel = {
-  id: number;
+  id: string;
   name: string;
   distance: string;
-  hotelprice: string;
+  hotel_price: string;
   description: string;
   secondary_description: string;
   tertiary_description: string;
@@ -44,11 +44,11 @@ class hotelRepository {
 
   async update(hotel: hotel, room: room) {
     const [result] = await databaseClient.query<Result>(
-      "update hotel set name = ?, distance = ?, hotelprice = ?, description = ?, secondary_description = ?, tertiary_description = ? where id = ?",
+      "update hotel set name = ?, distance = ?, hotel_price = ?, description = ?, secondary_description = ?, tertiary_description = ? where id = ?",
       [
         hotel.name,
         hotel.distance,
-        hotel.hotelprice,
+        hotel.hotel_price,
         hotel.description,
         hotel.secondary_description,
         hotel.tertiary_description,
@@ -73,11 +73,11 @@ class hotelRepository {
 
   async create(hotel: Omit<hotel, "id">, rooms: room[]) {
     const [result] = await databaseClient.query<Result>(
-      "insert into hotel (name, distance, hotelprice, description, secondary_description, tertiary_description) values (?, ?, ?, ?, ?, ?)",
+      "insert into hotel (name, distance, hotel_price, description, secondary_description, tertiary_description) values (?, ?, ?, ?, ?, ?)",
       [
         hotel.name,
         hotel.distance,
-        hotel.hotelprice,
+        hotel.hotel_price,
         hotel.description,
         hotel.secondary_description,
         hotel.tertiary_description,
@@ -88,24 +88,17 @@ class hotelRepository {
 
     for (const room of rooms) {
       await databaseClient.query<Result>(
-        "insert into room (hotelId, img, title, description, price, link_title) values (?, ?, ?, ?, ?, ?)",
-        [
-          hotelId,
-          room.img,
-          room.title,
-          room.description,
-          room.price,
-          room.link_title,
-        ],
+        "insert into room ( img, title, description, price, link_title) values ( ?, ?, ?, ?, ?)",
+        [room.img, room.title, room.description, room.price, room.link_title],
       );
     }
 
     return hotelId;
   }
 
-  async delete(id: number) {
+  async deleteByHotelId(id: number) {
     const [result] = await databaseClient.query<Result>(
-      "delete from hotel inner join room where id = ?",
+      "delete from hotel where id = ?",
       [id],
     );
 

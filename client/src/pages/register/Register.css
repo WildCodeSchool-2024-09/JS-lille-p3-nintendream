@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   width: 30%;
-  height: 80vh;
   gap: 1.5rem;
   margin-top: 5%;
 }
@@ -24,7 +23,7 @@
   border-radius: 12px;
   width: 80%;
   font-size: 1.1rem;
-  padding: 16px;
+  padding: 1.1rem;
 }
 
 .register-input::placeholder {
@@ -37,8 +36,10 @@
   background-color: var(--secondary-color);
   color: var(--primary-color);
   width: 40%;
-  height: auto;
+  padding: 0.8rem;
   font-size: 1.3rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
 }
 
 .resgiter-p {
@@ -50,6 +51,40 @@
 
 .register-submit-left {
   margin-top: -0.5rem;
+}
+
+.light.register-page {
+  background-color: var(--primary-color);
+}
+
+.dark.register-page {
+  background-color: var(--primary-dark-color);
+}
+
+.light.register-h2 {
+  color: black;
+}
+
+.dark.register-h2 {
+  color: white;
+}
+
+.light.register-input {
+  background-color: white;
+  color: black;
+}
+
+.dark.register-input {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-dark-color);
+}
+
+.light.register-submit {
+  background-color: var(--secondary-color);
+}
+
+.dark.register-submit {
+  background-color: var(--secondary-dark-color);
 }
 
 @media only screen and (max-width: 1024px) {
