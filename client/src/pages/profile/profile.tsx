@@ -52,10 +52,10 @@ function Profile() {
             </li>
             <li className="name-profile">Nom : {userContext.user.name}</li>
             <li className="age-profile">Age : {userContext.user.age}</li>
-            <div className="ending-profile">
-              A très vite dans notre super parc Nintendream !
-            </div>
           </ul>
+          <div className="ending-profile">
+            A très vite dans notre super parc Nintendream !
+          </div>
           <button
             type="button"
             className={`button-profile ${theme}`}
