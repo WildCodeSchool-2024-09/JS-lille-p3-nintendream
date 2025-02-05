@@ -14,8 +14,8 @@ function Confirmation() {
             <p className="payment-label"> Payer avec :</p>
             <div className="payment-methods">
               <img
-                src="/Logos/carte-bleue.png"
-                alt="Carte bleue"
+                src="/Logos/map-bleue.png"
+                alt="projectMap bleue"
                 className="payment-img"
               />
               <img
@@ -27,7 +27,7 @@ function Confirmation() {
             </div>
           </div>
           <label className="payment-label">
-            Titulaire de la carte :
+            Titulaire de la map :
             <input
               name="titulaire"
               type="text"
@@ -36,7 +36,7 @@ function Confirmation() {
             />
           </label>
           <label className="payment-label">
-            Numéro de la carte :
+            Numéro de la map :
             <input
               name="card-number"
               type="text"

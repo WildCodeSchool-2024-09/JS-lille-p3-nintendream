@@ -58,7 +58,7 @@ const resto: Restaurant[] = [
     name: "Pokemon Café",
     img: "/imgRestaurant/image5.jpg",
     intro:
-      "Pokémon Café est un lieu unique où les saveurs et les personnages emblématiques de l'univers Pokémon se rencontrent dans un cadre ludique et chaleureux. Plongez dans une ambiance accueillante et découvrez une carte de plats et boissons inspirés par vos Pokémon préférés. Des cafés mignons aux plats délicieux, chaque élément du menu est pensé pour offrir une expérience gastronomique originale, avec des présentations soignées et des touches de fantaisie. Que vous soyez un dresseur chevronné ou un fan de longue date, Pokémon Café vous invite à savourer un moment magique tout en dégustant des créations gourmandes, originales et amusantes.",
+      "Pokémon Café est un lieu unique où les saveurs et les personnages emblématiques de l'univers Pokémon se rencontrent dans un cadre ludique et chaleureux. Plongez dans une ambiance accueillante et découvrez une map de plats et boissons inspirés par vos Pokémon préférés. Des cafés mignons aux plats délicieux, chaque élément du menu est pensé pour offrir une expérience gastronomique originale, avec des présentations soignées et des touches de fantaisie. Que vous soyez un dresseur chevronné ou un fan de longue date, Pokémon Café vous invite à savourer un moment magique tout en dégustant des créations gourmandes, originales et amusantes.",
     text: "Des plats et boissons inspirés de vos Pokémon préférés, avec des présentations ludiques et originales.",
     adult_price: 13,
     kids_price: 11,
