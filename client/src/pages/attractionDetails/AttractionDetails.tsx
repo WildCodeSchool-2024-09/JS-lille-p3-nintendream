@@ -8,11 +8,11 @@ interface AttractionDetails {
   name: string;
   img: string;
   waiting_time: number;
-  type_attraction: string;
+  type: string;
   min_height: number;
   zone_id: number;
   schedule: string;
-  description_attraction: string;
+  description: string;
   state: string;
 }
 
@@ -39,8 +39,8 @@ function AttractionDetails() {
           />
           <div className="texte-card-attraction-details">
             <h1>{attraction.name}</h1>
-            <p>{attraction.description_attraction}</p>
-            <p>Type : {attraction.type_attraction}</p>
+            <p>{attraction.description}</p>
+            <p>Type : {attraction.type}</p>
             <p>Temps d'attente : {attraction.waiting_time}</p>
             <p>Hauteur minimum : {attraction.min_height}</p>
             <p>Horaires : {attraction.schedule}</p>
@@ -48,12 +48,13 @@ function AttractionDetails() {
           </div>
         </div>
       )}
-
-      <img
-        className="map-nintendream"
-        src="/image/attractions/MapNintendDream.jpeg"
-        alt="Carte du parc"
-      />
+      <section className="container-map">
+        <img
+          className="map-nintendream"
+          src="/image/attractions/MapNintendDream.jpeg"
+          alt="Carte du parc"
+        />
+      </section>
     </>
   );
 }
