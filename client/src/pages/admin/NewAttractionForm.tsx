@@ -11,7 +11,7 @@ type AttractionData = {
   schedule: string;
   description: string;
   state: string;
-  img_src?: string;
+  img?: string;
 };
 
 interface AttractionFormProps {

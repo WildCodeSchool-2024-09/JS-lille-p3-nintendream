@@ -62,7 +62,7 @@ const router = createBrowserRouter([
           <EditAttractionForm
             defaultValue={{
               id: 0,
-              name: "",
+              name: "{attraction.name}",
               waiting_time: "0",
               type: "",
               description: "",
@@ -87,10 +87,10 @@ const router = createBrowserRouter([
               type: "",
               description: "",
               min_height: "",
-              zone_id: 0,
+              zone_id: 1,
               schedule: "",
               state: "",
-              img_src: "",
+              img: "",
             }}
             onSubmit={() => {}}
           />
