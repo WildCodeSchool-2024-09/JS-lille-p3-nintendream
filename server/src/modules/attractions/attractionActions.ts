@@ -11,7 +11,7 @@ type newAttraction = {
   schedule: string;
   description: string;
   state: string;
-  img_src: string;
+  img?: string;
 };
 
 const browse: RequestHandler = async (req, res, next) => {
@@ -52,7 +52,7 @@ const edit: RequestHandler = async (req, res, next) => {
       image_url: req.body.image_url,
       schedule: req.body.schedule,
       state: req.body.state,
-      img_src: req.body.img_src,
+      img: req.body.img,
     };
 
     const affectedRows = await AttractionRepository.update(attraction);
@@ -78,7 +78,7 @@ const add: RequestHandler = async (req, res, next) => {
       description: req.body.description,
       schedule: req.body.schedule,
       state: req.body.state,
-      img_src: req.body.img_src,
+      img: req.body.img,
     };
 
     const insertId = await AttractionRepository.create(newAttraction);
