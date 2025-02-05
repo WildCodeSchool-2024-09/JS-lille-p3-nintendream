@@ -88,7 +88,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/:id/edit",
+        path: "/admin/:id/edit/attractions",
         element: (
           <EditAttractionForm
             defaultValue={{
@@ -108,7 +108,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/:id/delete",
+        path: "/admin/:id/delete/attractions",
         element: <DeleteAttractionForm />,
       },
 

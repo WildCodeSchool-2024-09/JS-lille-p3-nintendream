@@ -5,11 +5,6 @@
   justify-content: center;
 }
 
-.add-button-hotel,
-.add-button-restaurant {
-  color: black;
-}
-
 .admin-row1,
 .admin-row2 {
   border: 2px solid black;
@@ -50,6 +45,15 @@
   opacity: 80%;
 }
 
-.add-events-admin {
+.add-events-admin,
+.add-attraction-admin,
+.add-restaurants-admin,
+.add-hotel-admin {
   color: black;
+  display: flex;
+  align-items: center;
+}
+
+.logo-plus-admin {
+  height: 2rem;
 }
