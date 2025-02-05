@@ -144,7 +144,7 @@ function Admin() {
       <section className="admin-row2">
         {showAttractions && (
           <section className="admin-attraction-list">
-            <Link to="/admin/new/attractions">
+            <Link to="/admin/attractions/new">
               <p className="add-attraction-admin">
                 <img
                   src="/imageAdmin/plus.png"
@@ -157,8 +157,8 @@ function Admin() {
             {attractionsList.map((attraction) => (
               <article key={attraction.id} className="admin-attraction-title">
                 {attraction.name}{" "}
-                <Link to={`/admin/${attraction.id}/edit/attractions`}> 📝</Link>
-                <Link to={`/admin/${attraction.id}/delete/attractions`}>
+                <Link to={`/admin/attractions/${attraction.id}/edit`}> 📝</Link>
+                <Link to={`/admin/attractions/${attraction.id}/delete`}>
                   {" "}
                   🗑️
                 </Link>
@@ -169,7 +169,7 @@ function Admin() {
 
         {showHotels && (
           <section className="admin-hotel-list">
-            <Link to="/admin/newhotel">
+            <Link to="/admin/hotels/new">
               <p className="add-hotel-admin">
                 <img
                   src="/imageAdmin/plus.png"
@@ -184,8 +184,8 @@ function Admin() {
               <article key={hotel.id} className="admin-attraction-title">
                 {hotel.name}
                 {""}
-                <Link to={`/admin/${hotel.id}/hotel/edit`}> 📝</Link>
-                <Link to={`/admin/${hotel.id}/hotel/delete`}> 🗑️</Link>
+                <Link to={`/admin/hotels/${hotel.id}/edit`}> 📝</Link>
+                <Link to={`/admin/hotels/${hotel.id}/delete`}> 🗑️</Link>
               </article>
             ))}
           </section>
@@ -193,7 +193,7 @@ function Admin() {
 
         {showRestaurants && (
           <section className="admin-restaurants-list">
-            <Link to="/admin/new/restaurant">
+            <Link to="/admin/restaurants/new">
               <p className="add-restaurants-admin">
                 <img
                   src="/imageAdmin/plus.png"
@@ -206,8 +206,8 @@ function Admin() {
             {restaurantsList.map((restaurant) => (
               <article key={restaurant.id} className="admin-restaurants-title">
                 {restaurant.name}{" "}
-                <Link to={`/admin/${restaurant.id}/edit/restaurant`}> 📝</Link>
-                <Link to={`/admin/${restaurant.id}/delete/restaurant`}>🗑️</Link>
+                <Link to={`/admin/restaurants/${restaurant.id}/edit`}> 📝</Link>
+                <Link to={`/admin/restaurants/${restaurant.id}/delete`}>🗑️</Link>
               </article>
             ))}
           </section>
@@ -215,7 +215,7 @@ function Admin() {
 
         {showEvents && (
           <section>
-            <Link to="/admin/new/event">
+            <Link to="/admin/events/new">
               <p className="add-events-admin">
                 <img
                   src="/imageAdmin/plus.png"
@@ -228,8 +228,8 @@ function Admin() {
             {eventList.map((event) => (
               <article className="admin-attraction-title" key={event.id}>
                 {event.name}
-                <Link to={`/admin/${event.id}/edit/event`}>📝 </Link>
-                <Link to={`/admin/${event.id}/delete/event`}>🗑️ </Link>
+                <Link to={`/admin/events/${event.id}/edit`}>📝 </Link>
+                <Link to={`/admin/events/${event.id}/delete`}>🗑️ </Link>
               </article>
             ))}
           </section>
