@@ -1,0 +1,71 @@
+.body-profile {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background-profile-light {
+  height: 100vh;
+  width: 100vw;
+}
+
+.background-profile-dark {
+  height: 100vh;
+  width: 100vw;
+}
+
+.background-profile {
+  position: relative;
+}
+
+.box-container-profile {
+  background-color: white;
+  border-radius: 10%;
+  position: absolute;
+}
+
+.title-profile {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+
+.text-profile {
+  display: flex;
+  text-align: center;
+  margin: 5% 20%;
+}
+.email-profile {
+  margin-left: 20%;
+  margin-top: 8%;
+}
+.firstname-profile {
+  margin-left: 20%;
+  margin-top: 4%;
+}
+.name-profile {
+  margin-left: 20%;
+  margin-top: 4%;
+}
+.age-profile {
+  margin-left: 20%;
+  margin-top: 4%;
+}
+
+.ending-profile {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+  margin-bottom: 7%;
+}
+
+.light.box-container-profile {
+  background-color: white;
+  color: black;
+}
+
+.dark.box-container-profile {
+  background-color: var(--primary-dark-color);
+  color: white;
+}

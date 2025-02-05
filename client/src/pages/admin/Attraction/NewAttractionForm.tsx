@@ -1,5 +1,5 @@
 import "./AttractionForm.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 type AttractionData = {
   id: number;
@@ -11,7 +11,7 @@ type AttractionData = {
   schedule: string;
   description: string;
   state: string;
-  img_src: string;
+  img?: string;
 };
 
 interface AttractionFormProps {
@@ -19,36 +19,33 @@ interface AttractionFormProps {
   onSubmit: (attraction: AttractionData) => void;
 }
 
-function EditAttractionForm({ defaultValue }: AttractionFormProps) {
+function AttractionForm({ defaultValue }: AttractionFormProps) {
   const navigate = useNavigate();
-  const { id } = useParams();
 
-  const handleSubmitEditAttraction = (
+  const handleSubmitNewAttraction = (
     event: React.FormEvent<HTMLFormElement>,
   ) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
-    const editAttraction = Object.fromEntries(formData.entries());
 
-    fetch(`${import.meta.env.VITE_API_URL}/api/attractions/${id}`, {
-      method: "put",
+    const newAttraction = Object.fromEntries(formData.entries());
+
+    fetch(`${import.meta.env.VITE_API_URL}/api/attractions`, {
+      method: "post",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(editAttraction),
-    }).then((response) => {
-      if (response.status === 204) {
-        navigate("/admin/attractions/${id}");
-      }
-    });
+      body: JSON.stringify(newAttraction),
+    })
+      .then((response) => response.json())
+      .then(() => {
+        navigate("/admin");
+      });
   };
 
   return (
-    <form
-      onSubmit={handleSubmitEditAttraction}
-      className="form-admin-container"
-    >
+    <form onSubmit={handleSubmitNewAttraction} className="form-admin-container">
       <input
         type="text"
         name="name"
@@ -57,7 +54,7 @@ function EditAttractionForm({ defaultValue }: AttractionFormProps) {
         className="form-admin"
       />
       <input
-        type="text"
+        type="number"
         name="waiting_time"
         defaultValue={defaultValue.waiting_time}
         placeholder="waiting time"
@@ -72,7 +69,7 @@ function EditAttractionForm({ defaultValue }: AttractionFormProps) {
       />
 
       <input
-        type="text"
+        type="number"
         name="min_height"
         defaultValue={defaultValue.min_height}
         placeholder="min height"
@@ -107,10 +104,10 @@ function EditAttractionForm({ defaultValue }: AttractionFormProps) {
         className="form-admin"
       />
       <button type="submit" className="admin-form-button">
-        Submit
+        Ajouter
       </button>
     </form>
   );
 }
 
-export default EditAttractionForm;
+export default AttractionForm;

@@ -17,6 +17,7 @@ body {
   justify-content: center;
   gap: 10%;
 }
+
 .login-input {
   height: 40px;
   border: red solid 2px;
@@ -25,6 +26,7 @@ body {
   font-size: 1.1rem;
   padding: 16px;
 }
+
 .login-input::placeholder {
   font-size: 1.1rem;
 }
@@ -38,17 +40,67 @@ body {
   height: 40px;
   font-size: 1.3rem;
 }
+
 .login-submit-left {
   margin-top: -0.5rem;
 }
+
 .login-h2 {
   color: var(--secondary-color);
 }
+.login-article {
+  display: flex;
+  flex-direction: column;
+  margin-left: -7rem;
+}
+
 .login-p {
   color: var(--secondary-color);
   font-size: 0.9rem;
   margin-top: -1rem;
-  align-self: flex-start;
+}
+.login-link-form {
+  color: var(--secondary-color);
+}
+
+.light.login-page {
+  background-color: var(--primary-color);
+}
+
+.dark.login-page {
+  background-color: var(--primary-dark-color);
+}
+
+.light.login-h2,
+.light.login-p,
+.light.login-link-form {
+  color: var(--secondary-color);
+}
+
+.dark.login-h2,
+.dark.login-p,
+.dark.login-link-form {
+  color: white;
+}
+
+.light.login-input {
+  background-color: white;
+  color: black;
+  border-color: var(--secondary-color);
+}
+
+.dark.login-input {
+  background-color: var(--primary-color);
+  color: black;
+  border-color: var(--secondary-dark-color);
+}
+
+.light.login-submit.login-submit-left {
+  background-color: var(--secondary-color);
+}
+
+.dark.login-submit.login-submit-left {
+  background-color: var(--secondary-dark-color);
 }
 
 @media only screen and (max-width: 1024px) {

@@ -5,6 +5,11 @@
   justify-content: center;
 }
 
+.add-button-hotel,
+.add-button-restaurant {
+  color: black;
+}
+
 .admin-row1,
 .admin-row2 {
   border: 2px solid black;
@@ -19,9 +24,10 @@
 }
 
 .admin-attraction,
-.admin-restaurants,
+.admin-restaurants-title,
 .admin-hotels,
 .admin-events,
+.admin-restaurants,
 .admin-attraction-title {
   margin: 1rem;
   padding: 1rem;
@@ -30,6 +36,7 @@
   width: 15rem;
 }
 
+.admin-restaurants-title,
 .admin-attraction-title {
   width: 23rem;
 }
@@ -41,4 +48,8 @@
   background-color: var(--secondary-color);
   cursor: pointer;
   opacity: 80%;
+}
+
+.add-events-admin {
+  color: black;
 }

@@ -1,54 +1,59 @@
 import "./RestaurantDetails.css";
 import "./Restaurant.tsx";
 import { useLocation } from "react-router-dom";
+import { UseTheme } from "../../services/ThemeContext.tsx";
 
 function RestaurantDetails() {
   const location = useLocation();
   const resto = location.state;
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
 
   return (
     <>
-      <header className="header-allrestau">
-        <h1 className="title-allrestau">"{resto.nom}"</h1>
-      </header>
-      <body>
-        <div className="img-container-allrestau">
-          <img className="img-allrestau" src={resto.img} alt="" />
+      <body className={`body-restau ${theme}`}>
+        <header className="header-restau">
+          <h1 className="title-restau">"{resto.name}"</h1>
+        </header>
+        <div className="img-container-restau">
+          <img className="img-restau" src={resto.img} alt="" />
         </div>
-        <p className="texte-accro-allrestau">{resto.intro}</p>
-        <section className="card-container-allrestau">
-          <div className="card-allrestau">
-            <h1>{resto.nom}</h1>
-            <p className="font-allrestau">{resto.texte}</p>
-            <div className="white-box-allrestau">
-              <div className="price-container-allrestau">
-                <div className="price-box-allrestau">
+        <p className="text-accro-restau">{resto.intro}</p>
+        <section className="card-container-restau">
+          <div className={`card-restau ${theme}`}>
+            <h1>{resto.name}</h1>
+            <p className="font-restau">{resto.text}</p>
+            <div className={`white-box-restau ${theme}`}>
+              <div className={`price-container-restau ${theme}`}>
+                <div className="price-box-restau">
                   <b>
-                    <p className="price-allrestau">
-                      {resto.prix_adulte}
-                      <p className="pricetwo-allrestau">€99</p>
+                    <p className="price-restau">
+                      {resto.adult_price}
+                      <p className="pricetwo-restau">€99</p>
                     </p>
                   </b>
-                  <p className="type-allrestau">
+                  <p className="type-restau">
                     <b>Adulte</b>
                   </p>
-                  <p className="age-allrestau">+ de 14 ans</p>
+                  <p className="age-restau">+ de 14 ans</p>
                 </div>
-                <div className="price-box-allrestau">
+                <div className="price-box-restau">
                   <b>
-                    <p className="price-allrestau">
-                      {resto.prix_enfants}{" "}
-                      <p className="pricetwo-allrestau">€99</p>
+                    <p className="price-restau">
+                      {resto.kids_price} <p className="pricetwo-restau">€99</p>
                     </p>
                   </b>
-                  <p className="type-allrestau">
+                  <p className="type-restau">
                     <b>Enfants</b>
                   </p>
-                  <p className="age-allrestau">- de 14 ans</p>
+                  <p className="age-restau">- de 14 ans</p>
                 </div>
               </div>
-              <div className="button-allrestau">
-                <button type="submit" className="button-reservation-allrestau">
+              <div className="button-restau">
+                <button
+                  type="submit"
+                  className={`button-reservation-restau ${theme}`}
+                >
                   Reserver
                 </button>
               </div>
@@ -56,8 +61,8 @@ function RestaurantDetails() {
           </div>
         </section>
       </body>
-      <footer>
-        ©Restaurants créer par les grands cuisiniers Alicia, Timothey, Antoine,
+      <footer className={`footer-restaurant ${theme}`}>
+        © Restaurants créer par les grands cuisiniers Alicia, Timothey, Antoine,
         Julien et Thomas.
       </footer>
     </>

@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
 import "./Error.css";
+import { UseTheme } from "../../services/ThemeContext";
 
 function ErrorPage() {
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
   return (
-    <main className="error-main">
+    <main className={`error-main ${theme}`}>
       <h1 className="error-title">ERROR 404</h1>
       <section className="error-container">
         <img

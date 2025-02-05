@@ -1,0 +1,137 @@
+.main-reservation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.h1-reservation {
+  margin-top: 3rem;
+}
+
+.reservation-button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+}
+
+.disabled {
+  background-color: var(--secondary-color);
+  opacity: 0.6;
+  filter: brightness(0.8);
+}
+
+.reservation-button:hover {
+  cursor: pointer;
+}
+
+.reservation-button-more-less {
+  border: 1px solid red;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: var(--primary-color);
+  width: 42px;
+}
+
+.reservation-person-count {
+  font-size: 1.5rem;
+}
+
+.reservation-more-less {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 1rem;
+  align-items: center;
+}
+
+/* css du calendrier */
+.flatpickr-weekdays {
+  background-color: var(--secondary-color);
+}
+span.flatpickr-weekday {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+.flatpickr-months .flatpickr-month {
+  background-color: var(--secondary-color);
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  background-color: var(--secondary-color);
+}
+.flatpickr-current-month .flatpickr-monthDropdown-months:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.flatpickr-current-month input.cur-year:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.flatpickr-day.selected.startRange,
+.flatpickr-day.startRange.startRange,
+.flatpickr-day.endRange.startRange {
+  background-color: var(--secondary-color);
+}
+.flatpickr-day.selected.endRange,
+.flatpickr-day.startRange.endRange,
+.flatpickr-day.endRange.endRange {
+  background-color: var(--secondary-color);
+}
+.flatpickr-current-month {
+  color: var(--primary-color);
+}
+.flatpickr-input {
+  display: none;
+}
+
+.light.main-reservation {
+  background-color: var(--primary-color);
+}
+
+.dark.main-reservation {
+  background-color: var(--primary-dark-color);
+}
+
+.light.h1-reservation,
+.light.h2-reservation,
+.light.reservation-person-count {
+  color: black;
+}
+
+.dark.h1-reservation,
+.dark.h2-reservation,
+.dark.reservation-person-count {
+  color: white;
+}
+
+.light.reservation-button-more-less {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.dark.reservation-button-more-less {
+  background-color: var(--primary-dark-color);
+  color: white;
+  border-color: var(--secondary-dark-color);
+}
+
+.light.reservation-button {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.dark.reservation-button {
+  background-color: var(--secondary-dark-color);
+  color: white;
+}
+
+.light.reservation-button-more-less:active {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.dark.reservation-button-more-less:active {
+  background-color: var(--secondary-dark-color);
+  color: white;
+}

@@ -1,78 +1,93 @@
+import { Link } from "react-router-dom";
 import "./Login.css";
+import type { FormEventHandler } from "react";
+import { useContext, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { UseTheme } from "../../services/ThemeContext";
+import { UserContext } from "../../services/UserContext";
 
 function Login() {
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
+  const mailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+
+  const userContext = useContext(UserContext);
+
+  if (!userContext) {
+    throw new Error("UserContext is null");
+  }
+
+  const { setUser } = userContext;
+
+  const navigate = useNavigate();
+
+  const handleSubmitLogin: FormEventHandler = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/login`,
+        {
+          method: "post",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            mail: (mailRef.current as HTMLInputElement).value,
+            password: (passwordRef.current as HTMLInputElement).value,
+          }),
+        },
+      );
+      if (response.status === 200) {
+        const userFromBack = await response.json();
+        setUser(userFromBack);
+        navigate("/");
+      } else {
+        console.info(response);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
-    <div className="login-page">
-      <form className="login-form">
-        <h2 className="login-h2">Se connecter</h2>
+    <main className={`login-page ${theme}`}>
+      <form className="login-form" onSubmit={handleSubmitLogin}>
+        <h2 className={`login-h2 ${theme}`}>Se connecter</h2>
+
         <input
-          className="login-input"
-          type="text"
-          name="connection-username"
-          id="connection-username"
-          placeholder="Nom d'utilisateur"
-          required
-        />
-        <input
-          className="login-input"
-          type="password"
-          name="connection-password"
-          id="connection-password"
-          placeholder="Mot de passe"
-          required
-        />
-        <p className="login-p">Mot de passe oublié ?</p>
-        <input
-          type="submit"
-          value="Valider"
-          className="login-submit login-submit-left"
-        />
-      </form>
-      <form className="login-form">
-        <h2 className="login-h2">S'inscrire</h2>
-        <input
-          className="login-input"
-          type="text"
-          name="inscription-username"
-          id="inscription-username"
-          placeholder="Nom d'utilisateur"
-          required
-        />
-        <input
-          className="login-input"
+          className={`login-input ${theme}`}
           type="email"
           name="adresse-mail"
           id="adresse-mail"
           placeholder="Adresse email"
           required
+          ref={mailRef}
         />
         <input
-          className="login-input"
-          type="email"
-          name="confirm-adresse-mail"
-          id="confirm-adresse-mail"
-          placeholder="Confirmation adresse email"
-          required
-        />
-        <input
-          className="login-input"
+          className={`login-input ${theme}`}
           type="password"
-          name="inscription-password"
-          id="inscription-password"
+          name="connection-password"
+          id="connection-password"
           placeholder="Mot de passe"
           required
+          ref={passwordRef}
         />
+        <article className="login-article">
+          <p className={`login-p ${theme}`}>
+            Mot de passe oublié ? <br />
+            <Link to="/register" className={`login-link-form ${theme}`}>
+              Pas encore de compte ? Inscris-toi !
+            </Link>
+          </p>
+        </article>
+
         <input
-          className="login-input"
-          type="password"
-          name="inscription-confirm-password"
-          id="inscription-confirm-password"
-          placeholder="Confirmation mot de passe"
-          required
+          type="submit"
+          value="Valider"
+          className={`login-submit login-submit-left ${theme}`}
         />
-        <input type="submit" value="Valider" className="login-submit " />
       </form>
-    </div>
+    </main>
   );
 }
 
