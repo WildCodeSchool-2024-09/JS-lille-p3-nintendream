@@ -58,7 +58,7 @@ function Attractions() {
 
       <img
         className="map-nintendream"
-        src="JS-lille-p3-nintendream/client/public/image/attractions/MapNintendDream.jpeg"
+        src="/public/image/attractions/MapNintendDream.jpeg"
         alt="Map"
       />
     </>
