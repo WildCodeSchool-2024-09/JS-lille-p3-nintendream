@@ -28,8 +28,8 @@ router.get("api/profile/:id", ProfileAction.read);
 
 /* ************************************************************************* */
 
+import attractionActions from "./modules/attractions/attractionActions";
 import ProfileAction from "./modules/item/Profile/ProfileAction";
-import attractionActions from "./modules/item/attractions/attractionActions";
 
 router.get("/api/attractions", attractionActions.browse);
 router.get("/api/attractions/:id", attractionActions.read);
