@@ -1,5 +1,5 @@
-import databaseClient from "../../../../database/client";
-import type { Result, Rows } from "../../../../database/client";
+import databaseClient from "../../../database/client";
+import type { Result, Rows } from "../../../database/client";
 
 type Attraction = {
   id: number;
@@ -11,7 +11,7 @@ type Attraction = {
   schedule: string;
   description: string;
   state: string;
-  img_src: string;
+  img?: string;
 };
 
 class AttractionRepository {
@@ -39,7 +39,7 @@ class AttractionRepository {
 
   async create(attraction: Omit<Attraction, "id">) {
     const [result] = await databaseClient.query<Result>(
-      "insert into attraction (name, waiting_time,type, min_height, zone_id, description, schedule, state, img_src) values (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+      "insert into attraction (name, waiting_time,type, min_height, zone_id, description, schedule, state, img) values (?, ?, ?, ?, ?, ?, ?, ?, ?)",
       [
         attraction.name,
         attraction.waiting_time,
@@ -49,7 +49,7 @@ class AttractionRepository {
         attraction.description,
         attraction.schedule,
         attraction.state,
-        attraction.img_src,
+        attraction.img,
       ],
     );
     return result.insertId;
