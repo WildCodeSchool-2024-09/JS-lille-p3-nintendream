@@ -33,9 +33,9 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 import Profile from "./pages/profile/profile.tsx";
+import ProjectMap from "./pages/projectMap/projectMap.tsx";
 import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -60,6 +60,7 @@ const router = createBrowserRouter([
       { path: "/evenements", element: <Evenements /> },
       { path: "/evenements/:id", element: <EvenementDetails /> },
       { path: "/*", element: <ErrorPage /> },
+      { path: "/map", element: <ProjectMap /> },
       {
         path: "/register",
         element: <Register />,
