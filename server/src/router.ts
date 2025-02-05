@@ -55,4 +55,6 @@ import authActions from "./modules/auth/authActions";
 router.post("/api/login", authActions.login);
 router.post("/api/register", authActions.hashedPassword, authActions.register);
 
+// ici mettre toutes les routes admin + verificatoin du token
+
 export default router;

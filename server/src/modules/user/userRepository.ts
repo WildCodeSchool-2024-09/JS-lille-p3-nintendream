@@ -36,7 +36,7 @@ class UserRepository {
     return rows[0] as User;
   }
 
-  async readByMailWithPassword(mail: string) {
+  async readByMail(mail: string) {
     const [rows] = await databaseClient.query<Rows>(
       "select * from user where mail = ?",
       [mail],
