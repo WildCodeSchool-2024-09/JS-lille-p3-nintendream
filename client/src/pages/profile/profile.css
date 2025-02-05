@@ -1,4 +1,4 @@
-.body-profile {
+.main-profile {
   margin: 0;
   display: flex;
   justify-content: center;
@@ -56,8 +56,8 @@
 .ending-profile {
   display: flex;
   justify-content: center;
-  margin-top: 10%;
-  margin-bottom: 7%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .light.box-container-profile {
@@ -68,4 +68,38 @@
 .dark.box-container-profile {
   background-color: var(--primary-dark-color);
   color: white;
+}
+
+.button-profile {
+  background-image: linear-gradient(
+    to right,
+    #e60012 0%,
+    #e35d5b 51%,
+    #e60012 100%
+  );
+  padding: 15px 45px;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 20px;
+  display: block;
+  border: none;
+  margin: auto;
+  margin-bottom: 5%;
+}
+
+.button-profile:hover {
+  background-position: right center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.dark.button-profile {
+  background-image: linear-gradient(
+    to right,
+    #85010c 0%,
+    #882f2d 48%,
+    #85010c 100%
+  );
 }

@@ -21,7 +21,7 @@ const articles = [
     description:
       "Information importante avant votre visite. En raison d’une forte demande, vous devez impérativement être déjà muni d’un billet daté ou avoir déjà enregistré votre date de visite si vous êtes en possession d’un billet non daté.",
     image: "../image/imageHomepage/Ticket-Nintendream.jpg",
-    URL: "/billetterie",
+    URL: "/attractions",
   },
   {
     title: "Plongez dans un univers où vos rêves de gamer prennent vie !",
@@ -100,9 +100,9 @@ function Homepage() {
             <p>Découvrez la dernière attraction du parc</p>
           </div>
           <div className="button-reservation-homepage">
-            <Link to="billeterie" className="link-homepage-to-billeterie">
+            <Link to="attractions" className="link-homepage-to-attractions">
               <button type="button" className="button-homepage-reservation">
-                Je réserve !
+                Attractions
               </button>
             </Link>
           </div>
