@@ -12,9 +12,8 @@ function Profile() {
   if (!userContext) {
     throw new Error("UserContext is null");
   }
-  const { setUser } = userContext;
-  const { user } = userContext;
-  
+  const { setUser, user } = userContext;
+
   function handleProfileClick() {
     setUser(null);
     navigate("/");
