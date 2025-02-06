@@ -8,6 +8,7 @@ type EventDeleteFormProps = {
 
 function EventDeleteForm({ id, children }: EventDeleteFormProps) {
   const navigate = useNavigate();
+
   return (
     <form
       onSubmit={(event) => {
@@ -21,7 +22,9 @@ function EventDeleteForm({ id, children }: EventDeleteFormProps) {
         });
       }}
     >
-      <button type="submit">{children}</button>
+      <button type="submit" className="admin-form-event-button">
+        {children}
+      </button>
     </form>
   );
 }

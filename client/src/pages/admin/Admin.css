@@ -1,8 +1,9 @@
 .main-admin {
   display: flex;
   flex-direction: row;
-  margin-top: 2rem;
+  padding: 2rem;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .admin-row1,
@@ -56,4 +57,31 @@
 
 .logo-plus-admin {
   height: 2rem;
+}
+
+.light.main-admin {
+  background-color: var(--primary-color);
+}
+
+.dark.main-admin {
+  background-color: var(--primary-dark-color);
+  color: white;
+}
+
+.dark.admin-row1,
+.dark.admin-attraction,
+.dark.admin-hotels,
+.dark.admin-restaurants,
+.dark.admin-events,
+.dark.admin-row2,
+.dark.admin-attraction-title,
+.dark.admin-restaurants-title {
+  border-color: white;
+}
+
+.dark.add-attraction-admin,
+.dark.add-hotel-admin,
+.dark.add-restaurants-admin,
+.dark.add-events-admin {
+  color: white;
 }

@@ -1,6 +1,7 @@
 import "./Admin.css";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { UseTheme } from "../../services/ThemeContext";
 
 type Restaurant = {
   id: number;
@@ -107,33 +108,35 @@ function Admin() {
     setShowHotels(false);
     setShowRestaurants(false);
   };
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
 
   return (
-    <main className="main-admin">
-      <section className="admin-row1">
+    <main className={`main-admin ${theme}`}>
+      <section className={`admin-row1 ${theme}`}>
         <article
-          className="admin-attraction"
+          className={`admin-attraction ${theme}`}
           onClick={handleAttractionClick}
           onKeyUp={handleAttractionClick}
         >
           Attractions
         </article>
         <article
-          className="admin-hotels"
+          className={`admin-hotels ${theme}`}
           onClick={handleHotelClick}
           onKeyUp={handleHotelClick}
         >
           Hôtels
         </article>
         <article
-          className="admin-restaurants"
+          className={`admin-restaurants ${theme}`}
           onClick={handleRestaurantClick}
           onKeyUp={handleRestaurantClick}
         >
           Restaurants
         </article>
         <article
-          className="admin-events"
+          className={`admin-events ${theme}`}
           onClick={handleEventClick}
           onKeyUp={handleEventClick}
         >
@@ -141,11 +144,11 @@ function Admin() {
         </article>
       </section>
 
-      <section className="admin-row2">
+      <section className={`admin-row2 ${theme}`}>
         {showAttractions && (
           <section className="admin-attraction-list">
             <Link to="/admin/attractions/new">
-              <p className="add-attraction-admin">
+              <p className={`add-attraction-admin ${theme}`}>
                 <img
                   src="/imageAdmin/plus.png"
                   alt="logo du signe plus"
@@ -155,7 +158,10 @@ function Admin() {
               </p>
             </Link>
             {attractionsList.map((attraction) => (
-              <article key={attraction.id} className="admin-attraction-title">
+              <article
+                key={attraction.id}
+                className={`admin-attraction-title ${theme}`}
+              >
                 {attraction.name}{" "}
                 <Link to={`/admin/attractions/${attraction.id}/edit`}> 📝</Link>
                 <Link to={`/admin/attractions/${attraction.id}/delete`}>
@@ -170,7 +176,7 @@ function Admin() {
         {showHotels && (
           <section className="admin-hotel-list">
             <Link to="/admin/hotels/new">
-              <p className="add-hotel-admin">
+              <p className={`add-hotel-admin ${theme}`}>
                 <img
                   src="/imageAdmin/plus.png"
                   alt="logo du signe plus"
@@ -181,7 +187,10 @@ function Admin() {
             </Link>
 
             {hotelsList.map((hotel) => (
-              <article key={hotel.id} className="admin-attraction-title">
+              <article
+                key={hotel.id}
+                className={`admin-attraction-title ${theme}`}
+              >
                 {hotel.name}
                 {""}
                 <Link to={`/admin/hotels/${hotel.id}/edit`}> 📝</Link>
@@ -194,7 +203,7 @@ function Admin() {
         {showRestaurants && (
           <section className="admin-restaurants-list">
             <Link to="/admin/restaurants/new">
-              <p className="add-restaurants-admin">
+              <p className={`add-restaurants-admin ${theme}`}>
                 <img
                   src="/imageAdmin/plus.png"
                   alt="logo du signe plus"
@@ -204,7 +213,10 @@ function Admin() {
               </p>
             </Link>
             {restaurantsList.map((restaurant) => (
-              <article key={restaurant.id} className="admin-restaurants-title">
+              <article
+                key={restaurant.id}
+                className={`admin-restaurants-title ${theme}`}
+              >
                 {restaurant.name}{" "}
                 <Link to={`/admin/restaurants/${restaurant.id}/edit`}> 📝</Link>
                 <Link to={`/admin/restaurants/${restaurant.id}/delete`}>🗑️</Link>
@@ -216,7 +228,7 @@ function Admin() {
         {showEvents && (
           <section>
             <Link to="/admin/events/new">
-              <p className="add-events-admin">
+              <p className={`add-events-admin ${theme}`}>
                 <img
                   src="/imageAdmin/plus.png"
                   alt="logo du signe plus"
@@ -226,7 +238,10 @@ function Admin() {
               </p>
             </Link>
             {eventList.map((event) => (
-              <article className="admin-attraction-title" key={event.id}>
+              <article
+                className={`admin-attraction-title ${theme}`}
+                key={event.id}
+              >
                 {event.name}
                 <Link to={`/admin/events/${event.id}/edit`}>📝 </Link>
                 <Link to={`/admin/events/${event.id}/delete`}>🗑️ </Link>

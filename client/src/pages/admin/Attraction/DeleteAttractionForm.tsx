@@ -1,5 +1,6 @@
 import "./AttractionForm.css";
 import { useNavigate, useParams } from "react-router-dom";
+import { UseTheme } from "../../../services/ThemeContext";
 
 function DeleteAttractionForm() {
   const navigate = useNavigate();
@@ -19,19 +20,24 @@ function DeleteAttractionForm() {
     });
   };
 
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
+
   return (
-    <form
-      onSubmit={handleSubmitDeleteAttraction}
-      className="form-admin-container"
-    >
-      <h1 className="delete-title-form">
-        ❌ Êtes-vous sûr de vouloir supprimer l'attraction ? Attention ! Cette
-        action est irréversible ❌
-      </h1>
-      <button type="submit" className="admin-form-button">
-        Supprimer
-      </button>
-    </form>
+    <main className={`form-attraction-main-container ${theme}`}>
+      <form
+        onSubmit={handleSubmitDeleteAttraction}
+        className="form-admin-container"
+      >
+        <h1 className={`delete-title-form ${theme}`}>
+          ❌ Êtes-vous sûr de vouloir supprimer l'attraction ? Attention ! Cette
+          action est irréversible ❌
+        </h1>
+        <button type="submit" className="admin-form-button">
+          Supprimer
+        </button>
+      </form>
+    </main>
   );
 }
 
