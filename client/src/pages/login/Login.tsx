@@ -18,7 +18,7 @@ function Login() {
     throw new Error("UserContext is null");
   }
 
-  const { setUser } = userContext;
+  const { setUserAndToken } = userContext;
 
   const navigate = useNavigate();
 
@@ -39,7 +39,7 @@ function Login() {
       );
       if (response.status === 200) {
         const userFromBack = await response.json();
-        setUser(userFromBack);
+        setUserAndToken(userFromBack);
         navigate("/");
       } else {
         console.info(response);

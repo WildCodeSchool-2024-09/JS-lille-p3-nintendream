@@ -11,6 +11,11 @@ function NewEvent() {
     img_src: "",
     zone_id: 0,
   };
+  const storedData = localStorage.getItem("userAndToken");
+  if (!storedData) {
+    throw new Error("storedData is null");
+  }
+  const userAndToken = JSON.parse(storedData);
   return (
     <>
       <EventForm
@@ -20,6 +25,7 @@ function NewEvent() {
             method: "post",
             headers: {
               "Content-Type": "application/json",
+              Authorization: `Bearer ${userAndToken.token}`,
             },
             body: JSON.stringify(eventData),
           })

@@ -18,13 +18,10 @@ router.delete("/api/restaurant/:id", RestaurantAction.destroy);
 
 router.get("/api/events", EventActions.browse);
 router.get("/api/events/:id", EventActions.read);
-router.post("/api/events", EventActions.add);
-router.put("/api/events/:id", EventActions.edit);
-router.delete("/api/events/:id", EventActions.destroy);
 
-router.get("api/profile/:id", ProfileAction.read);
+router.get("api/profile/:id", authActions.verifyToken, ProfileAction.read);
 
-// Define item-related routes
+// Define item-related routesn,
 
 /* ************************************************************************* */
 
@@ -56,5 +53,9 @@ router.post("/api/login", authActions.login);
 router.post("/api/register", authActions.hashedPassword, authActions.register);
 
 // ici mettre toutes les routes admin + verificatoin du token
+router.use(authActions.verifyToken, authActions.verifyAdmin);
 
+router.post("/api/events", EventActions.add);
+router.put("/api/events/:id", EventActions.edit);
+router.delete("/api/events/:id", EventActions.destroy);
 export default router;

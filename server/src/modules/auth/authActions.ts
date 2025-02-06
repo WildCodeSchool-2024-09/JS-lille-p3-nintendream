@@ -23,6 +23,7 @@ const login: RequestHandler = async (req, res, next) => {
         mail: user.mail,
         first_name: user.first_name,
         name: user.name,
+        role: user.role,
       };
 
       const token = await jwt.sign(
@@ -95,12 +96,18 @@ const verifyToken: RequestHandler = (req, res, next) => {
     // Vérifier la validité du token (son authenticité et sa date d'expériation)
     // En cas de succès, le payload est extrait et décodé
     req.auth = jwt.verify(token, process.env.APP_SECRET as string) as MyPayload;
-
     next();
   } catch (err) {
     console.error(err);
     res.sendStatus(401);
   }
 };
+const verifyAdmin: RequestHandler = (req, res, next) => {
+  if (req.auth.role !== "admin") {
+    res.sendStatus(403);
+    return;
+  }
 
-export default { login, hashedPassword, register, verifyToken };
+  next();
+};
+export default { login, hashedPassword, register, verifyToken, verifyAdmin };
