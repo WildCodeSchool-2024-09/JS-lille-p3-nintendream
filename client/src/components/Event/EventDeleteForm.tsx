@@ -14,6 +14,7 @@ function EventDeleteForm({ id, children }: EventDeleteFormProps) {
     throw new Error("storedData is null");
   }
   const userAndToken = JSON.parse(storedData);
+
   return (
     <form
       onSubmit={(event) => {
@@ -31,7 +32,9 @@ function EventDeleteForm({ id, children }: EventDeleteFormProps) {
         });
       }}
     >
-      <button type="submit">{children}</button>
+      <button type="submit" className="admin-form-event-button">
+        {children}
+      </button>
     </form>
   );
 }
