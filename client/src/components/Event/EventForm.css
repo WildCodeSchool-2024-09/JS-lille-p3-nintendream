@@ -1,12 +1,16 @@
+.form-event-main-container {
+  min-height: 130vh;
+}
+
 .form-event {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 120vh;
   gap: 2rem;
   width: 40%;
   margin: auto;
-  margin-top: 3rem;
+  padding-top: 3rem;
 }
 
 .form-event-section {
@@ -22,4 +26,38 @@
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
   padding: 5px;
+}
+
+.admin-form-event-button {
+  margin-top: 1rem;
+  border-radius: 15px;
+  width: 15rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-self: center;
+}
+
+.admin-form-event-button:hover {
+  cursor: pointer;
+}
+
+.light.form-event-main-container {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.dark.form-event-main-container {
+  background-color: var(--primary-dark-color);
+  color: white;
+}
+
+.light.form-event-textarea {
+  background-color: white;
+  color: black;
+}
+
+.dark.form-event-textarea {
+  background-color: var(--primary-color);
+  color: black;
+  border-color: var(--secondary-dark-color);
 }
