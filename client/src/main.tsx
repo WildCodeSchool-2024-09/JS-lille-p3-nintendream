@@ -7,10 +7,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import EditAttractionForm from "./pages/admin//Attraction/EditAttractionForm.tsx";
+import EditAttraction from "./pages/admin/Attraction/EditAttraction.tsx";
 import Admin from "./pages/admin/Admin.tsx";
 import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
-import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
 import EventDelete from "./pages/admin/Event/EventDelete.tsx";
 import EventEdit from "./pages/admin/Event/EventEdit.tsx";
 import NewEvent from "./pages/admin/Event/NewEvent.tsx";
@@ -18,6 +17,7 @@ import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
 import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
 import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
 import DeleteRestaurantForm from "./pages/admin/restaurant/DeleteRestaurantForm.tsx";
+import EditRestaurantForm from "./pages/admin/restaurant/EditRestaurantForm.tsx";
 import RestaurantForm from "./pages/admin/restaurant/NewRestaurantForm.tsx";
 import AttractionDetails from "./pages/attractionDetails/AttractionDetails.tsx";
 import Attractions from "./pages/attractions/Attractions.tsx";
@@ -33,8 +33,10 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 import Profile from "./pages/profile/profile.tsx";
+import ProjectMap from "./pages/projectMap/projectMap.tsx";
 import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
+import NewAttraction from "./pages/admin/Attraction/NewAttraction.tsx";
 
 const router = createBrowserRouter([
   {
@@ -60,6 +62,7 @@ const router = createBrowserRouter([
       { path: "/evenements", element: <Evenements /> },
       { path: "/evenements/:id", element: <EvenementDetails /> },
       { path: "/*", element: <ErrorPage /> },
+      { path: "/map", element: <ProjectMap /> },
       {
         path: "/register",
         element: <Register />,
@@ -68,51 +71,24 @@ const router = createBrowserRouter([
       // Admin - Attractions
 
       {
-        path: "/admin/new/attractions",
-        element: (
-          <AttractionForm
-            defaultValue={{
-              id: 0,
-              name: "",
-              waiting_time: "0",
-              type: "",
-              description: "",
-              min_height: "",
-              zone_id: 0,
-              schedule: "",
-              state: "",
-              img_src: "",
-            }}
-            onSubmit={() => {}}
-          />
-        ),
+        path: "/admin/attractions/new",
+        element: <NewAttraction />,
       },
       {
-        path: "/admin/:id/edit",
-        element: (
-          <EditAttractionForm
-            defaultValue={{
-              id: 0,
-              name: "",
-              waiting_time: "0",
-              type: "",
-              description: "",
-              min_height: "",
-              zone_id: 0,
-              schedule: "",
-              state: "",
-              img_src: "",
-            }}
-            onSubmit={() => {}}
-          />
-        ),
+        path: "/admin/attractions/:id/edit",
+        element: <EditAttraction />,
       },
       {
         path: "/admin/:id/delete/attractions",
+
+        path: "/admin/attractions/:id/delete",
+
         element: <DeleteAttractionForm />,
       },
 
+      // Admin - Hotels
       {
+
 
         path: "/admin/new/restaurant",
         element: (
@@ -134,6 +110,9 @@ const router = createBrowserRouter([
       {
 
         path: "/admin/:id/hotel/edit",
+
+        path: "/admin/hotels/:id/edit",
+
         element: (
           <EditHotelForm
             defaultValue={{
@@ -152,7 +131,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: "/admin/newhotel",
+        path: "/admin/hotels/new",
         element: (
           <NewHotelForm
             defaultValue={{
@@ -170,20 +149,25 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/:id/hotel/delete",
+        path: "/admin/hotels/:id/delete",
         element: <DeletehotelForm />,
       },
+
+      // Admin - Events
+
       {
-        path: "/admin/new/event",
+        path: "/admin/events/new",
         element: <NewEvent />,
       },
       {
-        path: "/admin/:id/edit/event",
+        path: "/admin/events/:id/edit",
         element: <EventEdit />,
       },
-      { path: "/admin/:id/delete/event", element: <EventDelete /> },
+      { path: "/admin/events/:id/delete", element: <EventDelete /> },
+
+      // Admin - Restaurants
       {
-        path: "/admin/newattraction",
+        path: "/admin/restaurants/:id/edit",
         element: (
           <RestaurantForm
             defaultValue={{
@@ -200,7 +184,24 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/admin/:id/delete/restaurant",
+        path: "/admin/restaurants/new",
+        element: (
+          <EditRestaurantForm
+            defaultValue={{
+              id: 0,
+              name: "",
+              img: "",
+              intro: "",
+              text: "",
+              adult_price: 0,
+              kids_price: 0,
+            }}
+            onSubmit={() => {}}
+          />
+        ),
+      },
+      {
+        path: "/admin/restaurants/:id/delete",
         element: <DeleteRestaurantForm />,
       },
     ],
@@ -220,5 +221,4 @@ createRoot(rootElement).render(
   <StrictMode>
     <RouterProvider router={router} />
   </StrictMode>,
-
 );

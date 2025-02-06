@@ -32,7 +32,7 @@ function Attractions() {
       <div className="image-background-attraction">
         <img
           className="background-attraction"
-          src="/image/attractions/Background-Attraction.jpeg"
+          src="/public/image/attractions/Background-Attraction.webp"
           alt="attraction"
         />
       </div>
@@ -58,7 +58,7 @@ function Attractions() {
 
       <img
         className="map-nintendream"
-        src="JS-lille-p3-nintendream/client/public/image/attractions/MapNintendDream.jpeg"
+        src="/public/image/attractions/MapNintendDream.jpeg"
         alt="Map"
       />
     </>
