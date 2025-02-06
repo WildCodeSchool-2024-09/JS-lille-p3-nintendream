@@ -1,18 +1,20 @@
 import "./HotelForm.css";
 import { useNavigate, useParams } from "react-router-dom";
 
-function DeletehotelForm() {
+function DeleteHotelForm() {
   const navigate = useNavigate();
   const { id } = useParams();
 
   const handleSubmitDeletehotel = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    fetch(`${import.meta.env.VITE_API_URL}/api/hotels/${id}`, {
+    fetch(`${import.meta.env.VITE_API_URL}/api/hotel/${id}`, {
       method: "delete",
     }).then((response) => {
       if (response.status === 204) {
-        navigate("/hotels");
+        navigate("/admin");
+      } else {
+        alert("Erreur lors de la suppression de l'hotel");
       }
     });
   };
@@ -30,4 +32,4 @@ function DeletehotelForm() {
   );
 }
 
-export default DeletehotelForm;
+export default DeleteHotelForm;

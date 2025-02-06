@@ -1,21 +1,25 @@
 import { useLocation } from "react-router-dom";
 import "./Confirmation.css";
 import cleanDate from "../../services/CleanDate";
+import { UseTheme } from "../../services/ThemeContext";
+
 function Confirmation() {
   const { state } = useLocation();
   const dateString = String(state.date);
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
 
   return (
-    <main className="payment-main">
+    <main className={`payment-main ${theme}`}>
       <section>
-        <h2 className="payment-h2">Paiement sécurisé</h2>
-        <form className="payment-form">
+        <h2 className={`payment-h2 ${theme}`}>Paiement sécurisé</h2>
+        <form className={`payment-form ${theme}`}>
           <div className="payment-selection">
-            <p className="payment-label"> Payer avec :</p>
+            <p className={`payment-label ${theme}`}> Payer avec :</p>
             <div className="payment-methods">
               <img
-                src="/Logos/carte-bleue.png"
-                alt="Carte bleue"
+                src="/Logos/map-bleue.png"
+                alt="projectMap bleue"
                 className="payment-img"
               />
               <img
@@ -27,54 +31,65 @@ function Confirmation() {
             </div>
           </div>
           <label className="payment-label">
-            Titulaire de la carte :
+            Titulaire de la map :
             <input
               name="titulaire"
               type="text"
-              className="payment-input"
+              className={`payment-input ${theme}`}
               required
             />
           </label>
           <label className="payment-label">
-            Numéro de la carte :
+            Numéro de la map :
             <input
               name="card-number"
               type="text"
-              className="payment-input"
+              className={`payment-input ${theme}`}
               required
             />
           </label>
-          <label className="payment-label">
+          <label className={`payment-label ${theme}`}>
             Date d'expiration :
             <input
               name="card-expiration"
               type="text"
-              className="payment-input"
+              className={`payment-input ${theme}`}
               required
             />
           </label>
-          <label className="payment-label">
+          <label className={`payment-label ${theme}`}>
             CVC :
-            <input name="cvc" type="text" className="payment-input" required />
+            <input
+              name="cvc"
+              type="text"
+              className={`payment-input ${theme}`}
+              required
+            />
           </label>
-          <label className="payment-label">
+          <label className={`payment-label ${theme}`}>
             <input
               name="confirmation"
               type="submit"
               value="Valider"
-              className="payment-validate-button"
+              className={`payment-validate-button ${theme}`}
             />
           </label>
         </form>
       </section>
       <section>
-        <h2 className="payment-h2">Résumé de la commande :</h2>
-        <div className="payment-summary">
-          <p className="payment-label">
+        <h2 className={`payment-h2 ${theme}`}>Résumé de la commande :</h2>
+        <div className={`payment-summary ${theme}`}>
+          <p className={`payment-label ${theme}`}>
             Nombre de personnes : {state.personNumber}{" "}
           </p>
-          <p className="payment-label"> Date : {cleanDate(dateString)}</p>
-          <p className="payment-label"> Prix à payer : {state.price}€</p>
+          <p className={`payment-label ${theme}`}>
+            {" "}
+            Date : {cleanDate(dateString)}
+          </p>
+          <p className={`payment-label ${theme}`}>
+            {" "}
+            Prix à payer : {state.price}€
+          </p>
         </div>
       </section>
     </main>
