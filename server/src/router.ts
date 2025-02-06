@@ -21,7 +21,7 @@ router.get("/api/events/:id", EventActions.read);
 
 router.get("api/profile/:id", authActions.verifyToken, ProfileAction.read);
 
-// Define item-related routesn,
+// Define item-related routes,
 
 /* ************************************************************************* */
 
