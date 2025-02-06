@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import EventForm from "../../../components/Event/EventForm";
+
 interface Event {
   id: number;
   name: string;

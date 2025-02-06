@@ -14,8 +14,8 @@ import AttractionForm from "./pages/admin/Attraction/NewAttractionForm.tsx";
 import EventDelete from "./pages/admin/Event/EventDelete.tsx";
 import EventEdit from "./pages/admin/Event/EventEdit.tsx";
 import NewEvent from "./pages/admin/Event/NewEvent.tsx";
-import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
-import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
+import DeleteHotelForm from "./pages/admin/Hotel/HotelDelete.tsx";
+import EditHotel from "./pages/admin/Hotel/editHotel.tsx";
 import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
 import DeleteRestaurantForm from "./pages/admin/restaurant/DeleteRestaurantForm.tsx";
 import EditRestaurantForm from "./pages/admin/restaurant/EditRestaurantForm.tsx";
@@ -117,21 +117,7 @@ const router = createBrowserRouter([
       // Admin - Hotels
       {
         path: "/admin/hotels/:id/edit",
-        element: (
-          <EditHotelForm
-            defaultValue={{
-              id: 0,
-              img: "",
-              name: "",
-              distance: "0",
-              hotel_price: "0",
-              description: "",
-              secondary_description: "",
-              tertiary_description: "",
-            }}
-            onSubmit={() => {}}
-          />
-        ),
+        element: <EditHotel />,
       },
 
       {
@@ -154,7 +140,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/hotels/:id/delete",
-        element: <DeletehotelForm />,
+        element: <DeleteHotelForm />,
       },
 
       // Admin - Events

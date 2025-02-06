@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import "./EventForm.css";
+
 type EventData = {
   name: string;
   short_description: string;
