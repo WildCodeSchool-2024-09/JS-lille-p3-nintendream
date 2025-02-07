@@ -9,7 +9,7 @@ function HotelDelete() {
     <>
       <h1 className="hotel-text-delete">
         {" "}
-        ❌ Êtes-vous sûr de vouloir supprimer l'évènement ? Attention ! Cette
+        ❌ Êtes-vous sûr de vouloir supprimer l'hôtel ? Attention ! Cette
         action est irréversible ❌
       </h1>
       <section className="hotel-button-delete">
