@@ -82,8 +82,6 @@
   margin: auto;
   margin-top: 1rem;
   width: fit-content;
-  border: 2px var(--secondary-color) solid;
-  border-radius: 1rem;
   padding: 1.5rem 1rem;
   max-width: 80%;
 }
