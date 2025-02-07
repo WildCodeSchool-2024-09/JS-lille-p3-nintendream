@@ -120,7 +120,9 @@ function HotelForm({ children, defaultValue, onSubmit }: HotelFormProps) {
             placeholder="Source de l'image"
           />
         </section>
-        <button type="submit" className="admin-form-hotel-button">{children}</button>
+        <button type="submit" className="admin-form-hotel-button">
+          {children}
+        </button>
       </form>
     </main>
   );
