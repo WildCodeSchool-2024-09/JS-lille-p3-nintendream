@@ -12,7 +12,7 @@ function NewAttraction() {
     type: "",
     description: "",
     min_height: "",
-    zone_id: 0,
+    zone_id: 1,
     schedule: "",
     state: "",
     img: "",
@@ -22,13 +22,13 @@ function NewAttraction() {
     <>
       <AttractionForm
         defaultValue={newAttraction}
-        onSubmit={() => {
+        onSubmit={(attractionData) => {
           fetch(`${import.meta.env.VITE_API_URL}/api/attractions`, {
             method: "post",
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify(newAttraction),
+            body: JSON.stringify(attractionData),
           })
             .then((response) => response.json())
             .then(() => {
