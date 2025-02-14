@@ -12,10 +12,10 @@ interface Event {
   zone_id: number;
 }
 const storedData = localStorage.getItem("userAndToken");
-if (!storedData) {
-  throw new Error("storedData is null");
+let userAndToken = { user: "", token: "" };
+if (storedData) {
+  userAndToken = JSON.parse(storedData);
 }
-const userAndToken = JSON.parse(storedData);
 
 function EventEdit() {
   const { id } = useParams();

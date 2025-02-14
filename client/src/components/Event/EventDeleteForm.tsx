@@ -10,10 +10,10 @@ function EventDeleteForm({ id, children }: EventDeleteFormProps) {
   const navigate = useNavigate();
 
   const storedData = localStorage.getItem("userAndToken");
-  if (!storedData) {
-    throw new Error("storedData is null");
+  let userAndToken = { user: "", token: "" };
+  if (storedData) {
+    userAndToken = JSON.parse(storedData);
   }
-  const userAndToken = JSON.parse(storedData);
 
   return (
     <form
