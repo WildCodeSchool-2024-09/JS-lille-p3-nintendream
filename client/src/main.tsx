@@ -7,6 +7,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+
+import Admin from "./pages/admin/Admin.tsx";
+import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
+
 import DeleteAttractionForm from "./components/Attraction/DeleteAttractionForm.tsx";
 import Admin from "./pages/admin/Admin.tsx";
 import EditAttraction from "./pages/admin/Attraction/EditAttraction.tsx";
@@ -19,7 +23,6 @@ import NewHotel from "./pages/admin/Hotel/NewHotel.tsx";
 import EditHotel from "./pages/admin/Hotel/editHotel.tsx";
 import DeleteRestaurantForm from "./pages/admin/restaurant/DeleteRestaurantForm.tsx";
 import EditRestaurantForm from "./pages/admin/restaurant/EditRestaurantForm.tsx";
-import RestaurantForm from "./pages/admin/restaurant/NewRestaurantForm.tsx";
 import AttractionDetails from "./pages/attractionDetails/AttractionDetails.tsx";
 import Attractions from "./pages/attractions/Attractions.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
@@ -113,37 +116,11 @@ const router = createBrowserRouter([
       // Admin - Restaurants
       {
         path: "/admin/restaurants/:id/edit",
-        element: (
-          <RestaurantForm
-            defaultValue={{
-              id: 0,
-              name: "",
-              img: "",
-              intro: "",
-              text: "",
-              adult_price: 0,
-              kids_price: 0,
-            }}
-            onSubmit={() => {}}
-          />
-        ),
+        element: <EditRestaurantForm />,
       },
       {
         path: "/admin/restaurants/new",
-        element: (
-          <EditRestaurantForm
-            defaultValue={{
-              id: 0,
-              name: "",
-              img: "",
-              intro: "",
-              text: "",
-              adult_price: 0,
-              kids_price: 0,
-            }}
-            onSubmit={() => {}}
-          />
-        ),
+        element: <EditRestaurantForm />,
       },
       {
         path: "/admin/restaurants/:id/delete",
