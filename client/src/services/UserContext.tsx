@@ -1,28 +1,44 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import type { ReactNode } from "react";
 
-type User = {
-  first_name: string;
-  name: string;
-  age: number;
-  mail: string;
-  username: string;
-  password: string;
-  role: string;
+type UserAndToken = {
+  token: string;
+  user: {
+    id: number;
+    first_name: string;
+    name: string;
+    age: number;
+    mail: string;
+    username: string;
+    role: string;
+  };
 };
 
 interface UserContextType {
-  user: User | null;
-  setUser: (user: User | null) => void;
+  userAndToken: UserAndToken | null;
+  setUserAndToken: (userAndToken: UserAndToken | null) => void;
 }
 
 export const UserContext = createContext<UserContextType | null>(null);
 
 export function UserProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
+  // 🌟 Charger les données du localStorage au premier rendu
+  const [userAndToken, setUserAndToken] = useState<UserAndToken | null>(() => {
+    const storedData = localStorage.getItem("userAndToken");
+    return storedData ? JSON.parse(storedData) : null;
+  });
+
+  // 📝 Sauvegarder dans le localStorage à chaque changement
+  useEffect(() => {
+    if (userAndToken) {
+      localStorage.setItem("userAndToken", JSON.stringify(userAndToken));
+    } else {
+      localStorage.removeItem("userAndToken");
+    }
+  }, [userAndToken]);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ userAndToken, setUserAndToken }}>
       {children}
     </UserContext.Provider>
   );

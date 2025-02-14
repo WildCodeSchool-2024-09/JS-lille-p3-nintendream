@@ -13,8 +13,8 @@ function HotelDelete() {
     <main className={`form-hotel-main-container ${theme}`}>
       <h1 className="hotel-text-delete">
         {" "}
-        ❌ Êtes-vous sûr de vouloir supprimer l'hôtel ? Attention ! Cette
-        action est irréversible ❌
+        ❌ Êtes-vous sûr de vouloir supprimer l'hôtel ? Attention ! Cette action
+        est irréversible ❌
       </h1>
       <section className="hotel-button-delete">
         <HotelDeleteForm id={numberId}>Supprimer</HotelDeleteForm>
