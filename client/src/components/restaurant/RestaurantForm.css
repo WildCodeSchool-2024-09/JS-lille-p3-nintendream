@@ -1,0 +1,63 @@
+.form-restaurant-main-container {
+  min-height: 130vh;
+}
+
+.form-restaurant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 120vh;
+  gap: 2rem;
+  width: 40%;
+  margin: auto;
+  padding-top: 3rem;
+}
+
+.form-restaurant-section {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-restaurant-textarea {
+  width: 350px;
+  height: 75px;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.admin-form-restaurant-button {
+  margin-top: 1rem;
+  border-radius: 15px;
+  width: 15rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-self: center;
+}
+
+.admin-form-restaurant-button:hover {
+  cursor: pointer;
+}
+
+.light.form-restaurant-main-container {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.dark.form-restaurant-main-container {
+  background-color: var(--primary-dark-color);
+  color: white;
+}
+
+.light.form-restaurant-textarea {
+  background-color: white;
+  color: black;
+}
+
+.dark.form-restaurant-textarea {
+  background-color: var(--primary-color);
+  color: black;
+  border-color: var(--secondary-dark-color);
+}

@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import "./EventForm.css";
 import { UseTheme } from "../../services/ThemeContext";
 
-
 type EventData = {
   name: string;
   short_description: string;
