@@ -1,3 +1,7 @@
+.form-hotel-main-container {
+  min-height: 100vh;
+}
+
 .hotel-text-delete {
   display: flex;
   justify-self: center;
@@ -7,7 +11,7 @@
 
 .hotel-button-delete {
   padding: 15px 0px;
-  text-align: center;
+  justify-items: center;
   transition: 0.5s;
   background-size: 200% auto;
   border-radius: 20px;
@@ -16,4 +20,14 @@
   width: 50%;
   justify-self: center;
   font-size: 1.3rem;
+}
+
+.dark.form-hotel-main-container {
+  background-color: var(--primary-dark-color);
+  color: white;
+}
+
+.light.form-hotel-main-container {
+  background-color: var(--primary-color);
+  color: black;
 }

@@ -1,4 +1,4 @@
-import "./AttractionForm.css";
+import "../../../components/Attraction/AttractionForm.css";
 import { useNavigate } from "react-router-dom";
 import AttractionForm from "../../../components/Attraction/AttractionForm";
 

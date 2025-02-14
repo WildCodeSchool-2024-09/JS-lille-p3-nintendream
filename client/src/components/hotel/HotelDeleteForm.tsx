@@ -8,6 +8,7 @@ type HotelDeleteFormProps = {
 
 function HotelDeleteForm({ id, children }: HotelDeleteFormProps) {
   const navigate = useNavigate();
+
   return (
     <form
       onSubmit={(hotel) => {
@@ -21,7 +22,9 @@ function HotelDeleteForm({ id, children }: HotelDeleteFormProps) {
         });
       }}
     >
-      <button type="submit">{children}</button>
+      <button type="submit" className="admin-form-hotel-button">
+        {children}
+      </button>
     </form>
   );
 }
