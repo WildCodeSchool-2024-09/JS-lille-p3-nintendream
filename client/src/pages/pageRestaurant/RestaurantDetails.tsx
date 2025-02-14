@@ -12,11 +12,11 @@ function RestaurantDetails() {
   return (
     <>
       <body className={`body-restau ${theme}`}>
-        <header className="header-restau">
+        <header className="header-restau-details">
           <h1 className="title-restau">"{resto.name}"</h1>
         </header>
         <div className="img-container-restau">
-          <img className="img-restau" src={resto.img} alt="" />
+          <img className="img-restau-details" src={resto.img} alt="" />
         </div>
         <p className="text-accro-restau">{resto.intro}</p>
         <section className="card-container-restau">
@@ -48,14 +48,6 @@ function RestaurantDetails() {
                   </p>
                   <p className="age-restau">- de 14 ans</p>
                 </div>
-              </div>
-              <div className="button-restau">
-                <button
-                  type="submit"
-                  className={`button-reservation-restau ${theme}`}
-                >
-                  Reserver
-                </button>
               </div>
             </div>
           </div>

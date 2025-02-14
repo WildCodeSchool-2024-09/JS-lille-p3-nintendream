@@ -162,7 +162,7 @@ function Restaurant() {
                         type="submit"
                         className={`button-reservation-allresto ${theme}`}
                       >
-                        Réserver
+                        Détails
                       </button>
                     </div>
                   </Link>

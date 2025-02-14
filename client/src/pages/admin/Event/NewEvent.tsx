@@ -11,11 +11,13 @@ function NewEvent() {
     img_src: "",
     zone_id: 0,
   };
+  
   const storedData = localStorage.getItem("userAndToken");
-  if (!storedData) {
-    throw new Error("storedData is null");
-  }
-  const userAndToken = JSON.parse(storedData);
+let userAndToken = { user: "", token: "" };
+if (storedData) {
+  userAndToken = JSON.parse(storedData);
+}
+
   return (
     <>
       <EventForm
