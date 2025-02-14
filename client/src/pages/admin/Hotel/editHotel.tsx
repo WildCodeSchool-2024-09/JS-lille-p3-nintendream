@@ -1,4 +1,3 @@
-import "./hotelForm.css";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import HotelForm from "../../../components/hotel/HotelForm";

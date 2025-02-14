@@ -6,7 +6,7 @@
   gap: 2rem;
   width: 40%;
   margin: auto;
-  margin-top: 3rem;
+  padding-top: 3rem;
 }
 
 .form-hotel-section {
@@ -22,4 +22,39 @@
   border: 1px solid var(--secondary-color);
   border-radius: 10px;
   padding: 5px;
+}
+
+.admin-form-hotel-button {
+  margin-top: 1rem;
+  border-radius: 15px;
+  width: 15rem;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-form-hotel-button:hover {
+  cursor: pointer;
+}
+
+.light.form-hotel-main-container {
+  background-color: var(--primary-color);
+  color: black;
+}
+
+.dark.form-hotel-main-container {
+  background-color: var(--primary-dark-color);
+  color: white;
+}
+
+.light.form-hotel-textarea {
+  background-color: white;
+  color: black;
+  border-color: var(--secondary-color);
+}
+
+.dark.form-hotel-textarea {
+  background-color: var(--primary-color);
+  color: black;
+  border-color: var(--secondary-dark-color);
 }

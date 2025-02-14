@@ -1,6 +1,6 @@
 import "./AttractionForm.css";
 import { useNavigate, useParams } from "react-router-dom";
-import { UseTheme } from "../../../services/ThemeContext";
+import { UseTheme } from "../../services/ThemeContext";
 
 function DeleteAttractionForm() {
   const navigate = useNavigate();
