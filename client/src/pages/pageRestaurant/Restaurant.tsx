@@ -29,6 +29,10 @@ function Restaurant() {
       .catch((error) => console.error("Erreur lors du fetch :", error));
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },

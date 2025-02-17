@@ -1,10 +1,14 @@
 import "./Register.css";
 import type { FormEventHandler } from "react";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { UseTheme } from "../../services/ThemeContext";
 
 function Register() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const themeContext = UseTheme();
   const theme = themeContext ? themeContext.theme : "light";
   const navigate = useNavigate();

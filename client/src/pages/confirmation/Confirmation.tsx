@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import "./Confirmation.css";
+import { useEffect } from "react";
 import cleanDate from "../../services/CleanDate";
 import { UseTheme } from "../../services/ThemeContext";
 
@@ -8,6 +9,10 @@ function Confirmation() {
   const dateString = String(state.date);
   const themeContext = UseTheme();
   const theme = themeContext ? themeContext.theme : "light";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className={`payment-main ${theme}`}>

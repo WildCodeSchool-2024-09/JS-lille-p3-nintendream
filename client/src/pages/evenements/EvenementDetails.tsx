@@ -28,6 +28,10 @@ function EvenemementDetails() {
       });
   }, [id]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <main className={`event-details-main ${theme}`}>

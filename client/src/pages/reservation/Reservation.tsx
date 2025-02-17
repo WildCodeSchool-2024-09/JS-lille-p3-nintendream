@@ -17,6 +17,10 @@ function Reservation() {
   const [clickedADate, setClickedADate] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     switch (name) {
       case "individuel":
         setPrice(35);

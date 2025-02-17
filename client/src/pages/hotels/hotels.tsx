@@ -27,6 +27,10 @@ function HotelsPage() {
       });
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <main className={`hotels-container ${theme}`}>

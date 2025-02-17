@@ -1,5 +1,6 @@
 import "./RestaurantDetails.css";
 import "./Restaurant.tsx";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { UseTheme } from "../../services/ThemeContext.tsx";
 
@@ -8,6 +9,10 @@ function RestaurantDetails() {
   const resto = location.state;
   const themeContext = UseTheme();
   const theme = themeContext ? themeContext.theme : "light";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

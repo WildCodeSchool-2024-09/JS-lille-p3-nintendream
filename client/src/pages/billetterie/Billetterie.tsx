@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Billetterie.css";
+import { useEffect } from "react";
 import { UseTheme } from "../../services/ThemeContext";
 
 interface PricesProps {
@@ -49,6 +50,11 @@ const prices: PricesProps[] = [
 function Billetterie() {
   const themeContext = UseTheme();
   const theme = themeContext ? themeContext.theme : "light";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className={`billetterie-container ${theme}`}>
       <section className={`billetterie-title-container ${theme}`}>

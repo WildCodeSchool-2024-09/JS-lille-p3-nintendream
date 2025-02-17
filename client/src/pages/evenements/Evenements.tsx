@@ -25,6 +25,10 @@ function Evenements() {
       });
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className={`events-main ${theme}`}>
       <h1 className={`events-title ${theme}`}>Évènements et spectacles</h1>

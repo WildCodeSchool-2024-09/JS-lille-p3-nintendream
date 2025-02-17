@@ -370,93 +370,6 @@
   border: none;
 }
 
-@media screen and (max-width: 464px) {
-  .card-container-homepage-reservation {
-    height: 7rem;
-    margin-top: -8rem;
-    margin-bottom: 3rem;
-    z-index: 0;
-    margin-left: 2rem;
-    width: 10rem;
-  }
-
-  .button-reservation-new-attraction {
-    width: 84%;
-    justify-self: center;
-    font-size: 1rem;
-  }
-
-  .button-homepage-reservation {
-    width: 75%;
-    height: 3rem;
-    font-size: 0.8rem;
-  }
-
-  .link-article {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-self: center;
-    margin-top: 5rem;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px
-      rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    text-align: center;
-    justify-content: space-between;
-    margin-bottom: 3rem;
-  }
-
-  .image-card-article {
-    height: 100%;
-    border-radius: 10px;
-    width: 100%;
-    justify-items: center;
-    margin-left: 0;
-    margin-right: 2%;
-  }
-
-  .card-title {
-    font-size: x-large;
-    align-content: center;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-  }
-
-  .card-description {
-    font-size: larger;
-    align-content: center;
-    margin: 3rem;
-  }
-
-  .container-homepage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5rem;
-    padding: 0;
-    height: 35rem;
-  }
-
-  .button-container-homepage {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    white-space: pre-line;
-    padding: 1rem;
-    gap: 1rem;
-    height: 15rem;
-    gap: 5%;
-    margin-bottom: 5%;
-    list-style: none;
-    justify-content: space-evenly;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   .link-article {
     display: flex;
@@ -589,5 +502,104 @@
     font-size: 1.7rem;
     margin: 1rem;
     line-height: 2.3rem;
+  }
+}
+
+@media screen and (max-width: 464px) {
+  .card-container-homepage-reservation {
+    height: 7rem;
+    margin-top: -8rem;
+    margin-bottom: 3rem;
+    z-index: 0;
+    margin-left: 2rem;
+    width: 10rem;
+  }
+
+  .button-reservation-new-attraction {
+    width: 84%;
+    justify-self: center;
+    font-size: 1rem;
+  }
+
+  .button-homepage-reservation {
+    width: 75%;
+    height: 3rem;
+    font-size: 0.8rem;
+  }
+
+  .link-article {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-self: center;
+    margin-top: 5rem;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1), -4px -4px 10px
+      rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  .image-card-article {
+    height: 100%;
+    border-radius: 10px;
+    width: 100%;
+    justify-items: center;
+    margin-left: 0;
+    margin-right: 2%;
+  }
+
+  .card-title {
+    font-size: x-large;
+    align-content: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+
+  .card-description {
+    font-size: larger;
+    align-content: center;
+    margin: 3rem;
+  }
+
+  .container-homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    padding: 0;
+    height: 35rem;
+  }
+
+  .button-container-homepage {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    white-space: pre-line;
+    padding: 1rem;
+    gap: 1rem;
+    height: 15rem;
+    gap: 5%;
+    margin-bottom: 5%;
+    list-style: none;
+    justify-content: space-evenly;
+  }
+  .informations-card {
+    width: 19rem;
+  }
+
+  .informations-img {
+    height: 15rem;
+    width: 15rem;
+  }
+  .informations-description {
+    width: 16rem;
+    font-size: 1.2rem;
   }
 }

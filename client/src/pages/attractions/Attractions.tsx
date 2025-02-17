@@ -28,6 +28,10 @@ function Attractions() {
       });
   });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const themeContext = UseTheme();
   const theme = themeContext ? themeContext.theme : "light";
 
@@ -82,7 +86,10 @@ function Attractions() {
           <>
             {attraction.type === attractionsFilter ||
             attractionsFilter === "Tout" ? (
-              <div key={attraction.id} className="card-link-attraction">
+              <div
+                key={attraction.id}
+                className={`card-link-attraction ${theme}`}
+              >
                 <Link to={`/attraction/${attraction.id}`}>
                   <img
                     className="img-attraction"
