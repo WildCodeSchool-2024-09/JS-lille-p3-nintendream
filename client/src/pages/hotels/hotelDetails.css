@@ -146,6 +146,20 @@
   border: none;
 }
 
+.reservation-hotel {
+  padding: 15px 0px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  border-radius: 20px;
+  display: block;
+  border: none;
+  width: 50%;
+  justify-self: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 464px) {
   .paradise-hotel-img {
     height: 50rem;
@@ -158,7 +172,7 @@
   .hotel-description-img {
     font-size: 1.8rem;
     width: 19rem;
-    top: 65%;
+    top: 70%;
     border: 1px light black;
     border-radius: 15px;
     padding: 1.5rem;
@@ -191,23 +205,23 @@
     font-size: 1.5rem;
   }
   .room-card {
-    height: 40rem;
+    height: 44rem;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media (min-width: 760px) and (max-width: 1024px) {
   .paradise-hotel-img {
     height: 50rem;
   }
   .hotel-name {
     font-size: 4.5rem;
     width: 20rem;
-    top: 20%;
+    top: 29%;
   }
   .hotel-description-img {
     font-size: 1.8rem;
-    width: 25rem;
-    top: 50%;
+    width: 20rem;
+    top: 75%;
     border: 1px light black;
     border-radius: 15px;
     padding: 1.5rem;
@@ -237,6 +251,6 @@
     font-size: 1.8rem;
   }
   .room-card {
-    height: 42rem;
+    height: 48rem;
   }
 }
