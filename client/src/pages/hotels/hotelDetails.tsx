@@ -68,7 +68,10 @@ function HotelDetails() {
                 <p className="room-card-price">{room.price}</p>
               </article>
               <Link to={`/reservation/${room.link_title}`}>
-                <button type="button"> Réserver</button>
+                <button type="button" className="reservation-hotel">
+                  {" "}
+                  Réserver
+                </button>
               </Link>
             </section>
           ))}
