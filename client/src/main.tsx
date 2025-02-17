@@ -8,6 +8,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // Import the main app component
 import App from "./App";
 
+
 import Admin from "./pages/admin/Admin.tsx";
 import EditAttraction from "./pages/admin/Attraction/EditAttraction.tsx";
 import NewAttraction from "./pages/admin/Attraction/NewAttraction.tsx";
@@ -19,8 +20,8 @@ import NewHotel from "./pages/admin/Hotel/NewHotel.tsx";
 import EditHotel from "./pages/admin/Hotel/editHotel.tsx";
 import DeleteRestaurantForm from "./pages/admin/restaurant/DeleteRestaurantForm.tsx";
 import EditRestaurantForm from "./pages/admin/restaurant/EditRestaurantForm.tsx";
-import AttractionDetails from "./pages/attractionDetails/AttractionDetails.tsx";
 import Attractions from "./pages/attractions/Attractions.tsx";
+import AttractionDetails from "./pages/attractionDetails/AttractionDetails.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
 import Confirmation from "./pages/confirmation/Confirmation.tsx";
 import ErrorPage from "./pages/error/ErrorPage.tsx";
@@ -33,6 +34,7 @@ import Login from "./pages/login/Login";
 import Restaurant from "./pages/pageRestaurant/Restaurant";
 import RestaurantDetails from "./pages/pageRestaurant/RestaurantDetails";
 import Profile from "./pages/profile/profile.tsx";
+import NewRestaurant from "./pages/admin/restaurant/NewRestaurantForm.tsx";
 import ProjectMap from "./pages/projectMap/projectMap.tsx";
 import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
@@ -117,7 +119,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/restaurants/new",
+
         element: <EditRestaurantForm />,
+
+        element: <NewRestaurant />,
+
       },
       {
         path: "/admin/restaurants/:id/delete",

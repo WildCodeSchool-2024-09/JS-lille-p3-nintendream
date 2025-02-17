@@ -19,6 +19,8 @@ router.delete("/api/restaurant/:id", RestaurantAction.destroy);
 router.get("/api/events", EventActions.browse);
 router.get("/api/events/:id", EventActions.read);
 
+import authActions from "./modules/auth/authActions";
+import ProfileAction from "./modules/item/Profile/ProfileAction";
 router.get("api/profile/:id", authActions.verifyToken, ProfileAction.read);
 
 // Define item-related routes,
@@ -26,7 +28,6 @@ router.get("api/profile/:id", authActions.verifyToken, ProfileAction.read);
 /* ************************************************************************* */
 
 import attractionActions from "./modules/attractions/attractionActions";
-import ProfileAction from "./modules/item/Profile/ProfileAction";
 
 router.get("/api/attractions", attractionActions.browse);
 router.get("/api/attractions/:id", attractionActions.read);
@@ -46,8 +47,6 @@ import UserActions from "./modules/user/userActions";
 router.get("/api/users", UserActions.browse);
 router.get("/api/user/:id", UserActions.read);
 router.post("/api/users", authActions.hashedPassword, UserActions.add);
-
-import authActions from "./modules/auth/authActions";
 
 router.post("/api/login", authActions.login, authActions.validate);
 router.post("/api/register", authActions.hashedPassword, authActions.register);
