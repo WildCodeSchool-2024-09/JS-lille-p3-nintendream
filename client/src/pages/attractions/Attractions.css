@@ -65,7 +65,46 @@
 .dark.card-link-attraction {
   background-color: var(--secondary-dark-color);
 }
-
+.filter-button-attraction {
+  background-image: linear-gradient(
+    to right,
+    #e60012 0%,
+    #e35d5b 51%,
+    #e60012 100%
+  );
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+  display: block;
+  border: none;
+  text-decoration: none;
+}
+.filter-button-attraction:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.attraction-flex-button-p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: auto;
+  margin-top: 1rem;
+  width: fit-content;
+  padding: 1.5rem 1rem;
+  max-width: 80%;
+}
+.attraction-flex-button {
+  display: flex;
+  gap: 2rem;
+}
 @media screen and (max-width: 464px) {
   .card-link-attraction {
     width: 80%;
@@ -74,6 +113,24 @@
   .map-nintendream {
     width: 80%;
     height: 20rem;
+  }
+  .attraction-flex-button-p {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .attraction-flex-button {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .filter-button-attraction {
+    padding: 10px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    box-shadow: 0 0 20px #eee;
   }
 }
 
@@ -86,5 +143,15 @@
   .img-attraction {
     height: 50vh;
     margin: auto;
+  }
+  .attraction-flex-button-p {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .attraction-flex-button {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
   }
 }
