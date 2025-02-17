@@ -1,5 +1,6 @@
 import "./RestaurantForm.css";
 import { useNavigate, useParams } from "react-router-dom";
+import { UseTheme } from "../../../services/ThemeContext";
 
 function DeleteRestaurantForm() {
   const navigate = useNavigate();
@@ -19,19 +20,23 @@ function DeleteRestaurantForm() {
     });
   };
 
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
   return (
-    <form
-      onSubmit={handleSubmitDeleteRestaurant}
-      className="form-admin-container"
-    >
-      <h1 className="delete-title-form">
-        ❌ Êtes-vous sûr de vouloir supprimer le restaurant ? Attention ! Cette
-        action est irréversible ❌
-      </h1>
-      <button type="submit" className="admin-form-button">
-        Delete
-      </button>
-    </form>
+    <main className={`form-restaurant-main-container ${theme}`}>
+      <form
+        onSubmit={handleSubmitDeleteRestaurant}
+        className="form-admin-container"
+      >
+        <h1 className="delete-title-form">
+          ❌ Êtes-vous sûr de vouloir supprimer le restaurant ? Attention !
+          Cette action est irréversible ❌
+        </h1>
+        <button type="submit" className="admin-form-button">
+          Delete
+        </button>
+      </form>
+    </main>
   );
 }
 
