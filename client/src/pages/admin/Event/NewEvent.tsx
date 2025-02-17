@@ -11,12 +11,12 @@ function NewEvent() {
     img_src: "",
     zone_id: 0,
   };
-  
+
   const storedData = localStorage.getItem("userAndToken");
-let userAndToken = { user: "", token: "" };
-if (storedData) {
-  userAndToken = JSON.parse(storedData);
-}
+  let userAndToken = { user: "", token: "" };
+  if (storedData) {
+    userAndToken = JSON.parse(storedData);
+  }
 
   return (
     <>
