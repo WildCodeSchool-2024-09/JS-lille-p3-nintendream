@@ -1,26 +1,22 @@
-.form-event-main-container {
-  min-height: 130vh;
-}
-
-.form-event {
+.form-hotel {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 120vh;
+  height: 100vh;
   gap: 2rem;
   width: 40%;
   margin: auto;
   padding-top: 3rem;
 }
 
-.form-event-section {
+.form-hotel-section {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
-.form-event-textarea {
+.form-hotel-textarea {
   width: 350px;
   height: 75px;
   border: 1px solid var(--secondary-color);
@@ -28,36 +24,36 @@
   padding: 5px;
 }
 
-.admin-form-event-button {
+.admin-form-hotel-button {
   margin-top: 1rem;
   border-radius: 15px;
   width: 15rem;
   padding: 0.5rem;
   display: flex;
-  justify-self: center;
   justify-content: center;
 }
 
-.admin-form-event-button:hover {
+.admin-form-hotel-button:hover {
   cursor: pointer;
 }
 
-.light.form-event-main-container {
+.light.form-hotel-main-container {
   background-color: var(--primary-color);
   color: black;
 }
 
-.dark.form-event-main-container {
+.dark.form-hotel-main-container {
   background-color: var(--primary-dark-color);
   color: white;
 }
 
-.light.form-event-textarea {
+.light.form-hotel-textarea {
   background-color: white;
   color: black;
+  border-color: var(--secondary-color);
 }
 
-.dark.form-event-textarea {
+.dark.form-hotel-textarea {
   background-color: var(--primary-color);
   color: black;
   border-color: var(--secondary-dark-color);

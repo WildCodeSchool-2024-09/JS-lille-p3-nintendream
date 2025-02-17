@@ -1,8 +1,7 @@
 .form-admin-container {
   display: flex;
   flex-direction: column;
-  margin-top: 5rem;
-  padding: 1rem;
+  padding-top: 5rem;
   gap: 1rem;
   align-items: center;
 }

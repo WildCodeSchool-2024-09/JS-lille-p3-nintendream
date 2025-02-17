@@ -12,6 +12,9 @@ function NavBar() {
   }
 
   const userContext = useContext(UserContext);
+  const userAndToken = userContext?.userAndToken;
+  const user = userAndToken?.user;
+
   const themeContext = UseTheme();
   if (!themeContext) {
     return null;
@@ -27,9 +30,6 @@ function NavBar() {
     }
   };
 
-  if (!userContext) {
-    throw new Error("UserContext is null");
-  }
   return (
     <header className={`whole-nav ${theme}`}>
       <div className="logo-and-login">
@@ -88,7 +88,7 @@ function NavBar() {
             className="nintendreamlogo"
           />
         </Link>
-        {userContext.user ? (
+        {user ? (
           <Link to="/profile">
             <img
               src="/imgNav/profile.png"

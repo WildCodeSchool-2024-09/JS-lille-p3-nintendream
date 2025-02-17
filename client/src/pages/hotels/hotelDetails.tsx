@@ -7,7 +7,7 @@ interface room {
   title: string;
   img: string;
   description: string;
-  price: string;
+  price: number;
   link_title: string;
 }
 

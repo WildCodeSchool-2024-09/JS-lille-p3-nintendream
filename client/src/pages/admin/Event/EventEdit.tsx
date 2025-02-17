@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import EventForm from "../../../components/Event/EventForm";
+
 interface Event {
   id: number;
   name: string;
@@ -10,6 +11,12 @@ interface Event {
   img_src: string;
   zone_id: number;
 }
+const storedData = localStorage.getItem("userAndToken");
+let userAndToken = { user: "", token: "" };
+if (storedData) {
+  userAndToken = JSON.parse(storedData);
+}
+
 function EventEdit() {
   const { id } = useParams();
   const [event, setEvent] = useState(null as null | Event);
@@ -28,7 +35,10 @@ function EventEdit() {
         onSubmit={(eventData) => {
           fetch(`${import.meta.env.VITE_API_URL}/api/events/${id}`, {
             method: "put",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${userAndToken.token}`,
+            },
             body: JSON.stringify(eventData),
           }).then((response) => {
             if (response.status === 204) {

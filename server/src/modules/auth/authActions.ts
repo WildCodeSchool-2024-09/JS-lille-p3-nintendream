@@ -1,10 +1,12 @@
 import argon2 from "argon2";
 import type { RequestHandler } from "express";
+import joi from "joi";
+import jwt from "jsonwebtoken";
 import UserRepository from "../user/userRepository";
 
 const login: RequestHandler = async (req, res, next) => {
   try {
-    const user = await UserRepository.readByMailWithPassword(req.body.mail);
+    const user = await UserRepository.readByMail(req.body.mail);
 
     if (user == null) {
       res.sendStatus(422);
@@ -15,7 +17,28 @@ const login: RequestHandler = async (req, res, next) => {
     if (!verified) {
       res.sendStatus(422);
     } else {
-      res.json(user);
+      const { password, ...userWithoutHashedPassword } = user;
+
+      const myPayload: MyPayload = {
+        sub: user.id.toString(),
+        mail: user.mail,
+        first_name: user.first_name,
+        name: user.name,
+        role: user.role,
+      };
+
+      const token = await jwt.sign(
+        myPayload,
+        process.env.APP_SECRET as string,
+        {
+          expiresIn: "1h",
+        },
+      );
+
+      res.json({
+        token,
+        user: userWithoutHashedPassword,
+      });
     }
   } catch (err) {
     next(err);
@@ -55,4 +78,83 @@ const hashedPassword: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { login, hashedPassword, register };
+const userSchema = joi.object({
+  first_name: joi.string().max(255).required().messages({
+    "string.empty": "Le prénom est requis",
+    "string.max": "Le prénom ne peut pas dépasser 255 caractères",
+  }),
+  name: joi.string().max(255).required().messages({
+    "string.empty": "Le nom est requis",
+    "string.max": "Le nom ne peut pas dépasser 255 caractères",
+  }),
+  age: joi.number().max(120).required().messages({
+    "number.base": "L'âge doit être un nombre",
+    "number.max": "L'âge ne peut pas dépasser 120 ans",
+    "any.required": "L'âge est requis",
+  }),
+  mail: joi.string().email().max(255).required().messages({
+    "string.email": "L'email doit être valide",
+    "string.empty": "L'email est requis",
+    "string.max": "L'email ne peut pas dépasser 255 caractères",
+    "any.required": "L'email est requis",
+  }),
+  username: joi.string().max(255).required().messages({
+    "string.empty": "Le nom d'utilisateur est requis",
+    "string.max": "Le nom d'utilisateur ne peut pas dépasser 255 caractères",
+  }),
+  password: joi.string().max(255).required().messages({
+    "string.empty": "Le mot de passe est requis",
+    "string.max": "Le mot de passe ne peut pas dépasser 255 caractères",
+  }),
+});
+const validate: RequestHandler = (req, res, next) => {
+  const { error } = userSchema.validate(req.body, { abortEarly: false });
+
+  if (error == null) {
+    next();
+  } else {
+    res.status(400).json({ validationErrors: error.details });
+  }
+};
+
+const verifyToken: RequestHandler = (req, res, next) => {
+  try {
+    // Vérifier la présence de l'en-tête "Authorization" dans la requête
+    const authorizationHeader = req.get("Authorization");
+
+    if (authorizationHeader == null) {
+      throw new Error("Authorization header is missing");
+    }
+
+    // Vérifier que l'en-tête a la forme "Bearer <token>"
+    const [type, token] = authorizationHeader.split(" ");
+
+    if (type !== "Bearer") {
+      throw new Error("Authorization header has not the 'Bearer' type");
+    }
+
+    // Vérifier la validité du token (son authenticité et sa date d'expériation)
+    // En cas de succès, le payload est extrait et décodé
+    req.auth = jwt.verify(token, process.env.APP_SECRET as string) as MyPayload;
+    next();
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(401);
+  }
+};
+const verifyAdmin: RequestHandler = (req, res, next) => {
+  if (req.auth.role !== "admin") {
+    res.sendStatus(403);
+    return;
+  }
+
+  next();
+};
+export default {
+  login,
+  hashedPassword,
+  validate,
+  register,
+  verifyToken,
+  verifyAdmin,
+};
