@@ -1,7 +1,8 @@
-import "./RestaurantForm.css";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import RestaurantForm from "../../../components/restaurant/RestaurantForm";
 
-type Restaurant = {
+interface Restaurant {
   id: number;
   name: string;
   img: string;
@@ -9,92 +10,43 @@ type Restaurant = {
   text: string;
   adult_price: number;
   kids_price: number;
-};
-
-interface RestaurantFormProps {
-  defaultValue: Restaurant;
-  onSubmit: (restaurant: Restaurant) => void;
 }
 
-function EditRestaurantForm({ defaultValue }: RestaurantFormProps) {
-  const navigate = useNavigate();
+function RestaurantEdit() {
   const { id } = useParams();
+  const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
+  const navigate = useNavigate();
 
-  const handleSubmitEditRestaurant = (
-    event: React.FormEvent<HTMLFormElement>,
-  ) => {
-    event.preventDefault();
-
-    const formData = new FormData(event.currentTarget);
-    const editRestaurant = Object.fromEntries(formData.entries());
-
-    fetch(`${import.meta.env.VITE_API_URL}/api/restaurant/${id}`, {
-      method: "put",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(editRestaurant),
-    }).then((response) => {
-      if (response.status === 204) {
-        navigate("/admin/restaurant/${id}");
-      }
-    });
-  };
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}/api/restaurant/${id}`)
+      .then((response) => response.json())
+      .then((data: Restaurant) => {
+        setRestaurant(data);
+      });
+  }, [id]);
 
   return (
-    <form
-      onSubmit={handleSubmitEditRestaurant}
-      className="form-admin-container"
-    >
-      <input
-        type="text"
-        name="name"
-        defaultValue={defaultValue.name}
-        placeholder="name de restaurant"
-        className="form-admin"
-      />
-      <input
-        type="text"
-        name="image"
-        defaultValue={defaultValue.img}
-        placeholder="image"
-        className="form-admin"
-      />
-      <input
-        type="text"
-        name="paragraphe intro"
-        defaultValue={defaultValue.intro}
-        placeholder="paragraphe d'introduction"
-        className="form-admin"
-      />
-
-      <input
-        type="text"
-        name="text"
-        defaultValue={defaultValue.text}
-        placeholder="text"
-        className="form-admin"
-      />
-      <input
-        type="text"
-        name="prix adulte"
-        defaultValue={defaultValue.adult_price}
-        placeholder="prix adulte"
-        className="form-admin"
-      />
-      <input
-        type="text"
-        name="prix enfant"
-        defaultValue={defaultValue.kids_price}
-        placeholder="prix enfant"
-        className="form-admin"
-      />
-
-      <button type="submit" className="admin-form-button">
-        Submit
-      </button>
-    </form>
+    <>
+      {restaurant && (
+        <RestaurantForm
+          defaultValue={restaurant}
+          onSubmit={(restaurantData) => {
+            fetch(`${import.meta.env.VITE_API_URL}/api/restaurant/${id}`, {
+              method: "put",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(restaurantData),
+            }).then((response) => {
+              if (response.status === 204) {
+                navigate("/admin");
+              }
+            });
+          }}
+        >
+          Modifier
+        </RestaurantForm>
+      )}
+    </>
   );
 }
 
-export default EditRestaurantForm;
+export default RestaurantEdit;

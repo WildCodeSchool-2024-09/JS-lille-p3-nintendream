@@ -1,26 +1,26 @@
-.form-event-main-container {
-  min-height: 130vh;
+.form-attraction-main-container {
+  min-height: 160vh;
 }
 
-.form-event {
+.form-attraction-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 120vh;
+  height: 100vh;
   gap: 2rem;
   width: 40%;
   margin: auto;
   padding-top: 3rem;
 }
 
-.form-event-section {
+.form-attraction-section {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
-.form-event-textarea {
+.form-admin-attraction {
   width: 350px;
   height: 75px;
   border: 1px solid var(--secondary-color);
@@ -28,36 +28,35 @@
   padding: 5px;
 }
 
-.admin-form-event-button {
-  margin-top: 1rem;
-  border-radius: 15px;
-  width: 15rem;
-  padding: 0.5rem;
-  display: flex;
-  justify-self: center;
-  justify-content: center;
-}
-
-.admin-form-event-button:hover {
+.admin-form-button:hover {
   cursor: pointer;
 }
 
-.light.form-event-main-container {
+.light.form-attraction-main-container {
   background-color: var(--primary-color);
+}
+
+.dark.form-attraction-main-container {
+  background-color: var(--primary-dark-color);
+}
+
+.light.label-attractions-form,
+.light.delete-title-form {
   color: black;
 }
 
-.dark.form-event-main-container {
-  background-color: var(--primary-dark-color);
+.dark.label-attractions-form,
+.dark.delete-title-form {
   color: white;
 }
 
-.light.form-event-textarea {
+.light.form-admin-attraction {
   background-color: white;
   color: black;
+  border-color: var(--secondary-color);
 }
 
-.dark.form-event-textarea {
+.dark.form-admin-attraction {
   background-color: var(--primary-color);
   color: black;
   border-color: var(--secondary-dark-color);

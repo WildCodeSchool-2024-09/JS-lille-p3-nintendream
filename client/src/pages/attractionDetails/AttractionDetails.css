@@ -1,6 +1,5 @@
-.background-attraction-details {
-  width: 100%;
-  max-height: 500px;
+.attraction-details-main {
+  padding-top: 5rem;
 }
 
 .container-attraction-details {
@@ -10,7 +9,7 @@
   text-align: center;
   justify-content: space-between;
   border-radius: 20px;
-  margin-top: 8vh;
+  padding-top: 8vh;
   box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2), -6px -6px 15px rgba(0, 0, 0, 0.2);
   width: 90%;
   justify-self: center;
@@ -46,6 +45,20 @@
   height: 50%;
   margin-top: 5vh;
   border-radius: 10px;
+}
+
+.light.attraction-details-main {
+  background-color: var(--primary-color);
+}
+
+.dark.attraction-details-main {
+  background-color: var(--primary-dark-color);
+}
+
+.dark.container-attraction-details {
+  background-color: var(--tertiary-color);
+  color: white;
+  box-shadow: 0px 0px 10px var(--primary-color), 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
 @media screen and (max-width: 464px) {

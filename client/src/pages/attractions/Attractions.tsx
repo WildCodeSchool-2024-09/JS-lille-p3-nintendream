@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import "./Attractions.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { UseTheme } from "../../services/ThemeContext";
 
 interface Attractions {
   id: number;
@@ -27,8 +28,11 @@ function Attractions() {
       });
   });
 
+  const themeContext = UseTheme();
+  const theme = themeContext ? themeContext.theme : "light";
+
   return (
-    <main>
+    <main className={`attractions-main ${theme}`}>
       <div className="image-background-attraction">
         <img
           className="background-attraction"
@@ -102,7 +106,7 @@ function Attractions() {
 
       <img
         className="map-nintendream"
-        src="/public/image/attractions/MapNintendDream.jpeg"
+        src="/image/attractions/MapNintendDream.jpeg"
         alt="Map"
       />
     </main>

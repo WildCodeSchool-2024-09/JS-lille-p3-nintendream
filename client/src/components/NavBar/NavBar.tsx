@@ -10,8 +10,13 @@ function NavBar() {
   function handleClick() {
     setMenuBurgerToggle(!menuBurgerToggle);
   }
-
+  function handleClose() {
+    setMenuBurgerToggle(false);
+  }
   const userContext = useContext(UserContext);
+  const userAndToken = userContext?.userAndToken;
+  const user = userAndToken?.user;
+
   const themeContext = UseTheme();
   if (!themeContext) {
     return null;
@@ -27,11 +32,8 @@ function NavBar() {
     }
   };
 
-  if (!userContext) {
-    throw new Error("UserContext is null");
-  }
   return (
-    <header className={`whole-nav ${theme}`}>
+    <header className={`whole-nav ${theme}`} onTouchMove={handleClose}>
       <div className="logo-and-login">
         <button className="navbar-burger" onClick={handleClick} type="button">
           <span
@@ -88,7 +90,7 @@ function NavBar() {
             className="nintendreamlogo"
           />
         </Link>
-        {userContext.user ? (
+        {user ? (
           <Link to="/profile">
             <img
               src="/imgNav/profile.png"
@@ -110,9 +112,11 @@ function NavBar() {
       <ul
         className={
           menuBurgerToggle
-            ? "nav-ul navbar-burger-open"
-            : "nav-ul navbar-burger-close"
+            ? `nav-ul navbar-burger-open ${theme}`
+            : `nav-ul navbar-burger-close ${theme}`
         }
+        onClick={handleClose}
+        onKeyDown={handleClose}
       >
         <Link to="/">
           <li className="nav-li">Accueil</li>

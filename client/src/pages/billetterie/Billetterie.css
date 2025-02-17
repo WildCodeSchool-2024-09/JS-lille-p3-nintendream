@@ -63,11 +63,11 @@
   border-radius: 15px;
   display: flex;
   justify-content: center;
-  opacity: 70%;
 }
 
 .billetterie-price {
   font-size: 3rem;
+  align-content: center;
 }
 
 .billetterie-btn {
@@ -84,8 +84,6 @@
 }
 
 .billetterie-btn:hover {
-  background-position: right center;
-  background-color: #f76363;
   cursor: pointer;
 }
 
@@ -170,7 +168,7 @@
   }
   .billetterie-card {
     height: 49rem;
-    width: auto;
+    width: 22rem;
     align-self: center;
   }
   .billetterie-avantages-container {
@@ -178,19 +176,23 @@
     gap: 1rem;
   }
   .billetterie-avantages-img {
-    width: 3rem;
+    width: 4rem;
   }
   .billetterie-avantages-more {
     font-size: 1.5rem;
   }
+  .card-billetterie-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 
-@media screen and (max-width: 1024px) {
+@media (min-width: 760px) and (max-width: 1024px) {
   .subtitle-billetterie {
     font-size: 2rem;
   }
   .card-billetterie-container {
-    flex-direction: column;
+    flex-wrap: wrap;
   }
   .billetterie-other,
   .billetterie-cancel,
@@ -207,7 +209,7 @@
     align-self: center;
   }
   .billetterie-avantages-container {
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 1rem;
   }
   .billetterie-avantages-img {
