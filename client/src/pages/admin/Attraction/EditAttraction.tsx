@@ -1,5 +1,4 @@
 import "../../../components/Attraction/AttractionForm.css";
-
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import AttractionForm from "../../../components/Attraction/AttractionForm";

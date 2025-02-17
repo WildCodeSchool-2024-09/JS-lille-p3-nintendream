@@ -1,3 +1,6 @@
+// Pour les tests
+import dotenv from "dotenv";
+dotenv.config();
 // Load the express module to create a web application
 
 import express from "express";
