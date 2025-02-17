@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 import "./Confirmation.css";
+import { useEffect } from "react";
 import cleanDate from "../../services/CleanDate";
 import { UseTheme } from "../../services/ThemeContext";
-import { useEffect } from "react";
 
 function Confirmation() {
   const { state } = useLocation();

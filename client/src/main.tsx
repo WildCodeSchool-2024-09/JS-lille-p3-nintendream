@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
+import DeleteAttractionForm from "./components/Attraction/DeleteAttractionForm.tsx";
 import Admin from "./pages/admin/Admin.tsx";
 import EditAttraction from "./pages/admin/Attraction/EditAttraction.tsx";
 import NewAttraction from "./pages/admin/Attraction/NewAttraction.tsx";
@@ -36,7 +37,6 @@ import Profile from "./pages/profile/profile.tsx";
 import ProjectMap from "./pages/projectMap/projectMap.tsx";
 import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
-import DeleteAttractionForm from "./components/Attraction/DeleteAttractionForm.tsx";
 
 const router = createBrowserRouter([
   {

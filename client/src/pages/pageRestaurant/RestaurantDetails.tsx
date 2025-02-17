@@ -1,8 +1,8 @@
 import "./RestaurantDetails.css";
 import "./Restaurant.tsx";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { UseTheme } from "../../services/ThemeContext.tsx";
-import { useEffect } from "react";
 
 function RestaurantDetails() {
   const location = useLocation();

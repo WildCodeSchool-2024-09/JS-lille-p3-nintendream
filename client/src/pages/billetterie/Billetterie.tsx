@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Billetterie.css";
-import { UseTheme } from "../../services/ThemeContext";
 import { useEffect } from "react";
+import { UseTheme } from "../../services/ThemeContext";
 
 interface PricesProps {
   img: string;

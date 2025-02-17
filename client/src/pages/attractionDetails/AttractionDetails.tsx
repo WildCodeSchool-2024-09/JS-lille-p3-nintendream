@@ -29,8 +29,6 @@ function AttractionDetails() {
       });
   }, [id]);
 
-  
-
   const themeContext = UseTheme();
   const theme = themeContext ? themeContext.theme : "light";
 

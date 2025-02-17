@@ -1,7 +1,7 @@
 import "./Homepage.css";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { UseTheme } from "../../services/ThemeContext";
-import { useEffect } from "react";
 
 interface Article {
   image: string;
