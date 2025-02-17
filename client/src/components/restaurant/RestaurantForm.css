@@ -1,8 +1,8 @@
-.form-event-main-container {
+.form-restaurant-main-container {
   min-height: 130vh;
 }
 
-.form-event {
+.form-restaurant {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,14 +13,14 @@
   padding-top: 3rem;
 }
 
-.form-event-section {
+.form-restaurant-section {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
 }
 
-.form-event-textarea {
+.form-restaurant-textarea {
   width: 350px;
   height: 75px;
   border: 1px solid var(--secondary-color);
@@ -28,36 +28,35 @@
   padding: 5px;
 }
 
-.admin-form-event-button {
+.admin-form-restaurant-button {
   margin-top: 1rem;
   border-radius: 15px;
   width: 15rem;
   padding: 0.5rem;
   display: flex;
   justify-self: center;
-  justify-content: center;
 }
 
-.admin-form-event-button:hover {
+.admin-form-restaurant-button:hover {
   cursor: pointer;
 }
 
-.light.form-event-main-container {
+.light.form-restaurant-main-container {
   background-color: var(--primary-color);
   color: black;
 }
 
-.dark.form-event-main-container {
+.dark.form-restaurant-main-container {
   background-color: var(--primary-dark-color);
   color: white;
 }
 
-.light.form-event-textarea {
+.light.form-restaurant-textarea {
   background-color: white;
   color: black;
 }
 
-.dark.form-event-textarea {
+.dark.form-restaurant-textarea {
   background-color: var(--primary-color);
   color: black;
   border-color: var(--secondary-dark-color);

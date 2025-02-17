@@ -7,18 +7,18 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-import EditAttraction from "./pages/admin/Attraction/EditAttraction.tsx";
+import DeleteAttractionForm from "./components/Attraction/DeleteAttractionForm.tsx";
 import Admin from "./pages/admin/Admin.tsx";
-import DeleteAttractionForm from "./pages/admin/Attraction/DeleteAttractionForm.tsx";
+import EditAttraction from "./pages/admin/Attraction/EditAttraction.tsx";
+import NewAttraction from "./pages/admin/Attraction/NewAttraction.tsx";
 import EventDelete from "./pages/admin/Event/EventDelete.tsx";
 import EventEdit from "./pages/admin/Event/EventEdit.tsx";
 import NewEvent from "./pages/admin/Event/NewEvent.tsx";
-import DeletehotelForm from "./pages/admin/Hotel/deleteHotelForm.tsx";
-import EditHotelForm from "./pages/admin/Hotel/editHotelForm.tsx";
-import NewHotelForm from "./pages/admin/Hotel/newHotelForm.tsx";
+import DeleteHotelForm from "./pages/admin/Hotel/HotelDelete.tsx";
+import NewHotel from "./pages/admin/Hotel/NewHotel.tsx";
+import EditHotel from "./pages/admin/Hotel/editHotel.tsx";
 import DeleteRestaurantForm from "./pages/admin/restaurant/DeleteRestaurantForm.tsx";
 import EditRestaurantForm from "./pages/admin/restaurant/EditRestaurantForm.tsx";
-import RestaurantForm from "./pages/admin/restaurant/NewRestaurantForm.tsx";
 import AttractionDetails from "./pages/attractionDetails/AttractionDetails.tsx";
 import Attractions from "./pages/attractions/Attractions.tsx";
 import Billetterie from "./pages/billetterie/Billetterie";
@@ -36,7 +36,6 @@ import Profile from "./pages/profile/profile.tsx";
 import ProjectMap from "./pages/projectMap/projectMap.tsx";
 import Register from "./pages/register/Register.tsx";
 import Reservation from "./pages/reservation/Reservation.tsx";
-import NewAttraction from "./pages/admin/Attraction/NewAttraction.tsx";
 
 const router = createBrowserRouter([
   {
@@ -86,44 +85,16 @@ const router = createBrowserRouter([
       // Admin - Hotels
       {
         path: "/admin/hotels/:id/edit",
-        element: (
-          <EditHotelForm
-            defaultValue={{
-              id: 0,
-              img: "",
-              name: "",
-              distance: "0",
-              hotel_price: "0",
-              description: "",
-              secondary_description: "",
-              tertiary_description: "",
-            }}
-            onSubmit={() => {}}
-          />
-        ),
+        element: <EditHotel />,
       },
 
       {
         path: "/admin/hotels/new",
-        element: (
-          <NewHotelForm
-            defaultValue={{
-              id: 0,
-              img: "",
-              name: "",
-              distance: "0",
-              hotel_price: "0",
-              description: "",
-              secondary_description: "",
-              tertiary_description: "",
-            }}
-            onSubmit={() => {}}
-          />
-        ),
+        element: <NewHotel />,
       },
       {
         path: "/admin/hotels/:id/delete",
-        element: <DeletehotelForm />,
+        element: <DeleteHotelForm />,
       },
 
       // Admin - Events
@@ -141,37 +112,11 @@ const router = createBrowserRouter([
       // Admin - Restaurants
       {
         path: "/admin/restaurants/:id/edit",
-        element: (
-          <RestaurantForm
-            defaultValue={{
-              id: 0,
-              name: "",
-              img: "",
-              intro: "",
-              text: "",
-              adult_price: 0,
-              kids_price: 0,
-            }}
-            onSubmit={() => {}}
-          />
-        ),
+        element: <EditRestaurantForm />,
       },
       {
         path: "/admin/restaurants/new",
-        element: (
-          <EditRestaurantForm
-            defaultValue={{
-              id: 0,
-              name: "",
-              img: "",
-              intro: "",
-              text: "",
-              adult_price: 0,
-              kids_price: 0,
-            }}
-            onSubmit={() => {}}
-          />
-        ),
+        element: <EditRestaurantForm />,
       },
       {
         path: "/admin/restaurants/:id/delete",

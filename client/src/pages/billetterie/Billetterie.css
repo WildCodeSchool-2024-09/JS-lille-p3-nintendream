@@ -63,11 +63,11 @@
   border-radius: 15px;
   display: flex;
   justify-content: center;
-  opacity: 70%;
 }
 
 .billetterie-price {
   font-size: 3rem;
+  align-content: center;
 }
 
 .billetterie-btn {
@@ -84,8 +84,6 @@
 }
 
 .billetterie-btn:hover {
-  background-position: right center;
-  background-color: #f76363;
   cursor: pointer;
 }
 
