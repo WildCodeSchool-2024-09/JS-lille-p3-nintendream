@@ -1,6 +1,3 @@
-
-import "./AttractionForm.css";
-
 import "../../../components/Attraction/AttractionForm.css";
 
 import { useEffect, useState } from "react";
