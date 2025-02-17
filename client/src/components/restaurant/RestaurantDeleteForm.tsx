@@ -9,6 +9,7 @@ type RestaurantDeleteFormProps = {
 
 function RestaurantDeleteForm({ id, children }: RestaurantDeleteFormProps) {
   const navigate = useNavigate();
+
   return (
     <form
       onSubmit={(restaurant) => {
