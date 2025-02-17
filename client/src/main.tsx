@@ -7,8 +7,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 // Import the main app component
 import App from "./App";
-
-
 import Admin from "./pages/admin/Admin.tsx";
 import EditAttraction from "./pages/admin/Attraction/EditAttraction.tsx";
 import NewAttraction from "./pages/admin/Attraction/NewAttraction.tsx";
