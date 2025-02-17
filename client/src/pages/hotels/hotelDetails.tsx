@@ -25,6 +25,10 @@ function HotelDetails() {
       });
   }, [id]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const location = useLocation();
   const hotels = location.state;
 

@@ -29,8 +29,14 @@ function AttractionDetails() {
       });
   }, [id]);
 
+  
+
   const themeContext = UseTheme();
   const theme = themeContext ? themeContext.theme : "light";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

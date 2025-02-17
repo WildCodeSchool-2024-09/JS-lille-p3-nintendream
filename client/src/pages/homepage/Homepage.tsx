@@ -1,6 +1,7 @@
 import "./Homepage.css";
 import { Link } from "react-router-dom";
 import { UseTheme } from "../../services/ThemeContext";
+import { useEffect } from "react";
 
 interface Article {
   image: string;
@@ -64,6 +65,10 @@ const informations = [
 function Homepage() {
   const themeContext = UseTheme();
   const theme = themeContext ? themeContext.theme : "light";
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className={`homepage-main ${theme}`}>

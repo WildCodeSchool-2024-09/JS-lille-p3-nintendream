@@ -1,5 +1,11 @@
+import { useEffect } from "react";
 import "./projectMap.css";
+
 function ProjectMap() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <section className="container-page-map">

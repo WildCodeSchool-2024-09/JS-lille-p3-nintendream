@@ -117,11 +117,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/admin/restaurants/new",
-
-        element: <EditRestaurantForm />,
-
         element: <NewRestaurant />,
-
       },
       {
         path: "/admin/restaurants/:id/delete",

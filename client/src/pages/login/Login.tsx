@@ -1,12 +1,16 @@
 import { Link } from "react-router-dom";
 import "./Login.css";
 import type { FormEventHandler } from "react";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { UseTheme } from "../../services/ThemeContext";
 import { UserContext } from "../../services/UserContext";
 
 function Login() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const themeContext = UseTheme();
   const theme = themeContext ? themeContext.theme : "light";
   const mailRef = useRef<HTMLInputElement>(null);
